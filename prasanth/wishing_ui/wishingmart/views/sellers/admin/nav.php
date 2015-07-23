@@ -7,10 +7,10 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="<?php echo base_url('asserts/dist/img/user2-160x160.jpg'); ?>" class="img-circle" alt="User Image" />
+              <img src="<?php echo base_url('asserts/dist/img/avatar5.png'); ?>" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p>Wishing Mart User</p>
 
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -33,13 +33,13 @@
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
              </li>
-            <li class=<?php if($title == "Products" || $title == "Add Products"){ echo "active treeview"; }else{ echo "treeview"; } ?>>
+            <li class=<?php if($title == "Products" || $title == "Add Products"|| $title ==  "Edit Products"){ echo "active treeview"; }else{ echo "treeview"; } ?>>
               <a href="<?php echo base_url('index.php/seller/products'); ?>">
                 <i class="fa fa-files-o"></i> <span>Products</span>
               </a>
            </li>
-            <li>
-              <a href="pages/widgets.html">
+            <li class=<?php if($title == "Orders"){ echo "active treeview"; }else{ echo "treeview"; } ?>>
+              <a href="<?php echo base_url('index.php/seller/orders'); ?>">
                 <i class="fa fa-th"></i> <span>Orders</span> <small class="label pull-right bg-green">new</small>
               </a>
             </li>

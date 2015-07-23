@@ -7,12 +7,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            New
-            <small>Product</small>
+            Edit
+            <small>Product Details</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active"><a href="#">New Product</a></li>
+            <li class="active"><a href="#">Edit Product</a></li>
           </ol>
         </section>
 
@@ -25,7 +25,7 @@
   <!-- general form elements disabled -->
   <div class="box box-warning">
     <div class="box-header">
-      <h3 class="box-title">General Elements</h3>
+      <h3 class="box-title">Please Enter The Following Details</h3>
     </div><!-- /.box-header -->
     <div class="box-body">
       <form role="form">
@@ -44,7 +44,7 @@
         <!-- File uplode -->
        <div class="form-group">
           <label for="exampleInputFile">File input</label>
-          <input type="file" id="exampleInputFile">
+          <input type="file" id="exampleInputFile" disabled>
           <p class="help-block">Please Select Product Image.</p>
        </div>
 
@@ -62,7 +62,7 @@
         <!-- text input -->
         <div class="form-group">
           <label>Wight</label>
-          <input type="text" class="form-control" placeholder="Enter ..."/>
+          <input type="text" class="form-control" placeholder="Enter ..." disabled/>
         </div>
 
         <!-- Date dd/mm/yyyy -->
@@ -72,7 +72,7 @@
             <div class="input-group-addon">
               <i class="fa fa-calendar"></i>
             </div>
-            <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+            <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" disabled>
           </div><!-- /.input group -->
         </div>
         <!-- text input -->

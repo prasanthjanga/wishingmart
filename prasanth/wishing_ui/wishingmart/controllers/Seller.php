@@ -49,5 +49,33 @@ class Seller extends CI_Controller{
         $this->load->view('sellers/admin/footer');
 
      }
+     
+     public function product_edit(){
+
+        $data['title']="Edit Products";
+        $data['role']="seller";
+
+        $this->load->view('sellers/admin/header',$data);
+        //$data['pages']=$this->navmodel->get_nav();
+
+        $this->load->view('sellers/product_edit_view',$data);
+        $this->load->view('sellers/admin/footer');
+
+     }
+     public function orders(){
+
+        $data['title']="Orders";
+        $data['role']="seller";
+
+        $this->load->view('sellers/admin/header',$data);
+        //$data['pages']=$this->navmodel->get_nav();
+
+        $this->load->view('sellers/orders_view',$data);
+        $this->load->view('sellers/admin/footer');
+
+     }
+
+
+
 
 }
