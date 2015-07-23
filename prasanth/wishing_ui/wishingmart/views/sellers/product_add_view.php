@@ -75,6 +75,27 @@
             <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
           </div><!-- /.input group -->
         </div>
+        <!-- text input -->
+        <div class="form-group">
+          <label>Manufacturing Company Name</label>
+          <input type="text" class="form-control" placeholder="Enter ..."/>
+        </div>
+        <!-- textarea -->
+        <div class="form-group">
+          <label>Seo Key Words</label>
+          <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+        </div>
+        <!-- text input -->
+        <div class="form-group">
+          <label>Page Title Tag</label>
+          <input type="text" class="form-control" placeholder="Enter ..."/>
+        </div>
+        <!-- text input -->
+        <div class="form-group">
+          <label>Meta Tag Description</label>
+          <input type="text" class="form-control" placeholder="Enter ..."/>
+        </div>
+
 
 
         <div class="box-footer">

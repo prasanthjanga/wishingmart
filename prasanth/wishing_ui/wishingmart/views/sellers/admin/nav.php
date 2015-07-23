@@ -33,7 +33,7 @@
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
              </li>
-            <li class=<?php if($title == "Products"){ echo "active treeview"; }else{ echo "treeview"; } ?>>
+            <li class=<?php if($title == "Products" || $title == "Add Products"){ echo "active treeview"; }else{ echo "treeview"; } ?>>
               <a href="<?php echo base_url('index.php/seller/products'); ?>">
                 <i class="fa fa-files-o"></i> <span>Products</span>
               </a>
