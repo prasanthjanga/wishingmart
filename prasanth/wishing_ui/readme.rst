@@ -8,14 +8,14 @@ Release Information
 *******************
 
 This repo contains in-development code for future releases. To download the
-latest stable release please visit the `Wishing mart Downloads
+latest stable release please visit the `Wishing Mart UI Download
 <https://github.com/prasanthjanga/wishingmart.git>`_ page.
 
 **************************
 Our Repo and New Features
 **************************
 
-This is to configer our team work in one repository  <https://github.com/prasanthjanga/wishingmart.git>`_.
+This is to configer our team work in `Same Repository  <https://github.com/prasanthjanga/wishingmart.git>`_.
 
 *******************
 Server Requirements
@@ -35,7 +35,7 @@ Installation
 - Change the Data Base settings in "wishingmart/config/database.php" file.
 - Data Base is in MYSQL format.
 - Database Export file is in "database/wishing_cig.sql" and Import to your phpmyadmin.
-- then you can check for seller dashbord use this url `http://localhost:portnumber/wishing_ui/index.php/seller`_
+- then you can check for seller dashbord use this url http://localhost:portnumber/wishing_ui/index.php/seller
 
 
 
