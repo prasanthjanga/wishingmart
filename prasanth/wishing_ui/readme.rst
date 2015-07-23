@@ -1,29 +1,21 @@
 ###################
-What is CodeIgniter
+What is Wishing Mart UI
 ###################
-
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Wishing Maet UI is all Front end designing in HTML and Bootstrap.
 
 *******************
 Release Information
 *******************
 
 This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<http://www.codeigniter.com/download>`_ page.
+latest stable release please visit the `Wishing mart Downloads
+<https://github.com/prasanthjanga/wishingmart.git>`_ page.
 
 **************************
-Changelog and New Features
+Our Repo and New Features
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+This is to configer our team work in one repository  <https://github.com/prasanthjanga/wishingmart.git>`_.
 
 *******************
 Server Requirements
@@ -39,8 +31,14 @@ issues, as well as missing features.
 Installation
 ************
 
-Please see the `installation section <http://www.codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+- Change the base_url() in "wishingmart/config/config.php" file.
+- Change the Data Base settings in "wishingmart/config/database.php" file.
+- Data Base is in MYSQL format.
+- Database Export file is in "database/wishing_cig.sql" and Import to your phpmyadmin.
+- then you can check for seller dashbord use this url `http://localhost:portnumber/wishing_ui/index.php/seller`_
+
+
+
 
 *******
 License
