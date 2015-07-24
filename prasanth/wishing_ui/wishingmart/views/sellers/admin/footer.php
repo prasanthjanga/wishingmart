@@ -6,7 +6,7 @@
 
     <!-- jQuery 2.1.4 -->
     <script src="<?php echo base_url('asserts/plugins/jQuery/jQuery-2.1.4.min.js'); ?>"></script>
-<?php if($title !="Products"){ ?>
+<?php if($title !="Products" || $title != "Orders"){ ?>
   
     <!-- jQuery UI 1.11.2 -->
     <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js" type="text/javascript"></script>
@@ -34,7 +34,7 @@
     <script src="<?php echo base_url('asserts/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'); ?>" type="text/javascript"></script>
 
 <?php  }// if end  ?>  
-<?php if($title =="Products"){ ?>
+<?php if($title =="Products" || $title != "Orders"){ ?>
     <!-- DATA TABES SCRIPT -->
     <script src="<?php echo base_url('asserts/plugins/datatables/jquery.dataTables.min.js'); ?>" type="text/javascript"></script>
     <script src="<?php echo base_url('asserts/plugins/datatables/dataTables.bootstrap.min.js'); ?>" type="text/javascript"></script>
@@ -78,6 +78,19 @@
     });
     </script>
 <?php  }// if end  ?>  
+
+<?php if($title =="Orders"){ ?>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+    <!-- Page Script -->
+    <script>
+      $(function () {
+        //Add text editor
+        $("#compose-textarea").wysihtml5();
+      });
+    </script>
+<?php  }// if end  ?>  
+
 
   </body>
 </html>

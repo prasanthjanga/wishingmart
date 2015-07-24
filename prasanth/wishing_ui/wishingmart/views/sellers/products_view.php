@@ -45,14 +45,16 @@
                         <td>Product-11</td>
                         <td>50</td>
                         <td>8</td>
-                        <td><a href="<?php echo base_url('index.php/seller/product_edit'); ?>" class="btn btn-primary btn-xs">Edit</a> <a class="btn btn-danger btn-xs">Delete</a></td>
+                        <td><a href="<?php echo base_url('index.php/seller/product_edit'); ?>" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                         <a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a></td>
                       </tr>
                       <tr>
                         <td>2</td>
                         <td>Product-2</td>
                         <td>20</td>
                         <td>5</td>
-                        <td><a href="<?php echo base_url('index.php/seller/product_edit'); ?>" class="btn btn-primary btn-xs">Edit</a> <a class="btn btn-danger btn-xs">Delete</a></td>
+                        <td><a href="<?php echo base_url('index.php/seller/product_edit'); ?>" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                         <a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a></td>
                       </tr>
                     </tbody>
                     <tfoot>
@@ -89,14 +91,16 @@
                         <td>Product-1</td>
                         <td>50</td>
                         <td>8</td>
-                        <td><a href="<?php echo base_url('index.php/seller/product_edit'); ?>" class="btn btn-primary btn-xs">Edit</a> <a class="btn btn-danger btn-xs">Delete</a></td>
+                        <td><a href="<?php echo base_url('index.php/seller/product_edit'); ?>" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span>Edit</a> 
+                         <a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a></td>
                       </tr>
                       <tr>
                         <td>2</td>
                         <td>Product-2</td>
                         <td>20</td>
                         <td>5</td>
-                        <td><a href="<?php echo base_url('index.php/seller/product_edit'); ?>" class="btn btn-primary btn-xs">Edit</a> <a class="btn btn-danger btn-xs">Delete</a></td>
+                        <td><a href="<?php echo base_url('index.php/seller/product_edit'); ?>" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+                         <a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a></td>
                       </tr>
                     </tbody>
                     <tfoot>

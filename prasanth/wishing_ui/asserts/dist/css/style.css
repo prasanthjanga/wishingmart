@@ -1,0 +1,15 @@
+
+/* ---custome mail sending button --*/
+.collapse{
+  font-size: 31px;
+  display:block;
+}
+.collapse + input{
+  display:none;
+}
+.collapse + input + *{
+  display:none;
+}
+.collapse+ input:checked + *{
+  display:block;
+}

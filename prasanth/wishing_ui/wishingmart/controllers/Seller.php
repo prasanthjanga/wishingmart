@@ -24,7 +24,7 @@ class Seller extends CI_Controller{
 
      }
 
-     public function products(){
+     public function products(){ // TO VIEW ALL THE PRODUCTS.
 
         $data['title']="Products";
         $data['role']="seller";
@@ -37,7 +37,7 @@ class Seller extends CI_Controller{
 
      }
      
-     public function product_add(){
+     public function product_add(){ // TO ADD NEW PRODUCT
 
         $data['title']="Add Products";
         $data['role']="seller";
@@ -50,7 +50,7 @@ class Seller extends CI_Controller{
 
      }
      
-     public function product_edit(){
+     public function product_edit(){ // TO EDIT SELECTED PRODUCT DETAILS.
 
         $data['title']="Edit Products";
         $data['role']="seller";
@@ -62,7 +62,7 @@ class Seller extends CI_Controller{
         $this->load->view('sellers/admin/footer');
 
      }
-     public function orders(){
+     public function orders(){ // TO VIEW ALL THE ORDERS.
 
         $data['title']="Orders";
         $data['role']="seller";
@@ -70,7 +70,19 @@ class Seller extends CI_Controller{
         $this->load->view('sellers/admin/header',$data);
         //$data['pages']=$this->navmodel->get_nav();
 
-        $this->load->view('sellers/orders_view',$data);
+        $this->load->view('sellers/orders',$data);
+        $this->load->view('sellers/admin/footer');
+
+     }
+     public function order_view(){ // TO VIEW SELECTED ORDER DETAILS.
+
+        $data['title']="Orders";
+        $data['role']="seller";
+
+        $this->load->view('sellers/admin/header',$data);
+        //$data['pages']=$this->navmodel->get_nav();
+
+        $this->load->view('sellers/order_view',$data);
         $this->load->view('sellers/admin/footer');
 
      }

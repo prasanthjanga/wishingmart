@@ -17,7 +17,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
     <link href="<?php echo base_url('asserts/dist/css/skins/_all-skins.min.css'); ?>" rel="stylesheet" type="text/css" />
-<?php if($title != "Products"){ ?>    
+<?php if($title != "Products" || $title != "Orders"){ ?>    
     <!-- iCheck -->
     <link href="<?php echo base_url('asserts/plugins/iCheck/flat/blue.css'); ?>" rel="stylesheet" type="text/css" />
     <!-- Morris chart -->
@@ -41,11 +41,19 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- styling and scripting for mail button start-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <link href="<?php echo base_url('asserts/dist/css/style.css'); ?>" rel="stylesheet" type="text/css" />
+    <!-- styling and scripting for mail button end-->
+<?php if($title != "Orders"){ ?>    
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link href="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+<?php } ?> 
 
 
-  </head>
 
 
-  <body class="skin-blue sidebar-mini">
+</head>
+<body class="skin-blue sidebar-mini">
       <div class="wrapper">
       
