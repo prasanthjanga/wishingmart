@@ -91,17 +91,27 @@
                       </select>
                       </span>
                       <span style="display:inline-block;">
-                      <a class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+                      <a class="btn btn-success btn-sm">
+                        <span class="glyphicon glyphicon-floppy-disk"></span> Save
+                      </a>
                     </span>
 
                   </td>
                   <td>90</td>
-                  <td><a class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span> View</a></td>
+                  <td>
+                    <a href="<?php echo base_url('index.php/seller/order_view');?>" class="btn btn-primary btn-sm">
+                      <span class="glyphicon glyphicon-search"></span> View
+                    </a>
+                  </td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
-                  <th><a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a></th>
+                  <th>
+                    <a class="btn btn-danger btn-xs">
+                      <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                  </th>
                   <th>Order No.</th>
                   <th>Bill To</th>
                   <th>Ship To</th>
@@ -123,7 +133,11 @@
             <table id="example1" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th><a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a></th>
+                  <th>
+                    <a class="btn btn-danger btn-xs">
+                      <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                  </th>
                   <th>Order No.</th>
                   <th>Bill To</th>
                   <th>Ship To</th>
@@ -153,12 +167,18 @@
                       </select>
                       </span>
                       <span style="display:inline-block;">
-                      <a class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+                      <a class="btn btn-success btn-sm">
+                        <span class="glyphicon glyphicon-floppy-disk"></span> Save
+                      </a>
                     </span>
 
                   </td>
                   <td>90</td>
-                  <td><a class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span> View</a></td>
+                  <td>
+                    <a href="<?php echo base_url('index.php/seller/order_view');?>" class="btn btn-primary btn-sm">
+                      <span class="glyphicon glyphicon-search"></span> View
+                    </a>
+                  </td>
                 </tr>
                 <tr>
                   <td><input type="checkbox"></td>
@@ -179,12 +199,18 @@
                       </select>
                       </span>
                       <span style="display:inline-block;">
-                      <a class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+                      <a class="btn btn-success btn-sm">
+                        <span class="glyphicon glyphicon-floppy-disk"></span> Save
+                      </a>
                     </span>
 
                   </td>
                   <td>90</td>
-                  <td><a class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span> View</a></td>
+                  <td>
+                    <a href="<?php echo base_url('index.php/seller/order_view');?>" class="btn btn-primary btn-sm">
+                      <span class="glyphicon glyphicon-search"></span> View
+                    </a>
+                  </td>
                 </tr>
               </tbody>
               <tfoot>

@@ -185,9 +185,7 @@
                         <h3 class="box-title"><dt>Order Details Info</dt></h3>
                       </div><!--box-header with-border end-->
                       <div class="box-body text-left">
-                        <a href="" class="btn btn-success btn-sm">
-                          <span class="glyphicon glyphicon-floppy-disk"></span> Save
-                        </a>
+                        <a href="" class="btn btn-success btn-ms">Update</a>
                       </div><!--box-body text-left-->
                     </div><!--col-md-3 end-->
                   </div><!--ROW END-->
@@ -197,6 +195,81 @@
               </div><!--col-md-4 end-->
             </div><!-- row end -->
           </div><!-- box-body end-->
+          </div><!-- box end-->
+      
+
+
+
+
+
+<div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Total Order Calculations</h3>
+                  <div class="box-tools">
+                    <div class="input-group" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
+                      <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tbody><tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                    </tr>
+                    <tr>
+                      <td>121</td>
+                      <td>Product1</td>
+                      <td>$ 120</td>
+                      <td>2</td>
+                      <td>$ 240</td>
+                    </tr>
+                    <tr>
+                      <td>125</td>
+                      <td>Product1</td>
+                      <td>$ 120</td>
+                      <td>1</td>
+                      <td>$ 120</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"><dt>Sub Total</dt></td>
+                      <td>$ 360</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"><dt>Shipping</dt></td>
+                      <td>$ 0.00</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"><dt>Tax</dt></td>
+                      <td>$ 0.00</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"><h3>Total</h3></td>
+                      <td><dt>$ 360.00</dt></td>
+                    </tr>
+
+
+
+                  </tbody></table>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div>
+          </div>
+
+
+
+
+
+
+
 
 
 

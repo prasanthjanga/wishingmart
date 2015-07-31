@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  
-class Login extends CI_Controller
+class Signin extends CI_Controller
 {
 
      public function __construct()
@@ -13,7 +13,7 @@ class Login extends CI_Controller
           $this->load->database();
           $this->load->library('form_validation');
           //load the login model
-          $this->load->model('loginmodel');
+          //$this->load->model('loginmodel');
      }
 
      public function index()
@@ -66,6 +66,10 @@ class Login extends CI_Controller
      }
      public function home(){
           $this->load->view('home_view');
+     }
+     public function login(){
+          $data['title']="Login";
+          $this->load->view('login_view',$data);
      }
 
 }

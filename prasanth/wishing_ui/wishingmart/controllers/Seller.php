@@ -4,6 +4,7 @@ require(APPPATH.'libraries/REST_Controller.php');
 
 class Seller extends CI_Controller{
 
+
      public function __construct(){
 
         parent::__construct();
@@ -11,7 +12,7 @@ class Seller extends CI_Controller{
           
      }
 
-     public function index(){
+     public function index(){ // TO VIEW DASHBOARD
 
         $data['title']="Dashboard";
         $data['role']="seller";
@@ -86,6 +87,32 @@ class Seller extends CI_Controller{
         $this->load->view('sellers/admin/footer');
 
      }
+     public function sales(){ // TO VIEW All SALES DETAILS.
+
+        $data['title']="Sales";
+        $data['role']="seller";
+
+        $this->load->view('sellers/admin/header',$data);
+        //$data['pages']=$this->navmodel->get_nav();
+
+        $this->load->view('sellers/sales',$data);
+        $this->load->view('sellers/admin/footer');
+
+     }
+     public function reports(){ // TO VIEW All SALES DETAILS.
+
+        $data['title']="Reports";
+        $data['role']="seller";
+
+        $this->load->view('sellers/admin/header',$data);
+        //$data['pages']=$this->navmodel->get_nav();
+
+        $this->load->view('sellers/reports',$data);
+        $this->load->view('sellers/admin/footer');
+
+     }
+
+
 
 
 

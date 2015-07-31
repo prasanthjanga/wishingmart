@@ -43,14 +43,14 @@
                 <i class="fa fa-th"></i> <span>Orders</span> <small class="label pull-right bg-green">new</small>
               </a>
             </li>
-            <li class="treeview">
-              <a href="#">
+            <li class=<?php if($title == "Sales"){ echo "active treeview"; }else{ echo "treeview"; } ?>>
+              <a href="<?php echo base_url('index.php/seller/sales'); ?>">
                 <i class="fa fa-pie-chart"></i>
                 <span>Sales</span>
               </a>
             </li>
-            <li class="treeview">
-              <a href="#">
+            <li class=<?php if($title == "Reports"){ echo "active treeview"; }else{ echo "treeview"; } ?>>
+              <a href="<?php echo base_url('index.php/seller/reports'); ?>">
                 <i class="fa fa-flag-checkered"></i>
                 <span>Reports</span>
                 <i class="fa fa-angle-left pull-right"></i>
@@ -59,7 +59,7 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-globe"></i> <span>Zones</span>
-                <i class="fa fa-angle-left pull-right"></i>
+                <small class="label pull-right bg-red">X</small>
               </a>
             </li>
             <li class="treeview">

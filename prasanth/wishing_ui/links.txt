@@ -1,0 +1,1 @@
+http://localhost/wishing_ui1/prasanth/wishing_ui/index.php/login/login
