@@ -1,0 +1,163 @@
+{
+  "settings": {
+    "currentPage": "index.html"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "WISHING CART",
+        "meta_descr": "",
+        "header_custom": "",
+        "footer_custom": ""
+      },
+      "components": [
+        {
+          "_params": {
+            "logo": true
+          },
+          "items": "<ul class=\"nav nav-pills pull-right\">  <li><a href=\"http://mobirise.com\" data-app-btn=\"true\" class=\"mbr-menu-item\" id=\"note-editor-61\">SIGN IN&nbsp;</a></li></ul>",
+          "logo": "{PROJECT_IMAGES}logo.png",
+          "brand": "",
+          "_name": "menu",
+          "_anchor": "menu-2",
+          "_styles": {
+            "SPAN": {
+              "color": "#ffffff",
+              "font-family": "'Lora', serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Lora:400,700",
+              "font-size": "18px"
+            },
+            "A": {
+              "color": "#ffffff"
+            }
+          }
+        },
+        {
+          "_params": {
+            "bgImageRadio": true,
+            "bgImage": "{PROJECT_IMAGES}Layer 57.png",
+            "parallax": true,
+            "bgColorRadio": false,
+            "bgColor": "#28324e",
+            "bgVideoRadio": false,
+            "bgVideo": {
+              "url": "http://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "overlay": true,
+            "overlayColor": "#3d8eb9",
+            "overlayOpacity": "0.2"
+          },
+          "text": "\n                        \n                        \n                        \n                        <h1>INTRODUCING WISHING MART</h1><p>IT'S TIME TO REALISE YOUR DREAM</p>\n                    \n                    \n                    \n                    ",
+          "buttons": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-default\" href=\"http://mobirise.com\" id=\"note-editor-30\">MAKE A WISH</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-default\" href=\"http://mobirise.com\" id=\"note-editor-31\">GRANT A WISH</a>",
+          "_name": "header1",
+          "_anchor": "header1-0",
+          "_styles": {
+            "H1": {
+              "color": "#553982",
+              "font-family": "'Oswald', sans-serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Oswald:400,300,700"
+            },
+            "P": {
+              "font-family": "'Roboto Slab', serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700"
+            }
+          }
+        },
+        {
+          "_params": {
+            "textAlign": "left",
+            "inverse": false,
+            "bgImageRadio": false,
+            "bgImage": "{PROJECT_IMAGES}bg.jpg",
+            "parallax": true,
+            "bgColorRadio": true,
+            "bgColor": "#ffffff",
+            "bgVideoRadio": false,
+            "bgVideo": {
+              "url": "http://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "overlay": true,
+            "overlayColor": "#222",
+            "overlayOpacity": "1"
+          },
+          "image": "{PROJECT_IMAGES}Layer 63.png",
+          "text": "<h2>DRAG AND DROP WEBSITE BUILDER</h2><p>Make your own website in a few clicks! Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface.</p>",
+          "button": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-default\" href=\"http://mobirise.com\">LEARN MORE</a>",
+          "_name": "msg-box4",
+          "_anchor": "msg-box4-8"
+        },
+        {
+          "_params": {
+            "bgImageRadio": true,
+            "bgImage": "{PROJECT_IMAGES}bg.jpg",
+            "parallax": true,
+            "bgColorRadio": false,
+            "bgColor": "#fff",
+            "bgVideoRadio": false,
+            "bgVideo": {
+              "url": "http://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "overlay": true,
+            "overlayColor": "#28324e",
+            "overlayOpacity": 0.6
+          },
+          "caption": "<h3 style=\"color: #fff\">EASY TO USE!</h3> <p style=\"color: #fff\">Make your own website in a few clicks! Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface. MobiRise Website Builder creates responsive, retina and mobile friendly websites in a few clicks. Mobirise is one of the easiest website development tools available today. It also gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.</p>",
+          "_name": "content5",
+          "_anchor": "content5-8"
+        },
+        {
+          "_params": {
+            "bgImageRadio": false,
+            "bgImage": "{PROJECT_IMAGES}bg.jpg",
+            "parallax": true,
+            "bgColorRadio": true,
+            "bgColor": "#ffffff",
+            "overlay": true,
+            "overlayColor": "#c1c1c1",
+            "overlayOpacity": "0.6"
+          },
+          "text": "FOLLOW US",
+          "icons": "<a data-app-btn=\"true\" class=\"mbr-social-icons__icon socicon-bg-twitter\" title=\"Twitter\" target=\"_blank\" href=\"https://twitter.com/mobirise\" id=\"note-editor-288\"><i class=\"socicon socicon-twitter\"></i></a> <a data-app-btn=\"true\" class=\"mbr-social-icons__icon socicon-bg-facebook\" title=\"Facebook\" target=\"_blank\" href=\"https://www.facebook.com/pages/Mobirise/1616226671953247\" id=\"note-editor-289\"><i class=\"socicon socicon-facebook\"></i></a> <a data-app-btn=\"true\" class=\"mbr-social-icons__icon socicon-bg-google\" title=\"Google+\" target=\"_blank\" href=\"https://plus.google.com/u/0/+Mobirise/posts\" id=\"note-editor-290\"><i class=\"socicon socicon-google\"></i></a> <a data-app-btn=\"true\" class=\"mbr-social-icons__icon socicon-bg-youtube\" title=\"YouTube\" target=\"_blank\" href=\"http://www.youtube.com/channel/UCt_tncVAetpK5JeM8L-8jyw\" id=\"note-editor-291\"><i class=\"socicon socicon-youtube\"></i></a> <a data-app-btn=\"true\" class=\"mbr-social-icons__icon socicon-bg-instagram\" title=\"Instagram\" target=\"_blank\" href=\"https://instagram.com/mobirise/\" id=\"note-editor-292\"><i class=\"socicon socicon-instagram\"></i></a> <a data-app-btn=\"true\" class=\"mbr-social-icons__icon socicon-bg-pinterest\" title=\"Pinterest\" target=\"_blank\" href=\"https://www.pinterest.com/mobirise/\" id=\"note-editor-293\"><i class=\"socicon socicon-pinterest\"></i></a>    <a data-app-btn=\"true\" class=\"mbr-social-icons__icon socicon-bg-linkedin\" title=\"LinkedIn\" target=\"_blank\" href=\"https://www.linkedin.com/in/mobirise\" id=\"note-editor-297\"><i class=\"socicon socicon-linkedin\"></i></a>",
+          "_name": "social-buttons2",
+          "_anchor": "social-buttons2-7"
+        },
+        {
+          "_params": {
+            "bgImageRadio": true,
+            "bgImage": "{PROJECT_IMAGES}bg.jpg",
+            "parallax": true,
+            "bgColorRadio": false,
+            "bgColor": "#cccccc",
+            "overlay": true,
+            "overlayColor": "#28324e",
+            "overlayOpacity": "0.3"
+          },
+          "logo": "{PROJECT_IMAGES}shopping265x166_196.png",
+          "text1": "\n                        \n                        <p class=\"mbr-contacts__text\"><strong>BUYER</strong><br>Registration</p><p class=\"mbr-contacts__text\">Money Back Guarantee</p><p class=\"mbr-contacts__text\">Stores</p><p class=\"mbr-contacts__text\">Wishing Local</p><p class=\"mbr-contacts__text\">Wishing Guides</p><p class=\"mbr-contacts__text\"><br></p>\n                    \n                    ",
+          "text2": "\n                        \n                        <p class=\"mbr-contacts__text\">Seller</p>\n                    \n                    ",
+          "text3": "\n                        <p class=\"mbr-contacts__text\"><strong>LINKS</strong></p><ul class=\"mbr-contacts__list\"><li><a class=\"mbr-contacts__link\" href=\"http://mobirise.com/\">Website&nbsp;</a></li><li><a class=\"mbr-contacts__link\" href=\"http://mobirise.com/mobirise-free-win.zip\">Download for Windows</a></li><li><a class=\"mbr-contacts__link\" href=\"http://mobirise.com/mobirise-free-mac.zip\">Download for Mac</a></li><li>dds</li></ul>\n                    ",
+          "_name": "contacts1",
+          "_anchor": "contacts1-6",
+          "_styles": {
+            "P": {
+              "color": "#7c706b",
+              "text-align": "left",
+              "font-family": "'Oswald', sans-serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Oswald:400,300,700"
+            },
+            "UL": {
+              "text-align": "left"
+            }
+          }
+        }
+      ]
+    },
+    "register.html": {
+      "settings": {
+        "title": "Register"
+      },
+      "components": []
+    }
+  }
+}
