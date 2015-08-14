@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Register || WishingMart</title>
-
+<title> Make A wish|| WishingMart</title>
 
 <!-- Google fonts -->
 <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic' rel='stylesheet' type='text/css'>
@@ -24,8 +22,6 @@
 
 <!-- animate.css -->
 <link rel="stylesheet" href="assets/wow/animate.css" />
-
-
 
 <!-- favico -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -55,13 +51,33 @@
     <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
       
       <ul class="nav navbar-nav">        
+        
         <li><a href="ComingSoon.html"><span class="fa fa-shopping-cart"> Shopping</span></a></li>
         <li><a href="WishGrant.html"><span class="fa fa-star"> Wish/Grant </span></a></li>
-        
       </ul>
 <ul class="nav navbar-nav">
+
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="images/women.jpg" class="user-image" alt="User Image" />
+                  Vogue Robot
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header">
+                   <span class="hidden-xs"><img src="images/women.jpg" class="img-circle" alt="User Image" /></span>
+                    
+                    <div style="padding:10px; text-align:center">
+                  		<a href="#" class="btn btn-default btn-flat">Profile</a>
+                        </div>
+                  
+                 	<div style="padding:10px; text-align:center">
+                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                     </div>
+        	</li>
+            </ul>
        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Language <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li>English</li>
             <li>Malay</li>
@@ -70,6 +86,7 @@
             <li>French</li>  
             <li>Spanish</li>               
           </ul>
+        </li>
         </li>
       </ul>
     </div><!-- navbar-collapse -->
@@ -80,51 +97,66 @@
 
 <div class="container">
 
-
-<!-- Register form -->
-
-<div class="content inside-page create-account" >
-<h2 class="title">Register With Us</h2>
+<!-- form -->
+<div class="content inside-page" >
+<h2 class="title">Send  Us Your Wish</h2>
 <div class="row">
 
 
-	<form class="form-horizontal col-sm-6 col-sm-offset-3" autocomplete="on" >
+	<form class="form-horizontal col-sm-6 col-sm-offset-3" autocomplete="on">
 	<div class="panel-body">
 				
 
 				<div class="form-group">
-				<label for="" class="col-sm-4 control-label">First Name</label>
+				<label for="" class="col-sm-4 control-label">Product Name</label>
 				<div class="col-sm-8">
-				<input type="text" class="form-control" id="FirstName" required>
+				<input type="text" class="form-control" id="ProductName" required>
 				</div>				
 				</div>
                 
                 <div class="form-group">
-				<label for="" class="col-sm-4 control-label">Last Name</label>
+                <label for="" class="col-sm-4 control-label">Category</label>
+				
+					<div class="col-sm-8">
+					<select id="ProductCategory" class="form-control" required>
+					<option>Clothing</option>
+					<option>Accessories</option>
+					<option>Collectibles</option>
+					<option>Footwear</option>
+                    <option value="1">Others</option>
+					</select>
+					</div>
+				</div>
+                
+                <div  id="Category" class="form-group" style="display:none">
+				<label for="" class="col-sm-4 control-label">Category Name</label>
 				<div class="col-sm-8">
-				<input type="text" class="form-control" id="LastName" required>
+				<input type="text" class="form-control" id="ProductCategory1" required>
 				</div>				
 				</div>
-
-				<div class="form-group">
-				<label for="" class="col-sm-4 control-label">Date Of Birth</label>
+                
+                <div id="SubCategory" class="form-group" style="display:none">
+                <label for="" class="col-sm-4 control-label">Sub-Category</label>
+				
+					<div class="col-sm-8">
+					<select id="ProductSubCategory" class="form-control" required>
+					<option value="">Ladies</option>
+					<option>Gents</option>
+					<option>Children</option>
+					<option>Infants</option>
+                    <option value="1">Others</option>
+					</select>
+					</div>
+				</div>
+                
+                <div id="SubCategory1" class="form-group" style="display:none" >
+				<label for="" class="col-sm-4 control-label">Sub-Category Name</label>
 				<div class="col-sm-8">
-				<input type="date" class="form-control" id="dob" required>
+				<input type="text" class="form-control" id="ProductSubCategory1" required>
 				</div>				
 				</div>
-		
-				<div class="form-group">
-				<label for="" class="col-sm-4 control-label">Gender</label>
-				<div class="col-sm-8">
-					<label class="radio-inline">
-					<input type="radio" name="GenderOpt" id="RadMale" value="option1">Male 
-					</label>
-					<label class="radio-inline">
-					<input type="radio" name="GenderOpt" id="RadFemale" value="option2">Female
-					</label>
-				</div>
-				</div>
-            
+                
+                
 				<div class="form-group">
                 <label for="" class="col-sm-4 control-label"> Country</label>
 				
@@ -143,44 +175,45 @@
 					</div>
 				</div>
 
-				</div>
-				<div class="form-group">
-				<label for="inputEmail3" class="col-sm-4 control-label">Email</label>
-				<div class="col-sm-8">
-				<input type="email" class="form-control" id="EmailId" required>
-				</div>				
-				</div>	
-
-
-				<div class="form-group">
-				<label for="inputEmail3" class="col-sm-4 control-label">Password</label>
-				<div class="col-sm-8">
-				<input type="password" class="form-control" id="password1" required>
-				</div>				
-				</div>
-
-				<div class="form-group">
-				<label for="" class="col-sm-4 control-label">Re-Enter Password</label>
-				<div class="col-sm-8">
-				<input type="password" class="form-control" id="password2" required >
-				</div>				
-				</div>
                 
+                <hr>
+                
+                <p><strong>Product Description</strong></p>
                 
                 <div class="form-group">
-				<div id="register_tnc_error">
-					<label class="checkbox">
-					<input type="checkbox" name="tnc" required/> &nbsp; I agree to the <a href="terms.html">Terms of Service</a> and <a href="terms.html">Privacy Policy</a>
-					</label>  
-					<div id=""></div>
+				<label for="" class="col-sm-4 control-label">Brand</label>
+				<div class="col-sm-8">
+				<input type="text" class="form-control" id="Brand" >
+				</div>				
 				</div>
-				</div>	
-           
-				<a href="#" data-toggle="modal" data-target="#popup" class="btn btn-danger pull-right"> REGISTER </a>
+                
+                <div class="form-group">
+				<label for="" class="col-sm-4 control-label">Colour</label>
+				<div class="col-sm-8">
+				<input type="text" class="form-control" id="colour" >
+				</div>				
+				</div>
+                
+                <div class="form-group">
+				<label for="" class="col-sm-4 control-label">Description</label>
+				<div class="col-sm-8">
+                <textarea id="productdesc" class="form-control" placeholder="Give us more details about the product you wish for (eg. size , model , specifications )"></textarea>
+				</div>				
+				</div>
+                
+                <div class="form-group">
+				<label for="" class="col-sm-4 control-label">Product Image</label>
+				<div class="col-sm-8">
+				<input type="file" class="form-control" id="ProductImage" required>
+				</div>				
+				</div>
+                
+				<a href="#" data-toggle="modal" data-target="#popup" class="btn btn-danger pull-right" > Make a Wish </a>
+</div>
 </form>
 </div>
 </div>
-<!-- Register form -->
+<!-- form -->
 
 </div>
 
@@ -239,20 +272,57 @@
 <!-- custom script -->
 <script src="assets/script.js"></script>
 
+<script type="text/javascript">
 
+$(document).ready(function() {
+    $('#ProductCategory').change(function() {
+        if ( $("#ProductCategory").val ()  == "1") 
+        {                              
+            $("#Category").show();
+			$("#ProductCategory1").prop("required","true");
+			
+			 $("#SubCategory").hide();
+			$("#ProductSubCategory").prop("required","false");
+        }
+        else
+            $("#Category").hide();
+			$("#ProductCategory1").prop("required","false");
+			
+			$("#SubCategory").show();
+			$("#ProductSubCategory").prop("required","true");
+    }); 
+});
+
+$(document).ready(function() {
+    $('#ProductSubCategory').change(function() {
+        if ( $("#ProductSubCategory").val ()  == "1") 
+        {                              
+            $("#SubCategory1").show();
+			$("#ProductSubCategory1").prop("required","true");
+        }
+        else
+            $("#SubCategory1").hide();
+			$("#ProductSubCategory1").prop("required","false");
+    }); 
+});
+
+
+</script>
 
 <!-- popup -->
 <div class="modal fade" id="popup">
   <div class="modal-dialog">
    <div class="modal-content">
-  
-   <div class="row">
-            <div class="col-sm-6">
+   
+      <div class="row">
+            <div class="col-sm-10">
              
-            <h4>Registration Successful</h4>
-            <p>Please activate your link by the activation link sent to your email address </p>
-            <a href="Login.html" class="btn btn-danger">LOGIN</a>
-            <a href="index.html" class="btn btn-danger">HOME</a>
+            <h4>Wishes are Made</h4>
+            <p>May your wishes come true very soon. </p>
+            <a href="Profile.html" class="btn btn-danger">My Profile</a>
+            <a href="index.html" class="btn btn-danger">Home</a>
+            <a href="WishingPage.html" class="btn btn-danger">Make Another Wish</a>
+            <a href="GrantingPage.html" class="btn btn-danger">Grant A Wish</a>
             </div>
     </div>  
 </div>
