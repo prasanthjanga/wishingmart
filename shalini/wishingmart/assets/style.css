@@ -112,6 +112,13 @@ a{color: #333;}
 
 
 /*form styles*/
+
+.input-group[class*=col-] {
+    float: none;
+    padding-right:12px;
+    padding-left: 14px;
+}
+.datepicker-dropdown{background-color:white; color:black;}
 #msform fieldset {position: absolute;width: 100%;}
 #msform fieldset:not(:first-of-type) {display: none;}
 #progressbar{padding: 0;width: 334px;margin: 0;height: 47px;margin-left: 240px;}
