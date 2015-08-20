@@ -36,9 +36,7 @@
 <link rel="stylesheet" href="assets/datepicker.css">
 </head>
 
-<body>
-
-
+<body class="bodybg">
 <!-- header -->
 <nav class="navbar  navbar-inverse navbar-fixed-top" role="navigation">
   <div class="clearfix">
@@ -82,17 +80,17 @@
 
 <div class="container">
 
-
 <!-- Register form -->
 
 <div class="content inside-page create-account" >
-<h2 class="title">Register With Us</h2>
+<h1 class="title h2">
+  <span class="top"></span>
+Register
+  <span class="bottom"></span>
+</h1>
+
 <div class="row">
-
-
-	<form id="registerForm" class="form-horizontal col-sm-6 col-sm-offset-3" autocomplete="on" method="post">
-	<div class="">
-				 
+<form id="registerForm" class="form-horizontal col-sm-6 col-sm-offset-3" autocomplete="on" method="post">
 
 				<div class="form-group">
 				<label for="" class="col-sm-4 control-label">First Name</label>
@@ -183,7 +181,6 @@
                   
 	
     			<a href="#" data-toggle="modal" data-target="#popup" class="btn btn-danger pull-right"> REGISTER </a>
-</div>
 </form>
 </div>
 </div>
@@ -253,7 +250,7 @@ $(document).ready(function() {
     $('#datePicker')
         .datepicker({
             format: 'mm/dd/yyyy',
-            startDate: '01/01/2007',
+            startDate: '01/01/1950',
             endDate: '12/12/2007'
         })
         .on('changeDate', function(e) {
