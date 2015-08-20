@@ -110,8 +110,8 @@ Register
                 <label class="col-sm-4 control-label">Date Of Birth</label>
                 <div class="col-sm-8 date">
                	<div class="input-group input-append date" id="datePicker">
-                <input type="text" class="form-control" name="dob" />
                 <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                <input type="text" class="form-control" name="dob" />
             	</div>
                 </div>
             	</div>
@@ -177,10 +177,13 @@ Register
 					</label>  
 					<div id=""></div>
 				</div>
-				</div>	
-                  
-	
-    			<a href="#" data-toggle="modal" data-target="#popup" class="btn btn-danger pull-right"> REGISTER </a>
+                 </div>
+                 
+             <div class="form-group">
+        <div><a href="#" data-toggle="modal" data-target="#popup" class="btn btn-danger pull-right"> REGISTER </a></div>
+         </div>	
+
+    			
 </form>
 </div>
 </div>
@@ -249,9 +252,9 @@ Register
 $(document).ready(function() {
     $('#datePicker')
         .datepicker({
-            format: 'mm/dd/yyyy',
-            startDate: '01/01/1950',
-            endDate: '12/12/2007'
+            format: 'yyyy/mm/dd',
+            startDate: '1950/01/01',
+            endDate: '2007/12/31'
         })
         .on('changeDate', function(e) {
             // Revalidate the date field
