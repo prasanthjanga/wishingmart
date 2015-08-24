@@ -110,6 +110,9 @@ a{color: #333;}
 /*modal*/
 
 /*nav*/
+.navbar-inverse .navbar-nav>li>a {
+    color: skyblue;
+}
 .navbar-nav > li > a{text-transform: uppercase;font: normal 13px/19px 'Titillium Web';}
 .navbar-inverse{border:none; opacity:0.4; background-color:black;}
 .navbar-fixed-top{ background:rgba(0,0,0,0.32); opacity:1.0;}
@@ -178,7 +181,7 @@ a{color: #333;}
 
 
 /*form styles*/
-#registerForm{padding:20px; z-index:1000; color:whitesmoke;}
+#registerForm{padding:20px 40px 20px 20px; z-index:1000; color:whitesmoke; }
  .form-control,div.selector{
     background-color: rgba(0,0,0,0.5);
     background-image: none !important;
