@@ -36,7 +36,8 @@
 
 </head>
 
-<body class="bodybg">
+<body class=" bodybg">
+
 
 <!-- header -->
 <nav class="navbar  navbar-inverse navbar-fixed-top" role="navigation">
@@ -93,14 +94,7 @@ Register
 <div class="row">
 <form id="registerForm" class="form-horizontal col-sm-6 col-sm-offset-3" data-toggle="validator" role="form" method="post" action="">
 				
-                 <div class="form-group">
-				<label for="" class="col-sm-4 control-label"></label>
-				<div class="col-sm-8">
-              
-				</div>				
-				</div>
 				<div class="form-group">
-                <label for="" class=""></label>
 				<label for="" class="col-sm-4 control-label">First Name</label>
 				<div class="col-sm-8">
                   
@@ -161,7 +155,7 @@ Register
 					<option>Nepal</option>
 					</select>
 					</div>
-                    
+                  <span class="help-block pull-right">sample</span>  
 				</div>
 
 				<div class="form-group">
@@ -169,6 +163,7 @@ Register
 				<label for="inputEmail3" class="col-sm-4 control-label">Email</label>
 				<div class="col-sm-8">
 				<input type="email" class="form-control" id="EmailId" required>
+                <span class="help-block pull-right">sample</span>
 				</div>				
 				</div>	
 
@@ -281,35 +276,7 @@ $(document).ready(function() {
             format: 'yyyy/mm/dd',
             startDate: '1950/01/01',
             endDate: '2007/12/31'
-        })
-        .on('changeDate', function(e) {
-            // Revalidate the date field
-            $('#dateForm').formValidation('revalidateField', 'dob');
         });
-		$('#dateForm').formValidation({
-        framework: 'bootstrap',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            date: {
-                validators: {
-                    notEmpty: {
-                        message: 'The date is required'
-                    },
-                    date: {
-                        format: 'YYYY/MM/DD',
-                        min: '2007/01/01',
-                        max: '2007/12/31',
-                        message: 'The date is not a valid'
-                    }
-                }
-            }
-        }
-    });
-		});
 </script>
 
 
