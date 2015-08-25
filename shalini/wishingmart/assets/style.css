@@ -192,7 +192,7 @@ a{color: #333;}
     padding-right:12px;
     padding-left: 14px;
 }
-.help-block{color:red; margin-bottom:1px; font:bold;}
+.help-block{color:red; margin-bottom:1px; margin-top:0px; font:bold;}
 .form-control input{color:whitesmoke;}
 .form-control a{ color:whitesmoke;}
 .control-label{color:whitesmoke;}
