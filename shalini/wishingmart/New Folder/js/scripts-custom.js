@@ -1,28 +1,4 @@
-/*
-Theme Name: MOVER
-Description: Coming Soon
-Author: Themewings
-Theme URI: http://themewings.com/preview/themeforest/html/mover/
-Author URI: http://themeforest.net/user/themewings
-Version: 1.0
-*/
-/*
-TABLE OF CONTENTS
----------------------------
-1. BOOTSTRAP FIX FOR WINPHONE 8 AND IE10
-2. PRELOADER
-3. ANIMATED ELEMENTS
-4. NICE SCROLL
-5. COUNT DOWN
-6. owlCarousel
-7. BACKGROUNDS
-8. PAGE HEIGHT
-9. IOS
-10. RESPONSIVE VIDEO
-11. PLACEHOLDER
-12. AJAX SUBSCRIBE
-13. AJAX CONTACT
-** ***************************************/
+
 
 (function($) {
 	"use strict";
