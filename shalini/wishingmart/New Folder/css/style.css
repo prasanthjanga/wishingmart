@@ -24,7 +24,7 @@ html{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
+overflow:hidden;
 }
 
 
@@ -66,10 +66,13 @@ h1.bottom{
   padding-bottom:30px;
 }
 
+.info{ text-align:center; margin:10px; z-index:1030;}
+
+
 /*default*/
 h1.hide{display: none;}
 h1{font:normal 33px/30px 'Old Standard TT', serif; margin:0 0 10px 0;}
-h2{font:italic 60px/50px 'Old Standard TT', serif; margin:0;}
+h2{font:italic 60px/50px 'Old Standard TT', serif; margin:0; color:whitesmoke;}
 .dashboard{font:normal 50px/50px 'Georgia','Impact', serif; margin:0 0 40px 0; text-align:center; font:strong;}
 h2.title{font:normal 50px/50px 'Impact'; margin:0 0 40px 0; text-align:center; color:#4abcdd;}
 h3{font:normal 33px/33px 'Old Standard TT', serif;text-transform:uppercase; margin:0;}
@@ -645,101 +648,9 @@ section {
 	margin: 5px 0 15px 0;
 }
 
-.clock {
-	background:url(../images/partition-clock.png) left center no-repeat;
-}
-
-
+.
 /* ==================================================================
-	6.0 Preloader
-================================================================== */
-
-#preloadcontainer {
-  background: rgba(32,32,32,1) url(../images/overlay.png) repeat;
-  width: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;	
-  height: 100% !important;
-  min-height: 100% !important;
-  z-index: 999999998;
-}
-#preload-content {
-  height: 100px;
-  left: 50%;
-  margin-left: -50px;
-  margin-top: -50px;
-  position: absolute;
-  top: 40%;
-  width: 100px;
-  z-index: 999;
-}
-  
-.spinner {
-	margin: 100px auto;
-	width: 32px;
-	height: 32px;
-	position: relative;
-}
-
-.spinner .fa {
-	font-size:36px;
-	color: #d0345d;
-	display:none;
-}
-.loadingtext{
-	font-size:12px;
-	color: rgba(195,49,88,0.3);
-	text-align:center;
-	padding-top:50px;
-}
-
-.cube1, .cube2 {
-	background-color: #d0345d;
-	width: 15px;
-	height: 15px;
-	position: absolute;
-	border-radius: 50%;
-	top: 0;
-	left: 0;
-	-webkit-animation: cubemove 1.8s infinite ease-in-out;
-	animation: cubemove 1.8s infinite ease-in-out;
-}
-
-.cube2 {
-	-webkit-animation-delay: -0.9s;
-	animation-delay: -0.9s;
-}
-@-webkit-keyframes cubemove {
-25% { -webkit-transform: translateX(22px) rotate(-90deg) scale(0.5) }
-50% { -webkit-transform: translateX(22px) translateY(22px) rotate(-180deg) }
-75% { -webkit-transform: translateX(0px) translateY(22px) rotate(-270deg) scale(0.5) }
-100% { -webkit-transform: rotate(-360deg) }
-}
-
-@keyframes cubemove {
-25% { 
-	transform: translateX(42px) rotate(-90deg) scale(0.5);
-	-webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
-} 50% {
-/* Hack to make FF rotate in the right direction */
-	transform: translateX(42px) translateY(42px) rotate(-179deg);
-	-webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
-} 50.1% {
-	transform: translateX(42px) translateY(42px) rotate(-180deg);
-	-webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
-} 75% {
-	transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-	-webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-} 100% {
-	transform: rotate(-360deg);
-	-webkit-transform: rotate(-360deg);
-}
-}
-
-
-/* ==================================================================
-	7.0 Video, Pattern, Parallax Background
+Video, Pattern, Parallax Background
 ================================================================== */
 
 #video_background {
@@ -800,45 +711,6 @@ color:rgba(255,255,255,0.6); font-size:18px; width:24px;
 }
 
 
-.patternbackground:after {
-	content: '';
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: url(../images/overlay.png) repeat fixed;
-}
-
-.patternbackground1:after {
-	content: '';
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: url(../images/blackorchid.png) repeat fixed;
-}
-
-.patternbackground2:after {
-	content: '';
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: url(../images/dark_brick_wall.png) repeat fixed;
-}
-
-.patternbackground3:after {
-	content: '';
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: url(../images/vertical_cloth.png) repeat fixed;
-}
-
-.patternbackground4:after {
-	content: '';
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: url(../images/wood_1.png) repeat fixed;
-}
 
 .parallax-wallpaper {
 	left: -25%;
@@ -862,8 +734,9 @@ color:rgba(255,255,255,0.6); font-size:18px; width:24px;
     background: transparent;
     background-size: cover;
     -webkit-background-size: cover;
-    overflow: hidden;
+  
     z-index:0;
+
 }
 
 .star {
@@ -889,122 +762,7 @@ color:rgba(255,255,255,0.6); font-size:18px; width:24px;
 }
 
 
-/* ==================================================================
-	9.0 Count down Counter
-================================================================== */
-#countdown{
-	margin:o auto;
-	display:block;	
-}
 
-#countdown ul{ margin:0 auto; text-align:center;}
-#countdown ul li{
-	margin:0 auto;
-	display:inline-block;
-	padding:0 6px; width:24%;
-	text-align:center;
-	border-left:rgba(255,255,255,0.1) 1px solid;	
-	height:420px;
-	border-radius: 0px;
-	-webkit-transition: all .3s ease-in-out;
-	-moz-transition: all .3s ease-in-out;
-	-ms-transition: all .3s ease-in-out;
-	-o-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
-	}
-
-#countdown ul li{
-	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ5JSIgc3RvcC1jb2xvcj0iI2ZiZmNmZCIgc3RvcC1vcGFjaXR5PSIwLjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjN2RiOWU4IiBzdG9wLW9wYWNpdHk9IjAiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-background: -moz-linear-gradient(top,  rgba(30,87,153,0) 0%, rgba(251,252,253,0.1) 49%, rgba(255,255,255,0.1) 50%, rgba(125,185,232,0) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,0)), color-stop(49%,rgba(251,252,253,0.1)), color-stop(50%,rgba(255,255,255,0.1)), color-stop(100%,rgba(125,185,232,0))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 0%,rgba(251,252,253,0.1) 49%,rgba(255,255,255,0.1) 50%,rgba(125,185,232,0) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(30,87,153,0) 0%,rgba(251,252,253,0.1) 49%,rgba(255,255,255,0.1) 50%,rgba(125,185,232,0) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(30,87,153,0) 0%,rgba(251,252,253,0.1) 49%,rgba(255,255,255,0.1) 50%,rgba(125,185,232,0) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(30,87,153,0) 0%,rgba(251,252,253,0.1) 49%,rgba(255,255,255,0.1) 50%,rgba(125,185,232,0) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#007db9e8',GradientType=0 ); /* IE6-8 */
-}
-
-#countdown ul li:hover{
-	-webkit-transform: scale(1.2);
-	-moz-transform: scale(1.2);
-	-o-transform: scale(1.2);
-	-ms-transform: scale(1.2);
-	transform: scale(1.2);
-	-webkit-transition: all .3s ease-in-out;
-	-moz-transition: all .3s ease-in-out;
-	-ms-transition: all .3s ease-in-out;
-	-o-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
-
-}
-#countdown ul li.countdownsec,.countdowndays{
-	-webkit-transform: scale(1.2);
-	-moz-transform: scale(1.2);
-	-o-transform: scale(1.2);
-	-ms-transform: scale(1.2);
-	transform: scale(1.2);
-	-webkit-transition: all .3s ease-in-out;
-	-moz-transition: all .3s ease-in-out;
-	-ms-transition: all .3s ease-in-out;
-	-o-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
-	
-}
-.countdownsec .seconds{
-	color:#d1355e!important;
-}
-.countdowndays .days{
-	color:#d1355e!important;
-}
-#countdown ul li:hover span{
-	color:#d1355e;
-	-webkit-transition: all .3s ease-in-out;
-	-moz-transition: all .3s ease-in-out;
-	-ms-transition: all .3s ease-in-out;
-	-o-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
-}
-#countdown ul li:last-child:hover{	
-	border-right:rgba(255,255,255,0.1) 1px solid;
-	}
-#countdown ul li:last-child{	
-	border-right:rgba(255,255,255,0.1) 1px solid;
-	}
-#countdown ul li .days, .hours, .minutes, .seconds{	
-	text-transform:uppercase;
-	font-family:"Julius Sans One", Arial, Helvetica, sans-serif;
-	font-weight:lighter;
-	color:#fff;	font-size:42px;
-	font-weight: lighter;
-	text-shadow: -5px 5px 5px rgba(0,0,0,0.3);
-	-webkit-transition: all .3s ease-in-out;
-	-moz-transition: all .3s ease-in-out;
-	-ms-transition: all .3s ease-in-out;
-	-o-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
-	}
-
-
-#countdown ul li .countlabel{	
-	text-transform:uppercase;
-	color:rgba(255,255,255,0.5);
-	font-size:12px;
-	margin-top:12px;
-	padding-bottom:0px;
-	border-bottom:rgba(28,40,55,0.5) 0px dotted;
-	text-align:center;
-	}
-#countdown ul li .leftlabel{	
-	text-transform:uppercase;
-	color:rgba(255,255,255,0.06);
-	font-size:52px;
-	margin-top:5px;
-	text-align:center;
-	}
-#countdown ul li  {	
-	padding-top:165px;	
-	}
 	
 /* ==================================================================
 	10.0 Forms

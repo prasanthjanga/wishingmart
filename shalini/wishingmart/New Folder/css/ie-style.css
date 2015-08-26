@@ -1,15 +1,4 @@
-﻿/*
-Theme Name: MOVER
-Description: Coming Soon
-Author: Themewings
-Theme URI: http://themewings.com/preview/themeforest/html/mover/
-Author URI: http://themeforest.net/user/themewings
-Version: 1.0
-*/
-
-/* ==================================================================
-	1.0 IE CSS
-================================================================== */
+﻿
 .animated{ display:block; visibility:visible;}
 .spinner .fa {display:inline-block; padding:0 0 0 10px;}
 .cube1, .cube2 {visibility:hidden;}

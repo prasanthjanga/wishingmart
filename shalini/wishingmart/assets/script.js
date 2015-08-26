@@ -131,3 +131,14 @@ $('.carousel').swipe( {
      },
      allowPageScroll: 'vertical'
  });
+
+
+$("html").niceScroll({
+      cursorcolor: '#fff',
+      cursoropacitymin: '0',
+      cursoropacitymax: '1',
+      cursorwidth: '3px',
+      zindex: 10000,
+      horizrailenabled: false,
+      enablekeyboard: false
+    });
