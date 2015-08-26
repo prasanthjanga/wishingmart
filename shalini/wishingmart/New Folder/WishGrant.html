@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css" >
 <link rel="stylesheet" href="css/style-responsive.css" >
-
+<link rel="stylesheet" href="css/set1.css" >
 <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="css/ie-style.css"></link>
 <![endif]-->
@@ -43,7 +43,7 @@
 <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 
 </head>
-<body class="star-background">
+<body class="video-background">
      
     <div class="pageoverlay"></div>	
     
@@ -109,139 +109,51 @@
 <!-- header -->
     <!-- END MENU -->
     
-    <div class="container" data-parallaxify-range="100">
-  
- <!-- form -->
-<div class="content inside-page create-account" >
-<h1 class="title h2">
-  <span class="top"></span>
-Make A Wish
-  <span class="bottom"></span>
-</h1>
-<div class="row">
-<form id="registerForm" class="form-horizontal col-sm-6 col-sm-offset-3 col-lg-6 col-lg-offset-3" data-toggle="validator" role="form" method="post" action="">
-	<div class="panel-body">
-    
-				<div class="form-group">
-				<label for="" class="col-sm-4 control-label">Product Name</label>
-				<div class="col-sm-8">
-				<input type="text" class="form-control" id="ProductName" required>
-                <span class="help-block pull-right"></span>
-				</div>				
-				</div>
-                
-                <div class="form-group">
-                <label for="" class="col-sm-4 control-label">Category</label>
-					<div class="col-sm-8">
-					<select id="ProductCategory" class="form-control" required>
-					<option>Clothing</option>
-					<option>Accessories</option>
-					<option>Collectibles</option>
-					<option>Footwear</option>
-                    <option value="1">Others</option>
-					</select>
-					</div>
-                    <span class="help-block pull-right"></span>
-				</div>
-                
-                <div  id="Category" class="form-group" style="display:none">
-				<label for="" class="col-sm-4 control-label">Category Name</label>
-				<div class="col-sm-8">
-				<input type="text" class="form-control" id="ProductCategory1" required>
-                  <span class="help-block pull-right"></span>
-				</div>				
-				</div>
-                
-                <div id="SubCategory" class="form-group" style="display:none">
-                <label for="" class="col-sm-4 control-label">Sub-Category</label>
-				
-					<div class="col-sm-8">
-					<select id="ProductSubCategory" class="form-control" required>
-					<option value="">Ladies</option>
-					<option>Gents</option>
-					<option>Children</option>
-					<option>Infants</option>
-                    <option value="1">Others</option>
-					</select>
-					</div>
-                    <span class="help-block pull-right"></span>
-				</div>
-                
-                <div id="SubCategory1" class="form-group" style="display:none" >
-				<label for="" class="col-sm-4 control-label">Sub-Category Name</label>
-				<div class="col-sm-8">
-				<input type="text" class="form-control" id="ProductSubCategory1" required>
-                <span class="help-block pull-right"></span>
-				</div>				
-				</div>
-                
-                
-				<div class="form-group">
-                <label for="" class="col-sm-4 control-label"> Country</label>
-				
-					<div class="col-sm-8">
-					<select class="form-control" required>
-					<option>United Kingdom</option>
-					<option>Australia</option>
-					<option>America</option>
-					<option>Russia</option>
-                    <option>India</option>
-					<option>Singapore</option>
-					<option>Malaysia</option>
-					<option>China</option>
-					<option>Nepal</option>
-					</select>
-					</div>
-                    <span class="help-block pull-right"></span>
-				</div>
+    <div class="" data-parallaxify-range="100">
 
-                
-                <hr>
-                
-                <p><strong>Product Description <br> &nbsp;<br></strong></p>
-                
-                <div class="form-group">
-				<label for="" class="col-sm-4 control-label">Brand</label>
-				<div class="col-sm-8">
-				<input type="text" class="form-control" id="Brand" >
-                <span class="help-block pull-right"></span>
-				</div>				
-				</div>
-                
-                <div class="form-group">
-				<label for="" class="col-sm-4 control-label">Colour</label>
-				<div class="col-sm-8">
-				<input type="text" class="form-control" id="colour" >
-                <span class="help-block pull-right"></span>
-				</div>				
-				</div>
-                
-                <div class="form-group">
-				<label for="" class="col-sm-4 control-label">Description</label>
-				<div class="col-sm-8">
-                <textarea id="productdesc" class="form-control" placeholder="Give us more details about the product you wish for (eg. size , model , specifications )"></textarea>
-                 <span class="help-block pull-right"></span>
-				</div>				
-				</div>
-                
-                <div class="form-group">
-				<label for="" class="col-sm-4 control-label">Product Image</label>
-				<div class="col-sm-8">
-				<input type="file" class="form-control" id="ProductImage" required>
-                 <span class="help-block pull-right"></span>
-				</div>
-               				
-				</div>
-                
-				<button type="submit" class="btn btn-danger pull-right" > Make a Wish </button>
-</div>
-</form>
-</div>
-</div>
-<!-- form -->
-    </div> 
+    <!-- HTML5 VIDEO -->
+    <video id="video_background" class="video_bg" preload="auto" autoplay loop muted>
+        <source src="video/video.mp4" type="video/mp4">
+        <source src="video/video.html" type="video/ogg">
+        <source src="video/video.webm" type="video/webm">
+        <img src="video/video.jpg" alt="videofallback">
+    </video>
+    <!-- END HTML5 VIDEO -->
     
-<!-- footer -->
+     
+<div class="content fullpage">
+
+<div>&nbsp;</div>
+
+     <div class="grid ">
+				<figure class="effect-layla">
+						<figcaption>
+                        
+                        
+						<div><img src="images/make_wish.png" width="500" height="400" class="img-responsive" alt="Make Wish"/></div>
+						<p> Sky is the limit, <br> So just wish for anything..! <br> May your wishes come true</p>	
+							
+<p> <a href="wishingPage.html" class="btn btn-danger" role="button">Make a Wish</a></p>
+
+						</figcaption>
+							
+					</figure>
+					
+					<figure class="effect-layla">
+						<figcaption>
+						<div><img src="images/grant_wish.png" width="500" height="400" class="img-responsive" alt="Grant Wish"/></div>
+							<p>Earn by making wishes come true!</p>
+							
+<p> <a href="Grantingpage.html" class="btn  btn-danger" role="button">Grant a Wish</a></p>
+
+						</figcaption>		
+					</figure>
+				
+</div>	
+    
+
+              
+    <!-- footer -->
 <div class="footer navbar-fixed-bottom" role="navigation">
 	<div class="pull-left">
     <div class="links">
@@ -273,59 +185,19 @@ Make A Wish
 </div>
 
 <!-- footer -->
-
-
-<!-- END CONTAINER -->
-<!-- END HOME SECTION -->
-		
     <!-- JS -->
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/retina-1.1.0.min.js"></script>     
-    <script type="text/javascript" src="js/jquery.parallaxify.min.js"></script>
-    <script type="text/javascript" src="js/jquery.particleground.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="js/jquery.fittext.js"></script>
+    <script type="text/javascript" src="js/retina-1.1.0.min.js"></script>       
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="js/jquery.downCount.js"></script>
     <script type="text/javascript" src="js/jquery.easing.js"></script>
-    <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+    <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>	
+    <script type="text/javascript" src="js/jquery.mb.YTPlayer.js"></script>
     <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="js/scripts-custom.js"></script>	
-    <script type="text/javascript">
-
-$(document).ready(function() {
-    $('#ProductCategory').change(function() {
-        if ( $("#ProductCategory").val ()  == "1") 
-        {                              
-            $("#Category").show();
-			$("#ProductCategory1").prop("required","true");
-			
-			 $("#SubCategory").hide();
-			$("#ProductSubCategory").prop("required","false");
-        }
-        else
-            $("#Category").hide();
-			$("#ProductCategory1").prop("required","false");
-			
-			$("#SubCategory").show();
-			$("#ProductSubCategory").prop("required","true");
-    }); 
-});
-
-$(document).ready(function() {
-    $('#ProductSubCategory').change(function() {
-        if ( $("#ProductSubCategory").val ()  == "1") 
-        {                              
-            $("#SubCategory1").show();
-			$("#ProductSubCategory1").prop("required","true");
-        }
-        else
-            $("#SubCategory1").hide();
-			$("#ProductSubCategory1").prop("required","false");
-    }); 
-});
-
-
-</script>
-	
+   
+    <script type="text/javascript" src="js/scripts-custom.js"></script>		
 </body>
 </html>
