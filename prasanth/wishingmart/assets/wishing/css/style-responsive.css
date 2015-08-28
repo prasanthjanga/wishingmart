@@ -1,0 +1,217 @@
+﻿
+
+@media (max-width: 1500px) {
+	
+ 
+}
+@media (max-width: 1024px) {
+	.site-logo {
+	padding:63px 0 0 0;
+	display: block;
+	margin: 0 auto;
+	text-align:center;
+	}
+	#countdown  {
+	margin-bottom:20px;
+	}
+	#countdown ul{
+	margin:0 auto; position:relative; width:auto;
+	
+	}
+	#countdown ul li  {	
+	padding-top:20px;
+	padding-bottom:20px;
+	height:100px;
+	}
+	#countdown ul li.countdownsec{
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);	
+	}
+	#countdown ul li.countdownsec:hover{
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	transform: scale(1.2);	
+	}
+	#countdown ul li.countdowndays{
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);	
+	}
+	#countdown ul li.countdowndays:hover{
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	transform: scale(1.2);	
+	}
+	#owl-demo{
+	padding-bottom:100px;	
+	}
+	.social{padding-right:0px;}
+	.socialicon{width:100%; text-align:center;}
+	.social{text-align:center;}
+	.socialicon li{padding:0 60px 0 60px;}
+	
+	.videoicon{width:100%; text-align:center; margin-bottom:30px;}
+	.videoicon li{padding:0 30px 0 30px;}
+
+	
+}
+@media (max-width: 1199px) {
+
+
+}
+@media (max-width: 1100px) {
+
+}
+@media (max-width: 960px) {
+
+  
+}
+@media (max-width: 800px) {
+  
+  
+
+}
+@media (min-width: 767px) {
+.subscriptionForm .emailfield{
+		width: 80%;
+		padding: 13px 25px;
+	}
+
+}
+@media (max-width: 768px) {
+
+	.site-logo {
+	padding:53px 0 0 0;
+	display: block;
+	margin: 0 auto;
+	text-align:center;
+	}		
+	#countdown  {
+	margin-bottom:20px;
+	}
+	#countdown ul{
+	margin:0 auto; position:relative; width:auto;
+	
+	}
+	#countdown ul li  {	
+	padding-top:20px;
+	padding-bottom:20px;
+	height:100px;
+	}
+	.socialicon{width:100%; text-align:center;}
+	.social{text-align:center;}
+	.socialicon li{padding:0 50px 0 50px;}
+	
+	.videoicon{width:100%; text-align:center; margin-bottom:30px;}
+	.videoicon li{padding:0 30px 0 30px;}
+	h2 {font-size: 44px;}
+
+}
+@media (max-width: 640px) {
+
+.socialicon{width:100%; text-align:center;}
+.social{text-align:center;}
+.socialicon li{padding:0 30px 0 30px;}
+.videoicon{width:100%; text-align:center; margin-bottom:30px;}
+.videoicon li{padding:0 20px 0 20px;}
+
+}
+@media (max-width: 520px) {
+  
+  
+}
+
+@media (max-width: 480px) {
+	.subscriptionForm .emailfield{
+	width: 100%;
+	padding: 13px 25px;
+	}
+	#countdown  {
+	margin-bottom:20px;
+	}
+	#countdown ul li  {	
+	padding-top:20px;
+	padding-bottom:20px;
+	height:100px;
+	}
+	.socialicon{width:100%; text-align:center;}
+	.social{text-align:center;}
+	.socialicon li{padding:0 20px 0 20px;}
+	.videoicon{width:100%; text-align:center; margin-bottom:30px;}
+	.videoicon li{padding:0 10px 0 10px;}
+	h2 {font-size: 38px;}
+
+}
+@media (max-width: 420px) {
+  
+  
+}
+@media (max-width: 380px) {
+
+}
+
+@media (max-width: 350px) {
+#countdown ul li{
+width:23.9%;
+}
+#countdown ul li .days, .hours, .minutes, .seconds{		
+font-size:32px;
+}
+#countdown ul li .countlabel{	
+font-size:9px;
+}
+.socialicon{width:100%; text-align:center;}
+.social{text-align:center;}
+.socialicon li{padding:0 10px 0 10px;}
+.videoicon{width:100%; text-align:center; margin-bottom:30px;}
+.videoicon li{padding:0 10px 0 10px;}
+h2 {font-size: 36px; text-align:center;}
+.clock {background-position:center center;}
+}
+
+@media (max-width: 320px) {
+#countdown ul li{
+width:23.9%;
+}
+#countdown ul li .days, .hours, .minutes, .seconds{		
+font-size:32px;
+}
+#countdown ul li .countlabel{	
+font-size:9px;
+}
+.socialicon{width:100%; text-align:center;}
+.social{text-align:center;}
+.socialicon li{padding:0 10px 0 10px;}
+.videoicon{width:100%; text-align:center; margin-bottom:30px;}
+.videoicon li{padding:0 10px 0 10px;}
+h2 {font-size: 36px; text-align:center;}
+.clock {background-position:center center;}
+}
+
+@media (max-width: 310px) {
+#countdown ul li{
+width:23.6%;
+}
+#countdown ul li .days, .hours, .minutes, .seconds{		
+font-size:32px;
+}
+#countdown ul li .countlabel{	
+font-size:9px;
+}
+.socialicon{width:100%; text-align:center;}
+.social{text-align:center;}
+.socialicon li{padding:0 10px 0 10px;}
+.videoicon{width:100%; text-align:center; margin-bottom:30px;}
+.videoicon li{padding:0 10px 0 10px;}
+h2 {font-size: 36px; text-align:center;}
+.clock {background-position:center center;}
+}
