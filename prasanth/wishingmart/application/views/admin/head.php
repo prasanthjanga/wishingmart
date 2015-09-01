@@ -53,7 +53,6 @@ scrolltitle();
 
 <link rel="stylesheet" href="<?php echo base_url('assets/style.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/datepicker.css'); ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/wishing/css/set1.css'); ?>" >
 
 <?php } // ELSE END?>
 

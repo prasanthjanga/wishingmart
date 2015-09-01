@@ -19,8 +19,10 @@ Make A Wish
   <span class="bottom"></span>
 </h1>
 <div class="row">
-
-  <form class="form-horizontal col-sm-6 col-sm-offset-3" data-toggle="validator" role="form" method="post" action="<?php echo base_url('wishgrant/wishing'); ?>">
+<?php
+//echo form_open_multipart('wishgrant/wishing');
+?>
+  <form class="form-horizontal col-sm-6 col-sm-offset-3" data-toggle="validator" role="form" method="post" action="<?php echo base_url('wishgrant/wishing'); ?>" enctype="multipart/form-data" accept-charset="utf-8">
     <div class="panel-body">
       <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Name</label>
@@ -121,19 +123,12 @@ Make A Wish
         </div>        
       </div>
       
-      <div class="form-group">
-        <?php 
-          if(isset($images) && count($images)){
-            foreach($images as $image){
-              echo $image['filename'];
-              echo "<a href=".$image['url']."><img src=".$image['thumb_url']."></a>";
-            }
-          }
-        ?>
-      </div>
+
       <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Image</label>
         <div class="col-sm-8">
+        <img src="<?php echo $images[0]['thumb_url']; ?> ">
+
           <input type="file" class="form-control" name="userfile" size="20"/>
           <!--<input type="file" class="form-control" id="ProductImage" required>-->
           <span class="help-block pull-right"><?php echo form_error('userfile'); ?></span>
