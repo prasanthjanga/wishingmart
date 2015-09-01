@@ -27,7 +27,7 @@
 	position: relative;
 	float: left;
 	overflow: hidden;
-margin-top: 100px;
+	margin-top:20px;
 	min-width: 320px;
 	max-width: 480px;
 	/* max-height: 360px; */
@@ -108,7 +108,7 @@ margin-top: 100px;
 
 figure.effect-layla {
   /* background: #18a367; */
-  height: 700px;
+  height: 650px;
 }
 
 
