@@ -109,56 +109,27 @@ confirm_password.onkeyup = validatePassword;
   <div class="mbr-overlay" style="opacity:0;background:#EAA5EC;"></div>
     <div class="container">
         <div class="row">
-       
-<!-- BEGIN LOGIN FORM -->
-		<form class="form-vertical login-form" action="" method="post">
-			<h3 class="form-title">Login to your account</h3>
-			<div class="alert alert-error hide">
-				<button class="close" data-dismiss="alert"></button>
-				<span>Enter any username and password.</span>
-			</div>
-			<div class="control-group">
-				<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-				<label class="control-label visible-ie8 visible-ie9">Username</label>
-				<div class="controls">
-					<div class="input-icon left">
-						<i class="icon-user"></i>
-						<input class="m-wrap placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username"/>
-					</div>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label visible-ie8 visible-ie9">Password</label>
-				<div class="controls">
-					<div class="input-icon left">
-						<i class="icon-lock"></i>
-						<input class="m-wrap placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password"/>
-					</div>
-				</div>
-			</div>
-			<div class="form-actions">
-				<label class="checkbox">
-				<input type="checkbox" name="remember" value="1"/> Remember me
-				</label>
-				<button type="submit" class="btn blue pull-right">
-				Login <i class="m-icon-swapright m-icon-white"></i>
-				</button>            
-			</div>
-			<div class="forget-password">
-				<h4>Forgot your password ?</h4>
-				<p>
-					no worries, click <a href="javascript:;"  id="forget-password">here</a>
-					to reset your password.
-				</p>
-			</div>
-			<div class="create-account">
-				<p>
-					Don't have an account yet ?&nbsp; 
-					<a href="javascript:;" id="register-btn" >Create an account</a>
-				</p>
-			</div>
-		</form>
+           <form id="form1">
 
+<h1>Register With  Us !</h1>
+<div class='row'><span><input type='text' class='txtbx' id='First Name' name='First Name' placeholder='First Name' required /><label for='First Name'>First Name</label></span></div>
+
+<div class='row'><span><input type='text' class='txtbx' id='Last Name' name='Last Name' placeholder='Last Name' required /><label for='Last Name'>Last Name</label></span></div>
+
+<div class='row'><span><input type='email' class='email' id='Email ID' name='Email ID' placeholder='Email ID' required /><label for='Email ID'>Email ID</label></span></div>
+
+<div class='row'><span><input type='date' class='date' id='Date of Birth' name='Date of Birth' placeholder='Date of Birth' required /><label for='Date of Birth'>Date of Birth</label></span></div>
+
+<div class='row'><span><a class='radio'><input type='radio' class='chkbx' id='Gender1' name='Gender' value='Male' required ><label for='Gender1'>Male</label><input type='radio' class='chkbx' id='Gender2' name='Gender' value='Female' required ><label for='Gender2'>Female</label><label for='Gender2' class='lbl'>Gender</label></a></span></div>
+
+<div class='row'><span><input type='number' class='number' id='Age' name='Age' placeholder='Age' min="16" max="100"required /><label for='Age'>Age</label></span></div>
+
+<div class='row'><span><input type='password' class='password' id='password' name='Password' placeholder='Password' required /><label for='Password'>Password</label></span></div>
+
+<div class='row'><span><input type='password' class='password' id='confirm_password' name='Confirm Password' placeholder='Confirm Password' required /><label for='Confirm Password'>Confirm Password</label></span></div>
+
+<div class='row'><span><a href="#signin.html"><input type='submit' class='submit' id='Submit' name='Submit' value='Submit' /></span></div>
+</form>
         </div>
     </div>
 </section>
