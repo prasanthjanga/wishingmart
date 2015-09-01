@@ -28,6 +28,18 @@ html{
 }
 
 
+h3.title{
+  position: relative;
+  padding-top:30px;
+  padding-bottom:10px;
+  z-index: 100;
+  text-align:center;
+  font-family:'Orbitron';
+  font-size: 75px;
+  color: darkgray;
+  text-shadow: 0 1px #111010 ,-1px 0 #ea006e, -1px 2px #111010, -2px 1px #ea006e, -2px 3px #111010, -3px 2px #ea006e, -3px 4px #111010, -4px 3px #ea006e, -4px 5px #111010, -5px 4px #ea006e, -5px 6px #111010, -6px 5px #ea006e, -6px 7px #111010, -7px 6px #ea006e, -7px 8px #111010, -8px 7px #ea006e;
+}
+
 
 h1.title{
   position: relative;
@@ -72,7 +84,7 @@ h1{font:normal 33px/30px 'Old Standard TT', serif; margin:0 0 10px 0;}
 h2{font:italic 60px/50px 'Old Standard TT', serif; margin:0;}
 .dashboard{font:normal 50px/50px 'Georgia','Impact', serif; margin:0 0 40px 0; text-align:center; font:strong;}
 h2.title{font:normal 50px/50px 'Impact'; margin:0 0 40px 0; text-align:center; color:#4abcdd;}
-h3{font:normal 33px/33px 'Old Standard TT', serif;text-transform:uppercase; margin:0;}
+h3{font:normal bold 33px/33px 'Old Standard TT', serif;text-transform:uppercase; margin:0;}
 h4{font:italic 25px/25px 'Georgia','Impact', serif; margin:0; color:whitesmoke; font:bold; text-align:center;}
 .btn,a,a:hover{text-decoration: none;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;outline:0 ;}
 a{color: #333;}
@@ -98,7 +110,7 @@ a{color: #333;}
 .breadcrumb a:hover{text-decoration: underline;}
 .hidden{display:none;}
 
-.wishform{float:left ; padding-top:8px;}
+.wishform{float:left; padding-top:8px;}
 
 /*default*/
 
@@ -272,8 +284,6 @@ div.radio span{background:url(../images/radio.png) 0 20px !important;}
 
 div.radio span,div.radio input{width: 20px;height: 20px;}
 div.radio span.checked{background-position: 0 0 !important;}
-
-
 div.selector{border:none; border: 1px solid #999;height: 33px !important; padding:3px 10px !important; border-radius: 0; font-size: 14px; background-color:rgba(0,0,0,0.5); width: 100% !important;}
 div.selector:hover{}
 div.selector span{height: 36px;padding: 0; background: url(../images/drop.png) right 9px no-repeat !important;color: #8d8d8d; width: 100% !important;margin-right: 20px;}
@@ -321,12 +331,14 @@ div.selector option{ padding: 10px;}
   .homepage .height-half{height: 25%;}
   .block .overlay h4{margin: 10px 0;}
   #registerForm{margin-bottom:25%;}
+   h3.title{font-size: 50px;line-height: 53px;margin-bottom: 20px; padding-top: 30px;}
 }
 @media (max-width: 767px){
   h2{font-size: 20px; line-height: 20px;}
   h2.title{font-size: 30px;line-height: 53px;margin-bottom: 20px;}
   h1{font-size: 30px; line-height: 30px;margin-top: 20px;}
   h1.title{font-size: 40px;line-height: 53px;margin-bottom: 20px;}
+  h3.title{font-size: 40px;line-height: 53px;margin-bottom: 20px; padding-top: 30px;}
  .breadcrumb{margin-bottom: 15px;}
   .banner .caption h2{margin-bottom: 15px;}
   .banner .caption a.btn{width: 100%; margin-top: 10px;}
