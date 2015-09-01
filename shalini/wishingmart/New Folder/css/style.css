@@ -628,7 +628,7 @@ section {
 	margin: 5px 0 15px 0;
 }
 
-.
+
 /* ==================================================================
 Video, Pattern, Parallax Background
 ================================================================== */
@@ -810,60 +810,7 @@ input:-moz-placeholder { text-overflow: ellipsis; }
 }
 
 
-/* ==================================================================
-	12.0 Contact Forms
-================================================================== */
 
-.contactresponse {
-	padding-top: 5px;
-	color: #d1355e; font-size:16px;
-	display: none;
-	font-family: 'Raleway', sans-serif;
-}
-.contactsuccess {
-	padding-top: 5px;
-	color: #090; font-size:16px;
-	display: none;
-	font-family: 'Raleway', sans-serif;
-}
-
-#contacts_list {
-	margin-bottom: 45px;
-	font-family: 'Arial', sans-serif;
-}
-#contacts_list li {
-	overflow: hidden;
-	list-style: none;
-	font-weight: 300;
-	font-size: 15px;
-	line-height: 18px;
-	color: #c5c5c4;
-	margin:10px 0 0 0;
-}
-#contacts_list li i {
-	float: left;
-	margin-right: 7px;
-	color: #FFF;
-}
-
-/* WebKit browsers */
-.contact-form input::-webkit-input-placeholder,
-.contact-form textarea::-webkit-input-placeholder { 
-    color: #dfdfdf;
-}
-.contact-form :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #dfdfdf;
-    opacity:  1;
-}
-.contact-form ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #dfdfdf; 
-    opacity:  1;
-}
-.contact-form :-ms-input-placeholder { /* Internet Explorer 10+ */
-   color: #dfdfdf;
-}
-
-	
 /* ==================================================================
 	13.0 Dotstyle
 ================================================================== */
@@ -1109,9 +1056,5 @@ body.mobile .animated {
 	display: block;
 	visibility: visible;
 }
-
-/*==================================================================
-	16.0 Custom CSS
-================================================================== */
 
 
