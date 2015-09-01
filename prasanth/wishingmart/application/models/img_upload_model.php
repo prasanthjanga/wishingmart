@@ -14,20 +14,31 @@ class Img_upload_model extends CI_Model {
     
 
 	public function do_upload(){ // TO GET LANDING PAGE
+<<<<<<< HEAD
+		$config=array(
+			'allowed_types' => 'jpeg|jpg|png|gif',
+			'upload_path'	=> $this->gallery_path,
+=======
 
 		$config=array(
 			'allowed_types' => 'jpeg|jpg|png|gif',
 			'upload_path'	=>	$this->gallery_path,
+>>>>>>> 121e2cd84d2002ac5494b610d2a48b1f463ec934
 			'max_size'		=> 2000
 		);
 
 		$this->load->library('upload',$config);
 		$this->upload->do_upload();
+<<<<<<< HEAD
+
+		$image_data = $this->upload->data();
+=======
 		$image_data = $this->upload->data();
 		//print_r($image_data);
 
 		//return $image_data;
 
+>>>>>>> 121e2cd84d2002ac5494b610d2a48b1f463ec934
 		//echo "<pre>";
 		//print_r($image_data);
 		//echo "</pre>";
@@ -56,6 +67,11 @@ class Img_upload_model extends CI_Model {
 
 		$images = array();
 		foreach($files as $file){
+<<<<<<< HEAD
+			//echo $file;
+			//echo "--".$image_data['file_name']."--";
+=======
+>>>>>>> 121e2cd84d2002ac5494b610d2a48b1f463ec934
 			if($file == $image_data['file_name']){
 				$images[]=array(
 						'filename'	=> $file,
@@ -65,8 +81,11 @@ class Img_upload_model extends CI_Model {
 			}
 		}
 		return $images;
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 121e2cd84d2002ac5494b610d2a48b1f463ec934
 	}
 
 
