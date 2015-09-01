@@ -90,7 +90,7 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-w
 .skin-blue .main-header .logo:hover{background-color:#357ca5}
 .skin-blue .main-header li.user-header{background-color:#3c8dbc}
 .skin-blue .content-header{background:transparent}
-.skin-blue .wrapper,.skin-blue .main-sidebar,.skin-blue .left-side{background:rgba(0,0,0,0.8); opacity:1.0;}
+.skin-blue .wrapper,.skin-blue .main-sidebar,.skin-blue .left-side{background:rgba(0,0,0,1);}
 .skin-blue .user-panel>.info,.skin-blue .user-panel>.info>a{color:#fff}
 
 .skin-blue .sidebar-menu>li.header{color:skyblue;background:#1a2226}

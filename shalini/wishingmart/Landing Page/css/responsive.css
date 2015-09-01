@@ -1,0 +1,173 @@
+/* Smarty Themes - Top Level. Responsive Styles */
+
+@media (max-width: 1024px) {
+	.video_wrap iframe {
+		max-width: 100%;
+		height: auto;
+	}
+	#countdown_block .knob_progress .progress_count {
+		margin: 0 10px;
+	}
+	.countown_style_2 .countdown-row .countdown-section {
+		margin: 0 20px;
+	}
+}
+ 
+@media (max-width: 768px) {
+	#site_subheading {
+		margin-bottom: 20px;
+	}
+	#site_subheading:after {
+		margin-top: 10px;
+	}
+	#countdown_label {
+		padding-top: 25px;
+	}
+	#countdown_block.countown_style_2 {
+		left: 20px;
+		right: 20px;
+	}
+	.countown_style_2 .countdown-amount {
+		font-size: 30px;
+		line-height: 36px;
+	}
+	.countown_style_2 .countdown-section .countdown-period {
+		font-size: 16px;
+		line-height: 22px;
+	}
+	.col-xs-8,
+	.col-xs-7,
+	.col-xs-6,
+	.col-xs-4,
+	.col-xs-3,
+	.col-xs-2,
+	.col-xs-5 {
+		text-align: center;
+		float: none;
+		width: auto;
+		margin: 0 0 20px;
+	}
+	#contacts_list {
+		text-align: left;
+	}
+	#header #site_logo {
+		-webkit-transition: all ease .4s;
+		-moz-transition: all ease .4s;
+		-ms-transition: all ease .4s;
+		-o-transition: all ease .4s;
+		transition: all ease .4s;
+	}
+	#header.menu_opened #site_logo {
+		overflow: hidden;
+		width: 0;		
+	}
+	#percent_ready {
+		font-size: 150px;
+		line-height: 150px;
+		height: 105px;
+	}
+	#countdown_block.countown_style_1 #site_slogan {
+		font-size: 48px;
+		line-height: 40px;
+	}
+	#nav_wrap.visible {
+		left: 0;
+	}
+	.nav_wrap_inside {
+		top: 0;
+		position: relative;
+		margin-top: 0 !important;
+	}
+	#site_nav #go_back {
+		position: relative;
+		display: inline-block;
+		width: 21px;
+		border-bottom: 3px solid #fff;
+		border-top: 3px solid #fff;
+		height: 9px;
+		text-indent: 999px;
+		overflow: hidden;
+	}
+	#site_nav #go_back:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 3px;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: #fff;
+	}
+	#subscribe_form {
+		width: 100%;
+	}
+	#site_content .part_content {
+		padding: 0;
+	}
+	#site_content .part_content .scroll_container {
+		padding: 0 25px 25px;
+	}
+	#countdown_block.countown_style_1 {
+		width: 100%;
+		max-width: 100%;
+		left: 0;
+		right: 0;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.mCSB_outside + .mCSB_scrollTools {
+		right: 0px;
+	}
+	#header {
+		padding: 25px 15px;
+	}
+	#site_content .part_content .section_title {
+		font-size: 24px;
+	}
+}
+
+@media (max-width: 480px) {
+	.countown_style_2 .countdown-row .countdown-section,
+	.countdown-row .countdown-section {
+		margin: 0 10px;
+	}
+	#countdown_block.countown_style_2 {
+		left: 10px;
+		right: 10px;
+	}
+	#menu_button {
+		top: 0;
+		right: 0;
+		left: 0;
+		text-align: center;
+		padding-top: 10px;
+	}
+	#header {
+		padding-top: 40px;
+	}
+	#site_footer ul.social_links {
+		padding-bottom: 20px;
+	}
+	#site_subheading {
+		padding: 0 20px;
+		font-size: 11px;
+		line-height: 15px;
+	}
+	#subscribe_form .form_wrap {
+		padding: 17px 14px 0 13px;
+	}
+	#subscribe_form input {
+		padding: 12px 10px 13px;
+	}
+	#subscribe_form button {
+		font-size: 11px;
+		padding: 15px 10px 17px;
+	}
+	#subscribe_form button .icon-raquo {
+		margin-left: 5px;
+	}
+	#countdown_block.countown_style_1 #site_slogan {
+		font-size: 24px;
+		line-height: 29px;
+	}
+}

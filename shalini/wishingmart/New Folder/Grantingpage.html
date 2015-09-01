@@ -14,7 +14,7 @@
 
 <!-- JS -->
 <script type="text/javascript" src="js/modernizr.js"></script>
-<script src="../assets/form/validator.js"></script>
+
 
 
 <!-- CSS Global Compulsory -->
@@ -126,7 +126,7 @@ Grant Wish
     <div class="col-sm-6">
         
 <div class="row">
-  <form id="registerForm" class="form-horizontal col-sm-6 col-sm-offset-2 col-lg-offset-1 col-lg-11" autocomplete="on">
+  <form id="registerForm" class="form-horizontal col-sm-6 col-sm-offset-2 col-lg-offset-1 col-lg-11" data-toggle="validator" role="form" method="post" action="">
      <div class="panel-body">   
     
         <div><h1>Product Description</h1></div>
@@ -194,7 +194,7 @@ Grant Wish
         </div>        
         </div>
                 
-        <a href="#" data-toggle="modal" data-target="#popup" class="btn btn-danger pull-right" >Send Grant Request </a>
+        <button type="submit" class="btn btn-danger pull-right" >Send Grant Request </button>
         
         <div class="form-group"></div>
    </div>
@@ -309,5 +309,6 @@ Grant Wish
     <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
     <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="js/scripts-custom.js"></script>	
+    <script type="text/javascript" src="../assets/form/validator.js"></script>
 </body>
 </html>
