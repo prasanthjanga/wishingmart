@@ -1,6 +1,6 @@
-<body <?php if($thispage=="5" || $thispage=="6" ){ ?>class="star-background1"<?php }else{ ?>class="bodybg"<?php } ?>>
+<body <?php if($thispage=="5" || $thispage=="6" ){ ?>class="star-background"<?php }else{ ?>class="bodybg"<?php } ?>>
     <?php if($thispage=="5" || $thispage=="6" ){?>
-    <div class="pageoverlay1"></div> 
+    <div class="pageoverlay"></div> 
     <?php } ?>
 
 <!-- header -->

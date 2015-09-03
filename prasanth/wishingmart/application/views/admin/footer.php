@@ -16,6 +16,53 @@
 <script type="text/javascript" src="<?php echo base_url('assets/wishing/js/jquery.mb.YTPlayer.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/wishing/js/scripts-custom.js'); ?>"></script> 
 
+
+<?php }else{ ?>
+
+<script src="<?php echo base_url('assets/jquery.js'); ?>"></script>
+<!-- wow script -->
+<script src="<?php echo base_url('assets/wow/wow.min.js'); ?>"></script>
+<!-- uniform -->
+<script src="<?php echo base_url('assets/uniform/js/jquery.uniform.js'); ?>"></script>
+<!-- boostrap -->
+<script src="<?php echo base_url('assets/bootstrap/js/bootstrap.js'); ?>" type="text/javascript" ></script>
+<!-- jquery mobile -->
+<script src="<?php echo base_url('assets/mobile/touchSwipe.min.js'); ?>"></script>
+<!-- jquery mobile -->
+<script src="<?php echo base_url('assets/respond/respond.js'); ?>"></script>
+<!-- jQuery easing plugin --> 
+<script src="<?php echo base_url('assets/form/jquery.easing.min.js'); ?>" type="text/javascript"></script>
+<!-- custom script -->
+<script src="<?php echo base_url('assets/script.js'); ?>"></script>
+
+<script src="<?php echo base_url('assets/bootstrap-datepicker.js'); ?>"></script>
+
+
+<script>
+$(document).ready(function() {
+    $('#datePicker')
+        .datepicker({
+            format: 'yyyy/mm/dd',
+            startDate: '1950/01/01',
+            endDate: '2007/12/31'
+        })
+        .on('changeDate', function(e) {
+            // Revalidate the date field
+            $('#dateForm').formValidation('revalidateField', 'dob');
+        });
+		
+});
+</script>
+
+<?php } // ELSE END?>
+
+<script type="text/javascript" src="<?php echo base_url('assets/wishing/js/jquery.nicescroll.min.js'); ?>"></script>
+
+<script src="<?php echo base_url('assets/form/validator.js'); ?>"></script>
+
+<!-- jQuery 2.1.4 -->
+<script src="<?php echo base_url('assets/Dashboard/jQuery-2.1.4.min.js'); ?>" type="text/javascript"></script>
+
 <script type="text/javascript">
 $(document).ready(function() {
     $('#ProductCategory').change(function() {
@@ -49,46 +96,6 @@ $(document).ready(function() {
     }); 
 });
 </script>
-<?php }else{ ?>
-
-<script src="<?php echo base_url('assets/jquery.js'); ?>"></script>
-<!-- wow script -->
-<script src="<?php echo base_url('assets/wow/wow.min.js'); ?>"></script>
-<!-- uniform -->
-<script src="<?php echo base_url('assets/uniform/js/jquery.uniform.js'); ?>"></script>
-<!-- boostrap -->
-<script src="<?php echo base_url('assets/bootstrap/js/bootstrap.js'); ?>" type="text/javascript" ></script>
-<!-- jquery mobile -->
-<script src="<?php echo base_url('assets/mobile/touchSwipe.min.js'); ?>"></script>
-<!-- jquery mobile -->
-<script src="<?php echo base_url('assets/respond/respond.js'); ?>"></script>
-<!-- jQuery easing plugin --> 
-<script src="<?php echo base_url('assets/form/jquery.easing.min.js'); ?>" type="text/javascript"></script>
-<!-- custom script -->
-<script src="<?php echo base_url('assets/script.js'); ?>"></script>
-
-<script src="<?php echo base_url('assets/bootstrap-datepicker.js'); ?>"></script>
-
-<script src="<?php echo base_url('assets/form/validator.js'); ?>"></script>
-
-<script>
-$(document).ready(function() {
-    $('#datePicker')
-        .datepicker({
-            format: 'yyyy/mm/dd',
-            startDate: '1950/01/01',
-            endDate: '2007/12/31'
-        })
-        .on('changeDate', function(e) {
-            // Revalidate the date field
-            $('#dateForm').formValidation('revalidateField', 'dob');
-        });
-		
-});
-</script>
-
-<?php } // ELSE END?>
-<script type="text/javascript" src="<?php echo base_url('assets/wishing/js/jquery.nicescroll.min.js'); ?>"></script>
 
 </body>
 </html>

@@ -30,17 +30,22 @@ class Wishgrant extends CI_Controller {
     $data['title']="WishingMart || Wishing Page.";
     //echo "<span style='color:red;'>sample same form</span>";
     //echo $this->input->post('userfile');
-    //$url="http://localhost/wishing_ui1/prasanth/wmapi/wishing/country/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
-    //$obj_pre = self::getapi($url) ;
-    //print_r($obj_pre);
+    $url_country="http://localhost/wishing_ui1/prasanth/wmapi/wishing/country/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
+    $data['country'] = self::getapi($url_country) ;
+    
+    $url_category="http://localhost/wishing_ui1/prasanth/wmapi/wishing/category/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
+    $data['category'] = self::getapi($url_category) ;
+    
+    $url_subcategory="http://localhost/wishing_ui1/prasanth/wmapi/wishing/subcategory/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
+    $data['subcategory'] = self::getapi($url_subcategory) ;
 
     $this->load->library('form_validation');
-    $this->form_validation->set_rules('pname', 'Product Name', 'required|alpha');
-    $this->form_validation->set_rules('category', 'Category Name', 'required');
-    $this->form_validation->set_rules('scategory', 'Sub-Category Name', 'required');
-    $this->form_validation->set_rules('country', 'Country Name', 'required');
+    $this->form_validation->set_rules('pname', 'Product Name', 'required');
+    $this->form_validation->set_rules('category', 'Category Name', 'callback_select_validate');
+    $this->form_validation->set_rules('scategory', 'Sub-Category Name', 'callback_select_validate');
+    $this->form_validation->set_rules('country', 'Country Name', 'callback_select_validate');
     $this->form_validation->set_rules('brand', 'Brand Name', 'required');
-    $this->form_validation->set_rules('colour', 'Colour', 'required|alpha');
+    $this->form_validation->set_rules('colour', 'Colour', 'required');
     $this->form_validation->set_rules('desc', 'Description', 'required');
     $this->form_validation->set_rules('userfile', 'Product Image', 'callback_handle_upload');
     $this->form_validation->set_error_delimiters('<div>','</div>');
@@ -55,10 +60,20 @@ class Wishgrant extends CI_Controller {
       //echo "<pre>";
       //print_r($data);
       //echo "</pre>";
-
-      $this->load->view('wishsuccess_view',$data);
+      //if($images['file_size'] != "2"){
+        $data['success']="Your Wish Has Been Created Successfully"; 
+        //$this->load->view('wishing_view',$data);
+      //}else{
+        $this->load->view('wishing_view',$data);
+      //}
    }//ELSE END 
 
+  }
+
+  function wishlist(){
+    $data['thispage']="7";
+    $data['title']="WishingMart || All Wish List Page.";
+    $this->load->view('wishlist_view',$data);
   }
 
 
@@ -74,6 +89,19 @@ class Wishgrant extends CI_Controller {
     }
   }
   
+  function select_validate($select){
+    // 'none' is the first option that is default "-------Choose Country-------"
+    if($select=="none"){
+      $this->form_validation->set_message('select_validate', 'Please Select Your %s.');
+      return false;
+      } else{
+      // User picked something.
+      return true;
+    }
+  }
+
+
+
   public function granting(){
     $data['thispage']="6";
     $data['title']="WishingMart || granting Page.";
@@ -84,6 +112,13 @@ class Wishgrant extends CI_Controller {
 
 
     $this->load->view('granting_view',$data);
+  }
+
+  public function listofwishes(){ // TO GET LANDING PAGE
+    $data['thispage']="2";
+    $data['title']="MyAccount || WishingMart";
+
+    $this->load->view('listofwishes_view', $data);
   }
 
 
