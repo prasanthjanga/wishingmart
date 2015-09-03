@@ -51,22 +51,9 @@ class Landing extends CI_Controller {
     $data['thispage']="3";
     $data['title']="WishingMart || Register";
     
-    $url="http://localhost/wishing_ui1/prasanth/wmapi/usersget/country/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
-    if($url){
-      $username = 'admin';
-      $password = '1234';
-      $ch = curl_init();
-      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-      curl_setopt($ch, CURLOPT_URL,$url);
-      curl_setopt($ch, CURLOPT_USERPWD, $username . ':' . $password);
-      
-      $result=curl_exec($ch);
-      curl_close($ch);
-      $test = json_decode($result, true);
-      //print_r($test);
-      $data['country']=$test;
-    }//IF CLOSE.
+    $url_country="http://localhost/wishing_ui1/prasanth/wmapi/wishing/country/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
+    $data['country'] = self::getapi($url_country) ;
+
 
     $this->load->library('form_validation');
     $this->form_validation->set_rules('firstname', 'First Name', 'required|alpha');
@@ -108,7 +95,7 @@ class Landing extends CI_Controller {
           $result = json_decode($buffer);
           //print_r($result);
           if(isset($result->status) && $result->status == 'success'){
-            $this->load->view('regsuccess_view',$data);
+            $this->load->view('reg_view',$data);
             
           }else{
             echo 'Something has gone wrong';
@@ -182,6 +169,21 @@ class Landing extends CI_Controller {
     $data['title']="WishingMart || Forgot Password.";
     $this->load->view('forgotpwd_view',$data);
   }
+
+  public static function getapi($url){
+    //$url = "http://tapway.elasticbeanstalk.com/data/venue/".$mo->id."/summary?access_token=abcdef&start=".$start."&end=".$end;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $body = curl_exec($ch);
+    $obj = json_decode($body,true);
+
+    if(!isset($obj['status']))
+    return $obj ;
+    else
+    return 0 ;
+
+  } // getapi FUNCTION END  
 
 
 
