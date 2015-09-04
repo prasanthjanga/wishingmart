@@ -28,6 +28,18 @@ html{
 }
 
 
+.aboutbg{
+  background: url("../images/images.jpg"); 
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-attachment:fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ 
+}
+
 h3.title{
   position: relative;
   padding-top:30px;
@@ -84,6 +96,7 @@ h1{font:normal 33px/30px 'Old Standard TT', serif; margin:0 0 10px 0;}
 h2{font:italic 60px/50px 'Old Standard TT', serif; margin:0;}
 .dashboard{font:normal 50px/50px 'Georgia','Impact', serif; margin:0 0 40px 0; text-align:center; font:strong;}
 h2.title{font:normal 50px/50px 'Impact'; margin:0 0 40px 0; text-align:center; color:#4abcdd;}
+h4.title{font:normal 35px/35px 'orbitron'; margin:0; text-align:center; color:#000;}
 h3{font:normal bold 33px/33px 'Old Standard TT', serif;text-transform:uppercase; margin:0;}
 h4{font:italic 25px/25px 'Georgia','Impact', serif; margin:0; color:whitesmoke; font:bold; text-align:center;}
 .btn,a,a:hover{text-decoration: none;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;outline:0 ;}
@@ -103,8 +116,8 @@ a{color: #333;}
 .height-full{height: 100% !important;}
 .height-half{height: 50%;display: table;}
 
-.content{padding: 48px 0 38px 0;}
-.inside-page{padding: 80px 40px 70px 20px;height:100%;}
+.content{padding: 48px 0 70px 0; margin-bottom:70px;}
+.inside-page{padding: 80px 40px 100px 20px;height:100%;}
 .breadcrumb{margin-bottom: 30px;background: none;padding: 0;}
 .breadcrumb a{color: #4abcdd;}
 .breadcrumb a:hover{text-decoration: underline;}
@@ -165,33 +178,6 @@ a{color: #333;}
 /*footer*/
 
 
-/*home page*/
-.homepage {background-color: #333;}
-.homepage .col-md-6{padding-right: 0;padding-left: 0;}
-
-
-.banner {background-color: #000;}
-.carousel-control i.fa{font-size: 30px;top: 50%;position: absolute;margin-top: -16px;}
-.banner .caption{position: absolute;top: 50%;text-align: center;width: 100%;margin-top: -100px;padding: 0 15%;color: #fff;}
-.banner .caption h2{margin-bottom:20px;}
-.banner .caption p{margin-bottom: 30px;font:normal 25px/30px 'Old Standard TT', serif;color: #eee;}
-.banner .caption a.btn{margin: 0 5px;}
-
-.block.women{ background-image:url(../images/choice1.jpg); }
-.block.store{ background-image:url(../images/shop.jpg);display: block; }
-.block.men{ background-image:url(../images/choice2.jpg); }
-.block.couple{ background-image:url(../images/choice3.jpg); }
-.block{background-size:105%; display: table-cell;vertical-align: middle;text-align: center;position: relative;background-position: center;font: normal 16px 'Old Standard TT';-webkit-transition: all 0.4s ease-in-out;-moz-transition: all 0.4s ease-in-out;-ms-transition: all 0.4s ease-in-out;-o-transition: all 0.4s ease-in-out;transition: all 0.4s ease-in-out; background-repeat: no-repeat;}
-.block:hover{background-size:125%;}
-.block .info{background: rgba(234,0,110,0.9);border-radius: 50%;height: 150px;width: 150px;color: #fff;display: none;text-align: center;}
-.block .info h3{ margin:50px 0 5px 0;}
-.block:hover .info{display: inline-block;}
-.block .overlay{background: rgba(234,0,110,0.9);position: absolute;top: 0;right: 0;bottom: 0;left: 0;color: #fff;padding: 20px; opacity:0.8;}
-.block .overlay .store-info{display: table; vertical-align: middle;height: 100%;width: 100%;}
-.block .overlay .store-info .desc{display: table-cell; vertical-align: middle;}
-.block .overlay h4{margin:0 0 10px 0;border-bottom: 1px solid #ccc;display: inline-block;padding-bottom: 10px;}
-.block .overlay p{margin-bottom: 30px;}
-/*home page*/
 
 
 
@@ -274,8 +260,8 @@ div.selector select {background-color:black !important;}
 /*about*/
 .about h4{margin-bottom: 40px;}
 .about h3{margin-bottom: 10px;}
-.about p{margin-bottom: 40px;}
-
+.about p{margin-bottom: 40px; color:whitesmoke; font-family:"titillium web"; font-size:18px;}
+.terms p , .terms li , .terms a {margin-bottom: 40px; color:whitesmoke; font-family:"titillium web"; font-size:18px;}
 /*uniform*/
 .radio-inline{padding-top: 4px;padding-left: 0;color: whitesmoke;}
 .form-horizontal .radio{padding-top:3px;}
