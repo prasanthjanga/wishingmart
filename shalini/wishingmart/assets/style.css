@@ -127,11 +127,11 @@ a{color: #333;}
 .navbar-inverse .navbar-nav>li>a {
     color: skyblue;
 }
-.navbar-nav > li > a{text-transform: uppercase;font: normal 13px/19px 'Titillium Web';}
+.navbar-nav > li > a{ padding-bottom:0px !important;  text-transform: uppercase;font: normal 13px/19px 'Titillium Web';}
 .navbar-inverse{border:none; opacity:0.4; background-color:black;}
 .navbar-fixed-top{ background:rgba(0,0,0,0.32); opacity:1.0;}
 .navbar-brand{padding:6px 15px;}
-.dropdown-menu{background:#000; color: #fff; padding:5px;}
+.dropdown-menu{background:#000; color: #fff; padding-top:15px; margin-top:10px !important;}
 .dropdown-menu > li > a{color: #fff;padding:10px;}
 .dropdown-menu > li > a:hover{background-color: #333;color: #fff;}
 .navbar-nav>.user-menu .user-image {
@@ -141,6 +141,7 @@ a{color: #333;}
     border-radius: 50%;
     margin-right: 10px;
     margin-top: -2px;
+	
 }
 
 /*nav*/
@@ -158,8 +159,8 @@ a{color: #333;}
 .footer .links{margin-top: 9px;float: left;}
 .footer .links a{color: #888;padding: 0 10px;font: normal 13px/13px 'Titillium Web';}
 .footer .links a:hover{color: #fff;}
-.footer .social{margin-top: 5px;margin-right: 10px;}
-.footer .social a{color: #fff;font-size: 20px;margin:0 3px;}
+.footer .social{margin-top: 0px;margin-right: 10px;}
+.footer .social a{color: #fff;font-size: 20px;margin:0px;}
 .footer .social a:hover{color: #999;}
 /*footer*/
 
