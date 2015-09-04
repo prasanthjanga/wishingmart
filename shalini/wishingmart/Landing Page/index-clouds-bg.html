@@ -1,42 +1,75 @@
-<!DOCTYPE html>
-<html>
 
-<!-- Mirrored from themes.smartythemes.com/daniel/index-clouds-bg.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Aug 2015 16:35:52 GMT -->
-<head>
-	<meta charset="utf-8">
-	<title>Daniel - Responsive Underconstruction Landing Page</title>
+
+
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='http://fonts.googleapis.com/css?family=Khand:300,400,500,600,700' rel='stylesheet' type='text/css'>
 	<link href="css/icons/css/animation.css" rel='stylesheet' type='text/css'>
 	<link href="css/icons/css/fontello.css" rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/bootstrap.css" type='text/css'>
+<link href="../assets/bootstrap/css/bootstrap.css" type='text/css'>
 	<link rel="stylesheet" href="css/style.css" type='text/css'>
 	<link rel="stylesheet" href="css/responsive.css" type='text/css'>
+    <link href="../assets/bootstrap/css/bootstrap.min.css" type='text/css'>
+
 </head>
 <body class="clouds-bg">
 
-	<script id="vs" type="x-shader/x-vertex">
-		varying vec2 vUv;
-		void main() {
-			vUv = uv;
-			gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-		}
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="clearfix">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img src="../images/logo.png"  alt="logo"><h1 class="hide"></h1></a>
+    </div>
 
-	</script>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+      
+      <ul class="nav navbar-nav">        
+        
+        <li><a href="ComingSoon.html"><span class="fa fa-shopping-cart"> Shopping</span></a></li>
+        <li><a href="WishGrant.html"><span class="fa fa-star"> Wish/Grant </span></a></li>
+        
+      </ul>
+<ul class="nav navbar-nav">
+        <li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Login </a></li>
+        <li><a href="Register.html">Register</a></li>
+       <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Language <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li>English</li>
+            <li>Malay</li>
+            <li>Chinese</li>   
+            <li>Tamil</li> 
+            <li>French</li>  
+            <li>Spanish</li>               
+          </ul>
+        </li>
+      </ul>
+    </div><!-- navbar-collapse -->
+  </div><!-- container-fluid -->
+</nav>
+<!-- header -->
+
+	<script id="vs" type="x-shader/x-vertex">
+	varying vec2 vUv;void main(){vUv=uv;
+	gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}
+    </script>
 	<script id="fs" type="x-shader/x-fragment">
-		uniform sampler2D map;
-		uniform vec3 fogColor;
-		uniform float fogNear;
-		uniform float fogFar;
-		varying vec2 vUv;
-		void main() {
-			float depth = gl_FragCoord.z / gl_FragCoord.w;
-			float fogFactor = smoothstep( fogNear, fogFar, depth );
-	
-			gl_FragColor = texture2D( map, vUv );
-			gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 );
-			gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );
-		}
+	uniform sampler2D map;
+	uniform vec3 fogColor;
+	uniform float fogNear;
+	uniform float fogFar;
+	varying vec2 vUv;
+	void main(){float depth=gl_FragCoord.z/gl_FragCoord.w;
+	float fogFactor=smoothstep(fogNear,fogFar,depth);
+	gl_FragColor=texture2D(map,vUv);gl_FragColor.w*=pow(gl_FragCoord.z,20.0);
+	gl_FragColor=mix(gl_FragColor,vec4(fogColor,gl_FragColor.w),fogFactor);}
 	</script>
 	<script type="text/javascript" src="js/three.min.js"></script>
 	<script type="text/javascript" src="js/detector.js"></script>
@@ -46,51 +79,27 @@
 	<section class="screen-section section-1">
 		<div class="section-inner">
 			<header id="site-header">
-				<h1 id="site-logo"><img src="images/logo.png" alt=""></h1>
+				<h1 id="site-logo"><img src="../images/logo.png" alt=""></h1>
 				
-				<!-- To change site subtitle just write any text between <h3>...</h3> -->
-				<h3 id="site-subtitle">Responsive Web Template</h3>
+				<h3 id="site-subtitle">WishingMart</h3>
 			</header>
 		
 			<div id="countdown_block">
-				<!-- 
-					Don't be afraid to edit code ;) 
-					Here you can edit site tagline
-				 -->
-				<h2 id="site-tagline">Our website is launching soon</h2>
-				<div id="countdown"></div>
 				
-				<!-- Mailchimp-generated subscribe form -->
-				<div id="subscribe-form">
-					<div id="mc_embed_signup">
-					
-						<form action="http://your-username.us9.list-manage.com/subscribe/post?u=6c78bf2fdc16f050e38215178&amp;id=5b334ebbdc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    						<div id="mc_embed_signup_scroll">
-								<div class="mc-field-group">
-									<input type="email" value="" placeholder="Enter your email" name="EMAIL" class="required email" id="mce-EMAIL"><!-- 
-								 --><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-								</div>
-						
-								<div id="mce-responses" class="clear">
-									<div class="response" id="mce-error-response"></div>
-									<div class="response" id="mce-success-response"></div>
-								</div>
-						
-    							<div style=""><input type="text" name="b_6c78bf2fdc16f050e38215178_5b334ebbdc" tabindex="-1" value=""></div>
-    						</div>
-						</form>
-					</div>
-				</div>
+              <h1 class="title">
+                 
+                Visions Do Come True!
+                  
+                </h1>
 			</div>
-		
 			<footer id="site-footer">					
 				<ul id="site-social">
-					<li><a href="#"><i class="icon-social_twitter_square"></i></a></li>
-					<li><a href="#"><i class="icon-social_facebook_square"></i></a></li>
-					<li><a href="#"><i class="icon-social_dribbble_square"></i></a></li>
-					<li><a href="#"><i class="icon-social_instagram_square"></i></a></li>
-					<li><a href="#"><i class="icon-social_pinterest_square"></i></a></li>
-				</ul>
+                <li><a href="#"><i class="icon-social_twitter_square"></i></a></li>
+                <li><a href="#"><i class="icon-social_facebook_square"></i></a></li>
+                <li><a href="#"><i class="icon-social_googleplus_square"></i></a></li>
+                <li><a href="#"><i class="icon-social_instagram_square"></i></a></li>
+                <li><a href="#"><i class="icon-social_pinterest_square"></i></a></li>
+            </ul>
 				<div class="scrolldown">
 					<span class="mousescroll">
 						<span class="scrolldown-title">Scroll down</span>
@@ -104,6 +113,35 @@
 					</span>
 				</div>
 			</footer>
+            
+            <!-- footer -->
+<div class="footer navbar-fixed-bottom" role="navigation">
+	<div class="pull-left">
+    <div class="links">
+    	<a href="About.html">About Us</a>  
+        <a href="SellerInfo.html">Earn with Us</a>
+        <a href="BuyerInfo.html">Buyer</a>  
+        <a href="Tools.html">Tools &amp; Apps</a> 
+        <a href="ContactUs.html">Help &amp; Contacts</a>
+        <a href="Testimonial.html">Testimonials</a> 
+         <a href="Termscondition.html">Terms &amp; Conditions</a>   	    
+    </div>
+    </div>
+    <div class="social pull-right">
+    
+    			<a href="#"><i class="icon-social_twitter_square"></i></a>
+              <a href="#"><i class="icon-social_facebook_square"></i></a>
+                <a href="#"><i class="icon-social_googleplus_square"></i></a>
+                <a href="#"><i class="icon-social_instagram_square"></i></a>
+            <a href="#"><i class="icon-social_pinterest_square"></i></a>
+     
+   
+    
+    </div>
+    
+</div>
+
+<!-- footer -->
 		
 		</div>
 	</section>
@@ -128,7 +166,7 @@
 		<div class="section-inner">
 			<div class="left-half-block section-half">
 				<div class="section-content">
-					<h2 class="section-title">Services<!-- Here you can change section title --></h2>					
+					<h2 class="section-title">Services</h2>					
 					<div class="services">
 						<div class="service-item">
 							<i class="service-icon-1"></i>
@@ -208,9 +246,15 @@
 	<script src="js/classie.js"></script>
 	<script src="js/_front.js"></script>
 	
-	<script type='text/javascript' src='../../s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-	<script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+	<script type='text/javascript' src="js/mc-validate.js"></script>
+    
+	<script type='text/javascript'>
+	(function($) {window.fnames = new Array(); 
+	window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';
+	}(jQuery));
+	var $mcj = jQuery.noConflict(true);
+    </script>
 </body>
 
-<!-- Mirrored from themes.smartythemes.com/daniel/index-clouds-bg.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Aug 2015 16:36:02 GMT -->
+
 </html>

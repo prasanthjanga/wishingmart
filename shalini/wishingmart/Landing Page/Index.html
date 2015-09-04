@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US">  <!--<![endif]-->
+<head>	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>WishingMart || Wishes Do Come True!</title>
+
+<!-- favico -->
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link href="css/icons/css/animation.css" rel="stylesheet" type="text/css">
+<link href="css/icons/css/fontello.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/responsive.css" type="text/css">
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css" type="text/css"/>
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="css/windy.css" />
+		<link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+		<noscript><link rel="stylesheet" type="text/css" href="css/noJS.css" /></noscript>
+</head>
+<body class="clouds-bg inside-page">
+
+<!-- cloud script -->
+
+	<script id="vs" type="x-shader/x-vertex">
+	varying vec2 vUv;void main(){vUv=uv;
+	gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}
+    </script>
+	<script id="fs" type="x-shader/x-fragment">
+	uniform sampler2D map;
+	uniform vec3 fogColor;
+	uniform float fogNear;
+	uniform float fogFar;
+	varying vec2 vUv;
+	void main(){float depth=gl_FragCoord.z/gl_FragCoord.w;
+	float fogFactor=smoothstep(fogNear,fogFar,depth);
+	gl_FragColor=texture2D(map,vUv);gl_FragColor.w*=pow(gl_FragCoord.z,20.0);
+	gl_FragColor=mix(gl_FragColor,vec4(fogColor,gl_FragColor.w),fogFactor);}
+	</script>
+	<script type="text/javascript" src="js/three.min.js"></script>
+	<script type="text/javascript" src="js/detector.js"></script>
+	<script type="text/javascript" src="js/clouds-anim.js"></script>
+    
+<!-- cloud script -->
+
+<!-- First Screen -->
+<section class="screen-section section-1">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="clearfix">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img src="../images/logo.png"  alt="logo"><h1 class="hide"></h1></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+      
+      <ul class="nav navbar-nav">        
+        
+        <li><a href="ComingSoon.html"><span class="fa fa-shopping-cart">Shopping</span></a></li>
+        <li><a href="WishGrant.html"><span class="fa fa-star"> Wish/Grant </span></a></li>
+        
+      </ul>
+<ul class="nav navbar-nav">
+        <li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Login </a></li>
+        <li><a href="Register.html">Register</a></li>
+       <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Language <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li>English</li>
+            <li>Malay</li>
+            <li>Chinese</li>   
+            <li>Tamil</li> 
+            <li>French</li>  
+            <li>Spanish</li>               
+          </ul>
+        </li>
+      </ul>
+    </div><!-- navbar-collapse -->
+  </div><!-- container-fluid -->
+</nav>
+<!-- header -->
+
+		<div class="section-inner">
+        
+        
+			<header id="site-header">
+				<h1 id="site-logo"><img src="../images/logo.png" alt=""></h1>
+				
+				
+			</header>
+		
+			<div id="countdown_block">
+				
+              <h1 class="title">  
+               Wishingmart
+                </h1>
+                
+                <h3 id="site-subtitle"><strong>Wishes Do Come True</strong></h3>
+			</div>
+			<footer id="site-footer">					
+				
+				<div class="scrolldown">
+					<span class="keyscroll">
+						<span class="scrolldown-title"></span>
+					
+					</span>
+				</div>
+			</footer>
+		</div>
+         <!-- footer -->
+<div class="footer navbar-fixed-bottom" role="navigation">
+	<div class="pull-left">
+    <div class="links">
+      <a href="Termscondition.html">Terms &amp; Conditions</a>   
+    	<a href="About.html">About Us</a>
+         <a href="ContactUs.html">Contact Us</a>
+        <a href="Testimonial.html">Testimonials</a>   
+        <a href="SellerInfo.html">Buyer &amp; Seller</a> 
+        <a href="Tools.html">Tools &amp; Apps</a> 
+      
+         &nbsp;
+         &nbsp;	    
+    </div>
+     
+     <div class="links"><a href="../Index.html">WishingMart &copy; 2015</a></div>
+    
+    </div>
+    <div class="social pull-right">
+  
+    	<a href="#"><i class="icon-social_twitter_square"></i></a>
+              <a href="#"><i class="icon-social_facebook_square"></i></a>
+                <a href="#"><i class="icon-social_googleplus_square"></i></a>
+                <a href="#"><i class="icon-social_instagram_square"></i></a>
+            <a href="#"><i class="icon-social_pinterest_square"></i></a>
+   
+    </div>
+    
+</div>
+
+<!-- footer -->
+	</section>
+    
+    <!-- Section 2 -->
+	<section  class="screen-section section-2">
+		<div class="section-inner">
+			<div class="left-half-block section-half">
+				<div class="section-content">
+					<h2 class="section-title">Wish &amp; Grant</h2>
+					<h4><p></p></h4>
+				
+				</div>
+			</div>
+			<div class="left-half-block section-half">
+            </div>
+		</div>
+	</section>
+    
+<!-- Section 3 -->
+	<section class="screen-section section-3">
+		<div class="section-inner">
+			<div class="left-half-block section-half">
+				<div class="section-content">
+					<h2 class="section-title">Services</h2>					
+					<div class="services">
+						<div class="service-item">
+							<i class="service-icon-1"></i>
+							<h4 class="service-title">Photography</h4>
+							<div class="service-content">
+								Re mixture.
+							</div>
+							<a href="#" class="service-link">More</a>
+						</div>
+						<div class="service-item">
+							<i class="service-icon-2"></i>
+							<h4 class="service-title">Video Presentation</h4>
+							<div class="service-content">
+								
+							</div>
+							<a href="#" class="service-link">More</a>
+						</div>
+						<div class="service-item">
+							<i class="service-icon-3"></i>
+							<h4 class="service-title">Game Development</h4>
+							<div class="service-content">
+								When
+							</div>
+							<a href="#" class="service-link">More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="left-half-block section-half"></div>
+		</div>
+	</section> 
+   
+   
+   
+   <!-- Section 4 -->
+	<section class="screen-section section-4">
+		<div class="section-inner">
+			<div class="left-half-block section-half">
+				<div class="section-content">
+					<h2 class="section-title">Get In Touch</h2>
+                    
+					<div id="site-contacts">
+						1234 Some St, New York, US<br />
+						+1(0)800.123.4567<br />
+						info@yoursite.com
+					</div>					
+				
+				</div>
+			</div>
+			<div class="left-half-block section-half"></div>
+		</div>
+	</section> 
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.plugin.min.js"></script>
+	<script src="js/jquery.countdown.min.js"></script>
+	<script src="js/_config.js"></script>
+	<script src="js/curtain-scroll.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/_front.js"></script>
+	
+
+</body>
+</html>
