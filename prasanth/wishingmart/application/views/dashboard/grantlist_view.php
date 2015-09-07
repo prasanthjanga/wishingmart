@@ -36,7 +36,7 @@
                         <td>Win 95+</td>
                         <td>4</td>
                         <td>X</td>
-                        <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                        <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                        
                       </tr>
                       <tr>
@@ -46,7 +46,7 @@
                         <td>Win 95+</td>
                         <td>5</td>
                         <td>C</td>
-                           <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                           <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Trident</td>
@@ -55,7 +55,7 @@
                         <td>Win 95+</td>
                         <td>5.5</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Trident</td>
@@ -64,7 +64,7 @@
                         <td>Win 98+</td>
                         <td>6</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Trident</td>
@@ -72,7 +72,7 @@
                         <td>Win XP SP2+</td>
                         <td>7</td>
                         <td>A</td>
-                           <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                           <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Trident</td>
@@ -80,7 +80,7 @@
                         <td>Win XP</td>
                         <td>6</td>
                         <td>A</td>
-                        <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                        <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -88,7 +88,7 @@
                         <td>Win 98+ / OSX.2+</td>
                         <td>1.7</td>
                         <td>A</td>
-                        <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                        <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -96,7 +96,7 @@
                         <td>Win 98+ / OSX.2+</td>
                         <td>1.8</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -104,7 +104,7 @@
                         <td>Win 98+ / OSX.2+</td>
                         <td>1.8</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -112,7 +112,7 @@
                         <td>Win 2k+ / OSX.3+</td>
                         <td>1.9</td>
                         <td>A</td>
-                        <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                        <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -120,7 +120,7 @@
                         <td>OSX.2+</td>
                         <td>1.8</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -128,7 +128,7 @@
                         <td>OSX.3+</td>
                         <td>1.8</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -136,7 +136,7 @@
                         <td>Win 95+ / Mac OS 8.6-9.2</td>
                         <td>1.7</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -144,7 +144,7 @@
                         <td>Win 98SE+</td>
                         <td>1.7</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -152,7 +152,7 @@
                         <td>Win 98+ / OSX.2+</td>
                         <td>1.8</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -160,7 +160,7 @@
                         <td>Win 95+ / OSX.1+</td>
                         <td>1</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -168,7 +168,7 @@
                         <td>Win 95+ / OSX.1+</td>
                         <td>1.1</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -176,7 +176,7 @@
                         <td>Win 95+ / OSX.1+</td>
                         <td>1.2</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -184,7 +184,7 @@
                         <td>Win 95+ / OSX.1+</td>
                         <td>1.3</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -192,7 +192,7 @@
                         <td>Win 95+ / OSX.1+</td>
                         <td>1.4</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -200,7 +200,7 @@
                         <td>Win 95+ / OSX.1+</td>
                         <td>1.5</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -208,7 +208,7 @@
                         <td>Win 95+ / OSX.1+</td>
                         <td>1.6</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -216,7 +216,7 @@
                         <td>Win 98+ / OSX.1+</td>
                         <td>1.7</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -224,7 +224,7 @@
                         <td>Win 98+ / OSX.1+</td>
                         <td>1.8</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -232,7 +232,7 @@
                         <td>Win 98+ / OSX.2+</td>
                         <td>1.8</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Gecko</td>
@@ -240,7 +240,7 @@
                         <td>Gnome</td>
                         <td>1.8</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Webkit</td>
@@ -248,7 +248,7 @@
                         <td>OSX.3</td>
                         <td>125.5</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Webkit</td>
@@ -256,7 +256,7 @@
                         <td>OSX.3</td>
                         <td>312.8</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Webkit</td>
@@ -264,7 +264,7 @@
                         <td>OSX.4+</td>
                         <td>419.3</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Webkit</td>
@@ -272,7 +272,7 @@
                         <td>OSX.4+</td>
                         <td>522.1</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Webkit</td>
@@ -280,7 +280,7 @@
                         <td>OSX.4+</td>
                         <td>420</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Webkit</td>
@@ -288,7 +288,7 @@
                         <td>iPod</td>
                         <td>420.1</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Webkit</td>
@@ -296,7 +296,7 @@
                         <td>S60</td>
                         <td>413</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Presto</td>
@@ -304,7 +304,7 @@
                         <td>Win 95+ / OSX.1+</td>
                         <td>-</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Presto</td>
@@ -312,7 +312,7 @@
                         <td>Win 95+ / OSX.2+</td>
                         <td>-</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Presto</td>
@@ -320,7 +320,7 @@
                         <td>Win 95+ / OSX.2+</td>
                         <td>-</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Presto</td>
@@ -328,7 +328,7 @@
                         <td>Win 95+ / OSX.2+</td>
                         <td>-</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Presto</td>
@@ -336,7 +336,7 @@
                         <td>Win 95+ / OSX.3+</td>
                         <td>-</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Presto</td>
@@ -344,7 +344,7 @@
                         <td>Win 88+ / OSX.3+</td>
                         <td>-</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       <tr>
                         <td>Presto</td>
@@ -352,7 +352,7 @@
                         <td>Win 88+ / OSX.3+</td>
                         <td>-</td>
                         <td>A</td>
-                         <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                         <td><a href="<?php echo base_url('dashboard/viewgrantrequest'); ?>" class="btn btn-danger">View Request</a></td>
                       </tr>
                       
                     </tbody>

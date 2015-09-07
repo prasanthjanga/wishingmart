@@ -49,6 +49,11 @@ scrolltitle();
 <?php }//IF END ?>
 
 <link href="<?php echo base_url('assets/Dashboard/AdminLTE.min.css'); ?>" rel="stylesheet" type="text/css" />
+<!-- AdminLTE Skins. Choose a skin from the css/skins 
+         folder instead of downloading all of them to reduce the load. -->
+<!--
+<link href="<?php //echo base_url('assets/Dashboard/_all-skins.min.css'); ?>" rel="stylesheet" type="text/css" />
+-->
 <link rel="stylesheet" href="<?php echo base_url('assets/style.css'); ?>">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

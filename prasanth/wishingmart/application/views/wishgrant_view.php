@@ -14,7 +14,7 @@ include_once($head_top);
 
 <a href="<?php echo base_url('wishgrant/wishing'); ?>" class="btn btn-danger ">Make a Wish</a>
 
-<a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-danger ">Grant A Wish</a>
+<a href="<?php echo base_url('wishgrant/listofwishes'); ?>" class="btn btn-danger ">Grant A Wish</a>
 </div>
 
 </div>

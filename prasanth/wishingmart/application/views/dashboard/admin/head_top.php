@@ -18,16 +18,44 @@
         </a>
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">        
+            <li class="social user user-menu">
+              <a href="">
+                <i class="fa" data-toggle="tooltip" data-placement="left" data-original-title="Shopping">
+                  <img src="<?php echo base_url('assets/images/cms.png'); ?>" class="user-image" alt="Shopping" />
+                </i>
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav">        
+            <li class="social user user-menu">
+              <a href="">
+                <i class="fa" data-toggle="tooltip" data-placement="left" data-original-title="Chat">
+                  <img src="<?php echo base_url('assets/images/chat.png'); ?>" class="user-image" alt="Chat" />
+                </i>
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav">        
+            <li class="social user user-menu">
+              <a href="<?php echo base_url('wishgrant'); ?>">
+                <i class="fa" data-toggle="tooltip" data-placement="left" data-original-title="Wish">
+                  <img src="<?php echo base_url('assets/images/wish.png'); ?>" class="user-image" alt="Wish" />
+                </i>
+              </a>
+            </li>
+          </ul>
+
           <ul class="nav navbar-nav">
-       <li class="dropdown">
-        <div id="google_translate_element"></div>
-          <script type="text/javascript">
-          function googleTranslateElementInit() {
-           new google.translate.TranslateElement({pageLanguage: 'en',includedLanguages: 'en,hi,id,fr,de,zh-CN,ja,bz,es,ru,it,tl', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-          }
-          </script>
-        </li>
-      </ul>
+           <li class="dropdown">
+            <div id="google_translate_element"></div>
+              <script type="text/javascript">
+              function googleTranslateElementInit() {
+               new google.translate.TranslateElement({pageLanguage: 'en',includedLanguages: 'en,hi,id,fr,de,zh-CN,ja,bz,es,ru,it,tl', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+              }
+              </script>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
