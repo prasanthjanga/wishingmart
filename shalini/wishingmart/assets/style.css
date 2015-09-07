@@ -154,7 +154,7 @@ a{color: #333;}
 .navbar-nav > li > a{ padding-bottom:0px !important;  text-transform: uppercase;font: normal 13px/19px 'Titillium Web';}
 .navbar-inverse{border:none; opacity:0.4; background-color:black;}
 .navbar-fixed-top{ background:rgba(0,0,0,0.32); opacity:1.0;}
-.navbar-brand{padding:6px 15px;}
+.navbar-brand{padding:6px 15px !important;}
 .dropdown-menu{background:#000; color: #fff; padding-top:15px; margin-top:10px !important;}
 .dropdown-menu > li > a{color: #fff;padding:10px;}
 .dropdown-menu > li > a:hover{background-color: #333;color: #fff;}
