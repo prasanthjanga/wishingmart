@@ -32,7 +32,7 @@ include_once($head_top);
     <div class="detail">
         <h4><a href="#">Prom Dress</a></h4>
         <p>Elegant Green Dress Designed by XYZ</p>
-        <a href="GrantingPage.html" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Details</a>
+        <a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Details</a>
     </div>
     </div>
 </div>
@@ -51,7 +51,7 @@ include_once($head_top);
                           <h4><a href="#">Antique Horse 
                           Phone</a></h4>
                           <p>Rare collection of phone</p>
-                          <a href="GrantingPage.html" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>  
+                          <a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>  
                    </div>
                    </div>
             </div>
@@ -69,7 +69,7 @@ include_once($head_top);
                    <div class="detail">
                 <h4><a href="#">Men's Denim Jacket</a></h4>
                           <p>High Quality Denim</p>
-                          <a href="GrantingPage.html" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>
+                          <a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>
                                                                
                    </div>
                    </div>
@@ -88,7 +88,7 @@ include_once($head_top);
     <div class="detail">
         <h4><a href="#">Prom Dress</a></h4>
         <p>Elegant Green Dress Designed by XYZ</p>
-        <a href="GrantingPage.html" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Details</a>
+        <a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Details</a>
     </div>
     </div>
 </div>
@@ -107,7 +107,7 @@ include_once($head_top);
                           <h4><a href="#">Antique Horse 
                           Phone</a></h4>
                           <p>Rare collection of phone</p>
-                          <a href="GrantingPage.html" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>  
+                          <a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>  
                    </div>
                    </div>
             </div>
@@ -125,63 +125,7 @@ include_once($head_top);
                    <div class="detail">
                 <h4><a href="#">Men's Denim Jacket</a></h4>
                           <p>High Quality Denim</p>
-                          <a href="GrantingPage.html" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>
-                                                               
-                   </div>
-                   </div>
-            </div>
-            </div>
-            <!-- product -->
-            
-<!-- product -->
-<div class="col-sm-3">
-            <div class="product">
-    <a href="#">
-    <img src="<?php echo base_url('assets/images/products/1.jpg'); ?>" class="img-responsive"  alt="product">           
-    </a>
-
-    <div class="overlay">
-    <div class="detail">
-        <h4><a href="#">Prom Dress</a></h4>
-        <p>Elegant Green Dress Designed by XYZ</p>
-        <a href="GrantingPage.html" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Details</a>
-    </div>
-    </div>
-</div>
-            </div>
-<!-- product -->
-
-
-<!-- product -->
-            <div class="col-sm-3">
-            <div class="product">
-                   <a href="#">
-                   <img src="<?php echo base_url('assets/images/products/2.jpg'); ?>" class="img-responsive"  alt="product">
-         </a>
-                   <div class="overlay">
-                   <div class="detail">
-                          <h4><a href="#">Antique Horse 
-                          Phone</a></h4>
-                          <p>Rare collection of phone</p>
-                          <a href="GrantingPage.html" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>  
-                   </div>
-                   </div>
-            </div>
-            </div>
-            <!-- product -->
-
-<!-- product -->
-            <div class="col-sm-3">
-            <div class="product">
-                   <a href="#">
-                   <img src="<?php echo base_url('assets/images/products/3.jpg'); ?>" class="img-responsive" alt="product">  
-                   </a>
-
-                   <div class="overlay">
-                   <div class="detail">
-                <h4><a href="#">Men's Denim Jacket</a></h4>
-                          <p>High Quality Denim</p>
-                          <a href="GrantingPage.html" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>
+                          <a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>
                                                                
                    </div>
                    </div>
@@ -200,7 +144,7 @@ include_once($head_top);
     <div class="detail">
         <h4><a href="#">Prom Dress</a></h4>
         <p>Elegant Green Dress Designed by XYZ</p>
-        <a href="GrantingPage.html" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Details</a>
+        <a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Details</a>
     </div>
     </div>
 </div>
@@ -219,7 +163,7 @@ include_once($head_top);
                           <h4><a href="#">Antique Horse 
                           Phone</a></h4>
                           <p>Rare collection of phone</p>
-                          <a href="GrantingPage.html" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>  
+                          <a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>  
                    </div>
                    </div>
             </div>
@@ -237,7 +181,63 @@ include_once($head_top);
                    <div class="detail">
                 <h4><a href="#">Men's Denim Jacket</a></h4>
                           <p>High Quality Denim</p>
-                          <a href="GrantingPage.html" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>
+                          <a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>
+                                                               
+                   </div>
+                   </div>
+            </div>
+            </div>
+            <!-- product -->
+            
+<!-- product -->
+<div class="col-sm-3">
+            <div class="product">
+    <a href="#">
+    <img src="<?php echo base_url('assets/images/products/1.jpg'); ?>" class="img-responsive"  alt="product">           
+    </a>
+
+    <div class="overlay">
+    <div class="detail">
+        <h4><a href="#">Prom Dress</a></h4>
+        <p>Elegant Green Dress Designed by XYZ</p>
+        <a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Details</a>
+    </div>
+    </div>
+</div>
+            </div>
+<!-- product -->
+
+
+<!-- product -->
+            <div class="col-sm-3">
+            <div class="product">
+                   <a href="#">
+                   <img src="<?php echo base_url('assets/images/products/2.jpg'); ?>" class="img-responsive"  alt="product">
+         </a>
+                   <div class="overlay">
+                   <div class="detail">
+                          <h4><a href="#">Antique Horse 
+                          Phone</a></h4>
+                          <p>Rare collection of phone</p>
+                          <a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>  
+                   </div>
+                   </div>
+            </div>
+            </div>
+            <!-- product -->
+
+<!-- product -->
+            <div class="col-sm-3">
+            <div class="product">
+                   <a href="#">
+                   <img src="<?php echo base_url('assets/images/products/3.jpg'); ?>" class="img-responsive" alt="product">  
+                   </a>
+
+                   <div class="overlay">
+                   <div class="detail">
+                <h4><a href="#">Men's Denim Jacket</a></h4>
+                          <p>High Quality Denim</p>
+                          <a href="<?php echo base_url('wishgrant/granting'); ?>" class="btn btn-default view animated fadeInLeft"><i class="fa fa-search-plus"></i> View Detail</a>
                                                                
                    </div>
                    </div>

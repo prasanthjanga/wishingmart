@@ -187,4 +187,39 @@ class Landing extends CI_Controller {
 
 
 
+
+
+
+
+  function termscondition(){
+    $data['thispage']="f1";
+    $data['title']="Terms and Condition || WishingMart.";
+    $this->load->view('index',$data);
+  }
+  function aboutus(){
+    $data['thispage']="f2";
+    $data['title']="About Us || WishingMart.";
+    $this->load->view('index',$data);
+  }
+  function contactus(){
+    $data['thispage']="f3";
+    $data['title']="Contact Us || WishingMart.";
+    $this->load->view('index',$data);
+  }
+  function testimonial(){
+    $data['thispage']="f4";
+    $data['title']="Testimonial || WishingMart.";
+    $this->load->view('index',$data);
+  }
+  function buyerseller(){
+    $data['thispage']="f5";
+    $data['title']="Buyer & Seller || WishingMart.";
+    $this->load->view('index',$data);
+  }
+  function toolsapps(){
+    $data['thispage']="f6";
+    $data['title']="Tools & Apps || WishingMart.";
+    $this->load->view('index',$data);
+  }
+
 }

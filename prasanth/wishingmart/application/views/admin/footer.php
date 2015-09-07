@@ -61,8 +61,8 @@ $(document).ready(function() {
 <script src="<?php echo base_url('assets/form/validator.js'); ?>"></script>
 
 <!-- jQuery 2.1.4 -->
-<script src="<?php echo base_url('assets/Dashboard/jQuery-2.1.4.min.js'); ?>" type="text/javascript"></script>
-
+<!--<script src="<?php //echo base_url('assets/Dashboard/jQuery-2.1.4.min.js'); ?>" type="text/javascript"></script>
+-->
 <script type="text/javascript">
 $(document).ready(function() {
     $('#ProductCategory').change(function() {
