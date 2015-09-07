@@ -156,6 +156,9 @@ a{color: #333;}
     margin-top: -2px;
   
 }
+.nav>li{
+  margin-top:0px !important;
+}
 
 /*nav*/
 
@@ -172,7 +175,7 @@ a{color: #333;}
 .footer .links{margin-top: 9px;float: left;}
 .footer .links a{color: #888;padding: 0 10px;font: normal 13px/13px 'Titillium Web';}
 .footer .links a:hover{color: #fff;}
-.footer .social{margin-top: 0px;margin-right: 10px;}
+.footer .social{margin-top: 0px !important;margin-right: 10px;}
 .footer .social a{color: #fff;font-size: 20px;margin:0px;}
 .footer .social a:hover{color: #999;}
 /*footer*/

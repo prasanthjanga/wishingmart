@@ -29,6 +29,7 @@ class Registration extends REST_Controller
 
     }
 
+
     //To Get country Names
     //http://localhost/foldername/api/users/X-API-KEY/miapikey
     //http://localhost/wmapi/registration/country/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS

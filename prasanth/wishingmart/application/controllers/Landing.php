@@ -221,5 +221,10 @@ class Landing extends CI_Controller {
     $data['title']="Tools & Apps || WishingMart.";
     $this->load->view('index',$data);
   }
+  function comingsoon(){
+    $data['thispage']="cs";
+    $data['title']="Coming Soon || WishingMart.";
+    $this->load->view('comingsoon_view',$data);
+  }
 
 }

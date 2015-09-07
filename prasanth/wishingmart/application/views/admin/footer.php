@@ -55,6 +55,18 @@ $(document).ready(function() {
 </script>
 
 <?php } // ELSE END?>
+<?php if($thispage == "7"){ ?>
+<!-- script start -->
+<script type='text/javascript' src='<?php echo base_url('assets/wishgrant/js/jquery-1.11.2.min.js'); ?>'></script>
+<!--[if lt IE 10]>
+<script type='text/javascript' src='<?php //echo base_url('assets/wishgrant/js/ie/jquery.placeholder.js'); ?>'></script>
+<script type='text/javascript' src='<?php //echo base_url('assets/wishgrant/js/ie/ie.js'); ?>'></script>
+<![endif]-->
+<script type='text/javascript' src='<?php echo base_url('assets/wishgrant/js/plugin.js'); ?>'></script>
+<script type='text/javascript' src='<?php echo base_url('assets/wishgrant/js/variable.js'); ?>'></script>
+<script type='text/javascript' src='<?php echo base_url('assets/wishgrant/js/main.js'); ?>'></script>
+<!-- script end -->
+<?php } ?>
 
 <script type="text/javascript" src="<?php echo base_url('assets/wishing/js/jquery.nicescroll.min.js'); ?>"></script>
 
