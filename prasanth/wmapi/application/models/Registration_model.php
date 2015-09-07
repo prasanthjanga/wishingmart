@@ -45,6 +45,7 @@ class registration_model extends CI_Model
         return $reg.$user;
     }
 
+
     function get_country(){
         // Loading second db and running query.
         $CI = &get_instance();

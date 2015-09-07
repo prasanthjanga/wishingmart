@@ -47,6 +47,7 @@ scrolltitle();
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <script src="js/respond.min.js"></script>
 <![endif]-->
+
 <?php }else{ ?>
 
 <!-- animate.css -->
@@ -56,6 +57,10 @@ scrolltitle();
 <link rel="stylesheet" href="<?php echo base_url('assets/datepicker.css'); ?>">
 
 <?php } // ELSE END?>
+<?php if($thispage == "7"){ ?>
+<link type="text/css" href='<?php echo base_url('assets/wishgrant/css/style.css'); ?>' rel='stylesheet'>
+<?php } ?>
+
 
 
 <!-- Language Bar Script Start -->

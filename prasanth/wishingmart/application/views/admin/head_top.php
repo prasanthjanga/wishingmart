@@ -28,25 +28,6 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-    
-    <ul class="nav navbar-nav">        
-      <li class="social user user-menu">
-        <a href="">
-          <i class="fa" data-toggle="tooltip" data-placement="left" data-original-title="Shopping">
-            <img src="<?php echo base_url('assets/images/cms.png'); ?>" class="user-image" alt="Shopping" />
-          </i>
-        </a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav">        
-      <li class="social user user-menu">
-        <a href="">
-          <i class="fa" data-toggle="tooltip" data-placement="left" data-original-title="Chat">
-            <img src="<?php echo base_url('assets/images/chat.png'); ?>" class="user-image" alt="Chat" />
-          </i>
-        </a>
-      </li>
-    </ul>
     <ul class="nav navbar-nav">        
       <li class="social user user-menu">
         <a href="<?php echo base_url('wishgrant'); ?>">
@@ -56,6 +37,25 @@
         </a>
       </li>
     </ul>
+    <ul class="nav navbar-nav">        
+      <li class="social user user-menu">
+        <a href="<?php echo base_url('landing/comingsoon'); ?>">
+          <i class="fa" data-toggle="tooltip" data-placement="left" data-original-title="Shopping">
+            <img src="<?php echo base_url('assets/images/cms.png'); ?>" class="user-image" alt="Shopping" />
+          </i>
+        </a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav">        
+      <li class="social user user-menu">
+        <a href="<?php echo base_url('landing/comingsoon'); ?>">
+          <i class="fa" data-toggle="tooltip" data-placement="left" data-original-title="Chat">
+            <img src="<?php echo base_url('assets/images/chat.png'); ?>" class="user-image" alt="Chat" />
+          </i>
+        </a>
+      </li>
+    </ul>
+
     
     <ul class="nav navbar-nav">
       <li class="dropdown user user-menu">
