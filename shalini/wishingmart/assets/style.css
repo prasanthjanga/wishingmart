@@ -53,6 +53,17 @@ h3.title{
 }
 
 
+h5.title{
+  position: relative;
+  padding-top:30px;
+  padding-bottom:10px;
+  z-index: 100;
+  text-align:center;
+  font-family:'Orbitron';
+  font-size: 50px;
+  color: darkgray;
+  text-shadow: 0 1px #111010 ,-1px 0 #ea006e, -1px 2px #111010, -2px 1px #ea006e, -2px 3px #111010, -3px 2px #ea006e, -3px 4px #111010, -4px 3px #ea006e, -4px 5px #111010, -5px 4px #ea006e, -5px 6px #111010, -6px 5px #ea006e, -6px 7px #111010, -7px 6px #ea006e, -7px 8px #111010, -8px 7px #ea006e;
+}
 h1.title{
   position: relative;
   padding-bottom:30px;
@@ -220,48 +231,13 @@ div.selector select {background-color:black !important;}
 /*create-account*/
 .create-account .form-horizontal{border: 1px solid #ccc; background-color:rgba(0,0,0,0.32);padding-bottom:40px;}
 
-/*ProductListing*/
-.collection .sortby{margin-top: 11px;}
-.product{position: relative;margin-bottom:30px;}
-
-.product .price{position: absolute;right: 10px;top: 10px;width: 80px;height: 80px;text-align: center;border-radius: 50%;line-height: 80px;color: #fff;}
-.product .special{background: rgba(234,0,110,0.9);}
-.product .sale{background:rgba(146,199,4,0.9);}
-
-.product .overlay{position: absolute;top: 0; right: 0;left: 0; bottom:0;background:rgba(0,0,0,0.5);margin:0 1px;display: none;text-align: center;}
-.product:hover .overlay{display: block;color: #fff;}
-.product .overlay .detail{bottom: 20px;position: absolute;text-align: center;width: 100%;}
-
-.product .overlay a{color: #fff;}
-.product .overlay h4 {margin-bottom:15px; }
-.product .overlay h4 a{font-size: 18px;color: #fff;}
-.product .overlay h4 a:hover{color: #ccc;}
-.product .overlay p{padding: 0 10px 10px 10px;color: #ccc;}
-.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus{background-color: #ea006e;border-color:#ea006e;}
-.pagination>li>a, .pagination>li>span{color:#ea006e;}
-/*ProductListing*/
-
-/*product-details*/
-.product-details .information .price{margin-bottom: 40px;}
-.product-details .information .price span{font-size: 20px;text-decoration: line-through;color: #aaa;}
-.product-details .information .price b{font-size: 30px;}
-.product-details .information .price a.stock{}
-.product-details .quantity{padding: 1px 10px;width: 120px;}
-.description-tabs{margin:30px 0;}
-.description-tabs .nav > li > a{padding: 5px 15px;border-radius: 0 !important;color: #333;}
-.description-tabs .tab-content{padding:10px 0; }
-.description-tabs .tab-content .reviews{border-bottom: 1px dashed #aaa;margin-bottom: 10px;}
-.description-tabs .tab-content .reviews h5{font-size: 14px;margin: 0;font-weight: bold;}
-.description-tabs .tab-content textarea{margin-bottom: 10px;}
-.related-products{margin:50px 0; }
-.related-products h4{margin-bottom: 15px;}
-
-
 /*about*/
 .about h4{margin-bottom: 40px;}
 .about h3{margin-bottom: 10px;}
 .about p{margin-bottom: 40px; color:whitesmoke; font-family:"titillium web"; font-size:18px;}
 .terms p , .terms li , .terms a {margin-bottom: 40px; color:whitesmoke; font-family:"titillium web"; font-size:18px;}
+
+
 /*uniform*/
 .radio-inline{padding-top: 4px;padding-left: 0;color: whitesmoke;}
 .form-horizontal .radio{padding-top:3px;}
