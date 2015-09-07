@@ -37,6 +37,13 @@ class Dashboard extends CI_Controller {
     $this->load->view('dashboard/index', $data);
   }
 
+  public function updatewish(){ // TO GET Wishing Product List PAGE
+    $data['thispage']="9";
+    $data['title']="Update Wishing Product Details || WishingMart";
+
+    $this->load->view('dashboard/index', $data);
+  }
+
   public function profile(){ // TO GET Profile Details PAGE
     $data['thispage']="5";
     $data['title']="Profile Details || WishingMart";
@@ -54,6 +61,34 @@ class Dashboard extends CI_Controller {
   public function invoiceslist(){ // TO GET Invoices List PAGE
     $data['thispage']="7";
     $data['title']="Invoices List || WishingMart";
+
+    $this->load->view('dashboard/index', $data);
+  }
+
+  public function commingsoon(){ // TO GET Invoices List PAGE
+    $data['thispage']="cs";
+    $data['title']="commingsoon || WishingMart";
+
+    $this->load->view('dashboard/index', $data);
+  }
+
+  public function viewgrantrequest(){ // TO GET View Grant Request PAGE
+    $data['thispage']="31";
+    $data['title']="View Grant Request || WishingMart";
+
+    $this->load->view('dashboard/index', $data);
+  }
+  
+  public function shippingadd(){ // TO GET Shipping Address Details PAGE
+    $data['thispage']="32";
+    $data['title']="Shipping Address Details || WishingMart";
+
+    $this->load->view('dashboard/index', $data);
+  }
+
+  public function invoice(){ // TO GET Shipping Address Details PAGE
+    $data['thispage']="8";
+    $data['title']="Invoice || WishingMart";
 
     $this->load->view('dashboard/index', $data);
   }

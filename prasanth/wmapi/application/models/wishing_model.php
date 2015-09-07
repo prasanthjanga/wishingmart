@@ -50,7 +50,7 @@ class Wishing_model extends CI_Model
         $CI = &get_instance();
         //setting the second parameter to TRUE (Boolean) the function will return the database object.
         $this->user = $CI->load->database('user', TRUE);
-        $query = $this->user->query("SELECT * FROM country");
+        $query = $this->user->query("SELECT * FROM country ORDER BY cname ASC");
 
         //$query = $this->cms_db->select("users");
         if($query->num_rows() > 0){

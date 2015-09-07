@@ -12,7 +12,7 @@ msg = ' <?php echo $title; ?>' + msg;position = 0;
 function scrolltitle() {
 document.title = msg.substring(position, msg.length) + msg.substring(0, position); position++;
 if (position > msg.length) position = 0
-window.setTimeout("scrolltitle()",170);
+	window.setTimeout("scrolltitle()",170);
 }
 scrolltitle();
 </script>
@@ -31,6 +31,8 @@ scrolltitle();
 
 <!-- font awesome -->
 <link href="<?php echo base_url('assets/font-awesome.min.css'); ?>" rel="stylesheet">
+<!-- uniform -->
+<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/uniform/css/uniform.default.min.css'); ?>" />
 
  <!-- // WISHING PAGE CSS AND SCRIPT -->
 <?php if($thispage=="5" || $thispage=="6"){ ?>
@@ -46,8 +48,7 @@ scrolltitle();
     <script src="js/respond.min.js"></script>
 <![endif]-->
 <?php }else{ ?>
-<!-- uniform -->
-<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/uniform/css/uniform.default.min.css'); ?>" />
+
 <!-- animate.css -->
 <link rel="stylesheet" href="<?php echo base_url('assets/wow/animate.css'); ?>" />
 
@@ -65,7 +66,7 @@ body { top: 0px !important;overflow-y: auto;overflow-x: auto; }
 .skiptranslate{padding-top:4px; font:normal 13px/19px 'Titillium Web';}
 a.goog-te-menu-value > span{color:white;}
 .goog-te-gadget-simple{border:0 solid #d5d5d5 !important; border-radius:5px;}
-.goog-te-gadget-simple { padding:10px;}
+.goog-te-gadget-simple { padding:10px 10px 10px 0px;}
 .goog-te-gadget-simple > img{background-image: none !important; }
 .goog-te-gadget-simple{background-color:rgba(0, 0, 0, 0.0) !important;}
 a.goog-te-menu2-item>span.text{color:red;}
