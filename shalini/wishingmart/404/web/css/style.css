@@ -70,7 +70,7 @@ body {
 }
 .logo h1{
 	display: block;
-	padding: 2em 0em;
+	
 }
 .logo span{
 	font-size: 2em;
@@ -155,26 +155,7 @@ body {
 	outline: none;
 	-webkit-appearance:none;
 }
-/*****copy-right*****/
-.copy_right  {
-	color: #fff;
-	font-size: 0.85em;
-	line-height: 1.8em;
-	padding: 5em 0px 0px 0px;
-	font-family: 'open_sansregular';
-	text-align: center;
-}
-.copy_right a {
-	color:#FF7ED5;
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
-	-ms-transition: all 0.3s ease-out;
-	-o-transition: all 0.3s ease-out;
-	transition: all 0.3s ease-out;
-}
-.copy_right a:hover {
-	color:#fff;
-}
+
 /*********Media Queries************/
 @media only screen and (max-width: 768px)
 {
