@@ -28,6 +28,12 @@ if($thispage == "1"){
 	require('invoice_view.php');
 }elseif($thispage == "9"){
 	require('updatewish_view.php');
+}elseif($thispage == "10"){
+	require('mygrant_view.php');
+}elseif($thispage == "11"){
+	require('grantreports_view.php');
+}elseif($thispage == "12"){
+	require('wishreports_view.php');
 }else{
 	require('#');
 }

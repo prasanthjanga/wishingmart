@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/shalini/shalini/prasanth/wishingmart/';
+$config['base_url'] = 'http://localhost/wishing_ui1/prasanth/wishingmart/';
 
 /*
 |--------------------------------------------------------------------------

@@ -10,7 +10,11 @@
       <a href="<?php echo base_url('landing/toolsapps'); ?>">Tools &amp; Apps</a> 
       &nbsp;&nbsp;     
     </div>
-    <div class="links"> <a href="<?php echo base_url('landing'); ?>">WishingMart &copy; 2015</a></div>
+    <div class="links">
+      <a href="<?php echo base_url('landing'); ?>">
+        WishingMart &copy; <?php echo date("Y",time()); ?>
+      </a>
+    </div>
   </div>
 <div class="social pull-right">
   

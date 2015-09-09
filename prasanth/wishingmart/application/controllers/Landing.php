@@ -11,7 +11,7 @@ class Landing extends CI_Controller {
     //$this->load->model("registration_model");
     $this->load->helper('security');
     $this->load->library('encrypt');
-
+    $this->load->library('session');
 
 
   }
@@ -29,9 +29,15 @@ class Landing extends CI_Controller {
 
     $data['thispage']="2";
     $data['title']="WishingMart || Login";
+    //echo $array['email']=$this->input->post("email");
+    //echo $array['pwd']=$this->input->post("pwd");
+    //echo $this->session->set_userdata($array);
+    //echo $session_id = $this->session->userdata('session_id');
+
     $this->load->library('form_validation');
     $this->form_validation->set_rules('email', 'Email', 'required|callback_username_check');
     $this->form_validation->set_rules('pwd', 'Password', 'trim|required');
+    $this->form_validation->set_error_delimiters('<div>','</div>');
 
 
     if($this->form_validation->run() == TRUE){
@@ -225,6 +231,11 @@ class Landing extends CI_Controller {
     $data['thispage']="cs";
     $data['title']="Coming Soon || WishingMart.";
     $this->load->view('comingsoon_view',$data);
+  }
+  function error(){
+    $data['thispage']="404";
+    $data['title']="404 Page Not Found || WishingMart.";
+    $this->load->view('404_view',$data);
   }
 
 }
