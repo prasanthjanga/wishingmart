@@ -44,6 +44,16 @@ body {
   height: 100%;
 }
 
+.wishbg{
+  background: url("../img/bg/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 a {
   color: #fff; /* link color */
   -webkit-transition: all 0.3s ease-in-out;
