@@ -14,6 +14,52 @@ html.fp-enabled,
     /*Avoid flicker on slides transitions for mobile phones #336 */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
+/* Centered texts in each section
+	* --------------------------------------- */
+.section{
+     text-align:center;
+    align-content: center !important;
+}
+
+/* Fixed header and footer.
+* --------------------------------------- */
+#header, .footer{
+    position:fixed;
+    display:block;
+    width: 100%;
+    background: #333;
+    z-index:9;
+    text-align:center;
+    color: #f2f2f2;
+    padding: 0 0 0 0;
+    background:rgba(0,0,0,1) !important;
+}
+
+
+.navbar{
+
+    margin-bottom:0px !important;
+
+    position:fixed;
+    width:100% !important;
+
+}
+#footer{
+    bottom:0px;
+}
+
+
+/* Bottom menu
+* --------------------------------------- */
+#infoMenu {
+    bottom: 80px;
+}
+#infoMenu li a {
+    color: #fff;
+    z-index: 999;
+}
+
 #superContainer {
     height: 100%;
     position: relative;

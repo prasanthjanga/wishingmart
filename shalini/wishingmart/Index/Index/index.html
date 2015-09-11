@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="css/animation.css" rel='stylesheet' type='text/css'>
     <link href="jquery.fullPage.css" rel="stylesheet" type="text/css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="jquery.fullPage.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -36,23 +36,19 @@
     </script>
     <script src="js/modernizr.js"></script>
     <noscript>
-        <link rel="stylesheet" type="text/css" href="../VerticalShowcaseSlider/css/noscript.css"/>
+        <link rel="stylesheet" type="text/css" href="VerticalShowcaseSlider/css/noscript.css"/>
     </noscript>
     <!--[if lte IE 8]>
-    <link rel="stylesheet" type="text/css" href="css/noscript.css"/><![endif]-->
+    <link rel="stylesheet" type="text/css" href="VerticalShowcaseSlider/css/noscript.css"/><![endif]-->
 
 </head>
-<body class="clouds-bg ">
+<body class="clouds-bg content inside inside-page">
 
 <!-- cloud script -->
 
 <script id="vs" type="x-shader/x-vertex">
 	varying vec2 vUv;void main(){vUv=uv;
 	gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}
-
-
-
-
 
 </script>
 <script id="fs" type="x-shader/x-fragment">
@@ -66,10 +62,6 @@
 	gl_FragColor=texture2D(map,vUv);gl_FragColor.w*=pow(gl_FragCoord.z,20.0);
 	gl_FragColor=mix(gl_FragColor,vec4(fogColor,gl_FragColor.w),fogFactor);}
 
-
-
-
-
 </script>
 
 <script type="text/javascript" src="js/three.min.js"></script>
@@ -80,7 +72,8 @@
 
 
 <!-- .cd-vertical-nav -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div id="header">
+<nav class=" navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="clearfix">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -121,7 +114,8 @@
         </div>
     </div>
 </nav>
-<div id="fullpage">
+</div>
+<div id="fullpage" class= "">
     <div class="section active" id="section0">
         <div class="cd-block">
             <header id="site-header">
@@ -135,23 +129,27 @@
 
         </div>
     </div>
+
     <div class="section" id="section1">
-        <div class="  cd-block col-md-12">
+
+<div class="overlay"></div>
+        <div class="col-md-12">
+
             <div class="col-md-6">
 
                 <div id="slider" class="aslider" data-duration="10">
-                    <div class="aslide" data-duration="4">
-                        <img src="../../images/images.jpg"/>
+                    <div class="aslide" data-duration="6">
+                        <img src="img/slide1a.png"/>
 
                         <div class="text"></div>
                     </div>
-                    <div class="aslide" data-duration="4">
-                        <img src="../../images/images.jpg"/>
+                    <div class="aslide" data-duration="6">
+                        <img src="img/slide1b.png"/>
 
                         <div class="text"></div>
                     </div>
-                    <div class="aslide" data-duration="4">
-                        <img src="../../images/images.jpg"/>
+                    <div class="aslide" data-duration="6">
+                        <img src="img/slide1c.png"/>
 
                         <div class="text"></div>
                     </div>
@@ -163,215 +161,248 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-sm-2">
-                        <img src="img/Wishing_app.png" width="180" height="150" alt=""/>
+
                     </div>
                     <div class="col-sm-8">
                         <p>
-                           Make a wish , find out more..
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eos labore ratione illum
+                            excepturi neque sunt blanditiis ducimus soluta quae!
+
                         </p>
+
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eos labore ratione illum
+                            excepturi neque sunt blanditiis ducimus soluta quae! </p>
                         <a href="wishingPage.html" class="btn btn-danger" role="button">Make a Wish</a>
-
-                        <p>
-                            Earn granting wishes , find out more
-                        </p>
-
                         <a href="grantpage.html" class="btn btn-danger" role="button">Grant a Wish</a>
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
+      </div>
+
+    <div class="section " id="section2">
+
+        <div id="ps-container" class="ps-container">
+
+            <div class="ps-contentwrapper ">
+
+                <div class="ps-content">
+                    <h2>Item1</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item2</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item3</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item4</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item5</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+                <div class="ps-content">
+                    <h2>Item6</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item7</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item8</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item9</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item10</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+                <div class="ps-content">
+                    <h2>Item11</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item13</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item14</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item1</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item15</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+                <div class="ps-content">
+                    <h2>Item23</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item16</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item17</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item22</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+                <div class="ps-content">
+                    <h2>Item18</h2>
+                    <span class="ps-price">£100</span>
+
+                    <p>Description such as on the brand , colour , model or anything related to the products</p>
+                    <a href="">Buy this item</a>
+                </div>
+
+
+            </div>
+            <!-- /ps-contentwrapper -->
+            <div class="ps-slidewrapper">
+
+                <div class="ps-slides">
+                    <div style="background-image:url(img/products/images/1.png);"></div>
+                    <div style="background-image:url(img/products/images/3.jpg);"></div>
+                    <div style="background-image:url(img/products/images/4.jpg);"></div>
+                    <div style="background-image:url(img/products/images/5.jpg);"></div>
+                    <div style="background-image:url(img/products/images/6.jpg);"></div>
+                    <div style="background-image:url(img/products/images/7.jpg);"></div>
+                    <div style="background-image:url(img/products/images/8.jpg);"></div>
+                    <div style="background-image:url(img/products/images/9.jpg);"></div>
+                    <div style="background-image:url(img/products/images/10.jpg);"></div>
+                    <div style="background-image:url(img/products/images/11.jpg);"></div>
+                    <div style="background-image:url(img/products/images/12.jpg);"></div>
+                    <div style="background-image:url(img/products/images/13.jpg);"></div>
+                    <div style="background-image:url(img/products/images/14.jpg);"></div>
+                    <div style="background-image:url(img/products/images/15.jpg);"></div>
+                    <div style="background-image:url(img/products/images/17.jpg);"></div>
+                    <div style="background-image:url(img/products/images/19.jpg);"></div>
+                    <div style="background-image:url(img/products/images/20.jpg);"></div>
+                    <div style="background-image:url(img/products/images/21.jpg);"></div>
+                    <div style="background-image:url(img/products/images/22.jpg);"></div>
+                    <div style="background-image:url(img/products/images/23.jpg);"></div>
+                </div>
+
+                <nav>
+                    <a href="#" class="ps-prev"></a>
+                    <a href="#" class="ps-next"></a>
+                </nav>
+
+            </div>
+            <!-- /ps-slidewrapper -->
+
+        </div>
 
     </div>
 
     <div class="section" id="section3">
-        <div class="col-md-12">
-            <section id="ps-container" class="ps-container">
 
-                <div class="ps-contentwrapper">
+    <div class="col-md-12">
+        <div class="col-md-6" >
+            <img src="img/slide2c.png" class="img-responsive" />
 
-                    <div class="ps-content">
-                        <h2>Item1</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item2</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item3</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item4</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item5</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-                    <div class="ps-content">
-                        <h2>Item6</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item7</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item8</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item9</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item10</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-                    <div class="ps-content">
-                        <h2>Item11</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item13</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item14</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item1</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item15</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-                    <div class="ps-content">
-                        <h2>Item23</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item16</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item17</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item22</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-                    <div class="ps-content">
-                        <h2>Item18</h2>
-
-                        <p>Description such as on the brand , colour , model or anything related to the products</p>
-                        <a href="">Buy this item</a>
-                    </div>
-
-
-                </div>
-                <div class="ps-slidewrapper">
-
-                    <div class="ps-slides">
-                        <div style="background-image:url(img/products/images/1.png);"></div>
-                        <div style="background-image:url(img/products/images/3.jpg);"></div>
-                        <div style="background-image:url(img/products/images/4.jpg);"></div>
-                        <div style="background-image:url(img/products/images/5.jpg);"></div>
-                        <div style="background-image:url(img/products/images/6.jpg);"></div>
-                        <div style="background-image:url(img/products/images/7.jpg);"></div>
-                        <div style="background-image:url(img/products/images/9.jpg);"></div>
-                        <div style="background-image:url(img/products/images/10.jpg);"></div>
-                        <div style="background-image:url(img/products/images/11.jpg);"></div>
-                        <div style="background-image:url(img/products/images/12.jpg);"></div>
-                        <div style="background-image:url(img/products/images/13.jpg);"></div>
-                        <div style="background-image:url(img/products/images/14.jpg);"></div>
-                        <div style="background-image:url(img/products/images/15.jpg);"></div>
-                        <div style="background-image:url(img/products/images/17.jpg);"></div>
-                        <div style="background-image:url(img/products/images/19.jpg);"></div>
-                        <div style="background-image:url(img/products/images/20.jpg);"></div>
-                        <div style="background-image:url(img/products/images/21.jpg);"></div>
-                        <div style="background-image:url(img/products/images/22.jpg);"></div>
-                        <div style="background-image:url(img/products/images/23.jpg);"></div>
-                    </div>
-
-                    <nav>
-                        <a href="#" class="ps-prev"></a>
-                        <a href="#" class="ps-next"></a>
-                    </nav>
-
-                </div>
-
-            </section>
-
-        </div>
-    </div>
-
-    <div class="section" id="section4">
+       </div>
         <div class="col-md-6">
             <div class="row">
-                <div class="col-md-4">
-                    <img src="img/Wishing_cms2.png" width="150" height="150" alt=""/>
+                <div class="col-sm-4">
+
                 </div>
-                <div class="col-md-8">
+                <div class="col-sm-8">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eos labore ratione illum
+                        excepturi
+                        neque sunt blanditiis ducimus soluta quae!
+                    </p>
+
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eos labore ratione illum
                         excepturi
@@ -388,14 +419,11 @@
                 </div>
             </div>
         </div>
+</div>
+
     </div>
 
-    <div class="section" id="section5">
-        <div class="col-md-12">
-            <div class="col-md-6"></div>
-        </div>
-    </div>
-    <div class="section" id="section6">
+    <div class="section" id="section4">
         <div class="col-md-6">
             <img src="img/Wishing_chat2.png" width="150" height="150" alt=""/>
 
@@ -404,8 +432,34 @@
                 neque sunt blanditiis ducimus soluta quae!
             </p>
         </div>
+
+
+            <div class="col-md-6">
+
+                <div id="slider" class="aslider" data-duration="10">
+                    <div class="aslide" data-duration="6">
+                        <img src="img/slide1a.png"/>
+
+                        <div class="text"></div>
+                    </div>
+                    <div class="aslide" data-duration="6">
+                        <img src="img/slide1b.png"/>
+
+                        <div class="text"></div>
+                    </div>
+                    <div class="aslide" data-duration="6">
+                        <img src="img/slide1c.png"/>
+
+                        <div class="text"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
     </div>
 </div>
+
 <div class="footer navbar-fixed-bottom" role="navigation">
     <div class="pull-left">
         <div class="links">
@@ -435,12 +489,11 @@
 
 </div>
 <script src="js/main.js"></script>
-
 <script src="js/_config.js"></script>
 <script src="js/classie.js"></script>
 <script src="js/_front.js"></script>
-<script type="text/javascript" src="../VerticalShowcaseSlider/js/slider.js"></script>
-<script type="text/javascript" src="../VerticalShowcaseSlider/js/modernizr.custom.79639.js"></script>
+<script type="text/javascript" src="VerticalShowcaseSlider/js/slider.js"></script>
+<script type="text/javascript" src="VerticalShowcaseSlider/js/modernizr.custom.79639.js"></script>
 <script type="text/javascript">
     $(function () {
 

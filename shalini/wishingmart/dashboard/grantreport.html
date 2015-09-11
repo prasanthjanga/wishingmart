@@ -173,14 +173,23 @@
 
         <!-- Main content -->
         <section class="content inside-page">
-            <div class="">
-                <div class=" form-group pull-right">
-                    <div class="input-group">
+               <div class=" col-md-6 pull-right">
+
+                   <div class="form-group col-sm-4">
+                       <div class="control-label">
+                           <input class=" form-control " type="text"  value="" id="fromdt">
+                       </div></div>
+                    <div class="form-group col-sm-4">
+                    <div class=" control-label">
+                        <input class="form-control " type="text"  value= "" id="todt">
+                    </div></div>
+                    <div class="col-sm-4">
+                    <div class="form-group input-group">
                         <button class="btn btn-danger pull-right" id="daterange-btn">
                             <i class="fa fa-calendar"></i> Pick Range
                             <i class="fa fa-caret-down"></i>
                         </button>
-                    </div>
+                    </div></div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
@@ -488,16 +497,26 @@
                     'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
                 },
                 startDate: moment().subtract(29, 'days'),
-                endDate: moment()
+                endDate: moment(),
+
             },
             function (start, end) {
                 $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+
+
+
             }
+
+
+
     );
 
 </script>
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 1941e6fe2d7c66a19ce243e859cfc7e5d03fef01
 </body>
 </html>

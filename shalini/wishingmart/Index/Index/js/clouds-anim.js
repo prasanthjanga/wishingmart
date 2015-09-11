@@ -43,7 +43,7 @@ if (!Detector.webgl)
 
 		geometry = new THREE.Geometry();
 
-		var texture = THREE.ImageUtils.loadTexture('../3d-curtain-template/img/cloud.png', null, animate);
+		var texture = THREE.ImageUtils.loadTexture('../Index/img/cloud.png', null, animate);
 		texture.magFilter = THREE.LinearMipMapLinearFilter;
 		texture.minFilter = THREE.LinearMipMapLinearFilter;
 

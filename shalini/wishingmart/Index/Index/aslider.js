@@ -29,35 +29,35 @@ var aslider = {
             if (! currentSlider.hasAttribute('data-hide-mute') &&
                     ! currentSlider.hasAttribute('data-hide-controls')) {
                 // Add audio/mute icon
-                var muteButton = document.createElement('a');
-                muteButton.setAttribute('class', aslider.muteButtonClass);
-                muteButton.setAttribute('style', aslider.muteIconStyle);
-                muteButton.setAttribute('data-state', 100);
-                muteButton.setAttribute('onclick', 'aslider.toggleAudio(' + sliderIndex + ')');
-                var muteIcon = document.createElement('img');
-                muteIcon.setAttribute('src', aslider.audioLoudIcon);
-                muteIcon.setAttribute('style', 'width: inherit; height: inherit;');
-                muteButton.appendChild(muteIcon);
-                currentSlider.appendChild(muteButton);
+                //var muteButton = document.createElement('a');
+                //muteButton.setAttribute('class', aslider.muteButtonClass);
+                //muteButton.setAttribute('style', aslider.muteIconStyle);
+                //muteButton.setAttribute('data-state', 100);
+                //muteButton.setAttribute('onclick', 'aslider.toggleAudio(' + sliderIndex + ')');
+                //var muteIcon = document.createElement('img');
+                //muteIcon.setAttribute('src', aslider.audioLoudIcon);
+               // muteIcon.setAttribute('style', 'width: inherit; height: inherit;');
+               // muteButton.appendChild(muteIcon);
+                //currentSlider.appendChild(muteButton);
                 // Having the onclick handler appended this way neatly resolves potential memory leaks if the page
                 // will be modified by outside scripts.
             }
 
             // Hide the play-pause control?
-            if (! currentSlider.hasAttribute('data-hide-pause') &&
-                ! currentSlider.hasAttribute('data-hide-controls')) {
+           // if (! currentSlider.hasAttribute('data-hide-pause') &&
+             //   ! currentSlider.hasAttribute('data-hide-controls')) {
                 // Add play-pause icon
-                var pauseButton = document.createElement('a');
-                pauseButton.setAttribute('style', aslider.playPauseIconStyle);
-                pauseButton.setAttribute('class', aslider.pauseButtonClass);
-                pauseButton.setAttribute('data-state', 'play');
-                pauseButton.setAttribute('onclick', 'aslider.toggleState(' + sliderIndex + ')');
-                var pauseIcon = document.createElement('img');
-                pauseIcon.setAttribute('src', aslider.pauseIcon);
-                pauseIcon.setAttribute('style', 'width: inherit; height: inherit');
-                pauseButton.appendChild(pauseIcon);
-                currentSlider.appendChild(pauseButton);
-            }
+               // var pauseButton = document.createElement('a');
+                //pauseButton.setAttribute('style', aslider.playPauseIconStyle);
+               // pauseButton.setAttribute('class', aslider.pauseButtonClass);
+               // pauseButton.setAttribute('data-state', 'play');
+               // pauseButton.setAttribute('onclick', 'aslider.toggleState(' + sliderIndex + ')');
+               // var pauseIcon = document.createElement('img');
+               // pauseIcon.setAttribute('src', aslider.pauseIcon);
+               // pauseIcon.setAttribute('style', 'width: inherit; height: inherit');
+               // pauseButton.appendChild(pauseIcon);
+               // currentSlider.appendChild(pauseButton);
+           // }//
             
             // End slider specific setup.
 
