@@ -15,31 +15,36 @@
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
       
-      <li class="treeview <?php if($thispage=='3' || $thispage=='31' || $thispage=='32'){ echo 'active'; } ?>">
+      <li class="treeview <?php if($thispage=='3' || $thispage=='31' || $thispage=='32' || $thispage=='10' || $thispage=='11'){ echo 'active'; } ?>">
         <a href="">
           <i class="fa fa-magic"></i>
           <span>Grant Requests</span>
-          <span class="label label-primary pull-right">4</span>
+          <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
           <li><a href="<?php echo base_url('wishgrant/listofwishes'); ?>"><i class="fa fa-circle-o"></i>Grant A Wish</a></li>
           <li><a href="<?php echo base_url('dashboard/grantlist'); ?>"><i class="fa fa-circle-o"></i>Grant Requests
           <span class="label label-primary pull-right">4</span></a></li>
+          <li><a href="<?php echo base_url('dashboard/mygrant'); ?>"><i class="fa fa-circle-o"></i>My Requests</a></li>
+          <li><a href="<?php echo base_url('dashboard/grantreports'); ?>"><i class="fa fa-circle-o"></i>Grant Reports</a></li>
         </ul>
       </li>
          <li class="treeview <?php if($thispage=='4' || $thispage=='9'){ echo 'active'; } ?>">
         <a href="">
           <i class="fa fa-star"></i> <span>Wish</span> 
+          <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
           <li><a href="<?php echo base_url('wishgrant/wishing'); ?>"><i class="fa fa-circle-o"></i>Make A Wish</a></li>
           <li><a href="<?php echo base_url('dashboard/wishlist'); ?>"><i class="fa fa-circle-o"></i>Wish List</a></li>
+          <li><a href="<?php echo base_url('dashboard/wishreports'); ?>"><i class="fa fa-circle-o"></i>Wish Reports</a></li>
         </ul>
       </li>
       <li class="treeview <?php if($thispage=='5' || $thispage=='6'){ echo 'active'; } ?>">
         <a href="Account.html">
           <i class="fa fa-user"></i>
           <span>My Account</span>
+          <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
           <li><a href="<?php echo base_url('dashboard/profile'); ?>"><i class="fa fa-circle-o"></i>Personal Details</a></li>

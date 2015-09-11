@@ -9,7 +9,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title> Coming Soon || WishingMart</title>
+<title></title>
+<!-- Title Scroling Start-->
+<script type='text/javascript'> 
+//script by mistonline.in, please donot delete this.Thanks.
+msg = " || ";
+msg = ' <?php echo $title; ?>' + msg;position = 0;
+function scrolltitle() {
+document.title = msg.substring(position, msg.length) + msg.substring(0, position); position++;
+if (position > msg.length) position = 0
+  window.setTimeout("scrolltitle()",170);
+}
+scrolltitle();
+</script>
+<!-- Title Scroling end-->
 
 <!-- Google fonts -->
 <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic' rel='stylesheet' type='text/css'>
@@ -52,7 +65,7 @@ a.goog-te-menu2-item-selected div {color:black !important;}
 <!-- Language Bar Script End -->
 </head>
 
-<body>
+<body class="csoonbg">
 <!-- header -->
 <nav class="navbar  navbar-inverse navbar-fixed-top" role="navigation">
     <div class="clearfix">

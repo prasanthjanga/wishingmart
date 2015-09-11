@@ -60,6 +60,14 @@ scrolltitle();
 <?php if($thispage == "7"){ ?>
 <link type="text/css" href='<?php echo base_url('assets/wishgrant/css/style.css'); ?>' rel='stylesheet'>
 <?php } ?>
+<?php if($thispage == "2"){ ?>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/wishgrant/css/default.css'); ?>" />
+<link rel="stylesheet" type="text/css'); ?>" href="<?php echo base_url('assets/wishgrant/css/component.css'); ?>" />
+<script src="<?php echo base_url('assets/wishgrant/js/modernizr.custom.js'); ?>"></script>
+<?php } ?>
+<?php if($thispage == "404"){ ?>
+<link href="<?php echo base_url('assets/404/css/style.css'); ?>" rel="stylesheet" type="text/css" media="all" />
+<?php } ?>
 
 
 

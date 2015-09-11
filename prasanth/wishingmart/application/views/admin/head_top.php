@@ -1,11 +1,13 @@
 <body <?php
  if($thispage=="5" || $thispage=="6" ){ 
   ?>
-  class="star-background"
+    class="star-background"
   <?php }elseif($thispage=="f1" || $thispage=="f2" || $thispage=="f3" || $thispage=="f4" || $thispage=="f5" || $thispage=="f6" ){ ?>
-  class="aboutbg"
-  <?php }else{ ?>
-  class="bodybg"
+    class="aboutbg"
+  <?php }elseif($thispage=="7"){?>
+    class="wishbg"
+  <?php }else{?>
+    class="bodybg"
   <?php } ?>>
 
     <?php if($thispage=="5" || $thispage=="6" ){?>

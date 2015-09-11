@@ -29,97 +29,97 @@
                   <td><a href="">GR9842</a></td>
                   <td>Product1</td>
                   <td><span class="label label-success">Shipped</span></td>
-                  <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                  <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
                   
                 </tr>
                 <tr>
                   <td><a href="">GR1848</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-warning">Pending</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>iPhone 6 Plus</td>
                   <td><span class="label label-danger">Delivered</span></td>
-                   <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                   <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-info">Processing</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR1848</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-warning">Pending</span></td>
-                 <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                 <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>iPhone 6 Plus</td>
                   <td><span class="label label-danger">Delivered</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR9842</a></td>
                   <td>zProduct2</td>
                   <td><span class="label label-success">Shipped</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
              <tr>
                   <td><a href="">GR9842</a></td>
                   <td>Product1</td>
                   <td><span class="label label-success">Shipped</span></td>
-                   <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                   <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
                 </tr>
                 <tr>
                   <td><a href="">GR1848</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-warning">Pending</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>iPhone 6 Plus</td>
                   <td><span class="label label-danger">Delivered</span></td>
-                   <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                   <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-info">Processing</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR1848</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-warning">Pending</span></td>
-                 <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                 <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>iPhone 6 Plus</td>
                   <td><span class="label label-danger">Delivered</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR9842</a></td>
                   <td>zProduct2</td>
                   <td><span class="label label-success">Shipped</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
               
@@ -128,48 +128,48 @@
                   <td><a href="">GR9842</a></td>
                   <td>Product1</td>
                   <td><span class="label label-success">Shipped</span></td>
-                   <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                   <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
                 </tr>
                 <tr>
                   <td><a href="">GR1848</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-warning">Pending</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>iPhone 6 Plus</td>
                   <td><span class="label label-danger">Delivered</span></td>
-                   <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                   <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-info">Processing</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR1848</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-warning">Pending</span></td>
-                 <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                 <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>iPhone 6 Plus</td>
                   <td><span class="label label-danger">Delivered</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR9842</a></td>
                   <td>zProduct2</td>
                   <td><span class="label label-success">Shipped</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
           
@@ -177,144 +177,144 @@
                   <td><a href="">GR9842</a></td>
                   <td>Product1</td>
                   <td><span class="label label-success">Shipped</span></td>
-                   <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                   <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
                 </tr>
                 <tr>
                   <td><a href="">GR1848</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-warning">Pending</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>iPhone 6 Plus</td>
                   <td><span class="label label-danger">Delivered</span></td>
-                   <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                   <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-info">Processing</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR1848</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-warning">Pending</span></td>
-                 <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                 <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>iPhone 6 Plus</td>
                   <td><span class="label label-danger">Delivered</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR9842</a></td>
                   <td>Product2</td>
                   <td><span class="label label-success">Shipped</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
               <tr>
                   <td><a href="">GR9842</a></td>
                   <td>Product1</td>
                   <td><span class="label label-success">Shipped</span></td>
-                   <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                   <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
                 </tr>
                 <tr>
                   <td><a href="">GR1848</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-warning">Pending</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>iPhone 6 Plus</td>
                   <td><span class="label label-danger">Delivered</span></td>
-                   <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                   <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-info">Processing</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR1848</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-warning">Pending</span></td>
-                 <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                 <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>iPhone 6 Plus</td>
                   <td><span class="label label-danger">Delivered</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR9842</a></td>
                   <td>zProduct2</td>
                   <td><span class="label label-success">Shipped</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                <tr>
                   <td><a href="">GR9842</a></td>
                   <td>Product1</td>
                   <td><span class="label label-success">Shipped</span></td>
-                   <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                   <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
                 </tr>
                 <tr>
                   <td><a href="">GR1848</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-warning">Pending</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>iPhone 6 Plus</td>
                   <td><span class="label label-danger">Delivered</span></td>
-                   <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                   <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-info">Processing</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR1848</a></td>
                   <td>Samsung Smart TV</td>
                   <td><span class="label label-warning">Pending</span></td>
-                 <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                 <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR7429</a></td>
                   <td>iPhone 6 Plus</td>
                   <td><span class="label label-danger">Delivered</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
                 <tr>
                   <td><a href="">GR9842</a></td>
                   <td>zProduct2</td>
                   <td><span class="label label-success">Shipped</span></td>
-                    <td><a href="viewInvoice.html" class="btn btn-danger">View Invoice</a></td>
+                    <td><a href="<?php echo base_url('dashboard/invoice'); ?>" class="btn btn-danger">View Invoice</a></td>
               
                 </tr>
             </tbody>

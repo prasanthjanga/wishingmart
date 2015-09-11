@@ -92,6 +92,25 @@ class Dashboard extends CI_Controller {
 
     $this->load->view('dashboard/index', $data);
   }
+  
+  public function mygrant(){ // TO GET Shipping Address Details PAGE
+    $data['thispage']="10";
+    $data['title']="My Grant Requests || WishingMart";
+
+    $this->load->view('dashboard/index', $data);
+  }
+  public function grantreports(){ // TO GET Shipping Address Details PAGE
+    $data['thispage']="11";
+    $data['title']="Grant Reports || WishingMart";
+
+    $this->load->view('dashboard/index', $data);
+  }
+  public function wishreports(){ // TO GET Shipping Address Details PAGE
+    $data['thispage']="12";
+    $data['title']="Wish Reports || WishingMart";
+
+    $this->load->view('dashboard/index', $data);
+  }
 
 
 
