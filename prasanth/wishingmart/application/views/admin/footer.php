@@ -44,7 +44,7 @@ $(document).ready(function() {
         .datepicker({
             format: 'yyyy/mm/dd',
             startDate: '1950/01/01',
-            endDate: '2007/12/31'
+            //endDate: '2007/12/31'
         })
         .on('changeDate', function(e) {
             // Revalidate the date field
@@ -55,6 +55,11 @@ $(document).ready(function() {
 </script>
 
 <?php } // ELSE END?>
+<?php if($thispage == "2"){ ?>
+<script src="<?php echo base_url('assets/wishgrant/js/classie.js'); ?>"></script>
+<script src="<?php echo base_url('assets/wishgrant/js/cbpViewModeSwitch.js'); ?>"></script>
+<?php } // ELSE END?>
+
 <?php if($thispage == "7"){ ?>
 <!-- script start -->
 <script type='text/javascript' src='<?php echo base_url('assets/wishgrant/js/jquery-1.11.2.min.js'); ?>'></script>

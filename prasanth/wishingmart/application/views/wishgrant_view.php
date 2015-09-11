@@ -20,9 +20,9 @@ include_once($head_top);
 </div>
 
 -->
-
 <div class="overlay"></div> <!-- overlay -->
 <div class="pattern"></div> <!-- pattern -->
+
 
 <!-- fullpage -->
 <div id="fullpage">

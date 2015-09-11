@@ -35,17 +35,22 @@ scrolltitle();
 <!-- animate.css -->
 <link rel="stylesheet" href="<?php echo base_url('assets/wow/animate.css'); ?>" />
 
- <!-- Ionicons -->
-    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+<!-- Ionicons -->
+<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
 
 <!-- favico -->
 <link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon.ico'); ?>" type="image/x-icon">
 <link rel="icon" href="<?php echo base_url('assets/images/favicon.ico'); ?>" type="image/x-icon">
 
-<?php if($thispage=="3" || $thispage=="4" || $thispage=="7"){ ?>
+<?php if($thispage=="3" || $thispage=="4" || $thispage=="7" || $thispage=="10" || $thispage=="11" || $thispage=="12"){ ?>
 <!-- DataTables -->
 <link rel="stylesheet" href="<?php echo base_url('assets/Dashboard/datatables/dataTables.bootstrap.css'); ?>">
 
+<?php }//IF END ?>
+<?php if($thispage=="11" || $thispage=="12"){ ?>
+<!-- daterange picker -->
+<link rel="stylesheet" href="<?php echo base_url('assets/Dashboard/daterangepicker-bs3.css'); ?>">
+<link href="<?php echo base_url('assets/Dashboard/_all-skins.min.css'); ?>" rel="stylesheet" type="text/css" />
 <?php }//IF END ?>
 
 <link href="<?php echo base_url('assets/Dashboard/AdminLTE.min.css'); ?>" rel="stylesheet" type="text/css" />
