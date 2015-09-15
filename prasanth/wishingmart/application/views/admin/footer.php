@@ -1,5 +1,18 @@
+<?php if($thispage=="1"){ ?>
+<script src="<?php echo base_url('assets/landingpage/js/main.js'); ?>"></script>
+<script src="<?php echo base_url('assets/landingpage/js/_config.js'); ?>"></script>
+<script src="<?php echo base_url('assets/landingpage/js/classie.js'); ?>"></script>
+<script src="<?php echo base_url('assets/landingpage/js/_front.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/landingpage/VerticalShowcaseSlider/js/slider.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/landingpage/VerticalShowcaseSlider/js/modernizr.custom.79639.js'); ?>"></script>
+<script type="text/javascript">
+$(function(){
+    Slider.init();
+});
+</script>
+<?php }else{ ?>
 
- <!-- // WISHING PAGE CSS AND SCRIPT -->
+<!-- // WISHING PAGE CSS AND SCRIPT -->
 <?php if($thispage=="5" || $thispage=="6"){ ?>
 <!-- JS -->
 <script type="text/javascript" src="<?php echo base_url('assets/wishing/js/jquery-1.11.0.min.js'); ?>"></script>
@@ -114,5 +127,6 @@ $(document).ready(function() {
 });
 </script>
 
+<?php }//ELSE END ?>
 </body>
 </html>

@@ -73,32 +73,36 @@ class Wishing extends REST_Controller
 
     //create New User
     //http://localhost/foldername/api/new_user/X-API-KEY/miapikey
-    //http://localhost/wmapi/registration/new_wish/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    //http://localhost/wishing_ui1/prasanth/wmapi/wishing/new_wish/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS    public function new_user_post()
     public function new_wish_post()
     {
         
-        $fn      = $this->post("firstname");
-        $ln      = $this->post("lastname");
-        $gender  = $this->post("gender");
-        $dob     = $this->post("dob");
-        $cnid    = $this->post("country");
-        $email   = $this->post("email");
-        $pwd     = $this->post("pwd");
-
-        $datetime = mdate('%Y-%m-%d %h:%i:%s',time());
-
-        //$ra=rand(10000,100000);
-        //$ra=$email.$ra;
-        $link=md5($email); // to create randum number for activation link
+        $pname      = $this->post("pname");
+        $category   = $this->post("category");
+        $scategory  = $this->post("scategory");
+        $country    = $this->post("country");
+        $brand      = $this->post("brand");
+        $colour     = $this->post("colour");
+        $desc       = $this->post("desc");
+        $userfile   = $this->post("userfile");
+        $array=array(
+            'pname'     =>$this->post("pname"),
+            'category'  =>$this->post("category"),
+            'scategory' =>$this->post("scategory"),
+            'country'   =>$this->post("country"),
+            'colour'    =>$this->post("colour"),
+            'rid'       =>$this->post("rid"),
+            'desc'      =>$this->post("desc"),
+            'userfile'  =>$this->post("userfile"),
+        );
+        //echo $pname;exit();
         
-        $pwd = do_hash($pwd, 'md5');
-
-        if($fn && $ln && $dob && $gender && $cnid && $email && $pwd && $datetime && $link){
+        if($array){
             
-            $this->load->model("registration_model");
+            $this->load->model("wishing_model");
 
-            $new_user = $this->registration_model->create_user($fn,$ln,$dob,$gender,$cnid,$email,$pwd,$datetime,$link);
-            if($new_user === false){
+            $new_wish = $this->wishing_model->create_wish($array);
+            if($new_wish === false){
                 $this->response(array("status" => "failed"));
             }else{
                 $this->response(array("status" => "success"));
@@ -106,28 +110,7 @@ class Wishing extends REST_Controller
         }
     }
 
-    //To Get email Id
-    //http://localhost/foldername/api/users/X-API-KEY/miapikey
-    //http://localhost/wishing_ui1/prasanth/wmapi/registration/send/username/email@email.com/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS    
-    public function send_get(){
-        $mail=$this->get("username");//exit();
-        $dec_username=str_replace(array('-', '_', '~'), array('+', '/', '='), $mail);
-        $dec_username=$this->encrypt->decode($dec_username);
-        //echo $dec_username;//exit();
-        if($dec_username){
-            $this->load->model("registration_model");
-            $new_user = $this->registration_model->checkmail($dec_username);
-            if($new_user){
-                //$this->response($new_user, 200);
-                $this->response(array("status" => "success"));
-
-            }else{
-                //$this->response(NULL, 400);
-                $this->response(array("status" => "failed"));
-
-            }
-        }
-    }
+    
 
     
  

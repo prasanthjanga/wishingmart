@@ -35,7 +35,7 @@
 <script src="<?php echo base_url('assets/Dashboard/jquery.slimscroll.min.js'); ?>" type="text/javascript"></script>
 
 
-<?php if($thispage=="3" || $thispage=="4" || $thispage=="7" || $thispage=="10" || $thispage=="11" || $thispage=="12"){ ?>
+<?php if($thispage=="3" || $thispage=="4" || $thispage=="7" || $thispage=="10"){ ?>
 <!-- DataTables -->
 <script src="<?php echo base_url('assets/Dashboard/datatables/jquery.dataTables.min.js'); ?>"></script>
 <script src="<?php echo base_url('assets/Dashboard/datatables/dataTables.bootstrap.min.js'); ?>"></script>
@@ -51,36 +51,6 @@
       "autoWidth": false
     });
   });
-</script>
-<?php } ?>
-<?php if($thispage=="11" || $thispage=="12"){ ?>
-<!--Daterpicker-->
-<script src="<?php echo base_url('assets/Dashboard/moment.js'); ?>" type="text/javascript"></script>
-<script src="<?php echo base_url('assets/Dashboard/daterangepicker.js'); ?>" type="text/javascript"></script>
-<script type="text/javascript">
-//Date range picker
-$('#reservation').daterangepicker();
-//Date range picker with time picker
-$('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
-//Date range as a button
-$('#daterange-btn').daterangepicker(
-        {
-            ranges: {
-                'Today': [moment(), moment()],
-                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-            },
-            startDate: moment().subtract(29, 'days'),
-            endDate: moment()
-        },
-        function (start, end) {
-            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-        }
-);
-
 </script>
 <?php } ?>
 

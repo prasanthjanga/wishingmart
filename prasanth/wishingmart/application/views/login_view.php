@@ -22,16 +22,19 @@ Login
    <div class="row">
    <form id="registerForm" class="form-horizontal col-sm-6 col-sm-offset-3" data-toggle="validator" role="form" method="post" action="<?php echo base_url('landing/login'); ?>">
     <div class="col-sm-6 col-lg-offset-2 col-lg-9">
-      
+        <div class="help-block pull-right">
+          <?php echo $this->session->flashdata('flashmsg'); ?>
+        </div>
+
         <div class="form-group">
         <label for="Email1">Email address</label>
-        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required>
-        <div class="help-block control-label"></div>
+        <input type="email" name="email" class="form-control" value="<?php echo set_value('email'); ?>" id="exampleInputEmail1" placeholder="Enter email" required>
+        <div class="help-block control-label"><?php echo form_error('email'); ?></div>
         </div>
         <div class="form-group">
         <label for="password1">Password</label>
-        <input type="password" name="pwd" class="form-control" id="InputPassword1" placeholder="Password" required>
-        <div class="help-block control-label"></div>
+        <input type="password" name="pwd" class="form-control" value="<?php echo set_value('pwd'); ?>" id="InputPassword1" placeholder="Password" required>
+        <div class="help-block pull-right"><?php echo form_error('pwd'); ?></div>
         </div>
         
         

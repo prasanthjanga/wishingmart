@@ -3,33 +3,19 @@
 class login_model extends CI_Model
 {
 
-    public function check_name(){
-        // Loading second db and running query.
+
+
+    public function check_login($username){
         $CI = &get_instance();
-        //setting the second parameter to TRUE (Boolean) the function will return the database object.
         $this->user = $CI->load->database('user', TRUE);
-        $query = $this->user->query("SELECT uname FROM user");
 
-
-        //$query = $this->cms_db->select("users");
-        if($query->num_rows() > 0){
-            return $query->result();
+        $this->user->select("uid,pwd");
+        $query = $this->user->get_where("user", array("uname" => $username));
+        if($query->num_rows() == 1){
+            return $query->row();
         }
     }
-    function get_login(){
-        // Loading second db and running query.
-        $CI = &get_instance();
-        //setting the second parameter to TRUE (Boolean) the function will return the database object.
-        $this->user = $CI->load->database('user', TRUE);
-        $query = $this->user->query("SELECT * FROM user");
 
 
-        //$query = $this->cms_db->select("users");
-        if($query->num_rows() > 0){
-            return $query->result();
-        }
-
-        //return $cms_db->select()->from("users")->get()->row();
-    }
 
 }

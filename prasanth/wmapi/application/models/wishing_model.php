@@ -3,46 +3,38 @@
 class Wishing_model extends CI_Model
 {
 
-    public function create_user($fn,$ln,$dob,$gender,$cnid,$email,$pwd,$datetime,$link){
-        //echo "sample"."<br>".$fn."<br>".$ln."<br>".$gender."<br>".$dob."<br>".$cnid."<br>".$email."<br>".$pwd."<br>".$datetime."<br>".$link."<br>"; 
-
-        // Loading second db and running query.
-        $CI = &get_instance();
-        $this->user = $CI->load->database('user', TRUE);
-        $query = $this->user->query('SELECT MAX(rid) FROM registration');
+    public function create_wish($array){
+        //print_r($array);
+        $query = $this->db->query('SELECT MAX(wid) FROM wishing');
         if($query->num_rows() > 0){
             $row = $query->result_array();
         }
-        $max = $row[0]['MAX(rid)'];
+        $max = $row[0]['MAX(wid)'];
 
         if($max==0){
-            $rid = $max+101; 
+            $wid = $max+101; 
         }else{
-            $rid = $max+1; 
+            $wid = $max+1; 
         }
+        $datetime = mdate('%Y-%m-%d %h:%i:%s',time());
+
         //exit();
-
-        $reg_data = array(
-            "rid"       => $rid,
-            "fn"        => $fn,
-            "ln"        => $ln,
-            "gender"    => $gender,
-            "dob"       => $dob,
-            "cnid"      => $cnid,
-            "alink"     => $link,
-            "status"    => '0',
-            "doreg"     => $datetime,
-            "plevel"    => '1'
+        $wish_array=array(
+            'wid'       => $wid,
+            'wpn'       => $array['pname'],
+            'wpdec'     => $array['desc'],
+            'wpimg'     => $array['userfile'],
+            'wpdate'    => $datetime,
+            'rid'       => $array['rid'],
+            'status'    => $array['userfile'],
+            'scid'      => $array['scategory'],
+            'cnid'      => $array['category'],
         );
-
-        $user_data = array(
-            "uid"   => $rid,
-            "uname" => $email,
-            "pwd"   => $pwd           
-        );
-        $reg = $this->user->insert("registration", $reg_data);
-        $user = $this->user->insert("user",$user_data);
-        return $reg.$user;
+        print_r($array);
+        
+        $wishing_data = $this->db->insert("wishing", $wish_array);
+        //$user = $this->user->insert("user",$user_data);
+        return $wishing_data;
     }
 
     function get_country(){

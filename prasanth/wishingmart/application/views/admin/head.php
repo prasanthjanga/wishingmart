@@ -1,5 +1,11 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 7]>
+<html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US">  <!--<![endif]-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,14 +29,38 @@ scrolltitle();
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
 
-<!-- bootstrap -->
-<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>" />
 <!-- favico -->
 <link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon.ico'); ?>" type="image/x-icon">
 <link rel="icon" href="<?php echo base_url('assets/images/favicon.ico'); ?>" type="image/x-icon">
 
 <!-- font awesome -->
 <link href="<?php echo base_url('assets/font-awesome.min.css'); ?>" rel="stylesheet">
+
+<?php if($thispage=="1"){ ?>
+<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('assets/landingpage/css/reset.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('assets/landingpage/css/style.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('assets/landingpage/style.css'); ?>" type="text/css">
+<link href="<?php echo base_url('assets/landingpage/css/animation.css'); ?>" rel='stylesheet' type='text/css'>
+<link href="<?php echo base_url('assets/landingpage/jquery.fullPage.css'); ?>" rel="stylesheet" type="text/css">
+<script src="<?php echo base_url('assets/landingpage/js/jquery.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/landingpage/js/jquery-ui.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/landingpage/jquery.fullPage.js'); ?>"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#fullpage').fullpage();
+});
+</script>
+<script src="<?php echo base_url('assets/landingpage/js/modernizr.js'); ?>"></script>
+<noscript>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/landingpage/VerticalShowcaseSlider/css/noscript.css'); ?>"/>
+</noscript>
+
+<?php }else{ ?>
+
+<!-- bootstrap -->
+<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>" />
+
 <!-- uniform -->
 <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/uniform/css/uniform.default.min.css'); ?>" />
 
@@ -68,6 +98,8 @@ scrolltitle();
 <?php if($thispage == "404"){ ?>
 <link href="<?php echo base_url('assets/404/css/style.css'); ?>" rel="stylesheet" type="text/css" media="all" />
 <?php } ?>
+
+<?php }//ELSE END ?>
 
 
 
