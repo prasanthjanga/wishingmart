@@ -69,7 +69,7 @@ h1.title{
   padding-bottom:30px;
   z-index: 100;
   text-align:center;
-  font-family:'Pacifico';
+  font-family:'Orbitron';
   font-size: 100px;
   color: darkgray;
   text-shadow: 0 1px #111010 ,-1px 0 #ea006e, -1px 2px #111010, -2px 1px #ea006e, -2px 3px #111010, -3px 2px #ea006e, -3px 4px #111010, -4px 3px #ea006e, -4px 5px #111010, -5px 4px #ea006e, -5px 6px #111010, -6px 5px #ea006e, -6px 7px #111010, -7px 6px #ea006e, -7px 8px #111010, -8px 7px #ea006e;
@@ -152,8 +152,7 @@ a{color: #333;}
     color: skyblue;
 }
 .navbar-nav > li > a{ padding-bottom:0px !important; text-transform: uppercase;font: normal 13px/19px 'Titillium Web';}
-.navbar-inverse{border:none; opacity:0.4; background-color:black;}
-.navbar-fixed-top{ background:rgba(0,0,0,0.32); opacity:1.0;}
+.navbar-inverse{border:none; opacity:1.0; background-color:black;}
 .navbar-brand{padding:6px 15px !important;}
 .dropdown-menu{background:#000; color: #fff; padding-top:15px; margin-top:10px !important;}
 .dropdown-menu > li > a{color: #fff;padding:10px; }
@@ -181,7 +180,7 @@ a{color: #333;}
 
 
 /*footer*/
-.footer{background-color:rgba(0,0,0,0.32); position:fixed;margin-top:10px; z-index:1000;}
+.footer{background-color:black; opacity:1.0; position:fixed;margin-top:10px; z-index:1000;}
 
 .footer .links{margin-top: 9px;float: left;}
 .footer .links a{color: #888;padding: 0 10px;font: normal 13px/13px 'Titillium Web';}
@@ -227,7 +226,7 @@ div.selector select {background-color:black !important;}
 #progressbar li.done:before{background:url(../images/check.png) center no-repeat #c14387; }
 .forgot-password{margin-bottom: 10px;}
 #register_tnc_error{float:right;padding:20px;color: whitesmoke;}
-#register_tnc_error a{color:whitesmoke;}
+#register_tnc_error a{color:#ea006e;}
 /*form styles*/
 
 

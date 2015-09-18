@@ -551,6 +551,7 @@ height:60vh;
 	bottom: 0px;
 	overflow: hidden;
 	z-index: 1000;
+    color: black
 }
 
 .ps-content {
@@ -601,10 +602,10 @@ height:60vh;
 .ps-content a:last-child {
 	font-size: 14px;
 	font-weight: 700;
-	color: #555;
+	color: #000;
 	letter-spacing: 4px;
 	float: right;
-	border: 3px solid #555;
+	border: 3px solid #000;
 	padding: 3px;
 	text-indent: 4px;
 }
@@ -711,9 +712,8 @@ height:60vh;
 	background-color: #fff;
 	background-position: center top;
 	background-repeat: no-repeat;
-	-webkit-background-size: auto 100%;
-	-moz-background-size: auto 100%;
-	background-size: 100%;
+	moz-background-size: auto 100%;
+	background-size: contain;
 }
 
 .ps-move {
@@ -728,6 +728,7 @@ height:60vh;
 
 	.js .ps-container > div {
 		width: 100%;
+
 	}
 
 	.js .ps-header {
@@ -747,13 +748,14 @@ height:60vh;
 	}
 
 	.js .ps-slidewrapper > nav {
-		height: 100px;
+		height: 200px;
 	}
 
 	.js .ps-contentwrapper {
 		top: auto;
 		height: 220px;
 		bottom: 100px;
+        display:none;
 	}
 
 	.js .ps-content {
@@ -813,23 +815,59 @@ height:60vh;
                 font-family: sans-serif;
             }
 
-#section1, #section4  ,#section3, #section5 , #section6 {
-     background-color:rgba(135,206,250,0.3) ! important;
-
- }
-
-
-
-
-#overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-color: rgba(0,0,0,0.67); /*dim the background*/
+/* Style for our header texts
+       * --------------------------------------- */
+h1 {
+    font-size: 5em;
+    font-family: arial, helvetica;
+    color: #fff;
+    margin: 0;
+    padding: 0;
 }
+
+.intro p {
+    color: #fff;
+}
+
+/* Centered texts in each section
+* --------------------------------------- */
+.section {
+    text-align: center;
+}
+
+/* Fixed header and footer.
+* --------------------------------------- */
+#header, #footer {
+    position: fixed;
+    height: 50px;
+    display: block;
+    width: 100%;
+    background: #333;
+    z-index: 9;
+    text-align: center;
+    color: #f2f2f2;
+    padding: 20px 0 0 0;
+}
+
+#header {
+    top: 0px;
+}
+
+#footer {
+    bottom: 0px;
+}
+
+/* Bottom menu
+* --------------------------------------- */
+#infoMenu {
+    bottom: 80px;
+}
+
+#infoMenu li a {
+    color: #fff;
+    z-index: 999;
+}
+
 
 
 
