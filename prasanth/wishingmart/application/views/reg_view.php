@@ -21,7 +21,12 @@ Register
 
 		<form class="form-horizontal col-sm-6 col-sm-offset-3" method="post" action="<?php echo base_url('landing/registration'); ?>" data-toggle="validator" role="form" >
 			<div class="panel-body">
-
+		        <div class="form-group">
+					<div class="help-block center h2">
+			          <?php echo $this->session->flashdata('flashmsg'); ?>	
+		        	</div>				
+				</div>
+				
 						<?php //echo validation_errors(); ?>
 
 				<div class="form-group">

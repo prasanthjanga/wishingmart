@@ -5,6 +5,7 @@ class Dashboard extends CI_Controller {
     
   public function __construct(){
     parent::__construct();
+    self::logcheck(); //TO CHECK USER LOGIN OR NOT
     $this->load->helper('form');
     $this->load->helper('url');
     $this->load->helper('form');
@@ -17,6 +18,7 @@ class Dashboard extends CI_Controller {
   }
 
   public function index(){ // TO GET MyAccount PAGE
+    //self::logcheck(); //TO CHECK USER LOGIN OR NOT
     $data['thispage']="1";
     $data['title']="MyAccount || WishingMart";
 
@@ -99,19 +101,15 @@ class Dashboard extends CI_Controller {
 
     $this->load->view('dashboard/index', $data);
   }
-  public function grantreports(){ // TO GET Shipping Address Details PAGE
-    $data['thispage']="11";
-    $data['title']="Grant Reports || WishingMart";
 
-    $this->load->view('dashboard/index', $data);
+  function logcheck(){
+    if($this->session->userdata('logged_in') == '1'){ 
+      return TRUE;
+    }else{
+      redirect("landing"); 
+      return FALSE;
+    }
   }
-  public function wishreports(){ // TO GET Shipping Address Details PAGE
-    $data['thispage']="12";
-    $data['title']="Wish Reports || WishingMart";
-
-    $this->load->view('dashboard/index', $data);
-  }
-
 
 
 }

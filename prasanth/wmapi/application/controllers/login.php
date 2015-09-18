@@ -23,51 +23,32 @@ class Login extends REST_Controller
         $this->load->helper('date');
         $this->load->helper('security');
         $this->load->model("login_model");
-        
+        $this->load->library('encrypt');
 
     }
 
-    //To Get country Names
+
+    //To Check username and password
     //http://localhost/foldername/api/users/X-API-KEY/miapikey
-    //http://localhost/wmapi/login/user/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
-    public function user_get()
-    {
-        $this->load->model("login_model");
-        $users = $this->login_model->get_login();
-
-        if($users){
-            $this->response($users, 200);
-        }else{
+    //http://localhost/wishing_ui1/prasanth/wmapi/login/logincheck/username/email@email.com/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS    
+    public function logincheck_get(){
+        if(!$this->get("username")){
             $this->response(NULL, 400);
         }
-    }
-
-
-    //http://localhost/wmapi/login/checkuser/id/2/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
-    public function checkuser_get(){
-        $posts = $this->login_model->check_name();
-        if($posts){
-            $this->response($posts, 200);
-        }else{
-            $this->response(NULL, 400);
+        $mail=$this->get("username");//exit();
+        $dec_username=str_replace(array('-', '_', '~'), array('+', '/', '='), $mail);
+        $dec_username=$this->encrypt->decode($dec_username);
+        //echo $dec_username;//exit();
+       
+        if($dec_username ){
+            $new_user = $this->login_model->check_login($dec_username);
+             if($new_user){
+                $this->response($new_user, 200);
+            }else{
+                $this->response(array("status" => "User Name Is Not Avalable."));
+            }
         }
     }
-
-    //To Get country Names
-    //http://localhost/foldername/api/users/X-API-KEY/miapikey
-    //http://localhost/wmapi/login/forgot/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
-    public function password_get()
-    {
-        $this->load->model("login_model");
-        $users = $this->login_model->get_pwd();
-
-        if($users){
-            $this->response($users, 200);
-        }else{
-            $this->response(NULL, 400);
-        }
-    }
-
     
 
     

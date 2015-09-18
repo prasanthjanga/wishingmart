@@ -249,7 +249,7 @@ div.radio span{background:url(images/radio.png) 0 20px !important;}
 
 div.radio span,div.radio input{width: 20px;height: 20px;}
 div.radio span.checked{background-position: 0 0 !important;}
-div.selector{border:none; border: 1px solid #999;height: 33px !important; padding:3px 10px !important; border-radius: 0; font-size: 14px; background-color:rgba(0,0,0,0.5); width: 100% !important;}
+div.selector{border:none; border: 1px solid #999;height: 33px !important; padding:3px 10px !important; border-radius: 0; font-size: 14px; background-color:rgba(0,0,0,0.5); width: 100% !important;text-align: left !important;}
 div.selector:hover{}
 div.selector span{height: 36px;padding: 0; background: url(images/drop.png) right 9px no-repeat !important;color: #8d8d8d; width: 100% !important;margin-right: 20px;}
 div.selector:hover span{ background-position:right 9px !important; color: #282828;}
