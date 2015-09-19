@@ -11,44 +11,62 @@
     <title>WishingMart || Wishes Do Come True!</title>
 
     <!-- favico -->
-    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" >
+    <link rel="icon" type="image/gif" href="img/favicon.ico" >
+
 
     <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
 
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css" type="text/css"/>
     <link rel="stylesheet" href="../../assets/font-awesome.min.css" type="text/css"/>
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="css/animation.css" rel='stylesheet' type='text/css'>
     <link href="jquery.fullPage.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css" type="text/css"/>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="jquery.fullPage.js"></script>
+    <script src="js/modernizr.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#fullpage').fullpage();
+            $('#fullpage').fullpage({
+                loopTop: true,
+                loopBottom: true,
+                anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+
+                scrollingSpeed: 1000,
+                afterRender: function () {
+                 setInterval(function () {
+                       $.fn.fullpage.moveSlideRight();
+                   }, 4000);
+               }
+            });
+
         });
+
+
     </script>
-    <script src="js/modernizr.js"></script>
+
     <noscript>
-        <link rel="stylesheet" type="text/css" href="VerticalShowcaseSlider/css/noscript.css"/>
+        <link rel="stylesheet" type="text/css" href="css/noscript.css"/>
     </noscript>
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" type="text/css" href="VerticalShowcaseSlider/css/noscript.css"/><![endif]-->
+
 
 </head>
-<body class="clouds-bg content inside inside-page">
+
+<body class="clouds-bg">
 
 <!-- cloud script -->
-
 <script id="vs" type="x-shader/x-vertex">
 	varying vec2 vUv;void main(){vUv=uv;
 	gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}
+
 
 </script>
 <script id="fs" type="x-shader/x-fragment">
@@ -62,127 +80,124 @@
 	gl_FragColor=texture2D(map,vUv);gl_FragColor.w*=pow(gl_FragCoord.z,20.0);
 	gl_FragColor=mix(gl_FragColor,vec4(fogColor,gl_FragColor.w),fogFactor);}
 
+
 </script>
 
 <script type="text/javascript" src="js/three.min.js"></script>
 <script type="text/javascript" src="js/detector.js"></script>
 <script type="text/javascript" src="js/clouds-anim.js"></script>
-<script src="aslider.js"></script>
+
 <!-- cloud script -->
 
 
-<!-- .cd-vertical-nav -->
 <div id="header">
-<nav class=" navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="clearfix">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"><img src="../../images/logo.png" alt="logo">
+    <nav class=" navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="clearfix">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="img/logo1.png" alt="logo">
 
-                <h1 class="hide"></h1></a>
+                    <h1 class="hide"></h1></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav">
+
+                    <li><a href="ComingSoon.html"><span class="fa fa-shopping-cart">Shopping</span></a></li>
+                    <li><a href="WishGrant.html"><span class="fa fa-star"> Wish/Grant </span></a></li>
+
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Login </a></li>
+                    <li><a href="Register.html">Register</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Language <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>English</li>
+                            <li>Malay</li>
+                            <li>Chinese</li>
+                            <li>Tamil</li>
+                            <li>French</li>
+                            <li>Spanish</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-
-            <ul class="nav navbar-nav">
-
-                <li><a href="ComingSoon.html"><span class="fa fa-shopping-cart">Shopping</span></a></li>
-                <li><a href="WishGrant.html"><span class="fa fa-star"> Wish/Grant </span></a></li>
-
-            </ul>
-            <ul class="nav navbar-nav">
-                <li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Login </a></li>
-                <li><a href="Register.html">Register</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Language <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li>English</li>
-                        <li>Malay</li>
-                        <li>Chinese</li>
-                        <li>Tamil</li>
-                        <li>French</li>
-                        <li>Spanish</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    </nav>
 </div>
-<div id="fullpage" class= "">
-    <div class="section active" id="section0">
-        <div class="cd-block">
+<div id="footer">
+    <div class="footer navbar-fixed-bottom" role="navigation">
+        <div class="pull-left">
+            <div class="links">
+                <a href="Termscondition.html">Terms &amp; Conditions</a>
+                <a href="About.html">About Us</a>
+                <a href="ContactUs.html">Contact Us</a>
+                <a href="Testimonial.html">Testimonials</a>
+                <a href="SellerInfo.html">Buyer &amp; Seller</a>
+                <a href="Tools.html">Tools &amp; Apps</a>
+
+                &nbsp;
+                &nbsp;
+            </div>
+
+            <div class="links"><a href="../Index.html">WishingMart &copy; 2015</a></div>
+
+        </div>
+        <div class="social pull-right">
+
+            <a href="#"><i class="icon-social_twitter_square"></i></a>
+            <a href="#"><i class="icon-social_facebook_square"></i></a>
+            <a href="#"><i class="icon-social_googleplus_square"></i></a>
+            <a href="#"><i class="icon-social_instagram_square"></i></a>
+            <a href="#"><i class="icon-social_pinterest_square"></i></a>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="fullpage">
+    <div class="section " id="section0">
+        <div class="intro">
             <header id="site-header">
+                <h1 id="site-logo"><img src="img/Wish.png" alt="" height="180px" width="150px"></h1>
+                <div></div>
                 <h3 class="title">
                     Wishingmart
                 </h3>
 
                 <h3 id="site-subtitle"><strong>Wishes Do Come True</strong></h3>
-
+               <a href=""><i class="fa fa-angle-double-down center"></i></a>
             </header>
-
         </div>
     </div>
-
     <div class="section" id="section1">
+        <div class="slide" style=" background-image: url('img/slide1a.png'); background-size:100% 100%; ">
 
-<div class="overlay"></div>
-        <div class="col-md-12">
-
-            <div class="col-md-6">
-
-                <div id="slider" class="aslider" data-duration="10">
-                    <div class="aslide" data-duration="6">
-                        <img src="img/slide1a.png"/>
-
-                        <div class="text"></div>
-                    </div>
-                    <div class="aslide" data-duration="6">
-                        <img src="img/slide1b.png"/>
-
-                        <div class="text"></div>
-                    </div>
-                    <div class="aslide" data-duration="6">
-                        <img src="img/slide1c.png"/>
-
-                        <div class="text"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-sm-2">
-
-                    </div>
-                    <div class="col-sm-8">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eos labore ratione illum
-                            excepturi neque sunt blanditiis ducimus soluta quae!
-
-                        </p>
-
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eos labore ratione illum
-                            excepturi neque sunt blanditiis ducimus soluta quae! </p>
-                        <a href="wishingPage.html" class="btn btn-danger" role="button">Make a Wish</a>
-                        <a href="grantpage.html" class="btn btn-danger" role="button">Grant a Wish</a>
-                    </div>
-                </div>
-            </div>
+            <a href="../../wishgranting/wishgrant.html"> <div id="overlay" ></div></a>
 
         </div>
-      </div>
+        <div class="slide" style="background-image: url('img/slide1b.png'); background-size:100% 100%;">
 
-    <div class="section " id="section2">
+            <a href="../../wishgranting/wishgrant.html"> <div id="overlay" ></div></a>
 
+        </div>
+        <div class="slide" style="background-image: url('img/slide1c.png');background-size:100% 100%;">
+
+            <a href="../../wishgranting/wishgrant.html"> <div id="overlay" ></div></a>
+
+        </div>
+
+    </div>
+    <div class="section" id="section2">
         <div id="ps-container" class="ps-container">
 
             <div class="ps-contentwrapper ">
@@ -350,7 +365,7 @@
             <div class="ps-slidewrapper">
 
                 <div class="ps-slides">
-                    <div style="background-image:url(img/products/images/1.png);"></div>
+                 <div style="background-image:url(img/products/images/1.png);"></div>
                     <div style="background-image:url(img/products/images/3.jpg);"></div>
                     <div style="background-image:url(img/products/images/4.jpg);"></div>
                     <div style="background-image:url(img/products/images/5.jpg);"></div>
@@ -381,119 +396,33 @@
             <!-- /ps-slidewrapper -->
 
         </div>
-
     </div>
-
     <div class="section" id="section3">
-
-    <div class="col-md-12">
-        <div class="col-md-6" >
-            <img src="img/slide2c.png" class="img-responsive" />
-
-       </div>
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-sm-4">
-
-                </div>
-                <div class="col-sm-8">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eos labore ratione illum
-                        excepturi
-                        neque sunt blanditiis ducimus soluta quae!
-                    </p>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eos labore ratione illum
-                        excepturi
-                        neque sunt blanditiis ducimus soluta quae!
-                    </p>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eos labore ratione illum
-                        excepturi
-                        neque sunt blanditiis ducimus soluta quae!
-                    </p>
-
-                    <a href="wishingPage.html" class="btn btn-danger" role="button">Let's Shop</a>
-                </div>
-            </div>
+        <a href="index.html"> <div id="overlay" ></div></a>
         </div>
-</div>
-
-    </div>
-
     <div class="section" id="section4">
-        <div class="col-md-6">
-            <img src="img/Wishing_chat2.png" width="150" height="150" alt=""/>
 
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eos labore ratione illum excepturi
-                neque sunt blanditiis ducimus soluta quae!
-            </p>
-        </div>
+        <div class="slide" style=" background-image: url('img/slide2a.png'); background-size:100% 100%; ">
 
+            <a href="index.html"> <div id="overlay" ></div></a>
 
-            <div class="col-md-6">
+           </div>
+            <div class="slide" style="background-image: url('img/slide2b.png'); background-size:100% 100%; " >
 
-                <div id="slider" class="aslider" data-duration="10">
-                    <div class="aslide" data-duration="6">
-                        <img src="img/slide1a.png"/>
+               <a href="index.html"> <div id="overlay" ></div></a>
 
-                        <div class="text"></div>
-                    </div>
-                    <div class="aslide" data-duration="6">
-                        <img src="img/slide1b.png"/>
-
-                        <div class="text"></div>
-                    </div>
-                    <div class="aslide" data-duration="6">
-                        <img src="img/slide1c.png"/>
-
-                        <div class="text"></div>
-                    </div>
-
-                </div>
 
             </div>
-
-    </div>
-</div>
-
-<div class="footer navbar-fixed-bottom" role="navigation">
-    <div class="pull-left">
-        <div class="links">
-            <a href="Termscondition.html">Terms &amp; Conditions</a>
-            <a href="About.html">About Us</a>
-            <a href="ContactUs.html">Contact Us</a>
-            <a href="Testimonial.html">Testimonials</a>
-            <a href="SellerInfo.html">Buyer &amp; Seller</a>
-            <a href="Tools.html">Tools &amp; Apps</a>
-
-            &nbsp;
-            &nbsp;
-        </div>
-
-        <div class="links"><a href="../Index.html">WishingMart &copy; 2015</a></div>
-
-    </div>
-    <div class="social pull-right">
-
-        <a href="#"><i class="icon-social_twitter_square"></i></a>
-        <a href="#"><i class="icon-social_facebook_square"></i></a>
-        <a href="#"><i class="icon-social_googleplus_square"></i></a>
-        <a href="#"><i class="icon-social_instagram_square"></i></a>
-        <a href="#"><i class="icon-social_pinterest_square"></i></a>
-
     </div>
 
 </div>
+
 <script src="js/main.js"></script>
 <script src="js/_config.js"></script>
 <script src="js/classie.js"></script>
 <script src="js/_front.js"></script>
-<script type="text/javascript" src="VerticalShowcaseSlider/js/slider.js"></script>
-<script type="text/javascript" src="VerticalShowcaseSlider/js/modernizr.custom.79639.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
 <script type="text/javascript">
     $(function () {
 
@@ -501,5 +430,6 @@
 
     });
 </script>
+
 </body>
 </html>
