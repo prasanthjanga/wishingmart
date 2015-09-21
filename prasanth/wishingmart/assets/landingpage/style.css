@@ -638,7 +638,7 @@ a{color: #333;}
 }
 .navbar-nav > li > a{text-transform: uppercase;font: normal 13px/19px 'Titillium Web';}
 .navbar-inverse{border:none; opacity:0.4; background-color:black;}
-.navbar-fixed-top{ background:rgba(0,0,0,0.9); opacity:0.8;}
+.navbar-inverse{border:none; opacity:1.0; background-color:black;}
 .navbar-brand{padding:2px;}
 .dropdown-menu{background:#000; color: #fff; padding:5px;}
 .dropdown-menu > li > a{color: #fff;padding:10px;}

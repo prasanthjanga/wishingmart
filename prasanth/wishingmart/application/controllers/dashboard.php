@@ -1,8 +1,10 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboard extends CI_Controller {
-    
+
+  private $apiurl='http://localhost/wishing_ui1/prasanth/wmapi/';
+  private $apikey="/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
+
   public function __construct(){
     parent::__construct();
     self::logcheck(); //TO CHECK USER LOGIN OR NOT
@@ -33,17 +35,55 @@ class Dashboard extends CI_Controller {
   }
 
   public function wishlist(){ // TO GET Wishing Product List PAGE
-    $data['thispage']="4";
-    $data['title']="Wishing Product List || WishingMart";
+    
+      $data['thispage']="4";
+      $data['title']="Wishing Product List || WishingMart";
 
-    $this->load->view('dashboard/index', $data);
+      $uid=$this->session->userdata('uid');
+
+      $url_wish_list=$this->apiurl."dashboard/wishlistid/uid/".$uid.$this->apikey;
+      $data['wish_list'] = self::getapi($url_wish_list) ;
+      //print_r($data['wish_list']);exit();
+      //print_r($this->session->userdata());exit();
+
+      $this->load->view('dashboard/index', $data);
   }
 
   public function updatewish(){ // TO GET Wishing Product List PAGE
+
+
+    $url_country=$this->apiurl."wishing/country".$this->apikey;
+    $data['country'] = self::getapi($url_country);
+    
+    $url_category=$this->apiurl."wishing/category".$this->apikey;
+    $data['category'] = self::getapi($url_category);
+    
+    $url_subcategory=$this->apiurl."wishing/subcategory".$this->apikey;
+    $data['subcategory'] = self::getapi($url_subcategory);
+
     $data['thispage']="9";
     $data['title']="Update Wishing Product Details || WishingMart";
 
+    $data['wid']=$this->uri->segment(3);// for query string
+    $data['wstatus']=$this->uri->segment(4);// for query string
+
+    //echo $data['wid'].'////'.$data['wstatus'];
+    if($data['wid'] || $data['wstatus']){
+      //echo "have";exit();
+      $url_wish_details=$this->apiurl."dashboard/wishid/wid/".$data['wid'].$this->apikey;
+      $data['wish_details'] = self::getapi($url_wish_details);
+      //print_r($data['wish_details']);exit();
+      if($data['wid'] != $data['wish_details'][0]['wid'] || $data['wstatus'] != $data['wish_details'][0]['status']){
+        redurect('dashboard/wishlist');
+      }
+      $scategory_url=$this->apiurl."wishing/subcategoryid/id/".$data['wish_details'][0]['scid'].$this->apikey;
+      $data['sub_category'] = self::getapi($scategory_url);
+      //print_r($data['subcategory']);exit();
+
+    }
+
     $this->load->view('dashboard/index', $data);
+
   }
 
   public function profile(){ // TO GET Profile Details PAGE
@@ -110,6 +150,21 @@ class Dashboard extends CI_Controller {
       return FALSE;
     }
   }
+
+  public static function getapi($url){
+    //$url = "http://tapway.elasticbeanstalk.com/data/venue/".$mo->id."/summary?access_token=abcdef&start=".$start."&end=".$end;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $body = curl_exec($ch);
+    $obj = json_decode($body,true);
+
+    if(!isset($obj['status']))
+    return $obj ;
+    else
+    return 0 ;
+
+  } // getapi FUNCTION END  
 
 
 }

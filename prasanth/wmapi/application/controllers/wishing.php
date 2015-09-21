@@ -43,6 +43,23 @@ class Wishing extends REST_Controller
         }
     }
 
+    //To Get country Names using Country ID
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wmapi/wishing/countryid/id/2/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function countryid_get()
+    {
+        if(!$this->get("id")){
+            $this->response(NULL, 400);
+        }
+        $this->load->model("wishing_model");
+        $user = $this->wishing_model->get_countryid($this->get("id"));
+        if($user){
+            $this->response($user, 200);
+        }else{
+            $this->response(NULL, 400);
+        }
+    }
+
     //To Get Category Names
     //http://localhost/foldername/api/users/X-API-KEY/miapikey
     //http://localhost/wmapi/wishing/category/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
@@ -71,26 +88,43 @@ class Wishing extends REST_Controller
         }
     }
 
-    //create New User
+    //To Get Sub-Category Names using Sub-Category ID
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wmapi/wishing/subcategoryid/id/2/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function subcategoryid_get()
+    {
+        if(!$this->get("id")){
+            $this->response(NULL, 400);
+        }
+        $this->load->model("wishing_model");
+        $user = $this->wishing_model->get_subcategoryid($this->get("id"));
+        if($user){
+            $this->response($user, 200);
+        }else{
+            $this->response(NULL, 400);
+        }
+    }
+
+    //create New Wish
     //http://localhost/foldername/api/new_user/X-API-KEY/miapikey
-    //http://localhost/wishing_ui1/prasanth/wmapi/wishing/new_wish/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS    public function new_user_post()
+    //http://localhost/wishing_ui1/prasanth/wmapi/wishing/new_wish/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
     public function new_wish_post()
     {
         
-        $pname      = $this->post("pname");
-        $category   = $this->post("category");
-        $scategory  = $this->post("scategory");
-        $country    = $this->post("country");
-        $brand      = $this->post("brand");
-        $colour     = $this->post("colour");
-        $desc       = $this->post("desc");
-        $userfile   = $this->post("userfile");
+        //$pname      = $this->post("pname");
+        //$category   = $this->post("category");
+        //$scategory  = $this->post("scategory");
+       // $country    = $this->post("country");
+        //$brand      = $this->post("brand");
+        //$colour     = $this->post("colour");
+        //$desc       = $this->post("desc");
+        //$userfile   = $this->post("userfile");
         $array=array(
             'pname'     =>$this->post("pname"),
-            'category'  =>$this->post("category"),
             'scategory' =>$this->post("scategory"),
             'country'   =>$this->post("country"),
             'colour'    =>$this->post("colour"),
+            'brand'     =>$this->post("brand"),
             'rid'       =>$this->post("rid"),
             'desc'      =>$this->post("desc"),
             'userfile'  =>$this->post("userfile"),
@@ -102,7 +136,7 @@ class Wishing extends REST_Controller
             $this->load->model("wishing_model");
 
             $new_wish = $this->wishing_model->create_wish($array);
-            if($new_wish === false){
+            if($new_wish == false){
                 $this->response(array("status" => "failed"));
             }else{
                 $this->response(array("status" => "success"));
@@ -110,7 +144,48 @@ class Wishing extends REST_Controller
         }
     }
 
-    
+    //create New Wish
+    //http://localhost/foldername/api/new_user/X-API-KEY/miapikey
+    //http://localhost/wishing_ui1/prasanth/wmapi/wishing/grant_wish/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function grant_wish_post()
+    {
+        $array=array(
+            'wid'       =>$this->post("wid"),
+            'gtuid'     =>$this->post("gtuid"),
+            'gtprice'   =>$this->post("gtprice"),
+            'gtdesc'    =>$this->post("gtdesc"),
+            'gtimg'     =>$this->post("userfile"),
+            'gtcname'   =>$this->post("gtcname"),
+        );
+        print_r($array);//exit();
+        
+        if($array){
+            
+            $this->load->model("wishing_model");
+
+            $new_grant = $this->wishing_model->grant_wish($array);
+            if($new_grant == false){
+                $this->response(array("status" => "failed"));
+            }else{
+                $this->response(array("status" => "success"));
+            }
+        }
+    }
+
+    //create New Wish
+    //http://localhost/foldername/api/new_user/X-API-KEY/miapikey
+    //http://localhost/wishing_ui1/prasanth/wmapi/wishing/all_wish_list/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function all_wish_list_get()
+    {
+        $wishes = $this->wishing_model->get_all_wishes();
+
+        if($wishes){
+            $this->response($wishes, 200);
+        }else{
+            $this->response(NULL, 400);
+        }
+    }// all_wish_list_get END
+
 
     
  

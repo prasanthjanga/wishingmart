@@ -120,7 +120,7 @@ Register
             <div class="form-group">
 				<div id="register_tnc_error">
 					<label class="checkbox">
-						<input type="checkbox" name="tnc" required/> &nbsp; I agree to the <a href="terms.html">Terms of Service</a> and <a href="terms.html">Privacy Policy</a>
+						<input type="checkbox" name="tnc" required/> &nbsp; I agree to the <a href="<?php echo base_url('landing/termscondition'); ?>">Terms of Service</a> and <a href="<?php echo base_url('landing/termscondition'); ?>">Privacy Policy</a>
 					<div class="help-block pull-right"><?php echo form_error('tnc'); ?></div>
 					</label>  
 				</div>

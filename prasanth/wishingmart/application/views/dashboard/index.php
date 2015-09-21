@@ -26,6 +26,8 @@ if($thispage == "1"){
 	require('shippingaddress_view.php');
 }elseif($thispage == "8"){
 	require('invoice_view.php');
+}elseif($thispage == "91"){
+	require('viewwish_view.php');
 }elseif($thispage == "9"){
 	require('updatewish_view.php');
 }elseif($thispage == "10"){

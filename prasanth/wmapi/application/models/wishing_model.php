@@ -17,24 +17,70 @@ class Wishing_model extends CI_Model
             $wid = $max+1; 
         }
         $datetime = mdate('%Y-%m-%d %h:%i:%s',time());
-
         //exit();
         $wish_array=array(
             'wid'       => $wid,
             'wpn'       => $array['pname'],
+            'wpcolour'  => $array['colour'],
+            'brand'     => $array['brand'],
             'wpdec'     => $array['desc'],
             'wpimg'     => $array['userfile'],
             'wpdate'    => $datetime,
             'rid'       => $array['rid'],
-            'status'    => $array['userfile'],
+            'status'    => '0',
             'scid'      => $array['scategory'],
-            'cnid'      => $array['category'],
+            'cname'      => $array['country'],
         );
-        print_r($array);
+        //print_r($array);
         
         $wishing_data = $this->db->insert("wishing", $wish_array);
         //$user = $this->user->insert("user",$user_data);
+        //print_r($wishing_data);exit();
         return $wishing_data;
+    }
+
+    public function grant_wish($array){
+        //print_r($array);
+        $query = $this->db->query('SELECT MAX(gid) FROM granting');
+        if($query->num_rows() > 0){
+            $row = $query->result_array();
+        }
+        $max = $row[0]['MAX(gid)'];
+
+        if($max==0){
+            $gid = $max+101; 
+        }else{
+            $gid = $max+1; 
+        }
+        $datetime = mdate('%Y-%m-%d %h:%i:%s',time());
+        //exit();
+        $grant_array=array(
+            'gid'       =>$gid,
+            'wid'       =>$array["wid"],
+            'gtuid'     =>$array["gtuid"],
+            'gtprice'   =>$array["gtprice"],
+            'gtdesc'    =>$array["gtdesc"],
+            'gtdate'    =>$datetime,
+            'gtimg'     =>$array["gtimg"],
+            'gtcname'   =>$array["gtcname"],
+            'status'    =>'0',
+        );
+
+        //print_r($array);
+        
+        $granting_data = $this->db->insert("granting", $grant_array);
+        //$user = $this->user->insert("user",$user_data);
+        //print_r($wishing_data);exit();
+        return $granting_data;
+    }
+
+    function get_all_wishes(){
+        $query = $this->db->query("SELECT * FROM wishing ORDER BY `wpdate` DESC");
+
+        //$query = $this->cms_db->select("users");
+        if($query->num_rows() > 0){
+            return $query->result();
+        }
     }
 
     function get_country(){
@@ -49,6 +95,17 @@ class Wishing_model extends CI_Model
             return $query->result();
         }
     }
+    function get_countryid($id){
+        // Loading second db and running query.
+        $CI = &get_instance();
+        //setting the second parameter to TRUE (Boolean) the function will return the database object.
+        $this->user = $CI->load->database('user', TRUE);
+        $this->user->select("*");
+        $query = $this->user->get_where("country", array("cnid" => $id));
+        if($query->num_rows() == 1){
+            return $query->row();
+        }
+    }
 
     function get_category(){
         $query = $this->db->query("SELECT * FROM category");
@@ -60,6 +117,15 @@ class Wishing_model extends CI_Model
     }
     function get_subcategory(){
         $query = $this->db->query("SELECT * FROM subcategory");
+
+        //$query = $this->cms_db->select("users");
+        if($query->num_rows() > 0){
+            return $query->result();
+        }
+    }
+
+    function get_subcategoryid($id){
+        $query = $this->db->query("SELECT c.cname, s.scname FROM category c, subcategory s WHERE c.cid=s.cid and s.scid=".$id);
 
         //$query = $this->cms_db->select("users");
         if($query->num_rows() > 0){

@@ -5,8 +5,11 @@ include('application/views/admin/head_top.php');
 
 <div class="content inside-page">
 <div class="main container "> 
-       
-            
+    <div class="form-group">
+      <div class="help-block center h2">
+        <?php if(isset($flashmsg)){echo $flashmsg;} ?>            
+      </div>        
+    </div>    
     <div id="cbp-vm" class="  cbp-vm-switcher cbp-vm-view-grid">
 
       <div class="cbp-vm-options">
@@ -80,144 +83,51 @@ include('application/views/admin/head_top.php');
           </div>
             </div>  
                 </div>
-      <ul>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/1.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Silver beet</h3>
-          <div class="cbp-vm-price">Malaysia</div>
-          <div class="cbp-vm-details">
-            Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a>
-        </li>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/2.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Wattle seed</h3>
-          <div class="cbp-vm-price">UK</div>
-          <div class="cbp-vm-details">
-            Wattle seed bunya nuts spring onion okra garlic bitterleaf zucchini.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a
-        ></li>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/3.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Kohlrabi bok</h3>
-          <div class="cbp-vm-price">Italy</div>
-          <div class="cbp-vm-details">
-            Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a
-        ></li>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/4.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Melon sierra</h3>
-          <div class="cbp-vm-price">France</div>
-          <div class="cbp-vm-details">
-            Melon sierra leone bologi carrot peanut salsify celery onion jícama summer purslane.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a>
-        </li>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/5.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Celery carrot</h3>
-          <div class="cbp-vm-price">Country</div>
-          <div class="cbp-vm-details">
-            Celery carrot napa cabbage wakame zucchini celery chard beetroot jícama sierra leone.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a
-        ></li>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/6.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Catsear</h3>
-          <div class="cbp-vm-price">China</div>
-          <div class="cbp-vm-details">
-            Catsear cabbage tomato parsnip cucumber pea brussels sprout spring onion shallot swiss .
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a>
-        </li>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/7.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Mung bean</h3>
-          <div class="cbp-vm-price">India</div>
-          <div class="cbp-vm-details">
-            Mung bean taro chicory spinach komatsuna fennel.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a>
-        </li>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/8.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Epazote</h3>
-          <div class="cbp-vm-price">Turkey</div>
-          <div class="cbp-vm-details">
-            Epazote soko chickpea radicchio rutabaga desert raisin wattle seed coriander water.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a>
-        </li>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/9.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Tatsoi caulie</h3>
-          <div class="cbp-vm-price">Greece</div>
-          <div class="cbp-vm-details">
-            Tatsoi caulie broccoli rabe bush tomato fava bean beetroot epazote salad grape.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a>
-        </li>
-        
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/10.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Bush tomato</h3>
-          <div class="cbp-vm-price">Japan</div>
-          <div class="cbp-vm-details">
-            Bush tomato peanut shallot turnip prairie turnip gram desert raisin.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a>
-        </li>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/11.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Yarrow leek</h3>
-          <div class="cbp-vm-price">Country</div>
-          <div class="cbp-vm-details">
-            Yarrow leek cabbage amaranth onion salsify caulie kale desert raisin prairie turnip garlic.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a>
-        </li>
-                    <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/12.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Tatsoi caulie</h3>
-          <div class="cbp-vm-price">Country</div>
-          <div class="cbp-vm-details">
-            Tatsoi caulie broccoli rabe bush tomato fava bean beetroot epazote salad grape.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a>
-        </li>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/13.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Endive okra</h3>
-          <div class="cbp-vm-price">Country</div>
-          <div class="cbp-vm-details">
-            Endive okra chard desert raisin prairie turnip cucumber maize avocado.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a>
-        </li>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/14.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Bush tomato</h3>
-          <div class="cbp-vm-price">Country</div>
-          <div class="cbp-vm-details">
-            Bush tomato peanut shallot turnip prairie turnip gram desert raisin.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a>
-        </li>
-        <li>
-          <a class="cbp-vm-image" href="#"><img src="<?php echo base_url('assets/images/products/images/15.jpg'); ?>"></a>
-          <h3 class="cbp-vm-title">Yarrow leek</h3>
-          <div class="cbp-vm-price">Country</div>
-          <div class="cbp-vm-details">
-            Yarrow leek cabbage amaranth onion salsify caulie kale desert raisin prairie turnip garlic.
-          </div>
-          <a class="btn btn-danger" href="<?php echo base_url('wishgrant/granting'); ?>"><span class="fa fa-star"></span> Grant Wish</a>
-        </li>
-      </ul>
+
+<ul>
+<?php
+//print_r($allwishes);exit();
+$count=count($allwishes);
+for($i=0;$i<=($count-1);$i++){
+  //echo $allwishes[$i]['wpn'];
+  //echo $allwishes[$i]['cnid'];
+  //echo $allwishes[$i]['wpdec'];
+?>
+
+  <li>
+    <form action="<?php echo base_url('wishgrant/listofwishes'); ?>" method="post">
+    <a class="cbp-vm-image" href="#">
+      <img src="<?php echo base_url()."images/thumbs/".$allwishes[$i]['wpimg']; ?>" class="listimg" width="280px" height="280px">
+    </a>
+    <h3 class="cbp-vm-title">
+      <?php echo $allwishes[$i]['wpn']; ?>
+    </h3>
+    <div class="cbp-vm-price">
+      <?php echo $allwishes[$i]['cname']; ?>
+    </div>
+    <div class="cbp-vm-details">
+      <?php echo $allwishes[$i]['wpdec']; ?>
+    </div>
+      <input type="hidden" name="wid" value="<?php echo $allwishes[$i]['wid']; ?>">
+      <input type="hidden" name="wrid" value="<?php echo $allwishes[$i]['rid']; ?>">
+      <input type="hidden" name="wpname" value="<?php echo $allwishes[$i]['wpn']; ?>">
+      <input type="hidden" name="wcountry" value="<?php echo $allwishes[$i]['cname']; ?>">
+      <input type="hidden" name="wscatugery" value="<?php echo $allwishes[$i]['scid']; ?>">
+      <input type="hidden" name="wbrand" value="<?php echo $allwishes[$i]['brand']; ?>">
+      <input type="hidden" name="wcolour" value="<?php echo $allwishes[$i]['wpcolour']; ?>">
+      <input type="hidden" name="wdesc" value="<?php echo $allwishes[$i]['wpdec']; ?>">
+      <input type="hidden" name="wimg" value="<?php echo $allwishes[$i]['wpimg']; ?>">
+      <input type="submit" class="btn btn-danger" value="&#9733; Grant Wish" name="sub">
+
+<!--    <a class="btn btn-danger" href="<?php //echo base_url('wishgrant/granting/'.$allwishes[$i]['wid']); ?>">
+      <span class="fa fa-star"></span> Grant Wish
+    </a>
+    -->
+</form>
+  </li>
+
+<?php }// FOR END ?>
+</ul>
                 
                  
     </div>

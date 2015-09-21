@@ -125,7 +125,7 @@ a{color: #333;}
 }
 .navbar-nav > li > a{text-transform: uppercase;font: normal 13px/19px 'Titillium Web';}
 .navbar-inverse{border:none; opacity:0.4; background-color:black;}
-.navbar-fixed-top{ background:rgba(0,0,0,0.32); opacity:1.0;}
+.navbar-fixed-top{ background:rgba(0,0,0,1); opacity:1.0;}
 .navbar-brand{padding:6px 15px;}
 .dropdown-menu{background:#000; color: #fff; padding:5px;}
 .dropdown-menu > li > a{color: #fff;padding:10px;}
@@ -149,7 +149,7 @@ a{color: #333;}
 
 
 /*footer*/
-.footer{background-color:rgba(0,0,0,0.32); position:fixed;margin-top:10px; z-index:1000;}
+.footer{background-color:rgba(0,0,0,1); position:fixed;margin-top:10px; z-index:1000;}
 
 .footer .links{margin-top: 9px;float: left;}
 .footer .links a{color: #888;padding: 0 10px;font: normal 13px/13px 'Titillium Web';}

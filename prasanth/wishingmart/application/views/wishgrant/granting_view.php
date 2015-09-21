@@ -24,73 +24,84 @@ Grant Wish
 <div class="row">
 <div></div>
 
-  <form id="registerForm" class="form-horizontal col-sm-6 col-sm-offset-2 col-lg-offset-1 col-lg-11" autocomplete="on">
+<?php echo form_open_multipart('wishgrant/granting',array('id' => 'registerForm', 'data-toggle'=>'validator', 'class'=>'form-horizontal col-sm-6 col-sm-offset-2 col-lg-offset-1 col-lg-11','autocomplete'=>'on' )); ?>
       
-                <p><strong>Product Description</strong></p>
-                <hr>
-                      
-        <div class="form-group">
+    <p><h1>Product Description</h1></p>
+        <hr>
+    <div class="form-group">
+        <div class="help-block center h2">
+
+          <?php if(isset($images['error'])){ echo $images['error']; } ?>
+          <?php //echo validation_errors(); ?>
+          <?php echo $this->session->flashdata('flashmsg'); ?>  
+        </div>        
+    </div>                      
+    <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Name</label>
         <div class="col-sm-8">
-        <input type="text" class="form-control" id="ProductName" >
+        <?php echo $wish_details['wpname']; ?>
         </div>        
-        </div>
+    </div>
                  
                    
-        <div class="form-group">
-                <label for="" class="col-sm-4 control-label"> Country</label>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label"> Country *</label>
         
           <div class="col-sm-8">
-          <select class="form-control">
-          <option>United Kingdom</option>
-          <option>Australia</option>
-          <option>America</option>
-          <option>Russia</option>
-                    <option>India</option>
-          <option>Singapore</option>
-          <option>Malaysia</option>
-          <option>China</option>
-          <option>Nepal</option>
-          </select>
+          <?php
+            $count=round(count($country));
+            echo "<select class='form-control' name='gt_country' required>";
+            echo "<option value='none' selected='selected'>-- Select Country --</option>";
+            for($i=0;$i<$count;$i++){
+                foreach($country[$i] as $k=>$v){
+                    if($k == "cname"){
+                        echo "<option value=". $country[$i]['cname'] .">";
+                        echo $country[$i]['cname'];
+                        echo "</option>";
+                    }
+                }
+            }
+            echo "</select>";
+          ?>  
           </div>
-        </div>
+    </div>
                         
-                <div class="form-group">
+    <div class="form-group">
         <label for="" class="col-sm-4 control-label">Brand</label>
         <div class="col-sm-8">
-        <input type="text" class="form-control" id="Brand" >
+        <?php echo $wish_details['wbrand']; ?>
         </div>        
-        </div>
+    </div>
                 
-                <div class="form-group">
+    <div class="form-group">
         <label for="" class="col-sm-4 control-label">Colour</label>
         <div class="col-sm-8">
-        <input type="text" class="form-control" id="colour" >
+        <?php echo $wish_details['wcolour']; ?>
         </div>        
-        </div>
+    </div>
                 
-                <div class="form-group">
-        <label for="" class="col-sm-4 control-label">Description</label>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Description </label>
         <div class="col-sm-8">
-                <textarea id="productdesc" class="form-control" placeholder="Give us more details about the product you wish for (eg.size,model,specifications)"></textarea>
+            <textarea id="productdesc" class="form-control" name="gt_p_desc" placeholder="Give us more details about the product you wish for (eg.size,model,specifications)"></textarea>
         </div>        
-        </div>
+    </div>
                 
-                <div class="form-group">
+    <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Image</label>
         <div class="col-sm-8">
-        <input type="file" class="form-control" id="ProductImage" required>
+        <input type="file" class="form-control" name="userfile" id="ProductImage" required>
         </div>        
-        </div>
+    </div>
                 
-                <div class="form-group">
-        <label for="" class="col-sm-4 control-label">Price</label>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Price *</label>
         <div class="col-sm-8">
-        <input type="number" class="form-control" id="price" required>
+        <input type="number" class="form-control" name="gt_price" id="price" required>
         </div>        
-        </div>
-                
-        <a href="#" data-toggle="modal" data-target="#popup" class="btn btn-danger pull-right" >Send Grant Request </a>
+    </div>
+    
+    <input type="submit" name="sub" value="Send Grant Request" data-toggle="modal" data-target="#popup" class="btn btn-danger pull-right" >
 
 </form>
 </div>
@@ -103,48 +114,68 @@ Grant Wish
   <div class="panel-body">
     
         <div><h1>Wish Details</h1></div>
-         
-                <hr>
-                
+        <hr>
+
+        <div class="form-group">
+          <div class="col-sm-4 center image">
+              <img src="<?php echo base_url('assets/images/women.jpg'); ?>" class="img-circle" alt="User Image" height="50px">
+          </div>
+          <div class="col-sm-7 pull-left wishform">
+              <p>Vogue Robot<br>Malaysia</p>
+        </div>
+
+      </div>
+        <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Product Id</label>
+        <div class="col-sm-8">
+        <p class="wishform"><?php echo $wish_details['wid']; ?></p>
+        </div>        
+        </div>
         <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Name</label>
         <div class="col-sm-8">
-        <p class="wishform">Mayo Sunflower Handbag</p>
+        <p class="wishform"><?php echo $wish_details['wpname']; ?></p>
         </div>        
         </div>
                 
                 <div class="form-group">
-        <label for="" class="col-sm-4 control-label">Country</label>
+        <label for="" class="col-sm-4 control-label">Made In</label>
         <div class="col-sm-8">
-        <p class="wishform">Italy</p>
+        <p class="wishform"><?php echo $wish_details['wcountry']; ?></p>
         </div>        
         </div>
                 
                  <div class="form-group">
         <label for="" class="col-sm-4 control-label">Category</label>
         <div class="col-sm-8">
-        <p class="wishform">Accessories</p>
+        <p class="wishform"><?php echo $wish_details['wcatugory']; ?></p>
         </div>        
         </div>
                 
                  <div class="form-group">
         <label for="" class="col-sm-4 control-label">Sub-Category</label>
         <div class="col-sm-8">
-        <p class="wishform">Handbags</p>
+        <p class="wishform"><?php echo $wish_details['wscatugory']; ?></p>
         </div>        
         </div>
 
                  <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Description</label>
         <div class="col-sm-8">
-        <p class="wishform">Brand :Mayo Designer Club <br> Color: Yellow &amp; Green <br> Model: Sunflower <br> A very stunning handbag with outstanding design. </p>
+        <p class="wishform">
+            Brand : <?php echo $wish_details['wbrand']; ?> 
+            <br> 
+            Color: <?php echo $wish_details['wcolour']; ?>  
+            <br>
+            <?php echo $wish_details['wdesc']; ?>
+        </p>
         </div>        
         </div>
                 
                 <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Image</label>
         <div class="col-sm-8">
-        <img src="<?php echo base_url('assets/images/handbags.jpg'); ?>" width="100" height="100" alt=""/>
+        <img src="<?php echo base_url()."images/thumbs/".$wish_details['wimg']; ?>" width="200" height="200" alt=""/>
                 </div>        
         </div>
         
@@ -158,37 +189,6 @@ Grant Wish
     </div>
   </div>
   </div>
-<!-- footer -->
-<div class="footer navbar-fixed-bottom" role="navigation">
-  <div class="pull-left">
-    <div class="links">
-      <a href="Termscondition.html">Terms &amp; Conditions</a>   
-      <a href="About.html">About Us</a>
-         <a href="ContactUs.html">Contact Us</a>
-        <a href="Testimonial.html">Testimonials</a>   
-        <a href="SellerInfo.html">Buyer &amp; Seller</a> 
-        <a href="Tools.html">Tools &amp; Apps</a> 
-      
-         &nbsp;
-         &nbsp;     
-    </div>
-     
-     <div class="links"> <a href="../Index.html">WishingMart &copy; 2015</a></div>
-    
-    </div>
-    <div class="social pull-right">
-  
-      <a href="https://www.facebook.com/"><i class="fa fa-facebook-square" data-toggle="tooltip" data-placement="top" data-original-title="facebook"></i></a>
-      <a href="https://www.instagram.com/"><i class="fa fa-instagram"  data-toggle="tooltip" data-placement="top" data-original-title="instragram"></i></a>
-      <a href="https://www.twitter.com/"><i class="fa fa-twitter-square" data-toggle="tooltip" data-placement="top" data-original-title="twitter"></i></a>
-      <a href="https://www.pinterest.com/"><i class="fa fa-pinterest-square" data-toggle="tooltip" data-placement="top" data-original-title="pinterest"></i></a>
-      <a href="https://plus.google.com/"><i class="fa fa-google-plus-square" data-toggle="tooltip" data-placement="top" data-original-title="google+"></i></a>
-   
-    
-    </div>
-    
-</div>
-
 
 
 <?php

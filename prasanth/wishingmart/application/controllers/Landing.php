@@ -33,6 +33,7 @@ class Landing extends CI_Controller {
     $data['thispage']="2";
     $data['title']="WishingMart || Login";
     $this->session->unset_userdata('session_id');
+    //$this->session->sess_destroy();
 
     if($this->input->post("email") && $this->input->post("pwd")) {
       $this->form_validation->set_rules('email', 'Email', 'required');
@@ -76,7 +77,7 @@ class Landing extends CI_Controller {
 
     $data['thispage']="3";
     $data['title']="WishingMart || Register";
-    $url_country=$this->apiurl."wishing/country/".$this->apikey;
+    $url_country=$this->apiurl."wishing/country".$this->apikey;
     $data['country'] = self::getapi($url_country) ;
 
 
@@ -93,7 +94,7 @@ class Landing extends CI_Controller {
     $this->form_validation->set_error_delimiters('<div>','</div>');
     
     if($this->form_validation->run() == TRUE){
-      $url=$this->apiurl."registration/new_user/".$this->apikey;
+      $url=$this->apiurl."registration/new_user".$this->apikey;
       if($url){
         $username = 'admin';
         $password = '1234';

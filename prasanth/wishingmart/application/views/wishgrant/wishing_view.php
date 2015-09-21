@@ -8,28 +8,28 @@ include('application/views/admin/head_top.php');
  <!-- form -->
 <div class="content inside-page create-account" >
 <h1 class="title h2">
-  <span class="top"></span>
-<?php if(isset($success)){ echo $success;}else{ echo "Make A Wish";} ?>
+  <span class="top"></span>Make A Wish
   <span class="bottom"></span>
 </h1>
 <div class="row">
 <?php
 //echo form_open_multipart('wishgrant/wishing');
 ?>
-  <form class="form-horizontal col-sm-6 col-sm-offset-3" data-toggle="validator" role="form" method="post" action="<?php echo base_url('wishgrant/wishing'); ?>" enctype="multipart/form-data" accept-charset="utf-8" id="registerForm">
+<?php echo form_open_multipart('wishgrant/wishing',array('id' => 'registerForm', 'data-toggle'=>'validator', 'class'=>'form-horizontal col-sm-6 col-sm-offset-3','role'=>'form' )); ?>
+
     <div class="panel-body">
       <div class="form-group">
         <div class="help-block center h2">
-          <?php echo $error; ?>
+
+          <?php if(isset($images['error'])){ echo $images['error']; } ?>
+          <?php //echo validation_errors(); ?>
           <?php echo $this->session->flashdata('flashmsg'); ?>  
         </div>        
       </div>
       <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Name</label>
         <div class="col-sm-8">
-          <?php if(set_value('pname')){ echo set_value('pname'); }else{ ?>
           <input type="text" name="pname" value="<?php echo set_value('pname'); ?>" class="form-control" id="ProductName" required>
-          <?php } ?>
           <span class="help-block pull-right"><?php echo form_error('pname'); ?></span>
         </div>        
       </div>
@@ -92,7 +92,7 @@ include('application/views/admin/head_top.php');
 -->              
               
       <div class="form-group">
-        <label for="" class="col-sm-4 control-label"> Country</label>
+        <label for="" class="col-sm-4 control-label"> Country *</label>
         <div class="col-sm-8">
           <?php
             $count=round(count($country));
@@ -101,8 +101,7 @@ include('application/views/admin/head_top.php');
             for($i=0;$i<$count;$i++){
                 foreach($country[$i] as $k=>$v){
                     if($k == "cname"){
-                        echo "<option value=". $country[$i]['cnid'] .">";
-                        
+                        echo "<option value=". $country[$i]['cname'] .">";
                         echo $country[$i]['cname'];
                         echo "</option>";
                     }

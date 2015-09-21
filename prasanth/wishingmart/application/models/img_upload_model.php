@@ -18,40 +18,36 @@ class Img_upload_model extends CI_Model {
 		$config=array(
 			'allowed_types' => 'jpeg|jpg|png|gif',
 			'upload_path'	=>	$this->gallery_path,
-			'max_size'		=> '2000',
+			'max_size'		=> '400',
 		);
 
 		$this->load->library('upload',$config);
-		if ( ! $this->upload->do_upload())
-		{
-			return display_errors();
+		if ( ! $this->upload->do_upload()){
+			$data = array('error' => $this->upload->display_errors());
+			return $data;
 		}else{
-			$this->upload->do_upload();
-			$image_data = $this->upload->data();
-			//print_r($image_data);
-
-			//return $image_data;
+			$data = array('image_data' => $this->upload->data());
 
 			//echo "<pre>";
-			//print_r($image_data);
+			//print_r($data['image_data']);//exit();
 			//echo "</pre>";
 
 			$config=array(
-					'source_image'	=> $image_data['full_path'],
-					'new_image'		=> $this->gallery_path . '/thumbs',
-					'maintain_ration'=> true,
-					'width'			=> 150,
-					'height'		=> 100,
-
+				'image_library' => 'gd2',
+				'source_image'	=> $data['image_data']['full_path'],
+				'new_image'		=> $this->gallery_path . '/thumbs',
+				'maintain_ration'=> true,
+				'width'			=> 250,
+				'height'		=> 250,
 			);
 			//echo "<pre>";
 			//print_r($image_data);
 			//echo "</pre>";
 
-			$this->load->library('image_lib',$config);
+			$this->load->library('image_lib');
+			$this->image_lib->initialize($config);
+
 			$this->image_lib->resize();
-
-
 
 			$files = scandir($this->gallery_path);
 			$files = array_diff($files, array('.','..','thumbs'));
@@ -60,16 +56,16 @@ class Img_upload_model extends CI_Model {
 
 			$images = array();
 			foreach($files as $file){
-				if($file == $image_data['file_name']){
+				if($file == $data['image_data']['file_name']){
 					$images[]=array(
-							'filename'	=> $file,
-							'url'		=> $this->gallery_path_url . $file,
-							'thumb_url'	=> $this->gallery_path_url . 'thumbs/' . $file
+						'filename'	=> $file,
+						'url'		=> $this->gallery_path_url . $file,
+						'thumb_url'	=> $this->gallery_path_url . 'thumbs/' . $file
 					);
 				}
 			}
 			return $images;
-		}
+		}//else end
 	}
 
 

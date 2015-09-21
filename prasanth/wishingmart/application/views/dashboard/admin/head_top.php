@@ -2,7 +2,7 @@
   <div class="wrapper">
     <header class="main-header">
       <!-- Logo -->
-      <a href="<?php echo base_url('dashboard'); ?>" class="logo navbar-brand">
+      <a href="<?php echo base_url('landing'); ?>" class="logo navbar-brand">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>W</b>M</span>
         <!-- logo for regular state and mobile devices -->

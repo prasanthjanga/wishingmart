@@ -15,6 +15,11 @@
         WishingMart &copy; <?php echo date("Y",time()); ?>
       </a>
     </div>
+<!--
+    <div class="links">
+      <p>Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+    </div>
+-->
   </div>
 <div class="social pull-right">
   
