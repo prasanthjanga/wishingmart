@@ -3,7 +3,7 @@
         <!-- Content Header (Page header) -->
         
         <section class="content-header">
-          <h4>Invoice</h4>
+<div><h3 class="title">Invoice</h3></div>
         
         </section>
 
@@ -14,7 +14,7 @@
             <div class="col-xs-12">
               <h2 class="page-header">
                 <i class="fa fa-globe"></i>WishingMart
-                <small class="pull-right">Date: 2/10/2015</small>
+                <small class="pull-right">Date: <?php echo date("d/M/Y",time()); ?></small>
               </h2>
             </div><!-- /.col -->
           </div>
@@ -35,10 +35,10 @@
               To
               <address>
                 <strong>Wisher</strong><br>
-                795 <br>
-              	Jalan Pipit, Taman Million<br>
-                Phone:0125340408<br>
-                Email: user@example.com
+                <?php echo $s_add['street'].",".$s_add['city']; ?> <br>
+                <?php echo $s_add['country'].",".$s_add['postcode']; ?> <br>
+                Phone:<?php echo $s_add['contact']; ?><br>
+                Email: <?php echo $this->session->userdata('email'); ?>
               </address>
             </div><!-- /.col -->
             <div class="col-sm-4 invoice-col">

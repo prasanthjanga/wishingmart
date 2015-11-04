@@ -34,6 +34,25 @@
 <!-- SlimScroll 1.3.0 -->
 <script src="<?php echo base_url('assets/Dashboard/jquery.slimscroll.min.js'); ?>" type="text/javascript"></script>
 
+<?php if($thispage=="5"){ ?>
+<script src="<?php echo base_url('assets/bootstrap-datepicker.js'); ?>" type="text/javascript"></script>
+<script>
+$(document).ready(function() {
+    $('#datePicker')
+        .datepicker({
+            format: 'yyyy/mm/dd',
+            startDate: '1950/01/01',
+            //endDate: '2007/12/31'
+        })
+        .on('changeDate', function(e) {
+            // Revalidate the date field
+            $('#dateForm').formValidation('revalidateField', 'dob');
+        });
+    
+});
+</script>
+
+<?php } ?>
 
 <?php if($thispage=="3" || $thispage=="4" || $thispage=="7" || $thispage=="10"){ ?>
 <!-- DataTables -->

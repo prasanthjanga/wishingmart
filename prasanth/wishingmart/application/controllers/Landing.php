@@ -16,6 +16,7 @@ class Landing extends CI_Controller {
     //$this->load->library('session');
     $this->load->library('auth');
     $this->load->library('form_validation');
+    
 
   }
 
@@ -49,14 +50,42 @@ class Landing extends CI_Controller {
         $data['check'] = self::getapi($url_check);
         //echo $data->check->pwd;
         $pwd=do_hash($pwd, 'md5');
-        if($data['check']['pwd']== $pwd){
-          $newdata = array(
-            'uid'     => $data['check']['uid'],
-            'email'     => $email,
-            'logged_in' => TRUE
-          );
-          $this->session->set_userdata($newdata);
-          redirect('wishgrant');
+        if($data['check']['pwd'] == $pwd){
+          //Chat User Online
+          $url_online=$this->apiurl."chat/online".$this->apikey;
+          if($url_online){
+            $username = 'admin';
+            $password = '1234';
+            $curl_handle = curl_init();
+            curl_setopt($curl_handle, CURLOPT_URL, $url_online);
+            curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($curl_handle, CURLOPT_POST, 1);
+            curl_setopt($curl_handle, CURLOPT_POSTFIELDS, array(
+              "uid" => $data['check']['uid'],
+              "online"  => '1',
+            ));
+             
+            // Optional, delete this line if your API is open
+            curl_setopt($curl_handle, CURLOPT_USERPWD, $username . ':' . $password);
+             
+            $buffer = curl_exec($curl_handle);
+            curl_close($curl_handle);
+             
+            $result = json_decode($buffer);
+            //print_r($result);
+            if(isset($result->status) && $result->status == 'success'){
+              $newdata = array(
+                'uid'     => $data['check']['uid'],
+                'email'     => $email,
+                'logged_in' => TRUE
+              );
+              $this->session->set_userdata($newdata);
+              redirect('wishgrant');              
+            }else{
+              $this->session->set_flashdata('flashmsg','<div>User in Offline.</div>'); 
+              redirect('wishgrant');              
+            }// else end
+          }// if end
         }else{
           $this->session->set_flashdata('flashmsg','<div>UserName & Password Is Not Matching.</div>'); 
           $this->load->view('login_view', $data);
@@ -270,9 +299,40 @@ class Landing extends CI_Controller {
   function logout(){
     $data['thispage']="logout";
     $data['title']="Logout || WishingMart.";
-    $this->session->all_userdata();
-    $this->session->sess_destroy();
-    redirect("landing"); 
+    //Chat User Offline
+    $url_online=$this->apiurl."chat/online".$this->apikey;
+    if($url_online){
+      $username = 'admin';
+      $password = '1234';
+      $curl_handle = curl_init();
+      curl_setopt($curl_handle, CURLOPT_URL, $url_online);
+      curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($curl_handle, CURLOPT_POST, 1);
+      curl_setopt($curl_handle, CURLOPT_POSTFIELDS, array(
+        "uid" => $this->session->userdata('uid'),
+        "online"  => '2',
+      ));
+       
+      // Optional, delete this line if your API is open
+      curl_setopt($curl_handle, CURLOPT_USERPWD, $username . ':' . $password);
+       
+      $buffer = curl_exec($curl_handle);
+      curl_close($curl_handle);
+       
+      $result = json_decode($buffer);
+      //print_r($result);
+      if(isset($result->status) && $result->status == 'success'){
+        $this->session->all_userdata();
+        $this->session->sess_destroy();
+        redirect("landing"); 
+      }else{
+        $this->session->set_flashdata('flashmsg','<div>User in online error.</div>'); 
+        redirect('landing');
+      }// else end
+    }// if end
   }
+
+
+
 
 }

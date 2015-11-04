@@ -5,6 +5,7 @@ include('application/views/admin/head_top.php');
 
 
 
+
 <div class="container" data-parallaxify-range="100">
   
  <!-- form -->
@@ -113,7 +114,22 @@ Grant Wish
     <div class="form-horizontal col-sm-6 col-sm-offset-3 col-lg-offset-1 col-lg-11" >
   <div class="panel-body">
     
-        <div><h1>Wish Details</h1></div>
+        <div class="form-group">
+          <div class="col-sm-9 image">
+            <h1>Wish Details</h1>
+          </div>
+          <div class="col-sm-2 pull-left wishform">
+            <?php if($online['online']== '1'){ ?>
+            <a href="#" onclick="funenter()">
+                <h4 class="label label-success">User Online</h4>
+            </a>
+            <?php }else{//if end ?>
+            <a href="#" onclick="funoffline()">
+                <h4 class="label label-danger">User Offline</h4>
+            </a>
+            <?php }//else end ?>
+          </div>
+        </div>
         <hr>
 
         <div class="form-group">
@@ -189,6 +205,7 @@ Grant Wish
     </div>
   </div>
   </div>
+
 
 
 <?php

@@ -81,18 +81,21 @@
         </div>
 
  <div class="col-sm-6">
-        
+
+<?php if($wstatus!="1"){ ?>
 <div class="row">
-<form id="registerForm" class="form-horizontal col-sm-6 col-sm-offset-2 col-lg-offset-1 col-lg-11" autocomplete="on">
+<?php echo form_open_multipart('dashboard/updatewish',array('id' => 'registerForm', 'data-toggle'=>'validator', 'class'=>'form-horizontal col-sm-6 col-sm-offset-2 col-lg-offset-1 col-lg-11','autocomplete'=>'on' )); ?>
+
      <div class="panel-body">   
     
         <div><h1>Update Wish</h1></div>
         <hr>
-
+        <input type="hidden" name="wuid" value="<?php echo $wish_details[0]['wid']; ?>">
         <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Name</label>
         <div class="col-sm-8">
-        <input type="text" class="form-control" id="ProductName" placeholder="<?php echo $wish_details[0]['wpn']; ?>">
+        <input type="text" name="pname" class="form-control" id="ProductName" placeholder="<?php echo $wish_details[0]['wpn']; ?>">
+          <?php echo form_error('pname'); ?>
         </div>        
         </div>
           
@@ -168,39 +171,39 @@
         <div class="form-group">
         <label for="" class="col-sm-4 control-label">Brand</label>
         <div class="col-sm-8">
-        <input type="text" class="form-control" id="Brand" placeholder="<?php echo $wish_details[0]['brand']; ?>">
+        <input type="text" name="brand" class="form-control" id="Brand" placeholder="<?php echo $wish_details[0]['brand']; ?>">
         </div>        
         </div>
                 
-                <div class="form-group">
+        <div class="form-group">
         <label for="" class="col-sm-4 control-label">Colour</label>
         <div class="col-sm-8">
-        <input type="text" class="form-control" id="colour" placeholder="<?php echo $wish_details[0]['wpcolour']; ?>" >
+        <input type="text" name="colour" class="form-control" id="colour" placeholder="<?php echo $wish_details[0]['wpcolour']; ?>" >
         </div>        
         </div>
                 
-                <div class="form-group">
+        <div class="form-group">
         <label for="" class="col-sm-4 control-label">Description</label>
         <div class="col-sm-8">
-                <textarea id="productdesc" class="form-control" placeholder="<?php echo $wish_details[0]['wpdec']; ?>"></textarea>
+          <textarea id="productdesc" name="pdesc" class="form-control" placeholder="<?php echo $wish_details[0]['wpdec']; ?>"></textarea>
         </div>        
         </div>
                 
-                <div class="form-group">
+        <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Image</label>
         <div class="col-sm-8">
         <input type="file" name="userfile" class="form-control" id="ProductImage" >
         </div>        
         </div>
             
-        <button href="#" class="btn btn-danger pull-right" >Update Wish </button>
+        <input type="submit" name="sub" value="Update Wish" class="btn btn-danger pull-right" >
         
         <div class="form-group"></div>
    </div>
 </form>
 </div>
- 
-    </div>
+<?php } ?>    
+</div>
 </div>
 
            </section>

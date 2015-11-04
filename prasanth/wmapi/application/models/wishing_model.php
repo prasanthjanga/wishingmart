@@ -56,7 +56,7 @@ class Wishing_model extends CI_Model
         //exit();
         $grant_array=array(
             'gid'       =>$gid,
-            'wid'       =>$array["wid"],
+            'wpid'       =>$array["wid"],
             'gtuid'     =>$array["gtuid"],
             'gtprice'   =>$array["gtprice"],
             'gtdesc'    =>$array["gtdesc"],

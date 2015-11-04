@@ -9,7 +9,9 @@
         <img src="<?php echo base_url('assets/images/women.jpg'); ?>" class="img-circle" alt="User Image" height="45px"/>
       </div>
       <div class="pull-left info">
-        <p>Vogue Robot</p>
+        <p>
+          <?php echo $this->session->userdata('email'); ?>
+        </p>
       </div>
     </div>
       </a>

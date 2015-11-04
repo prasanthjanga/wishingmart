@@ -1,3 +1,25 @@
+<!-- Online chatting pluggin Start-->
+<div class="chatbox" id="tab1" style="bottom:0px; display:none;">
+
+    <div class="chatboxhead"><?php echo $this->session->userdata('wrid'); ?>
+        <div class="chatboxoptions">
+            <a href="javascript:void(0)" onclick="toggler('myContent');">- </a>
+<!--
+        <a href="javascript:void(0)" onclick="this.parentNode.parentNode.parentNode.style.display = 'none'">x</a>
+-->
+        <a href="#" onclick="funclose()">X</a>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+    <div id="myContent">
+        <div id="divcontent" class="chatboxcontent"></div>
+        <div class="chatboxinput">
+            <textarea type="text" id="txtmsg" class="chatboxtextarea" onkeypress="funsend(event)" ></textarea>
+        </div>
+    </div>
+</div>
+<!-- Online chatting pluggin end-->
+
 <!-- footer -->
 <div class="footer navbar-fixed-bottom" role="navigation">
   <div class="pull-left">

@@ -27,7 +27,7 @@ $(function(){
 <script type="text/javascript" src="<?php echo base_url('assets/wishing/js/jquery.easing.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/wishing/js/jquery.backstretch.min.js'); ?>"></script> 
 <script type="text/javascript" src="<?php echo base_url('assets/wishing/js/jquery.mb.YTPlayer.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/wishing/js/scripts-custom.js'); ?>"></script> 
+<script type="text/javascript" src="<?php //echo base_url('assets/wishing/js/scripts-custom.js'); ?>"></script> 
 
 
 <?php }else{ ?>

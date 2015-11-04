@@ -15,7 +15,7 @@
                 <div class="help-block pull-right"></div>
 				<label for="" class="col-sm-4 control-label">Old Password</label>
 				<div class="col-sm-8">
-				<input type="password" class="form-control" id="oldpswrd"  required>
+				<input type="password" name="old_pwd" class="form-control" id="oldpswrd"  required>
 				</div>				
 				</div>
 
@@ -23,7 +23,7 @@
                 <div class="help-block pull-right"></div>
 				<label for="" class="col-sm-4 control-label">New Password</label>
 				<div class="col-sm-8">
-				<input type="password" class="form-control" id="password1"  required >
+				<input type="password" name="new_pwd" class="form-control" id="password1"  required >
 				</div>				
 				</div>
                 
@@ -31,7 +31,7 @@
                 <div class="help-block pull-right"></div>
 				<label for="" class="col-sm-4 control-label">Re-Enter New Password</label>
 				<div class="col-sm-8">
-				<input type="password" class="form-control" id="password2"  required >
+				<input type="password" name="new_pwd1" class="form-control" id="password2"  required >
 				</div>				
 				</div>
                 

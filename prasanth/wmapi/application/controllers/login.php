@@ -42,14 +42,14 @@ class Login extends REST_Controller
        
         if($dec_username ){
             $new_user = $this->login_model->check_login($dec_username);
-             if($new_user){
+            if($new_user){
                 $this->response($new_user, 200);
             }else{
                 $this->response(array("status" => "User Name Is Not Avalable."));
             }
         }
     }
-    
+
 
     
 }

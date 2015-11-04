@@ -29,6 +29,8 @@
               </thead>
               <tbody>
 <?php
+//print_r($wish_list);
+//exit();
 //echo count($wish_list);
 for($i=0;$i<=(count($wish_list)-1);$i++){
   //echo $i;
@@ -41,8 +43,8 @@ for($i=0;$i<=(count($wish_list)-1);$i++){
     </td>
 
     <td>
-<!--      <img src="<?php echo base_url()."images/thumbs/".$wish_list[$i]['wpimg']; ?>" width="100px" height="100px" alt=""/>
--->
+      <img src="<?php echo base_url()."images/thumbs/".$wish_list[$i]['wpimg']; ?>" width="100px" height="100px" alt=""/>
+
     </td>
     <td>
       <?php echo $wish_list[$i]['wpn']; ?>

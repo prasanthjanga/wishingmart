@@ -22,7 +22,6 @@ scrolltitle();
 <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
-
 <!-- font awesome -->
 <link href="<?php echo base_url('assets/font-awesome.min.css'); ?>" rel="stylesheet">
 
@@ -48,6 +47,12 @@ scrolltitle();
 
 <?php }//IF END ?>
 
+<?php if($thispage=="5"){ ?>
+<link rel="stylesheet" href="<?php echo base_url('assets/wow/animate.css'); ?>" />
+<link rel="stylesheet" href="<?php echo base_url('assets/style.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('assets/datepicker.css'); ?>">
+<?php }//IF END ?>
+
 
 <link href="<?php echo base_url('assets/Dashboard/AdminLTE.min.css'); ?>" rel="stylesheet" type="text/css" />
 <!-- AdminLTE Skins. Choose a skin from the css/skins 
@@ -64,7 +69,45 @@ scrolltitle();
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
+<?php if($thispage == "c1" || $thispage == "31"){ ?>
+    <script src="//code.jquery.com/jquery-1.3.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/chat/chat.css'); ?>">
+<script type="text/javascript">
+    setInterval('funread()',1000)
+    function funread(){
+        $.post("<?php echo base_url('chat/read'); ?>",{},function(data){
+            document.getElementById('divcontent').innerHTML=data
+            //$("#divcontent").scrollTop($("#divcontent")[0].scrollHeight);// to scroll down
+        })
+    }
+    function funsend(e){
+        if(e.keyCode === 13 || e.keyCode === 0){
+            msg = document.getElementById('txtmsg').value;
+            mssg = msg.replace(/^\s+|\s+$/g,"");
+            jQuery("#divcontent").load("<?php echo base_url('chat/insert').'/'; ?>" + encodeURIComponent(mssg));
+            document.getElementById('txtmsg').value='';
+        }
+    $("#divcontent").scrollTop($("#divcontent")[0].scrollHeight);
+    }
+    function funenter(){
+        //uname=document.getElementById('txtuname').value;
+        uname="<?php echo $this->uri->segment(3); ?>";
+        //document.getElementById('div1').style.display="none"
+        document.getElementById('tab1').style.display="block"
+    }
+    function funclose(){
+        document.getElementById('tab1').style.display="none"
+        document.getElementById('div1').style.display="block"
+    }
 
+
+</script>
+<script type="text/javascript">
+    function toggler(divId) {
+        $("#" + divId).toggle();
+    }
+</script>
+<?php }//if end C1 ?>
 
 
 <!-- Language Bar Script Start -->

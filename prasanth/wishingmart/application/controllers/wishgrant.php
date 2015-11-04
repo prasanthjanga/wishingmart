@@ -161,6 +161,11 @@ class Wishgrant extends CI_Controller {
     $url_country=$this->apiurl."wishing/country".$this->apikey;
     $data['country'] = self::getapi($url_country) ;
 
+    $url_chat_on=$this->apiurl."chat/online_status/uid/".$this->session->userdata("wrid").$this->apikey;
+    $data['online'] = self::getapi($url_chat_on) ;
+    //print_r($this->session->userdata());  
+    //exit();
+
     $data['wish_details']=array(
       'wid'       => $this->session->userdata("wid"),
       'wrid'      => $this->session->userdata("wrid"),
@@ -279,21 +284,27 @@ class Wishgrant extends CI_Controller {
     //print_r($data['country']);exit();
     if(isset($_POST['sub'])){
       //echo "helloooooooooooooo";
-      $wish_details=array(
-        'wid'       => $this->input->post("wid"),
-        'wrid'      => $this->input->post("wrid"),
-        'wpname'    => $this->input->post("wpname"),
-        'wcountry'  => $this->input->post("wcountry"),
-        'wscatugery'=> $this->input->post("wscatugery"),
-        'wbrand'    => $this->input->post("wbrand"),
-        'wcolour'   => $this->input->post("wcolour"),
-        'wdesc'     => $this->input->post("wdesc"),
-        'wimg'      => $this->input->post("wimg"),
-      );
-      //print_r($wish_details);
-      $this->session->set_userdata($wish_details);
-      redirect("wishgrant/granting");
-    }
+      echo $login_id=$this->session->userdata('uid');
+      echo $wrid = $this->input->post("wrid");
+      if($login_id != $wrid){
+        $wish_details=array(
+          'wid'       => $this->input->post("wid"),
+          'wrid'      => $this->input->post("wrid"),
+          'wpname'    => $this->input->post("wpname"),
+          'wcountry'  => $this->input->post("wcountry"),
+          'wscatugery'=> $this->input->post("wscatugery"),
+          'wbrand'    => $this->input->post("wbrand"),
+          'wcolour'   => $this->input->post("wcolour"),
+          'wdesc'     => $this->input->post("wdesc"),
+          'wimg'      => $this->input->post("wimg"),
+        );
+        //print_r($wish_details);
+        $this->session->set_userdata($wish_details);
+        redirect("wishgrant/granting");
+      }else{
+        $this->session->set_flashdata('flashmsg','<div>This Wish Is Make By You !!!.</div>'); 
+      }//IF END
+    }//IF END
     $this->load->view('wishgrant/listofwishes_view', $data);
   }
 

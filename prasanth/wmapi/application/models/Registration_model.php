@@ -40,9 +40,36 @@ class registration_model extends CI_Model
             "uname" => $email,
             "pwd"   => $pwd           
         );
-        $reg = $this->user->insert("registration", $reg_data);
-        $user = $this->user->insert("user",$user_data);
-        return $reg.$user;
+        $reg     = $this->user->insert("registration", $reg_data);
+        $user    = $this->user->insert("user",$user_data);
+        $data_prof=array(
+            'pid'     =>$rid,
+            'paid'    =>"0",
+            'said'    =>"0",
+            'enotice' =>"0",
+            'prof_img'=>"profile.png",
+            'contact' =>"0",
+            'hcontact' =>"0",
+        );
+        $profile = $this->user->insert("profile",$data_prof);
+        $data_pay=array(
+            'payid'      =>$rid,
+            'card_no'    =>"0",
+            'issued_bank'=>"0",
+            'country'    =>"0",
+            'card_type'  =>"0",
+        );
+        $payment = $this->user->insert("payment",$data_pay);
+        
+        $data_onlie=array(
+            'uid'    =>$rid,
+            'online' =>"0",
+        );
+        $CI = &get_instance();
+        $this->chat = $CI->load->database('chat', TRUE);
+        $data_onlie = $this->chat->insert("payment",$data_pay);
+
+        return $reg.$user.$profile.$data_pay.$data_onlie;
     }
 
 

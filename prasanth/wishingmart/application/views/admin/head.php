@@ -25,6 +25,7 @@ scrolltitle();
 <!-- Title Scroling end-->
 
 <!-- Google fonts -->
+
 <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
@@ -37,70 +38,108 @@ scrolltitle();
 <link href="<?php echo base_url('assets/font-awesome.min.css'); ?>" rel="stylesheet">
 
 <?php if($thispage=="1"){ ?>
-<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.css'); ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/landingpage/css/reset.css'); ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/landingpage/css/style.css'); ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/landingpage/style.css'); ?>" type="text/css">
-<link href="<?php echo base_url('assets/landingpage/css/animation.css'); ?>" rel='stylesheet' type='text/css'>
-<link href="<?php echo base_url('assets/landingpage/jquery.fullPage.css'); ?>" rel="stylesheet" type="text/css">
-<script src="<?php echo base_url('assets/landingpage/js/jquery.min.js'); ?>"></script>
-<script src="<?php echo base_url('assets/landingpage/js/jquery-ui.min.js'); ?>"></script>
-<script src="<?php echo base_url('assets/landingpage/jquery.fullPage.js'); ?>"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-    $('#fullpage').fullpage();
-});
-</script>
-<script src="<?php echo base_url('assets/landingpage/js/modernizr.js'); ?>"></script>
-<noscript>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/landingpage/VerticalShowcaseSlider/css/noscript.css'); ?>"/>
-</noscript>
+    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/landingpage/css/reset.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/landingpage/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/landingpage/style.css'); ?>" type="text/css">
+    <link href="<?php echo base_url('assets/landingpage/css/animation.css'); ?>" rel='stylesheet' type='text/css'>
+    <link href="<?php echo base_url('assets/landingpage/jquery.fullPage.css'); ?>" rel="stylesheet" type="text/css">
+    <script src="<?php echo base_url('assets/landingpage/js/jquery.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/landingpage/js/jquery-ui.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/landingpage/jquery.fullPage.js'); ?>"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#fullpage').fullpage();
+    });
+    </script>
+    <script src="<?php echo base_url('assets/landingpage/js/modernizr.js'); ?>"></script>
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/landingpage/VerticalShowcaseSlider/css/noscript.css'); ?>"/>
+    </noscript>
 
 <?php }else{ ?>
 
-<!-- bootstrap -->
-<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>" />
 
-<!-- uniform -->
-<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/uniform/css/uniform.default.min.css'); ?>" />
+    <!-- uniform -->
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/uniform/css/uniform.default.min.css'); ?>" />
 
- <!-- // WISHING PAGE CSS AND SCRIPT -->
+     <!-- // WISHING PAGE CSS AND SCRIPT -->
 <?php if($thispage=="5" || $thispage=="6"){ ?>
-<script type="text/javascript" src="<?php echo base_url('assets/wishing/js/modernizr.js'); ?>"></script>
-<!-- CSS Global Compulsory -->
-<link rel="stylesheet" href="<?php echo base_url('assets/wishing/css/style.css'); ?>" >
-<link rel="stylesheet" href="<?php echo base_url('assets/wishing/css/style-responsive.css'); ?>" >
-<!-- CSS Implementing Plugins -->
-<link rel="stylesheet" href="<?php echo base_url('assets/wishing/css/animate.min.css'); ?>">       
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <script src="js/respond.min.js"></script>
-<![endif]-->
+    <script type="text/javascript" src="<?php echo base_url('assets/wishing/js/modernizr.js'); ?>"></script>
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/wishing/css/style.css'); ?>" >
+    <link rel="stylesheet" href="<?php echo base_url('assets/wishing/css/style-responsive.css'); ?>" >
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/wishing/css/animate.min.css'); ?>">       
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
 
 <?php }else{ ?>
 
-<!-- animate.css -->
-<link rel="stylesheet" href="<?php echo base_url('assets/wow/animate.css'); ?>" />
+    <!-- animate.css -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/wow/animate.css'); ?>" />
 
-<link rel="stylesheet" href="<?php echo base_url('assets/style.css'); ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/datepicker.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/datepicker.css'); ?>">
 
 <?php } // ELSE END?>
 <?php if($thispage == "7"){ ?>
-<link type="text/css" href='<?php echo base_url('assets/wishgrant/css/style.css'); ?>' rel='stylesheet'>
+    <link type="text/css" href='<?php echo base_url('assets/wishgrant/css/style.css'); ?>' rel='stylesheet'>
 <?php } ?>
 <?php if($thispage == "2"){ ?>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/wishgrant/css/default.css'); ?>" />
-<link rel="stylesheet" type="text/css'); ?>" href="<?php echo base_url('assets/wishgrant/css/component.css'); ?>" />
-<script src="<?php echo base_url('assets/wishgrant/js/modernizr.custom.js'); ?>"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/wishgrant/css/default.css'); ?>" />
+    <link rel="stylesheet" type="text/css'); ?>" href="<?php echo base_url('assets/wishgrant/css/component.css'); ?>" />
+    <script src="<?php echo base_url('assets/wishgrant/js/modernizr.custom.js'); ?>"></script>
 <?php } ?>
 <?php if($thispage == "404"){ ?>
-<link href="<?php echo base_url('assets/404/css/style.css'); ?>" rel="stylesheet" type="text/css" media="all" />
+    <link href="<?php echo base_url('assets/404/css/style.css'); ?>" rel="stylesheet" type="text/css" media="all" />
 <?php } ?>
 
 <?php }//ELSE END ?>
+<?php if($thispage == "c1" || $thispage == "6"){ ?>
+    <script src="//code.jquery.com/jquery-1.3.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/chat/chat.css'); ?>">
+<script type="text/javascript">
+    setInterval('funread()',1000)
+    function funread(){
+        $.post("<?php echo base_url('chat/read'); ?>",{},function(data){
+            document.getElementById('divcontent').innerHTML=data
+            //$("#divcontent").scrollTop($("#divcontent")[0].scrollHeight);// to scroll down
+        })
+    }
+    function funsend(e){
+        if(e.keyCode === 13 || e.keyCode === 0){
+            msg = document.getElementById('txtmsg').value;
+            mssg = msg.replace(/^\s+|\s+$/g,"");
+            jQuery("#divcontent").load("<?php echo base_url('chat/insert').'/'; ?>" + encodeURIComponent(mssg));
+            document.getElementById('txtmsg').value='';
+        }
+    $("#divcontent").scrollTop($("#divcontent")[0].scrollHeight);
+    }
+    function funenter(){
+        //uname=document.getElementById('txtuname').value;
+        uname="<?php echo $this->session->userdata('rid'); ?>";
+        //document.getElementById('div1').style.display="none"
+        document.getElementById('tab1').style.display="block"
+    }
+    function funclose(){
+        document.getElementById('tab1').style.display="none"
+        document.getElementById('div1').style.display="block"
+    }
 
+
+</script>
+<script type="text/javascript">
+    function toggler(divId) {
+        $("#" + divId).toggle();
+    }
+</script>
+<?php }//if end C1 ?>
 
 
 <!-- Language Bar Script Start -->

@@ -3,8 +3,6 @@
 class login_model extends CI_Model
 {
 
-
-
     public function check_login($username){
         $CI = &get_instance();
         $this->user = $CI->load->database('user', TRUE);
