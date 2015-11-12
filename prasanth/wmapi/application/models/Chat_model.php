@@ -76,6 +76,8 @@ class chat_model extends CI_Model
         $this->chat->join('online oll', 'oll.uid = chat.to_id', 'left outer');
         $this->chat->like('from_id', $chat_uid, 'none');
         $this->chat->or_like('to_id', $chat_uid, 'none');
+        $this->chat->group_by("chat.from_id");
+        $this->chat->order_by("chat.sent","DESC");
         return $this->chat->get()->result_array();
     }
 

@@ -163,9 +163,9 @@
 }
 
 .cbp-vm-view-grid ul li {
-	width: 33%;
+	width: 23%;
 	text-align: center;
-	padding: 25px;
+	/*padding: 25px;*/
 	margin: 20px 0 0;
 	display: inline-block;
 	min-height: 420px;

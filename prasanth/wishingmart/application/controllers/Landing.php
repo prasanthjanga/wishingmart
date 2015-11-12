@@ -23,7 +23,12 @@ class Landing extends CI_Controller {
 	public function index(){ // TO GET LANDING PAGE
       $data['thispage']="1";
       $data['title']="WishingMart || Your Dream,Our Mission || Wishes Do Come True!";
-  		$this->load->view('landing_view', $data);
+  		
+      $url_product_list=$this->apiurl."login/productlist".$this->apikey;
+      $data['product_list'] = self::getapi($url_product_list);
+//print_r($data['product_list']);
+//exit();
+      $this->load->view('landing_view', $data);
 	}
 
 
@@ -45,9 +50,10 @@ class Landing extends CI_Controller {
         $pwd=$this->input->post("pwd");
         $enc_username=$this->encrypt->encode($email);
         $enc_username=str_replace(array('+', '/', '='), array('-', '_', '~'), $enc_username);
-        //echo $enc_username; //exit();
+        echo $enc_username; //exit();
         $url_check=$this->apiurl."login/logincheck/username/".$enc_username.$this->apikey;
         $data['check'] = self::getapi($url_check);
+
         //echo $data->check->pwd;
         $pwd=do_hash($pwd, 'md5');
         if($data['check']['pwd'] == $pwd){
@@ -61,8 +67,8 @@ class Landing extends CI_Controller {
             curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($curl_handle, CURLOPT_POST, 1);
             curl_setopt($curl_handle, CURLOPT_POSTFIELDS, array(
-              "uid" => $data['check']['uid'],
-              "online"  => '1',
+              "uid"      => $data['check']['uid'],
+              "online"   => '1',
             ));
              
             // Optional, delete this line if your API is open
@@ -74,9 +80,11 @@ class Landing extends CI_Controller {
             $result = json_decode($buffer);
             //print_r($result);
             if(isset($result->status) && $result->status == 'success'){
+
               $newdata = array(
-                'uid'     => $data['check']['uid'],
+                'uid'       => $data['check']['uid'],
                 'email'     => $email,
+                'prof_img'  => $data['check']['prof_img'],
                 'logged_in' => TRUE
               );
               $this->session->set_userdata($newdata);
@@ -216,9 +224,13 @@ class Landing extends CI_Controller {
   }
 
   function forgotpassword(){
-    $data['thispage']="8";
-    $data['title']="WishingMart || Forgot Password.";
-    $this->load->view('forgotpwd_view',$data);
+    if($this->session->userdata('logged_in') == '1'){
+      redirect("landing");
+    }else{
+      $data['thispage']="8";
+      $data['title']="WishingMart || Forgot Password.";
+      $this->load->view('forgotpwd_view',$data);
+    }
   }
 
   public static function getapi($url){
@@ -326,7 +338,7 @@ class Landing extends CI_Controller {
         $this->session->sess_destroy();
         redirect("landing"); 
       }else{
-        $this->session->set_flashdata('flashmsg','<div>User in online error.</div>'); 
+        $this->session->set_flashdata('flashmsg',"<div>User in online error.</div>"); 
         redirect('landing');
       }// else end
     }// if end

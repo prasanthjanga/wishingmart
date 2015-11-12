@@ -6,7 +6,13 @@
     <a href="<?php echo base_url('dashboard'); ?>">
     <div class="user-panel">
       <div class="pull-left image">
-        <img src="<?php echo base_url('assets/images/women.jpg'); ?>" class="img-circle" alt="User Image" height="45px"/>
+        <img src="<?php 
+          if($this->session->userdata('prof_img')!=''){
+              echo base_url().'images/profile/'.$this->session->userdata('prof_img');
+          }else{
+              echo base_url().'assets/images/profile-null.png';
+          }
+          ?>"  class="img-circle" alt="User Image" height="45px"/>
       </div>
       <div class="pull-left info">
         <p>
@@ -26,6 +32,12 @@
       <li class="treeview <?php if($thispage=='c3'){ echo 'active'; } ?>">
         <a href="<?php echo base_url('chat/youwithfriends'); ?>">
           <i class="fa fa-comments-o"></i> <span>You With Friends</span> 
+        </a>
+      </li>
+      <li class="treeview <?php if($thispage=='c4'){ echo 'active'; } ?>">
+        <a href="<?php echo base_url('chat/offline'); ?>">
+          <small class="label label-danger"><i class="fa fa-clock-o"></i></small>
+            <span>Offline Chat</span> 
         </a>
       </li>
       <li class="treeview <?php if($thispage=='4'){ echo 'active'; } ?>">

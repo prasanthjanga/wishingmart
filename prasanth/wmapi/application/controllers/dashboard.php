@@ -207,7 +207,7 @@ class Dashboard extends REST_Controller
         );
 
         if(isset($bank_ac)){
-            //print_r($bank_ac);        exit();
+            //print_r($bank_ac);  exit();
             $new_bank = $this->dashboard_model->post_bank_ac($bank_ac);
             if($new_bank === false){
                 $this->response(array("status" => "failed"));

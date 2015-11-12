@@ -18,7 +18,7 @@ class Img_upload_model extends CI_Model {
 		$config=array(
 			'allowed_types' => 'jpeg|jpg|png|gif',
 			'upload_path'	=>	$this->gallery_path,
-			'max_size'		=> '400',
+			'max_size'		=> '100',
 		);
 
 		$this->load->library('upload',$config);
@@ -35,10 +35,10 @@ class Img_upload_model extends CI_Model {
 			$config=array(
 				'image_library' => 'gd2',
 				'source_image'	=> $data['image_data']['full_path'],
-				'new_image'		=> $this->gallery_path . '/thumbs',
+				'new_image'		=> $this->gallery_path . '/profile',
 				'maintain_ration'=> true,
-				'width'			=> 250,
-				'height'		=> 250,
+				'width'			=> 160,
+				'height'		=> 160,
 			);
 			//echo "<pre>";
 			//print_r($image_data);
@@ -49,10 +49,12 @@ class Img_upload_model extends CI_Model {
 
 			$this->image_lib->resize();
 
+
 			$files = scandir($this->gallery_path);
-			$files = array_diff($files, array('.','..','thumbs'));
+			$files = array_diff($files, array('.','..','profile'));
 
 			//print_r($files);
+			@unlink( $config['source_image'] );
 
 			$images = array();
 			foreach($files as $file){
@@ -60,7 +62,7 @@ class Img_upload_model extends CI_Model {
 					$images[]=array(
 						'filename'	=> $file,
 						'url'		=> $this->gallery_path_url . $file,
-						'thumb_url'	=> $this->gallery_path_url . 'thumbs/' . $file
+						'thumb_url'	=> $this->gallery_path_url . 'profile/' . $file
 					);
 				}
 			}

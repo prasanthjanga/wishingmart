@@ -75,6 +75,22 @@ class Chat extends CI_Controller {
 
     $this->load->view('chatapp/index', $data);
   }
+  public function offline(){ // TO GET LANDING PAGE
+    //self::logcheck(); //TO CHECK USER LOGIN OR NOT
+    $data['thispage']="c4";
+    $data['title']="WishingMart || Chatting With Offline Friends.";
+
+    $uid=$this->session->userdata('uid');
+
+    $url_chat_all=$this->apiurl."chat/all_chat/uid/".$uid.$this->apikey;
+    $data['chat_all'] = self::getapi($url_chat_all);
+    //echo "<pre>";
+    //print_r($data['chat_all']);
+    //echo "</pre>";
+    //exit();
+
+    $this->load->view('chatapp/index', $data);
+  }
 
   public function read(){
     self::logcheck(); //TO CHECK USER LOGIN OR NOT

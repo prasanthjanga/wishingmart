@@ -126,6 +126,7 @@ class Dashboard extends CI_Controller {
     $data['title']="Profile Details || WishingMart";
     $url_profile=$this->apiurl."dashboard/profile/uid/".$this->session->userdata('uid').$this->apikey;
     $data['profile'] = self::getapi($url_profile);
+    //echo "<pre>";
     //print_r($data['profile']); exit();
     $url_country=$this->apiurl."wishing/country".$this->apikey;
     $data['country'] = self::getapi($url_country);
@@ -133,7 +134,7 @@ class Dashboard extends CI_Controller {
     $this->load->view('dashboard/index', $data);
   }
 
-  public function profile_pic(){ // TO GET Profile Details PAGE
+  public function profile_pic(){ // TO Update Profile Image Details PAGE
     $data['thispage']="5";
     $data['title']="Profile Details || WishingMart";
     if(isset($_POST['sub'])){
@@ -147,7 +148,7 @@ class Dashboard extends CI_Controller {
         $this->load->model('img_upload_model');
         $data['images'] = $this->img_upload_model->do_upload();
         if(isset($data['images']['error'])){
-          $this->session->set_flashdata('flashmsg','<div>The Image Size Is Not Alowed.</div>'); 
+          $this->session->set_flashdata('flashmsg',"<div>The Image Size Is Not Alowed.</div>"); 
           //$this->load->view('dashboard/profile', $data);
           redirect('dashboard/profile');
         }else{
@@ -176,10 +177,12 @@ class Dashboard extends CI_Controller {
             $result = json_decode($buffer);
             //print_r($result);exit();
             if(isset($result->status) && $result->status == 'success'){
-              $this->session->set_flashdata('flashmsg','<div>profile picture updated.</div>'); 
-              redirect('dashboard/index');
+              $this->session->set_flashdata('flashmsg',"<div><a href='#' class='close' data-dismiss='alert'>&times;</a>profile picture updated.</div>"); 
+              $this->session->unset_userdata('prof_img');
+              $this->session->set_userdata('prof_img',$data['images'][0]['filename']);
+              redirect('dashboard/profile');
             }else{
-              $this->session->set_flashdata('flashmsg','<div>Profile picture is not updated.</div>'); 
+              $this->session->set_flashdata('flashmsg',"<div>Profile picture is not updated.</div>"); 
             }//ELSE END
           }//IF END
         }//ELSE END
@@ -190,7 +193,7 @@ class Dashboard extends CI_Controller {
     $this->load->view('dashboard/index', $data);
   }
 
-  public function about_me(){ // TO GET Profile Details PAGE
+  public function about_me(){ // TO Update About Us Profile Details PAGE
     $data['thispage']="5";
     $data['title']="Profile Details || WishingMart";
     if(isset($_POST['sub'])){
@@ -241,10 +244,10 @@ class Dashboard extends CI_Controller {
           $result = json_decode($buffer);
           //print_r($result);exit();
           if(isset($result->status) && $result->status == 'success'){
-            $this->session->set_flashdata('flashmsg','<div>profile About  updated.</div>'); 
+            $this->session->set_flashdata('flashmsg',"<div>profile About  updated.</div>"); 
             redirect('dashboard/profile');
           }else{
-            $this->session->set_flashdata('flashmsg','<div>You About Not updated.</div>'); 
+            $this->session->set_flashdata('flashmsg',"<div>You About Not updated.</div>"); 
           }//ELSE END
         }//IF END
       }// ELSE END
@@ -252,7 +255,7 @@ class Dashboard extends CI_Controller {
     $this->load->view('dashboard/index', $data);
   }
 
-  public function bac_details(){ // TO GET Profile Details PAGE
+  public function bac_details(){ // TO Update Bank Account Details PAGE
     $data['thispage']="5";
     $data['title']="Profile Details || WishingMart";
     if(isset($_POST['sub'])){
@@ -295,10 +298,10 @@ class Dashboard extends CI_Controller {
           $result = json_decode($buffer);
           //print_r($result);exit();
           if(isset($result->status) && $result->status == 'success'){
-            $this->session->set_flashdata('flashmsg','<div>Bank A/C Details updated.</div>'); 
+            $this->session->set_flashdata('flashmsg',"<div>Bank A/C Details updated.</div>"); 
             redirect('dashboard/profile');
           }else{
-            $this->session->set_flashdata('flashmsg','<div>Bank A/C Details Not Updated.</div>'); 
+            $this->session->set_flashdata('flashmsg',"<div>Bank A/C Details Not Updated.</div>"); 
           }//ELSE END
         }//IF END
       }// ELSE END
@@ -306,7 +309,7 @@ class Dashboard extends CI_Controller {
     $this->load->view('dashboard/index', $data);
   }
 
-  public function postal_details(){ // TO GET Profile Details PAGE
+  public function postal_details(){ // TO Update Postal address Details PAGE
     //exit();
     $data['thispage']="5";
     $data['title']="Profile Details || WishingMart";

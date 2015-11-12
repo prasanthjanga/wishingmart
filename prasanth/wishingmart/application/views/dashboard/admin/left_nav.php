@@ -6,7 +6,13 @@
     <a href="<?php echo base_url('dashboard'); ?>">
     <div class="user-panel">
       <div class="pull-left image">
-        <img src="<?php echo base_url('assets/images/women.jpg'); ?>" class="img-circle" alt="User Image" height="45px"/>
+        <img src="<?php 
+          if($this->session->userdata('prof_img')!=''){
+              echo base_url().'images/profile/'.$this->session->userdata('prof_img');
+          }else{
+              echo base_url().'assets/images/profile-null.png';
+          }
+          ?>"  class="img-circle" alt="User Image" height="45px"/>
       </div>
       <div class="pull-left info">
         <p>

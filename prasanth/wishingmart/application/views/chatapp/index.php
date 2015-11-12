@@ -10,6 +10,8 @@ if($thispage == "c1"){
 	require('friends_with_you_view.php');
 }elseif($thispage == "c3"){
 	require('you_with_friends_view.php');
+}elseif($thispage == "c4"){
+	require('offline_chat_view.php');
 }else{
 	require('../404_view.php');
 }

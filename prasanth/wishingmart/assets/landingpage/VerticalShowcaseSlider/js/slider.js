@@ -37,7 +37,7 @@ var Slider = (function() {
 				$currentSlide = $slides.eq( current ),
 				initCSS = {
 					top : 0,
-					zIndex : 999
+					zIndex : 999,
 				};
 
 			$currentItem.css( initCSS );

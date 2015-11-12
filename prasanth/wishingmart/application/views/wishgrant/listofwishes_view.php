@@ -66,11 +66,13 @@ include('application/views/admin/head_top.php');
       <option>Date</option>
       </select>
       </div>
-                
+
+
+
     </div>
            
         <a href="#" class="cbp-vm-icon cbp-vm-grid cbp-vm-selected" data-view="cbp-vm-view-grid">Grid View</a>
-        <a href="#" class="cbp-vm-icon cbp-vm-list" data-view="cbp-vm-view-list">List View</a>
+        <a href="#" class="cbp-vm-icon cbp-vm-list" data-view="cbp-vm-view-list" onclick="myFunction()">List View</a>
                               
             <div class="">
             <div class="input-group col-sm-12" >
@@ -93,11 +95,19 @@ for($i=0;$i<=($count-1);$i++){
   //echo $allwishes[$i]['cnid'];
   //echo $allwishes[$i]['wpdec'];
 ?>
-
+<script type="text/javascript">
+/*
+function myFunction() {
+  document.getElementById('grid_view').style.height= "100px";
+  document.getElementById('grid_view').style.width= "250px";
+  return true;
+}
+*/
+</script> 
   <li>
     <form action="<?php echo base_url('wishgrant/listofwishes'); ?>" method="post">
     <a class="cbp-vm-image" href="#">
-      <img src="<?php echo base_url()."images/thumbs/".$allwishes[$i]['wpimg']; ?>" class="listimg" width="280px" height="280px">
+      <img src="<?php echo base_url()."images/thumbs/".$allwishes[$i]['wpimg']; ?>">
     </a>
     <h3 class="cbp-vm-title">
       <?php echo $allwishes[$i]['wpn']; ?>

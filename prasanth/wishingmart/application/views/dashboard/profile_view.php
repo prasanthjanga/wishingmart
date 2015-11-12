@@ -55,14 +55,25 @@ function p_add1()
 <div class="row">
 <!--<form id="registerForm" class="form-horizontal col-sm-6 col-sm-offset-3 col-lg-offset-1 col-lg-10" data-toggle="validator" role="form" method="post" action="">
     -->
-<div class="form-horizontal col-sm-6 col-sm-offset-3 col-lg-offset-1 col-lg-10">    <div class="form-group">
+<div class="form-horizontal col-sm-6 col-sm-offset-3 col-lg-offset-1 col-lg-10">
+    <div class="form-group">
       <label for="" class="col-sm-4 control-label">
-            <?php echo $this->session->flashdata('flashmsg'); ?> 
+        <?php echo $this->session->flashdata('flashmsg'); ?> 
       </label> 
     </div>
-    <div class="form-group">
-    <div class= " col-sm-12 col-lg-offset-4 col-lg-12" id="hide_div">
-        <img src="<?php echo base_url()."images/thumbs/".$profile[0]['prof_img']; ?>" width="200" height="200" alt=""/>
+    <div class="form-horizontal form-group">
+<br>
+ <h4 class="">Profile Picture</h4>
+    <hr>
+    <div class= " col-sm-12 col-lg-offset-4 col-lg-12" id="hide_div"><br>
+
+        <img src="<?php 
+          if($profile[0]['prof_img'] !=''){
+              echo base_url().'images/profile/'.$profile[0]['prof_img'];
+          }else{
+              echo base_url().'assets/images/profile-null.png';
+          }
+        ?>" width="200" height="200" alt="" style="border-radius:100px;"/>
         
         <div class="form-group">
           <label for="" class="col-sm-4 control-label">
@@ -70,7 +81,7 @@ function p_add1()
         </div>
         <div class="col-sm-6">
             <input type="submit" data-toggle="collapse" data-target="#demo"
-             onclick="test()" class="btn btn-danger pull-right" value="Change Profile Picture" >
+             onclick="test()" class="btn btn-danger pull-right" required="" value="Change Profile Picture" >
         </div>  
     </div>
     
@@ -95,10 +106,12 @@ function p_add1()
 
 
 <section>
+
+<div class="form-horizontal row form-group" id='hide_about'>
+<br>
  <h4 class="">About Me</h4>
-<hr>
-<div class="row" id='hide_about'>
- <div class="col-sm-6">
+    <hr>
+  <div class="col-sm-6">
     <div class="form-group">
         <label for="" class="col-sm-4 control-label">First Name</label>
         <div class="col-sm-8">
@@ -168,7 +181,11 @@ function p_add1()
 </div>
 
 
-<div class="row" id='edit_about' style="display:none"><!-- style="display:none"-->
+<div class="form-horizontal row form-group" id='edit_about' style="display:none"><!-- style="display:none"-->
+<br>
+ <h4 class="">About Me</h4>
+    <hr>
+
 <?php echo form_open_multipart('dashboard/about_me',array('id' => 'registerForm', 'data-toggle'=>'validator')); ?>
  <div class="col-sm-6">
     <div class="form-group">
@@ -270,10 +287,10 @@ function p_add1()
 
 
 
-<section>
-<h4>Payment Details</h4>
-<hr>
-<div class="row" id="hide_payment">
+<div class="form-horizontal row form-group" id="hide_payment">
+<br>
+    <h4>Payment Details</h4>
+        <hr>
   <div class="col-sm-6">
     <div class="form-group">
         <label for="" class="col-sm-4 control-label"> Credit Card No </label>
@@ -312,8 +329,12 @@ function p_add1()
 </div>
 
 
-<div class="row" id="edit_payment" style="display:none">
-<?php echo form_open_multipart('dashboard/bac_details',array('id' => 'registerForm', 'data-toggle'=>'validator')); ?>
+
+<div class="form-horizontal row form-group" id="edit_payment" style="display:none">
+<br>
+    <h4>Payment Details</h4>
+        <hr>
+    <?php echo form_open_multipart('dashboard/bac_details',array('id' => 'registerForm', 'data-toggle'=>'validator')); ?>
   <div class="col-sm-6">
     <div class="form-group">
         <label for="" class="col-sm-4 control-label"> Credit Card No </label>
@@ -372,9 +393,11 @@ function p_add1()
 
 
 <section>
+
+<div class="form-horizontal row form-group" id="hide_p_add">
+<br>
 <h4>Postal Address</h4>
 <hr>
- <div class="row" id="hide_p_add">
  <div class="col-sm-6">
   
    <div class="form-group">
@@ -412,7 +435,10 @@ function p_add1()
       </div> 
     </div>
     </div>
-<div class="row" id="edit_p_add" style="display:none">
+<div class="form-horizontal row form-group" id="edit_p_add" style="display:none">
+<br>
+<h4>Postal Address</h4>
+<hr>
 <?php echo form_open_multipart('dashboard/postal_details',array('id' => 'registerForm', 'data-toggle'=>'validator')); ?>
     <div class="col-sm-6">
  

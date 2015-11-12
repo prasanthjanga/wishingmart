@@ -163,6 +163,12 @@ class Wishgrant extends CI_Controller {
 
     $url_chat_on=$this->apiurl."chat/online_status/uid/".$this->session->userdata("wrid").$this->apikey;
     $data['online'] = self::getapi($url_chat_on) ;
+
+    $url_wish_user=$this->apiurl."wishing/wishuser/wrid/".$this->session->userdata("wrid").$this->apikey;
+    $data['wish_user'] = self::getapi($url_wish_user) ;
+    //print_r($data['wish_user']);
+    //exit();
+
     //print_r($this->session->userdata());  
     //exit();
 
@@ -178,7 +184,7 @@ class Wishgrant extends CI_Controller {
       'wdesc'     => $this->session->userdata("wdesc"),
       'wimg'      => $this->session->userdata("wimg"),
     );
-    //print_r($wish_details);
+    //print_r($data['wish_details']);
     //exit();
     if(isset($data['wish_details'])){
       $data['thispage']="6";

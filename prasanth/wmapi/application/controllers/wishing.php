@@ -187,7 +187,23 @@ class Wishing extends REST_Controller
     }// all_wish_list_get END
 
 
-    
+    //To Get Wishing user details for granting page
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wmapi/wishing/wishuser/wrid/104/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function wishuser_get()
+    {
+        if(!$this->get("wrid")){
+            $this->response(NULL, 400);
+        }
+        $this->load->model("wishing_model");
+        $user = $this->wishing_model->get_wishuser($this->get("wrid"));
+        if($user){
+            $this->response($user, 200);
+        }else{
+            $this->response(NULL, 400);
+        }
+    }
+
  
 
     

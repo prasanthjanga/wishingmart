@@ -108,8 +108,8 @@ h2{font:italic 60px/50px 'Old Standard TT', serif; margin:0;}
 .dashboard{font:normal 50px/50px 'Georgia','Impact', serif; margin:0 0 40px 0; text-align:center; font:strong;}
 h2.title{font:normal 50px/50px 'Impact'; margin:0 0 40px 0; text-align:center; color:#4abcdd;}
 h4.title{font:normal 35px/35px 'orbitron'; margin:0; text-align:center; color:#000;}
-h3{font:normal bold 33px/33px 'Old Standard TT', serif;text-transform:uppercase; margin:0;}
-h4{font:italic 25px/25px 'Georgia','Impact', serif; margin:0; color:whitesmoke; font:bold; text-align:center;}
+/*h3{font:normal bold 33px/33px 'Old Standard TT', serif;text-transform:uppercase; margin:0;}
+*/h4{font:italic 25px/25px 'Georgia','Impact', serif; margin:0; color:whitesmoke; font:bold; text-align:center;}
 .btn,a,a:hover{text-decoration: none;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;outline:0 ;}
 a{color: #333;}
 
@@ -155,9 +155,9 @@ a{color: #333;}
 .navbar-nav > li{margin-top:0px !important;}
 .navbar-nav > li > a{ padding: 13px 5px; padding-bottom:0px !important;  text-transform: uppercase;font: normal 13px/19px 'Titillium Web';}
 .navbar-inverse{border:none; opacity:1; background-color:black;}
-.navbar-fixed-top{ background:rgba(0,0,0,1); opacity:1.0;}
+.navbar-fixed-top{ background:rgba(0,0,0,.3); opacity:1.0;}
 .navbar-brand{padding:6px 15px !important;}
-.dropdown-menu{background:#000; color: #fff; padding-top:15px; margin-top:10px !important;}
+.dropdown-menu{background:rgba(0,0,0,.3); color: #fff; padding-top:15px; margin-top:10px !important;}
 .dropdown-menu > li > a{color: #fff;padding:10px;}
 .dropdown-menu > li > a:hover{background-color: #333;color: #fff;}
 .navbar-nav>.user-menu .user-image {
@@ -180,7 +180,7 @@ a{color: #333;}
 
 
 /*footer*/
-.footer{background-color:rgba(0,0,0,1); position:fixed;margin-top:10px; z-index:1000;}
+.footer{background-color:rgba(0,0,0,.3); position:fixed;margin-top:10px; z-index:1000;}
 
 .footer .links{margin-top: 9px;float: left;}
 .footer .links a{color: #888;padding: 0 10px;font: normal 13px/13px 'Titillium Web';}

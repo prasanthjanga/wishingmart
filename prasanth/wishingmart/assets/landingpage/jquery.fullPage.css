@@ -31,9 +31,9 @@ html.fp-enabled,
     background: #333;
     z-index:9;
     text-align:center;
-    color: #f2f2f2;
+    color: #fff;
     padding: 0 0 0 0;
-    background:rgba(0,0,0,1) !important;
+    background:rgba(0,0,0,0.3) !important;
 }
 
 

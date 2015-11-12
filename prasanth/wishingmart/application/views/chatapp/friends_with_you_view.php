@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
 
     <div><h3 class=" title ">
-        Friends With You
+        <i class="fa fa-users"></i> Friends With You
     </h3></div>
 
         <!-- Main content -->
@@ -47,12 +47,16 @@ for($i=0;$i<=(count($chat_all)-1);$i++){
 		echo "</td>";
 		echo "<td>";
 			//echo $chat_all[$i]['online'];
-		if($chat_all[$i]["from_online"]=="1"){
-			echo '<small class="label label-success"><i class="fa fa-clock-o"></i> Online</small>';
-		}else{
-			echo '<small class="label label-danger"><i class="fa fa-clock-o"></i> Offline</small>';
-		}
-		echo "</td>";
+    if($chat_all[$i]["from_online"]=="1"){
+      echo "<a href='#' onclick='funenter(".$this->session->set_userdata('from_id',$chat_all[$i]['from_id']).")'>";
+      echo '<small class="label label-success"><i class="fa fa-clock-o"></i> Online</small>';
+      echo "</a>";
+    }else{
+      echo "<a href='#' onclick='funoffline()'>";
+      echo '<small class="label label-danger"><i class="fa fa-clock-o"></i> Offline</small>';
+      echo "</a>";
+    }
+
 		echo "<td>";
 			echo $chat_all[$i]['message'];
 		echo "</td>";

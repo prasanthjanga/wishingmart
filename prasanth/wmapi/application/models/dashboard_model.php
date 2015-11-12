@@ -169,15 +169,15 @@ WHERE r.rid=$uid
     function post_bank_ac($bank_ac){
         $CI = &get_instance(); //To Load 2nd DB
         $this->user = $CI->load->database('user', TRUE); //To Load 2nd DB
-/*
+
         $bank_ac=array(
             'card_no'     => $bank_ac['cno'],
             'issued_bank' => $bank_ac['ib'],
             'card_type'   => $bank_ac['ct'],
             'country'     => $bank_ac['country'],
         );
-*/
-        //print_r($bank_ac);exit();
+
+        print_r($bank_ac);exit();
         if($bank_ac['cno']){
             $this->user->where('payid', $bank_ac['uid']);
             $this->user->update('payment', array('card_no'=>$bank_ac['cno']));

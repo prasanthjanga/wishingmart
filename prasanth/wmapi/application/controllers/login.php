@@ -50,6 +50,17 @@ class Login extends REST_Controller
         }
     }
 
+    //To View 10 product on Landing page from DB 
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wishing_ui1/prasanth/wmapi/login/productlist/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS    
+    public function productlist_get(){
+        $list_pro = $this->login_model->get_productlist();
 
+        if($list_pro){
+            $this->response($list_pro, 200);
+        }else{
+            $this->response(NULL, 400);
+        }
+    }
     
 }

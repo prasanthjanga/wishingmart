@@ -134,10 +134,19 @@ Grant Wish
 
         <div class="form-group">
           <div class="col-sm-4 center image">
-              <img src="<?php echo base_url('assets/images/women.jpg'); ?>" class="img-circle" alt="User Image" height="50px">
+        <img src="<?php 
+        if($wish_user['prof_img']!=''){
+            echo base_url().'images/profile/'.$wish_user['prof_img'];
+        }else{
+            echo base_url().'assets/images/profile-null.png';
+        }
+        ?>"  class="img-circle" alt="User Image" height="50px"/>
           </div>
           <div class="col-sm-7 pull-left wishform">
-              <p>Vogue Robot<br>Malaysia</p>
+              <p>
+                <?php echo $wish_user['fn']; ?><br>
+                <?php echo $wish_user['cname']; ?>
+              </p>
         </div>
 
       </div>

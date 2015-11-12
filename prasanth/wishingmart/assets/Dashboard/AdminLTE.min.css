@@ -462,7 +462,7 @@ a:hover, a:active, a:focus {
 
 .sidebar {
     padding-bottom: 10px;
-    background: rgba(0, 0, 0, 0.8);
+    /*background: rgba(0, 0, 0, 0.8);*/
     height: 100vh !important;
 }
 
@@ -4599,7 +4599,8 @@ table.text-center, table.text-center td, table.text-center th {
 }
 
 .skin-blue .main-header .navbar, aside .sidebar {
-    background: black;
+    /*background: black;*/
+    background-color:rgba(0,0,0,.3);
     opacity: 1.0;
 }
 
@@ -4644,14 +4645,15 @@ table.text-center, table.text-center td, table.text-center th {
 }
 
 .skin-blue .main-header .logo {
-    background: black;
+    /*background: black;*/
+    background-color:rgba(0,0,0,.5);
     opacity:1.0;
     color: #fff;
     border-bottom: 0 solid transparent;
 }
 
 .skin-blue .main-header .logo:hover {
-    background-color: #357ca5
+    background-color: #000
 }
 
 .skin-blue .main-header li.user-header {

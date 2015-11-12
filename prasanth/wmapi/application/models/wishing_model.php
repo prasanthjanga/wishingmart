@@ -156,4 +156,22 @@ class Wishing_model extends CI_Model
     }
 
 
+    function get_wishuser($wrid){
+        // Loading second db and running query.
+        $CI = &get_instance();
+        //setting the second parameter to TRUE (Boolean) the function will return the database object.
+        $this->user = $CI->load->database('user', TRUE);
+        //$this->user->select("*");
+        //$query = $this->user->get_where("country", array("cnid" => $id));
+
+        $query = $this->user->query("SELECT r.rid,r.fn,r.ln,c.cname,p.prof_img FROM registration r
+LEFT OUTER JOIN profile p ON p.pid=r.rid
+LEFT OUTER JOIN country c ON c.cnid=r.cnid
+WHERE rid='$wrid'");
+        if($query->num_rows() == 1){
+            return $query->row();
+        }
+    }
+
+
 }
