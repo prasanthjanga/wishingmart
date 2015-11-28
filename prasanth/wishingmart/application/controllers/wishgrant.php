@@ -62,7 +62,7 @@ class Wishgrant extends CI_Controller {
       $this->load->view('wishgrant/wishing_view',$data);
     }else{
       //echo "<span style='color:red;'>sample same form</span>";
-      $data['images'] = $this->img_upload_model->do_upload();
+      $data['images'] = $this->img_upload_model->wishing_do_upload();
       if(isset($data['images']['error'])){
         $this->session->set_flashdata('flashmsg','<div>The Image Size Is Not Alowed.</div>'); 
         $this->load->view('wishgrant/wishing_view',$data);
@@ -155,60 +155,56 @@ class Wishgrant extends CI_Controller {
 
   public function granting(){
     self::logcheck(); //TO CHECK USER LOGIN OR NOT
-    $allwishes_url=$this->apiurl."wishing/subcategoryid/id/".$this->session->userdata("wscatugery").$this->apikey;
-    $data['subcategory'] = self::getapi($allwishes_url);
+    $data['thispage']="6";
+    $data['title']="WishingMart || granting Page.";
+    
+    $wp_id=$this->uri->segment(3);
 
+    $url_wishbyid = $this->apiurl."wishing/wishbyid/wpid/".$wp_id.$this->apikey;
+    $data['wishbyid'] = self::getapi($url_wishbyid) ;
+    //print_r($data['wishbyid']);
+    //exit();    
+    
+    $this->session->set_userdata('from_id',$data['wishbyid'][0]['rid']);
+    
+    $url_chat_on=$this->apiurl."chat/online_status/uid/".$data['wishbyid'][0]['rid'].$this->apikey;
+    $data['online'] = self::getapi($url_chat_on) ;
+    //print_r($data['online']);
+    //exit();
     $url_country=$this->apiurl."wishing/country".$this->apikey;
     $data['country'] = self::getapi($url_country) ;
+    //print_r($data['country']);exit();
 
-    $url_chat_on=$this->apiurl."chat/online_status/uid/".$this->session->userdata("wrid").$this->apikey;
-    $data['online'] = self::getapi($url_chat_on) ;
+    if($data['wishbyid'][0]['rid'] == $this->session->userdata('uid')){
+      redirect('wishgrant/listofwishes');
+    }else{
 
-    $url_wish_user=$this->apiurl."wishing/wishuser/wrid/".$this->session->userdata("wrid").$this->apikey;
-    $data['wish_user'] = self::getapi($url_wish_user) ;
-    //print_r($data['wish_user']);
-    //exit();
 
-    //print_r($this->session->userdata());  
-    //exit();
-
-    $data['wish_details']=array(
-      'wid'       => $this->session->userdata("wid"),
-      'wrid'      => $this->session->userdata("wrid"),
-      'wpname'    => $this->session->userdata("wpname"),
-      'wcountry'  => $this->session->userdata("wcountry"),
-      'wcatugory' => $data['subcategory'][0]['cname'],
-      'wscatugory'=> $data['subcategory'][0]['scname'],
-      'wbrand'    => $this->session->userdata("wbrand"),
-      'wcolour'   => $this->session->userdata("wcolour"),
-      'wdesc'     => $this->session->userdata("wdesc"),
-      'wimg'      => $this->session->userdata("wimg"),
-    );
-    //print_r($data['wish_details']);
-    //exit();
-    if(isset($data['wish_details'])){
-      $data['thispage']="6";
-      $data['title']="WishingMart || granting Page.";
-      //echo $data['wid']=$this->uri->segment(3);// for query string
-      //echo $this->session->userdata('wid');
       if(isset($_POST['sub'])){
+
         $this->load->library('form_validation');
         $this->form_validation->set_rules('gt_country', 'Country Name', 'callback_select_validate');
         $this->form_validation->set_rules('gt_p_desc', 'Description', 'required');
         $this->form_validation->set_rules('userfile', 'Product Image', 'callback_handle_upload');
         $this->form_validation->set_rules('gt_price', 'Product Price In $', 'required');
+        $this->form_validation->set_rules('s_company', 'Shipping Company Name', 'required');
+        $this->form_validation->set_rules('s_cost', 'Shipping Cost in $', 'required');
+        $this->form_validation->set_rules('s_edays', 'Shipping Estimated Days', 'required');
+        $this->form_validation->set_rules('b_weight', 'Box Weight', 'required');
+        $this->form_validation->set_rules('b_wsize', 'Box Width ( Lenght )', 'required');
+        $this->form_validation->set_rules('b_hsize', 'Box Width ( Height )', 'required');
         $this->form_validation->set_error_delimiters('<div>','</div>');
         
         if($this->form_validation->run() == FALSE){
           //echo "<span style='color:red;'>Form Errors Plz Ceck.</span>";
           $this->load->view('wishgrant/granting_view',$data);
         }else{
-          $data['images'] = $this->img_upload_model->do_upload();
+          $data['images'] = $this->img_upload_model->granting_do_upload();
           if(isset($data['images']['error'])){
             $this->session->set_flashdata('flashmsg','<div>The Image Size Is Not Alowed.</div>'); 
             $this->load->view('wishgrant/granting_view',$data);
           }else{
-            //echo $data['wish_details']['wid'];
+            //echo $this->input->post('wpid');
             //echo $this->session->userdata("uid");
             //echo $this->input->post("gt_price");
             //echo $this->input->post("gt_p_desc");
@@ -224,12 +220,19 @@ class Wishgrant extends CI_Controller {
               curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
               curl_setopt($curl_handle, CURLOPT_POST, 1);
               curl_setopt($curl_handle, CURLOPT_POSTFIELDS, array(
-                'wid'     =>$data['wish_details']['wid'],
+                'wid'     =>$this->input->post('wpid'),
                 'gtuid'   =>$this->session->userdata("uid"),
                 'gtprice' =>$this->input->post("gt_price"),
                 'gtdesc'  =>$this->input->post("gt_p_desc"),
                 'gtcname' =>$this->input->post("gt_country"),
                 'userfile'=>$data['images'][0]['filename'],
+                'scompany'=>$this->input->post("s_company"),
+                'scost'   =>$this->input->post("s_cost"),
+                'sedays'  =>$this->input->post("s_edays"),
+                'bweight' =>$this->input->post("b_weight"),
+                'bwsize'  =>$this->input->post("b_wsize"),
+                'bhsize'  =>$this->input->post("b_hsize"),
+
               ));
                
               // Optional, delete this line if your API is open
@@ -252,34 +255,18 @@ class Wishgrant extends CI_Controller {
           }//ELSE END
         }//ELSE END
       }// IF END
-
       $this->load->view('wishgrant/granting_view',$data);
-    }else{
-      redirect("wishgrant/listofwishes");
     }
   }
 
   public function listofwishes(){ // TO GET LANDING PAGE
     self::logcheck(); //TO CHECK USER LOGIN OR NOT
-    $this->session->unset_userdata("wid");
-    $this->session->unset_userdata("wrid");
-    $this->session->unset_userdata("wpname");
-    $this->session->unset_userdata("wcountry");
-    $this->session->unset_userdata("wcatugory");
-    $this->session->unset_userdata("wscatugery");
-    $this->session->unset_userdata("wscatugory");
-    $this->session->unset_userdata("wbrand");
-    $this->session->unset_userdata("wcolour");
-    $this->session->unset_userdata("wdesc");
-    $this->session->unset_userdata("wimg");
-
+    
     $data['thispage']="2";
     $data['title']="MyAccount || WishingMart";
-    //$allwishes_url="http://localhost/wishing_ui1/prasanth/wmapi/wishing/all_wish_list/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
 
     $data['flashmsg']=$this->session->userdata('flashmsg');
     $this->session->unset_userdata('flashmsg');
-
     
     $allwishes_url=$this->apiurl."wishing/all_wish_list".$this->apikey;
     $data['allwishes'] = self::getapi($allwishes_url) ;
@@ -288,29 +275,7 @@ class Wishgrant extends CI_Controller {
     $url_country=$this->apiurl."wishing/country".$this->apikey;
     $data['country'] = self::getapi($url_country) ;
     //print_r($data['country']);exit();
-    if(isset($_POST['sub'])){
-      //echo "helloooooooooooooo";
-      echo $login_id=$this->session->userdata('uid');
-      echo $wrid = $this->input->post("wrid");
-      if($login_id != $wrid){
-        $wish_details=array(
-          'wid'       => $this->input->post("wid"),
-          'wrid'      => $this->input->post("wrid"),
-          'wpname'    => $this->input->post("wpname"),
-          'wcountry'  => $this->input->post("wcountry"),
-          'wscatugery'=> $this->input->post("wscatugery"),
-          'wbrand'    => $this->input->post("wbrand"),
-          'wcolour'   => $this->input->post("wcolour"),
-          'wdesc'     => $this->input->post("wdesc"),
-          'wimg'      => $this->input->post("wimg"),
-        );
-        //print_r($wish_details);
-        $this->session->set_userdata($wish_details);
-        redirect("wishgrant/granting");
-      }else{
-        $this->session->set_flashdata('flashmsg','<div>This Wish Is Make By You !!!.</div>'); 
-      }//IF END
-    }//IF END
+    
     $this->load->view('wishgrant/listofwishes_view', $data);
   }
 

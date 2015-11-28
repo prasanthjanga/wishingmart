@@ -34,15 +34,14 @@
             <div class="col-sm-8">
                 <p class="wishform"><?php echo $grant_pro[0]['gid']; ?></p>
                 <input type="hidden" name="gid" value="<?php echo $grant_pro[0]['gid']; ?>" >
-                <input type="hidden" name="wid" value="<?php echo $wish_pro[0]['wid']; ?>" >
+                <input type="hidden" name="wpid" value="<?php echo $grant_pro[0]['wid']; ?>" >
             </div>        
         </div>
         
         <div class="form-group">
             <label for="" class="col-sm-4 control-label">Product Name</label>
             <div class="col-sm-8">
-                <p class="wishform"><?php echo $wish_pro[0]['wpn']; ?></p>
-                <input type="hidden" name="wpn" value="<?php echo $wish_pro[0]['wpn']; ?>" >
+                <p class="wishform"><?php echo $grant_pro[0]['wpn']; ?></p>
             </div>        
         </div>
             
@@ -50,21 +49,20 @@
             <label for="" class="col-sm-4 control-label">Country</label>
             <div class="col-sm-8">
                 <p class="wishform"><?php echo $grant_pro[0]['gtcname']; ?></p>
-                <input type="hidden" name="gtcname" value="<?php echo $grant_pro[0]['gtcname']; ?>" >
             </div>        
         </div>
             
         <div class="form-group">
             <label for="" class="col-sm-4 control-label">Category</label>
             <div class="col-sm-8">
-                <p class="wishform"><?php echo $sub_category[0]['cname']; ?></p>
+                <p class="wishform"><?php echo $grant_pro[0]['wcategory']; ?></p>
             </div>        
         </div>
             
         <div class="form-group">
             <label for="" class="col-sm-4 control-label">Sub-Category</label>
             <div class="col-sm-8">
-                <p class="wishform"><?php echo $sub_category[0]['scname']; ?></p>
+                <p class="wishform"><?php echo $grant_pro[0]['wscname']; ?></p>
             </div>        
         </div>
 
@@ -72,21 +70,17 @@
             <label for="" class="col-sm-4 control-label">Product Description</label>
             <div class="col-sm-8">
                 <p class="wishform">
-                    Brand : <?php echo $wish_pro[0]['brand']; ?> <br>
-                    Color : <?php echo $wish_pro[0]['wpcolour']; ?> <br>
+                    Brand : <?php echo $grant_pro[0]['brand']; ?> <br>
+                    Color : <?php echo $grant_pro[0]['wpcolour']; ?> <br>
                     <?php echo $grant_pro[0]['gtdesc']; ?>
                 </p>
-                <input type="hidden" name="brand" value="<?php echo $wish_pro[0]['brand']; ?>" >
-                <input type="hidden" name="wpcolour" value="<?php echo $wish_pro[0]['wpcolour']; ?>" >
-                <input type="hidden" name="gtdesc" value="<?php echo $grant_pro[0]['gtdesc']; ?>" >
             </div>        
         </div>
             
         <div class="form-group">
             <label for="" class="col-sm-4 control-label">Product Image</label>
             <div class="col-sm-8">
-                <img src="<?php echo base_url()."images/thumbs/".$grant_pro[0]['gtimg']; ?>" width="100px" height="100px" alt=""/>
-                <input type="hidden" name="gtimg" value="<?php echo $grant_pro[0]['gtimg']; ?>" >
+                <img src="<?php echo base_url()."images/products/granted/".$grant_pro[0]['gtimg']; ?>" width="200px" height="200px" alt=""/>
             </div>        
         </div>
     
@@ -95,7 +89,28 @@
             <label for="" class="col-sm-4 control-label">Price</label>
             <div class="col-sm-8">
                 <p class="wishform">USD <?php echo $grant_pro[0]['gtprice']; ?></p>
-                <input type="hidden" name="gtprice" value="<?php echo $grant_pro[0]['gtprice']; ?>" >
+            </div>        
+        </div>
+
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">Shipping cost</label>
+            <div class="col-sm-8">
+                <p class="wishform">USD <?php echo $grant_pro[0]['escost']; ?></p>
+            </div>        
+        </div>
+
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">Quantity</label>
+            <div class="col-sm-8">
+                <p class="wishform">
+                    <select class="form-control" name="quantity" required="">
+                        <?php
+                        for($i=1;$i<=1;$i++){
+                            echo "<option value=".$i.">".$i."</options>";
+                        }
+                        ?>
+                    </select>
+                </p>
             </div>        
         </div>
     
@@ -120,35 +135,35 @@
         <div class="form-group">
             <label for="" class="col-sm-4 control-label">Product Id</label>
             <div class="col-sm-8">
-                <p class="wishform"><?php echo $wish_pro[0]['wid']; ?></p>
+                <p class="wishform"><?php echo $grant_pro[0]['wid']; ?></p>
             </div>        
         </div>
 
         <div class="form-group">
             <label for="" class="col-sm-4 control-label">Product Name</label>
             <div class="col-sm-8">
-                <p class="wishform"><?php echo $wish_pro[0]['wpn']; ?></p>
+                <p class="wishform"><?php echo $grant_pro[0]['wpn']; ?></p>
             </div>        
         </div>
             
         <div class="form-group">
             <label for="" class="col-sm-4 control-label">Country</label>
             <div class="col-sm-8">
-                <p class="wishform"><?php echo $wish_pro[0]['cname']; ?></p>
+                <p class="wishform"><?php echo $grant_pro[0]['wpcname']; ?></p>
             </div>        
         </div>
             
         <div class="form-group">
             <label for="" class="col-sm-4 control-label">Category</label>
             <div class="col-sm-8">
-                <p class="wishform"><?php echo $sub_category[0]['cname']; ?></p>
+                <p class="wishform"><?php echo $grant_pro[0]['wcategory']; ?></p>
             </div>        
         </div>
             
         <div class="form-group">
             <label for="" class="col-sm-4 control-label">Sub-Category</label>
             <div class="col-sm-8">
-                <p class="wishform"><?php echo $sub_category[0]['scname']; ?></p>
+                <p class="wishform"><?php echo $grant_pro[0]['wscname']; ?></p>
             </div>        
         </div>
 
@@ -156,9 +171,9 @@
             <label for="" class="col-sm-4 control-label">Product Description</label>
             <div class="col-sm-8">
                 <p class="wishform">
-                    Brand : <?php echo $wish_pro[0]['brand']; ?> <br>
-                    Color : <?php echo $wish_pro[0]['wpcolour']; ?> <br>
-                    <?php echo $wish_pro[0]['wpdec']; ?>
+                    Brand : <?php echo $grant_pro[0]['brand']; ?> <br>
+                    Color : <?php echo $grant_pro[0]['wpcolour']; ?> <br>
+                    <?php echo $grant_pro[0]['wpdec']; ?>
                 </p>
             </div>        
         </div>
@@ -166,7 +181,7 @@
         <div class="form-group">
             <label for="" class="col-sm-4 control-label">Product Image</label>
             <div class="col-sm-8">
-                <img src="<?php echo base_url()."images/thumbs/".$wish_pro[0]['wpimg']; ?>" width="100px" height="100px" alt=""/>
+                <img src="<?php echo base_url()."images/products/wished/".$grant_pro[0]['wpimg']; ?>" width="200px" height="200px" alt=""/>
             </div>        
         </div>
         </div><!-- panel-body END-->

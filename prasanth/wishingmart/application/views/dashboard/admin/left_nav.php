@@ -30,19 +30,20 @@
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="<?php echo base_url('dashboard/wishlist'); ?>"><i class="fa fa-circle-o"></i>Wish List</a></li>
+          <li><a href="<?php echo base_url('dashboard/wishlist'); ?>" title="Wishes Done By Me"><i class="fa fa-circle-o"></i>Wish List</a></li>
         </ul>
       </li>
-      <li class="treeview <?php if($thispage=='3' || $thispage=='31' || $thispage=='32' || $thispage=='10'){ echo 'active'; } ?>">
+      <li class="treeview <?php if($thispage=='3' || $thispage=='31' || $thispage=='32' || $thispage=='10' ){ echo 'active'; } ?>">
         <a href="">
           <i class="fa fa-magic"></i>
           <span>Grant Requests</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="<?php echo base_url('dashboard/grantlist'); ?>"><i class="fa fa-circle-o"></i>Grant Requests
+          <li><a href="<?php echo base_url('dashboard/grantlist'); ?>" title="Grant Request For My Wishes"><i class="fa fa-circle-o"></i>Grant Requests
           <span class="label label-primary pull-right">4</span></a></li>
-          <li><a href="<?php echo base_url('dashboard/mygrant'); ?>"><i class="fa fa-circle-o"></i>My Requests</a></li>
+          <li><a href="<?php echo base_url('dashboard/mygrant'); ?>" title="Grant Request I Sent To Others"><i class="fa fa-circle-o"></i>My Requests</a></li>
+
         </ul>
       </li>
       
@@ -58,10 +59,23 @@
           
         </ul>
       </li>
-      <li class="treeview <?php if($thispage=='7' || $thispage=='8'){ echo 'active'; } ?>">
-        <a href="<?php echo base_url('dashboard/invoiceslist'); ?>">
+      <li class="treeview <?php if($thispage=='11' || $thispage=='12'){ echo 'active'; } ?>">
+        <a href="<?php echo base_url('dashboard/orderslist'); ?>">
+          <i class="fa fa-bars"></i>
+          <span>Orders</span>
+        </a>
+      </li>
+      <li class="treeview <?php if($thispage=='7' || $thispage=='71'){ echo 'active'; } ?>">
+        <a href="<?php echo base_url('dashboard/invoicelist'); ?>">
           <i class="fa fa-money"></i>
-          <span>Transactions</span>
+          <span>Invoices</span>
+        </a>
+      </li>
+
+      <li class="treeview <?php if($thispage=='' || $thispage==''){ echo 'active'; } ?>">
+        <a href="<?php echo base_url('dashboard/invoicelist'); ?>">
+          <i class="fa fa-truck"></i>
+          <span>Tracking</span>
         </a>
       </li>
       

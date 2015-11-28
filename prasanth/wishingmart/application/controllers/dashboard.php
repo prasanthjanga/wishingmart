@@ -4,7 +4,6 @@ class Dashboard extends CI_Controller {
 
   private $apiurl='http://localhost/wishing_ui1/prasanth/wmapi/';
   private $apikey="/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
-
   public function __construct(){
     parent::__construct();
     self::logcheck(); //TO CHECK USER LOGIN OR NOT
@@ -83,8 +82,8 @@ class Dashboard extends CI_Controller {
       if($data['wid'] != $data['wish_details'][0]['wid'] || $data['wstatus'] != $data['wish_details'][0]['status']){
         redirect('dashboard/wishlist');
       }
-      $scategory_url=$this->apiurl."wishing/subcategoryid/id/".$data['wish_details'][0]['scid'].$this->apikey;
-      $data['sub_category'] = self::getapi($scategory_url);
+      //$scategory_url=$this->apiurl."wishing/subcategoryid/id/".$data['wish_details'][0]['scid'].$this->apikey;
+      //$data['sub_category'] = self::getapi($scategory_url);
       //print_r($data['subcategory']);exit();
 
     }
@@ -114,11 +113,8 @@ class Dashboard extends CI_Controller {
       }else{
         echo "sample ok ok";exit();
       }
-
     }
-
     $this->load->view('dashboard/index', $data);
-
   }
 
   public function profile(){ // TO GET Profile Details PAGE
@@ -186,10 +182,8 @@ class Dashboard extends CI_Controller {
             }//ELSE END
           }//IF END
         }//ELSE END
-
       }// ELSE END
     }
-
     $this->load->view('dashboard/index', $data);
   }
 
@@ -384,14 +378,29 @@ class Dashboard extends CI_Controller {
     $this->load->view('dashboard/index', $data);
   }
 
-  public function invoiceslist(){ // TO GET Invoices List PAGE
+  public function invoicelist(){ // TO GET Invoices List PAGE
     $data['thispage']="7";
-    $data['title']="Invoices List || WishingMart";
+    $data['title']="Invoice List || WishingMart";
+
+    $url_invoice_list=$this->apiurl."dashboard/invoicelist/uid/".$this->session->userdata('uid').$this->apikey;
+    $data['invoice_list'] = self::getapi($url_invoice_list);
+    //print_r($data['invoice_list']);exit();
 
     $this->load->view('dashboard/index', $data);
   }
 
-  public function commingsoon(){ // TO GET Invoices List PAGE
+  public function invoiceview(){ // TO GET Invoices List PAGE
+    $data['thispage']="71";
+    $data['title']="Invoices View || WishingMart";
+
+    $url_invoice_list=$this->apiurl."dashboard/invoiceview/iid/".$this->uri->segment(3).$this->apikey;
+    $data['invoice_list'] = self::getapi($url_invoice_list);
+    //print_r($data['invoice_list']);exit();
+
+    $this->load->view('dashboard/index', $data);
+  }
+
+  public function commingsoon(){ // TO GET Comming soon PAGE
     $data['thispage']="cs";
     $data['title']="commingsoon || WishingMart";
 
@@ -400,61 +409,59 @@ class Dashboard extends CI_Controller {
 
   public function viewgrantrequest(){ // TO GET View Grant Request PAGE
     $gt_id = $this->uri->segment(3);// for query string
-    $wp_id = $this->uri->segment(4);// for query string
-    $this->session->set_userdata("from_id",$gt_id);
-
-    $url_grant_list=$this->apiurl."dashboard/grantid/gid/".$gt_id.$this->apikey;
-    $data['grant_pro'] = self::getapi($url_grant_list);
-    
-    $url_grant_list=$this->apiurl."dashboard/wishid/wid/".$data['grant_pro'][0]['wpid'].$this->apikey;
-    $data['wish_pro'] = self::getapi($url_grant_list);
-
-    $scategory_url=$this->apiurl."wishing/subcategoryid/id/".$data['wish_pro'][0]['scid'].$this->apikey;
-    $data['sub_category'] = self::getapi($scategory_url);
-
-    $url_chat_on=$this->apiurl."chat/online_status/uid/".$gt_id.$this->apikey;
-    $data['online'] = self::getapi($url_chat_on) ;
-    //print_r($this->session->userdata());  
-    //exit();
-    
-    if($data['grant_pro'][0]['gid'] == $gt_id && $data['grant_pro'][0]['wpid'] == $wp_id){
-
-      
-      $data['thispage']="31";
-      $data['title']="View Grant Request || WishingMart";
-
-      $this->load->view('dashboard/index', $data);
-    }else{
+    if(empty($gt_id)){
       redirect('dashboard/grantlist');
+    }else{
+      //$wp_id = $this->uri->segment(4);// for query string
+      $this->session->set_userdata("from_id",$gt_id);
+
+      $url_grant_list=$this->apiurl."dashboard/grantid/gid/".$gt_id.$this->apikey;
+      $data['grant_pro'] = self::getapi($url_grant_list);
+      //print_r($data['grant_pro']); exit();
+      
+      //$url_grant_list=$this->apiurl."dashboard/wishid/wid/".$data['grant_pro'][0]['wpid'].$this->apikey;
+      //$data['wish_pro'] = self::getapi($url_grant_list);
+
+      //$scategory_url=$this->apiurl."wishing/subcategoryid/id/".$data['wish_pro'][0]['scid'].$this->apikey;
+      //$data['sub_category'] = self::getapi($scategory_url);
+
+      $url_chat_on=$this->apiurl."chat/online_status/uid/".$gt_id.$this->apikey;
+      $data['online'] = self::getapi($url_chat_on) ;
+      //print_r($this->session->userdata());  
+      //exit();
+      if($data['grant_pro'][0]['gstatus']=='1'){
+        redirect('dashboard/grantlist');
+      }else{
+        if($data['grant_pro'][0]['gid'] == $gt_id){
+          $data['thispage']="31";
+          $data['title']="View Grant Request || WishingMart";
+
+          $this->load->view('dashboard/index', $data);
+        }else{
+          redirect('dashboard/grantlist');
+        }//ELSE END
+      }//ELSE END
     }//ELSE END
   }
-
 
   
   public function shippingadd(){ // TO GET Shipping Address Details PAGE
     if(isset($_POST['sub'])){
       //echo $this->input->post('wid');
       //echo $this->input->post('gid');
-      //echo $this->input->post('wpn');
-      //echo $this->input->post('gtcname');
-      //echo $this->input->post('brand');
-      //echo $this->input->post('wpcolour');
-      //echo $this->input->post('gtdesc');
-      //echo $this->input->post('gtimg');
-      //echo $this->input->post('gtprice');
+
       $data['aprovel_details']=array(
-        'wid'     => $this->input->post('wid'),
-        'gid'     => $this->input->post('gid'),
-        'wpn'     => $this->input->post('wpn'),
-        'gtcname' => $this->input->post('gtcname'),
-        'brand'   => $this->input->post('brand'),
-        'wpcolour'=> $this->input->post('wpcolour'),
-        'gtdesc'  => $this->input->post('gtdesc'),
-        'gtimg'   => $this->input->post('gtimg'),
-        'gtprice' => $this->input->post('gtprice'),
+        'wpid'     => $this->input->post('wpid'),
+        'gid'      => $this->input->post('gid'),
+        'quantity' => $this->input->post('quantity'),
       );
       //echo "<pre>"; print_r($data['aprovel_details']);      exit();
-    
+      $this->session->set_userdata("gid",$data['aprovel_details']['gid']);
+      $url_grant_list=$this->apiurl."dashboard/grantid/gid/".$data['aprovel_details']['gid'].$this->apikey;
+      $data['grant_pro'] = self::getapi($url_grant_list);
+      //print_r($data['grant_pro']);
+      //exit();
+
       $url_country=$this->apiurl."wishing/country".$this->apikey;
       $data['country'] = self::getapi($url_country);
 
@@ -466,7 +473,7 @@ class Dashboard extends CI_Controller {
     }//IF END
   }
 
-  public function invoice(){ // TO GET Shipping Address Details PAGE
+  public function productadd(){
     if(isset($_POST['sasub'])){
       $data['shipping_add']=array(
         'uid'     => $this->session->userdata('uid'),
@@ -475,14 +482,17 @@ class Dashboard extends CI_Controller {
         'country' => $this->input->post('country'),
         'postcode'=> $this->input->post('postcode'),
         'contact' => $this->input->post('contact'),
+        'gid'     => $this->input->post('gid'),
+        'quantity'=> $this->input->post('quantity'),
       );
-      $this->session->set_userdata('s_add',$data['shipping_add']);
+      //$this->session->set_userdata('s_add',$data['shipping_add']);
       //echo $this->input->post('street');
       //echo $this->input->post('city');
       //echo $this->input->post('country');
       //echo $this->input->post('postcode');
       //echo $this->input->post('contact');
       //echo '<pre>';    print_r($data["shipping_add"]);      exit();
+      
       if(isset($data["shipping_add"])){
         $url_ship_add=$this->apiurl."dashboard/shipping_add".$this->apikey;
         if($url_ship_add){
@@ -503,33 +513,52 @@ class Dashboard extends CI_Controller {
           $result = json_decode($buffer);
           //print_r($result);exit();
           if(isset($result->status) && $result->status == 'success'){
-            redirect('dashboard/invoice');
+            redirect('dashboard/productadd');
             //$this->load->Controller('wishgrant/listofwishes',$data);
           }else{
             $this->session->set_flashdata('flashmsg','<div>You Wish Not Created.</div>'); 
+            redirect('dashboard/shippingadd');
           }//ELSE END
         }//IF END
       }//IF END
     }else{
-      $data['s_add']=$this->session->userdata('s_add');
-      if(isset($data['s_add'])){
-        //print_r($data['s_add']);
-        //exit();
-        //redirect('dashboard/shippingadd');
-        $data['thispage']="8";
-        $data['title']="Invoice || WishingMart";
+      $data['thispage']="11";
+      $data['title']="Product & Shipping Details || WishingMart";
 
-        $this->load->view('dashboard/index', $data);
-      }else{
-        //redirect('dashboard/shippingadd');grantlist
-        redirect('dashboard/grantlist');
-      }//ELSE END
-    }//ELSE END
+      //$data['granting_id']=$this->session->userdata('gid');
+      $data['approval_id']=$this->uri->segment(3);
+
+      $url_grant_list=$this->apiurl."dashboard/orderview/aid/".$data['approval_id'].$this->apikey;
+      $data['order_view'] = self::getapi($url_grant_list);
+      //print_r($data['grant_pro']);
+      //exit();
+
+      $this->load->view('dashboard/index', $data);
+    }
   }
+
+  public function orderslist(){
+    $data['thispage']="12";
+    $data['title']="Invoice || WishingMart";
+
+    $url_order_list=$this->apiurl."dashboard/orderslist/uid/".$this->session->userdata('uid').$this->apikey;
+    $data['orders_list'] = self::getapi($url_order_list);
+    //print_r($data['orders_list']);
+    //exit();
+
+    $this->load->view('dashboard/index', $data);
+  }
+
+
   
   public function mygrant(){ // TO GET Shipping Address Details PAGE
     $data['thispage']="10";
     $data['title']="My Grant Requests || WishingMart";
+
+    $url_mygrant=$this->apiurl."dashboard/mygrantlist/uid/".$this->session->userdata('uid').$this->apikey;
+    $data['mygrant_list'] = self::getapi($url_mygrant);
+    //print_r($data['mygrant_list']);
+    //exit();
 
     $this->load->view('dashboard/index', $data);
   }

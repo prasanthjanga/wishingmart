@@ -43,17 +43,31 @@ for($i=0;$i<=(count($wish_list)-1);$i++){
     </td>
 
     <td>
-      <img src="<?php echo base_url()."images/thumbs/".$wish_list[$i]['wpimg']; ?>" width="100px" height="100px" alt=""/>
+      <img src="<?php echo base_url()."images/products/wished/".$wish_list[$i]['wpimg']; ?>" width="50px" height="50px" title="<?php echo $wish_list[$i]['wpn']; ?>" alt=""/>
 
     </td>
     <td>
       <?php echo $wish_list[$i]['wpn']; ?>
     </td>
     <td>
-      <?php echo $wish_list[$i]['wpdec']; ?>
+<?php 
+
+$str_wpdec=$wish_list[$i]['wpdec'];
+//$str_count=strlen($wish_list[$i]['wpdec']);
+
+$small = substr($str_wpdec, 0, 25);
+echo "<span title='$str_wpdec'>".$small." ...</span>";
+//echo $wish_list[$i]['wpdec']; 
+?>
     </td>
     <td>
-      <?php echo $wish_list[$i]['wpdate']; ?>
+
+<?php 
+$date_date=$wish_list[$i]['wpdate'];
+$date_ymd=date("Y-M-d",strtotime($date_date));
+?>
+  <span title="<?php echo $date_date; ?>"><?php echo $date_ymd; ?></span>
+
     </td>
     <td>
       <?php
@@ -77,7 +91,6 @@ for($i=0;$i<=(count($wish_list)-1);$i++){
       <?php
         if($wish_list[$i]['status'] =='0'){
           echo '<a href='.base_url("dashboard/updatewish").'/'.$wish_list[$i]["wid"].'/'.$wish_list[$i]["status"].' class="btn btn-danger">Update/View</a>';
-          
         }elseif($wish_list[$i]['status'] =='1'){
           echo '<a href='.base_url("dashboard/updatewish").'/'.$wish_list[$i]["wid"].'/'.$wish_list[$i]["status"].' class="btn btn-danger">View</a>';
         }

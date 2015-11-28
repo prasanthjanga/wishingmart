@@ -40,7 +40,8 @@ Grant Wish
     <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Name</label>
         <div class="col-sm-8">
-        <?php echo $wish_details['wpname']; ?>
+        <?php echo $wishbyid[0]['wpn']; ?>
+        <input type="hidden" name="wpid" value="<?php echo $wishbyid[0]['wid']; ?>">
         </div>        
     </div>
                  
@@ -56,7 +57,7 @@ Grant Wish
             for($i=0;$i<$count;$i++){
                 foreach($country[$i] as $k=>$v){
                     if($k == "cname"){
-                        echo "<option value=". $country[$i]['cname'] .">";
+                        echo "<option value=". $country[$i]['cnid'] .">";
                         echo $country[$i]['cname'];
                         echo "</option>";
                     }
@@ -70,14 +71,14 @@ Grant Wish
     <div class="form-group">
         <label for="" class="col-sm-4 control-label">Brand</label>
         <div class="col-sm-8">
-        <?php echo $wish_details['wbrand']; ?>
+        <?php echo $wishbyid[0]['brand']; ?>
         </div>        
     </div>
                 
     <div class="form-group">
         <label for="" class="col-sm-4 control-label">Colour</label>
         <div class="col-sm-8">
-        <?php echo $wish_details['wcolour']; ?>
+        <?php echo $wishbyid[0]['wpcolour']; ?>
         </div>        
     </div>
                 
@@ -100,6 +101,46 @@ Grant Wish
         <div class="col-sm-8">
         <input type="number" class="form-control" name="gt_price" id="price" required>
         </div>        
+    </div>
+
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Shipping Company *</label>
+        <div class="col-sm-8">
+        <input type="text" class="form-control" name="s_company" id="" required>
+        </div>        
+    </div>
+
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Shipping Cost *</label>
+        <div class="col-sm-8">
+        <input type="number" class="form-control" name="s_cost" id="" required>
+        </div>        
+    </div>
+
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Eistmated No.of Days *</label>
+        <div class="col-sm-8">
+        <input type="number" class="form-control" name="s_edays" id="" required>
+        </div>        
+    </div>
+
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Box Weight (Kg) *</label>
+        <div class="col-sm-7">
+        <input type="number" class="form-control" name="b_weight" id="" required>
+        </div>        
+    </div>
+
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Box Size (W * H)*</label>
+        <div class="col-sm-3">
+        <input type="number" class="form-control" name="b_wsize" id="" required>
+        </div>
+        <span class="col-sm-1"> X </span>
+        <div class="col-sm-3">
+        <input type="number" class="form-control" name="b_hsize" id="" required>
+        </div>        
+        <span class="col-sm-1"> CM </span>
     </div>
     
     <input type="submit" name="sub" value="Send Grant Request" data-toggle="modal" data-target="#popup" class="btn btn-danger pull-right" >
@@ -131,12 +172,15 @@ Grant Wish
           </div>
         </div>
         <hr>
-
+<?php
+//print_r($wishbyid);
+//exit();
+?>
         <div class="form-group">
           <div class="col-sm-4 center image">
         <img src="<?php 
-        if($wish_user['prof_img']!=''){
-            echo base_url().'images/profile/'.$wish_user['prof_img'];
+        if($wishbyid[0]['prof_img']!=''){
+            echo base_url().'images/profile/'.$wishbyid[0]['prof_img'];
         }else{
             echo base_url().'assets/images/profile-null.png';
         }
@@ -144,8 +188,8 @@ Grant Wish
           </div>
           <div class="col-sm-7 pull-left wishform">
               <p>
-                <?php echo $wish_user['fn']; ?><br>
-                <?php echo $wish_user['cname']; ?>
+                <?php echo $wishbyid[0]['fn']; ?><br>
+                <?php echo $wishbyid[0]['wu_country']; ?>
               </p>
         </div>
 
@@ -153,34 +197,34 @@ Grant Wish
         <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Id</label>
         <div class="col-sm-8">
-        <p class="wishform"><?php echo $wish_details['wid']; ?></p>
+        <p class="wishform"><?php echo $wishbyid[0]['wid']; ?></p>
         </div>        
         </div>
         <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Name</label>
         <div class="col-sm-8">
-        <p class="wishform"><?php echo $wish_details['wpname']; ?></p>
+        <p class="wishform"><?php echo $wishbyid[0]['wpn']; ?></p>
         </div>        
         </div>
                 
                 <div class="form-group">
         <label for="" class="col-sm-4 control-label">Made In</label>
         <div class="col-sm-8">
-        <p class="wishform"><?php echo $wish_details['wcountry']; ?></p>
+        <p class="wishform"><?php echo $wishbyid[0]['wp_country']; ?></p>
         </div>        
         </div>
                 
                  <div class="form-group">
         <label for="" class="col-sm-4 control-label">Category</label>
         <div class="col-sm-8">
-        <p class="wishform"><?php echo $wish_details['wcatugory']; ?></p>
+        <p class="wishform"><?php echo $wishbyid[0]['category']; ?></p>
         </div>        
         </div>
                 
                  <div class="form-group">
         <label for="" class="col-sm-4 control-label">Sub-Category</label>
         <div class="col-sm-8">
-        <p class="wishform"><?php echo $wish_details['wscatugory']; ?></p>
+        <p class="wishform"><?php echo $wishbyid[0]['subcategory']; ?></p>
         </div>        
         </div>
 
@@ -188,11 +232,11 @@ Grant Wish
         <label for="" class="col-sm-4 control-label">Product Description</label>
         <div class="col-sm-8">
         <p class="wishform">
-            Brand : <?php echo $wish_details['wbrand']; ?> 
+            Brand : <?php echo $wishbyid[0]['brand']; ?> 
             <br> 
-            Color: <?php echo $wish_details['wcolour']; ?>  
+            Color: <?php echo $wishbyid[0]['wpcolour']; ?>  
             <br>
-            <?php echo $wish_details['wdesc']; ?>
+            <?php echo $wishbyid[0]['wpdec']; ?>
         </p>
         </div>        
         </div>
@@ -200,7 +244,7 @@ Grant Wish
                 <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Image</label>
         <div class="col-sm-8">
-        <img src="<?php echo base_url()."images/thumbs/".$wish_details['wimg']; ?>" width="200" height="200" alt=""/>
+        <img src="<?php echo base_url()."images/products/wished/".$wishbyid[0]['wpimg']; ?>" width="200" height="200" alt=""/>
                 </div>        
         </div>
         

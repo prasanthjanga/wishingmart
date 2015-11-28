@@ -35,10 +35,10 @@
               To
               <address>
                 <strong>Wisher</strong><br>
-                <?php echo $s_add['street'].",".$s_add['city']; ?> <br>
-                <?php echo $s_add['country'].",".$s_add['postcode']; ?> <br>
-                Phone:<?php echo $s_add['contact']; ?><br>
-                Email: <?php echo $this->session->userdata('email'); ?>
+                <?php //echo $s_add['street'].",".$s_add['city']; ?> <br>
+                <?php //echo $s_add['country'].",".$s_add['postcode']; ?> <br>
+                Phone:<?php //echo $s_add['contact']; ?><br>
+                Email: <?php //echo $this->session->userdata('email'); ?>
               </address>
             </div><!-- /.col -->
             <div class="col-sm-4 invoice-col">

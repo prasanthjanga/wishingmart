@@ -63,7 +63,7 @@ function p_add1()
     </div>
     <div class="form-horizontal form-group">
 <br>
- <h4 class="">Profile Picture</h4>
+ <h4 class=""><i class="fa fa-picture-o"></i> Profile Picture</h4>
     <hr>
     <div class= " col-sm-12 col-lg-offset-4 col-lg-12" id="hide_div"><br>
 
@@ -289,7 +289,7 @@ function p_add1()
 
 <div class="form-horizontal row form-group" id="hide_payment">
 <br>
-    <h4>Payment Details</h4>
+    <h4><i class="fa fa-credit-card"></i> Payment Details</h4>
         <hr>
   <div class="col-sm-6">
     <div class="form-group">
@@ -332,7 +332,7 @@ function p_add1()
 
 <div class="form-horizontal row form-group" id="edit_payment" style="display:none">
 <br>
-    <h4>Payment Details</h4>
+    <h4><i class="fa fa-credit-card"></i> Payment Details</h4>
         <hr>
     <?php echo form_open_multipart('dashboard/bac_details',array('id' => 'registerForm', 'data-toggle'=>'validator')); ?>
   <div class="col-sm-6">
@@ -396,7 +396,7 @@ function p_add1()
 
 <div class="form-horizontal row form-group" id="hide_p_add">
 <br>
-<h4>Postal Address</h4>
+<h4><i class="fa fa-map-marker"></i> Postal Address</h4>
 <hr>
  <div class="col-sm-6">
   
@@ -437,7 +437,7 @@ function p_add1()
     </div>
 <div class="form-horizontal row form-group" id="edit_p_add" style="display:none">
 <br>
-<h4>Postal Address</h4>
+<h4><i class="fa fa-map-marker"></i> Postal Address</h4>
 <hr>
 <?php echo form_open_multipart('dashboard/postal_details',array('id' => 'registerForm', 'data-toggle'=>'validator')); ?>
     <div class="col-sm-6">

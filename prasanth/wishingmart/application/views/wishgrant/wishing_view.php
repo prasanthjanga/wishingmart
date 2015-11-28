@@ -101,7 +101,7 @@ include('application/views/admin/head_top.php');
             for($i=0;$i<$count;$i++){
                 foreach($country[$i] as $k=>$v){
                     if($k == "cname"){
-                        echo "<option value=". $country[$i]['cname'] .">";
+                        echo "<option value=". $country[$i]['cnid'] .">";
                         echo $country[$i]['cname'];
                         echo "</option>";
                     }

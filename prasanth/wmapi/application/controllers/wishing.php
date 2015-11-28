@@ -156,11 +156,16 @@ class Wishing extends REST_Controller
             'gtdesc'    =>$this->post("gtdesc"),
             'gtimg'     =>$this->post("userfile"),
             'gtcname'   =>$this->post("gtcname"),
+            'scompany'  =>$this->post("scompany"),
+            'scost'     =>$this->post("scost"),
+            'sedays'    =>$this->post("sedays"),
+            'bweight'   =>$this->post("bweight"),
+            'bwsize'    =>$this->post("bwsize"),
+            'bhsize'    =>$this->post("bhsize"),
         );
-        print_r($array);//exit();
+        //print_r($array);exit();
         
         if($array){
-            
             $this->load->model("wishing_model");
 
             $new_grant = $this->wishing_model->grant_wish($array);
@@ -197,6 +202,23 @@ class Wishing extends REST_Controller
         }
         $this->load->model("wishing_model");
         $user = $this->wishing_model->get_wishuser($this->get("wrid"));
+        if($user){
+            $this->response($user, 200);
+        }else{
+            $this->response(NULL, 400);
+        }
+    }
+
+    //To Get Wishing details by wish id
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wmapi/wishing/wishbyid/wpid/101/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function wishbyid_get()
+    {
+        if(!$this->get("wpid")){
+            $this->response(NULL, 400);
+        }
+        $this->load->model("wishing_model");
+        $user = $this->wishing_model->get_wishbyid($this->get("wpid"));
         if($user){
             $this->response($user, 200);
         }else{

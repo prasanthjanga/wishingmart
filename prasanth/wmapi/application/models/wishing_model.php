@@ -56,7 +56,7 @@ class Wishing_model extends CI_Model
         //exit();
         $grant_array=array(
             'gid'       =>$gid,
-            'wpid'       =>$array["wid"],
+            'wpid'      =>$array["wid"],
             'gtuid'     =>$array["gtuid"],
             'gtprice'   =>$array["gtprice"],
             'gtdesc'    =>$array["gtdesc"],
@@ -65,17 +65,32 @@ class Wishing_model extends CI_Model
             'gtcname'   =>$array["gtcname"],
             'status'    =>'0',
         );
+        $est_array=array(
+            'esid'      =>$gid,
+            'escompany' =>$array["scompany"],
+            'escost'    =>$array["scost"],
+            'esdays'    =>$array["sedays"],
+            'esweight'  =>$array["bweight"],
+            'eswidth'   =>$array["bwsize"],
+            'esheight'  =>$array["bhsize"],
+        );
 
-        //print_r($array);
-        
-        $granting_data = $this->db->insert("granting", $grant_array);
+        //print_r($array);exit();
+        if(isset($array)){
+            $granting_data = $this->db->insert("granting", $grant_array);
+            $est_shipping_data = $this->db->insert("est_shipping", $est_array);
+            
+            return $granting_data.$est_shipping_data;
+        }
         //$user = $this->user->insert("user",$user_data);
         //print_r($wishing_data);exit();
-        return $granting_data;
     }
 
     function get_all_wishes(){
-        $query = $this->db->query("SELECT * FROM wishing ORDER BY `wpdate` DESC");
+        $query = $this->db->query("SELECT w.wid,w.rid,w.wpn,c.cname,w.wpdec,w.wpimg
+FROM vr_wishing.wishing w
+LEFT JOIN vr_users.country c ON c.cnid = w.cname
+ORDER BY wpdate ASC ");
 
         //$query = $this->cms_db->select("users");
         if($query->num_rows() > 0){
@@ -170,6 +185,20 @@ LEFT OUTER JOIN country c ON c.cnid=r.cnid
 WHERE rid='$wrid'");
         if($query->num_rows() == 1){
             return $query->row();
+        }
+    }
+
+    function get_wishbyid($wpid){
+        $query = $this->db->query("SELECT w.*,p.prof_img,r.fn,r.ln,c.cname wp_country,cc.cname wu_country,wc.cname category,s.scname subcategory  FROM wishing w
+LEFT OUTER JOIN vr_users.profile p ON p.pid=w.rid
+LEFT OUTER JOIN vr_users.registration r ON r.rid=w.rid
+LEFT OUTER JOIN vr_users.country c ON c.cnid=r.cnid
+LEFT OUTER JOIN vr_users.country cc ON cc.cnid=w.cname
+LEFT OUTER JOIN vr_wishing.subcategory s ON s.scid=w.scid
+LEFT OUTER JOIN vr_wishing.category wc ON wc.cid=s.cid
+WHERE wid=$wpid");
+        if($query->num_rows() > 0){
+            return $query->result();
         }
     }
 

@@ -41,7 +41,7 @@ scrolltitle();
 <link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon.ico'); ?>" type="image/x-icon">
 <link rel="icon" href="<?php echo base_url('assets/images/favicon.ico'); ?>" type="image/x-icon">
 
-<?php if($thispage=="3" || $thispage=="4" || $thispage=="7" || $thispage=="10"){ ?>
+<?php if($thispage=="3" || $thispage=="4" || $thispage=="7" || $thispage=="10" || $thispage=="11" || $thispage=="12"){ ?>
 <!-- DataTables -->
 <link rel="stylesheet" href="<?php echo base_url('assets/Dashboard/datatables/dataTables.bootstrap.css'); ?>">
 

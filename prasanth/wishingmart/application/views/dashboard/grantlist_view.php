@@ -42,21 +42,35 @@ for($i=0;$i<=($count-1);$i++){
 <tr>
   <td><?php echo $grant_list[$i]['gid']; ?></td>
   <td>
-    <img src="<?php echo base_url()."images/thumbs/".$grant_list[$i]['gtimg']; ?>" width="100px" height="100px" alt=""/>
+    <img src="<?php echo base_url()."images/products/granted/".$grant_list[$i]['gtimg']; ?>" width="50px" height="50px" alt=""/>
   </td>
-  <td><?php echo $grant_list[$i]['gtcname']; ?></td>
+  <td><?php echo $grant_list[$i]['country']; ?></td>
   <td><?php echo "$ ".$grant_list[$i]['gtprice']; ?></td>
-  <td><?php echo $grant_list[$i]['gtdate']; ?></td>
+  <td>
+    <span title="<?php echo $grant_list[$i]['gtdate']; ?>">
+      <?php echo date("Y-M-d",strtotime($grant_list[$i]['gtdate'])); ?>
+    </span>
+  </td>
   <td>
     <?php
-      if($grant_list[$i]['status']=="0"){
+      if($grant_list[$i]['gstatus']=='0'){
         echo "<span class='label label-warning'>Waiting</span>";
-      }elseif($grant_list[$i]['status']=="1"){
+      }elseif($grant_list[$i]['gstatus']=='1'){
         echo "<span class='label label-success'>Accepted</span>";
       }
     ?>
   </td>
-  <td><a href="<?php echo base_url('dashboard/viewgrantrequest')."/".$grant_list[$i]['gid']."/".$grant_list[$i]['wpid']; ?>" class="btn btn-danger">View Request</a></td>
+  <td>
+    <?php
+    //echo $grant_list[$i]['gtuid'];
+    //echo $this->session->userdata('uid');exit();
+    if($grant_list[$i]['gtuid'] != $this->session->userdata('uid')){
+    ?>
+      <a href="<?php echo base_url('dashboard/viewgrantrequest')."/".$grant_list[$i]['gid']; ?>" class="btn btn-danger <?php if($grant_list[$i]['gstatus']=='1'){ echo 'disabled'; } ?>">View Request</a>
+    <?php
+    }//IF END
+    ?>
+  </td>
 </tr>
 
 <?php 

@@ -3,6 +3,7 @@ include('application/views/admin/head.php');
 include('application/views/admin/head_top.php');
 ?>
 
+
 <div class="content inside-page">
 <div class="main container "> 
     <div class="form-group">
@@ -87,27 +88,28 @@ include('application/views/admin/head_top.php');
                 </div>
 
 <ul>
+  
+
 <?php
 //print_r($allwishes);exit();
-$count=count($allwishes);
-for($i=0;$i<=($count-1);$i++){
+//$count=count($allwishes);
+//for($i=0;$i<=($count-1);$i++){
   //echo $allwishes[$i]['wpn'];
   //echo $allwishes[$i]['cnid'];
   //echo $allwishes[$i]['wpdec'];
+$count=count($allwishes);
+$page=$this->uri->segment(3);
+if(!is_numeric($page)) $page=1;
+$num = $count;
+$per_page=4; //default 5 results per page
+$start=$per_page*($page-1); //start for select on next page (page2, 3, 4,5)
+$end=min($num,$page*$per_page); //end
+for($i=$start;$i<=($end-1);$i++){
 ?>
-<script type="text/javascript">
-/*
-function myFunction() {
-  document.getElementById('grid_view').style.height= "100px";
-  document.getElementById('grid_view').style.width= "250px";
-  return true;
-}
-*/
-</script> 
+ 
   <li>
-    <form action="<?php echo base_url('wishgrant/listofwishes'); ?>" method="post">
     <a class="cbp-vm-image" href="#">
-      <img src="<?php echo base_url()."images/thumbs/".$allwishes[$i]['wpimg']; ?>">
+      <img src="<?php echo base_url('images/products/wished').'/'.$allwishes[$i]['wpimg']; ?>">
     </a>
     <h3 class="cbp-vm-title">
       <?php echo $allwishes[$i]['wpn']; ?>
@@ -116,42 +118,63 @@ function myFunction() {
       <?php echo $allwishes[$i]['cname']; ?>
     </div>
     <div class="cbp-vm-details">
-      <?php echo $allwishes[$i]['wpdec']; ?>
+      <?php 
+        $str_wpdec=$allwishes[$i]['wpdec'];
+        $str_count=strlen($allwishes[$i]['wpdec']);
+
+        $small = substr($str_wpdec, 0, 25);
+        echo "<span title='$str_wpdec'>".$small." ...</span>";
+        //echo $wish_list[$i]['wpdec']; 
+      ?>
+      <?php //echo $allwishes[$i]['wpdec']; ?>
     </div>
-      <input type="hidden" name="wid" value="<?php echo $allwishes[$i]['wid']; ?>">
-      <input type="hidden" name="wrid" value="<?php echo $allwishes[$i]['rid']; ?>">
-      <input type="hidden" name="wpname" value="<?php echo $allwishes[$i]['wpn']; ?>">
-      <input type="hidden" name="wcountry" value="<?php echo $allwishes[$i]['cname']; ?>">
-      <input type="hidden" name="wscatugery" value="<?php echo $allwishes[$i]['scid']; ?>">
-      <input type="hidden" name="wbrand" value="<?php echo $allwishes[$i]['brand']; ?>">
-      <input type="hidden" name="wcolour" value="<?php echo $allwishes[$i]['wpcolour']; ?>">
-      <input type="hidden" name="wdesc" value="<?php echo $allwishes[$i]['wpdec']; ?>">
-      <input type="hidden" name="wimg" value="<?php echo $allwishes[$i]['wpimg']; ?>">
-      <input type="submit" class="btn btn-danger" value="&#9733; Grant Wish" name="sub">
+    <?php
+    if($allwishes[$i]['rid']!=$this->session->userdata('uid')){
+    ?>
+      <a href="<?php echo base_url('wishgrant/granting').'/'.$allwishes[$i]['wid']; ?>" class="btn btn-danger">&#9733; Grant Wish</a>
+    <?php
+    }else{
+    ?>
+      <a href="#" class="btn btn-danger disabled">&#9733; Your Wish</a>
+    <?php
+    }//ELSE END
+    ?>
 
 <!--    <a class="btn btn-danger" href="<?php //echo base_url('wishgrant/granting/'.$allwishes[$i]['wid']); ?>">
       <span class="fa fa-star"></span> Grant Wish
     </a>
     -->
-</form>
   </li>
 
 <?php }// FOR END ?>
 </ul>
-                
-                 
     </div>
-            <div class="center">
-                 <ul class="pagination ">
-                 <li class="disabled"><a href="#">«</a></li>
-                 <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                 <li><a href="#">2</a></li>
-                 <li><a href="#">3</a></li>
-                 <li><a href="#">4</a></li>
-                 <li><a href="#">5</a></li>
-                 <li><a href="#">»</a></li>
-                 </ul>
-                 </div>
+
+
+<!--PAGING START-->
+
+<div class="center">
+  <ul class="pagination ">
+
+<?php
+$pages=ceil($num/$per_page);
+$numpage="";
+for($s=1; $s<=$pages; $s++){
+  if($s==$page)
+    $numpage .= "<li class='active disabled'><a href='#'>".$s."<span class='sr-only'>(current)</span></a></li> ";
+  else
+    $numpage .= "<li><a href=".base_url("wishgrant/listofwishes")."/$s>$s</a></li> ";
+}
+
+echo $numpage;
+
+
+?>
+
+  </ul>
+</div>
+<!--PAGING END-->
+
   </div><!-- /main -->
 </div><!-- /container -->
 

@@ -17,8 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/wishing_ui1/prasanth/wmapi/';
-//$config['base_url'] = 'http://8da2efe2.ngrok.io/wishing_ui1/prasanth/wmapi/';
+$config['base_url'] = 'http://voguerobot.byethost11.com/';
 
 /*
 |--------------------------------------------------------------------------
@@ -307,6 +306,7 @@ $config['cache_query_string'] = FALSE;
 |
 */
 $config['encryption_key'] = 'VogueRobot123456';
+//$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------

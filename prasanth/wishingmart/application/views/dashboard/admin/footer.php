@@ -54,7 +54,7 @@ $(document).ready(function() {
 
 <?php } ?>
 
-<?php if($thispage=="3" || $thispage=="4" || $thispage=="7" || $thispage=="10"){ ?>
+<?php if($thispage=="3" || $thispage=="4" || $thispage=="7" || $thispage=="10" || $thispage=="11" || $thispage=="12"){ ?>
 <!-- DataTables -->
 <script src="<?php echo base_url('assets/Dashboard/datatables/jquery.dataTables.min.js'); ?>"></script>
 <script src="<?php echo base_url('assets/Dashboard/datatables/dataTables.bootstrap.min.js'); ?>"></script>

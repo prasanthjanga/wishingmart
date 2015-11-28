@@ -1,7 +1,7 @@
 <!-- Online chatting pluggin Start-->
 <div class="chatbox" id="tab1" style="bottom:0px; display:none;">
 
-    <div class="chatboxhead"><?php echo $this->session->userdata('wrid'); ?>
+    <div class="chatboxhead"><?php echo $this->session->userdata('from_id'); ?>
         <div class="chatboxoptions">
             <a href="javascript:void(0)" onclick="toggler('myContent');">- </a>
 <!--

@@ -132,6 +132,8 @@ class Dashboard extends REST_Controller
             'add3'    => $this->post("country"),
             'pincode' => $this->post("postcode"),
             'contact' => $this->post("contact"),
+            'gid'     => $this->post("gid"),//grant id from grant table
+            'quantity'=> $this->post("quantity"),//grant id from grant table
         );
 
         if(isset($address)){
@@ -268,6 +270,102 @@ class Dashboard extends REST_Controller
         }
     } 
 
+    //To Get List My Grants done By User Based on User Id
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wmapi/dashboard/mygrantlist/uid/104/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function mygrantlist_get()
+    {
+        if(!$this->get("uid")){
+            $this->response(NULL, 400);
+        }else{
+            $uid=$this->get("uid");
+            $mygrant_list = $this->dashboard_model->get_mygrantlist($uid);
+            //print_r($profile);exit();
+            if($mygrant_list){
+                $this->response($mygrant_list, 200);
+            }else{
+                $this->response(NULL, 400);
+            }
+        }//ELSE END
+    } 
+
+
+    //To Get List My Orders Placed By User Id
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wmapi/dashboard/orderslist/uid/104/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function orderslist_get()
+    {
+        if(!$this->get("uid")){
+            $this->response(NULL, 400);
+        }else{
+            $uid=$this->get("uid");
+            $myorders_list = $this->dashboard_model->get_orderslist($uid);
+            //print_r($profile);exit();
+            if($myorders_list){
+                $this->response($myorders_list, 200);
+            }else{
+                $this->response(NULL, 400);
+            }
+        }//ELSE END
+    } 
+
+
+    //To Get Order View Selected by the approval ID
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wmapi/dashboard/orderview/aid/101/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function orderview_get()
+    {
+        if(!$this->get("aid")){
+            $this->response(NULL, 400);
+        }else{
+            $aid=$this->get("aid");
+            $myorder_view = $this->dashboard_model->get_orderview($aid);
+            //print_r($profile);exit();
+            if($myorder_view){
+                $this->response($myorder_view, 200);
+            }else{
+                $this->response(NULL, 400);
+            }
+        }//ELSE END
+    } 
+
+    //To Get Invoice List Selected by the approval ID
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wmapi/dashboard/invoicelist/uid/102/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function invoicelist_get()
+    {
+        if(!$this->get("uid")){
+            $this->response(NULL, 400);
+        }else{
+            $uid=$this->get("uid");
+            $myorders_list = $this->dashboard_model->get_invoicelist($uid);
+            //print_r($profile);exit();
+            if($myorders_list){
+                $this->response($myorders_list, 200);
+            }else{
+                $this->response(NULL, 400);
+            }
+        }//ELSE END
+    }  
+
+    //To Get Invoice View Selected by the approval ID
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wmapi/dashboard/orderview/aid/101/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function invoiceview_get()
+    {
+        if(!$this->get("iid")){
+            $this->response(NULL, 400);
+        }else{
+            $iid=$this->get("iid");
+            $invoice_view = $this->dashboard_model->get_invoiceview($iid);
+            //print_r($profile);exit();
+            if($invoice_view){
+                $this->response($invoice_view, 200);
+            }else{
+                $this->response(NULL, 400);
+            }
+        }//ELSE END
+    } 
 
 
 

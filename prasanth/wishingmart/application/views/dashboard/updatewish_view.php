@@ -38,21 +38,21 @@
               <div class="form-group">
                 <label for="" class="col-sm-4 control-label">Country</label>
                 <div class="col-sm-8">
-                <p class="wishform"><?php echo $wish_details[0]['cname']; ?></p>
+                <p class="wishform"><?php echo $wish_details[0]['country']; ?></p>
                 </div>        
               </div>
                 
               <div class="form-group">
                 <label for="" class="col-sm-4 control-label">Category</label>
                 <div class="col-sm-8">
-                <p class="wishform"><?php echo $sub_category[0]['cname']; ?></p>
+                <p class="wishform"><?php echo $wish_details[0]['category']; ?></p>
                 </div>        
               </div>
                 
               <div class="form-group">
                 <label for="" class="col-sm-4 control-label">Sub-Category</label>
                 <div class="col-sm-8">
-                <p class="wishform"><?php echo $sub_category[0]['scname']; ?></p>
+                <p class="wishform"><?php echo $wish_details[0]['subcategory']; ?></p>
                 </div>        
               </div>
 
@@ -72,7 +72,7 @@
               <div class="form-group">
                 <label for="" class="col-sm-4 control-label">Product Image</label>
                 <div class="col-sm-8">
-                <img src="<?php echo base_url()."images/thumbs/".$wish_details[0]['wpimg']; ?>" width="100px" height="100px" alt=""/>
+                <img src="<?php echo base_url()."images/products/wished/".$wish_details[0]['wpimg']; ?>" width="100px" height="100px" alt=""/>
                 </div>        
               </div>
               </div>

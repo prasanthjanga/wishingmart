@@ -50,7 +50,7 @@ class Landing extends CI_Controller {
         $pwd=$this->input->post("pwd");
         $enc_username=$this->encrypt->encode($email);
         $enc_username=str_replace(array('+', '/', '='), array('-', '_', '~'), $enc_username);
-        echo $enc_username; //exit();
+        //echo $enc_username; //exit();
         $url_check=$this->apiurl."login/logincheck/username/".$enc_username.$this->apikey;
         $data['check'] = self::getapi($url_check);
 
