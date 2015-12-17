@@ -20,7 +20,7 @@
                       }
                     ?>
                   </p>
-                </div>        
+                </div>
               </div>
                 <hr>
               <div class="form-group">
@@ -90,7 +90,7 @@
     
         <div><h1>Update Wish</h1></div>
         <hr>
-        <input type="hidden" name="wuid" value="<?php echo $wish_details[0]['wid']; ?>">
+        <input type="hidden" name="wid" value="<?php echo $wish_details[0]['wid']; ?>">
         <div class="form-group">
         <label for="" class="col-sm-4 control-label">Product Name</label>
         <div class="col-sm-8">
@@ -110,7 +110,7 @@
             for($i=0;$i<$count;$i++){
                 foreach($country[$i] as $k=>$v){
                     if($k == "cname"){
-                        echo "<option value=". $country[$i]['cname'] .">";
+                        echo "<option value=". $country[$i]['cnid'] .">";
                         echo $country[$i]['cname'];
                         echo "</option>";
                     }

@@ -72,13 +72,6 @@
         </a>
       </li>
 
-      <li class="treeview <?php if($thispage=='' || $thispage==''){ echo 'active'; } ?>">
-        <a href="<?php echo base_url('dashboard/invoicelist'); ?>">
-          <i class="fa fa-truck"></i>
-          <span>Tracking</span>
-        </a>
-      </li>
-      
 
       <li class="treeview">
         <a href="<?php echo base_url('landing/logout'); ?>">

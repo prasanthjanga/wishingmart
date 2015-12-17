@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Chat extends CI_Controller {
   
@@ -18,11 +17,12 @@ class Chat extends CI_Controller {
     //$this->load->library('image_lib');
     $this->load->model('img_upload_model');
     $this->load->library('form_validation');
-    $this->load->library('cart');
+    //$this->load->library('cart');
 
 
 
   }
+
 	public function index(){ // TO GET LANDING PAGE
     //self::logcheck(); //TO CHECK USER LOGIN OR NOT
     $data['thispage']="c1";
@@ -241,7 +241,7 @@ class Chat extends CI_Controller {
     print_r($data['chat_all']);
     echo "</pre>";
 
-    $this->load->view('chat/index',$data);
+    $this->load->view('chatapp/index',$data);
 
 
   }

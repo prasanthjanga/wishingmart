@@ -17,11 +17,11 @@
           </div>
           <div class="col-sm-2 pull-left wishform">
             <?php if($online['online']== '1'){ ?>
-            <a href="#" onclick="funenter()">
+            <a href="#" onclick="javascript:chatWith('<?php echo $grant_pro[0]['gid']; ?>')">
                 <h4 class="label label-success">User Online</h4>
             </a>
             <?php }else{//if end ?>
-            <a href="#" onclick="funoffline()">
+            <a href="#" onclick="javascript:chatWith('<?php echo $grant_pro[0]['gid']; ?>')">
                 <h4 class="label label-danger">User Offline</h4>
             </a>
             <?php }//else end ?>

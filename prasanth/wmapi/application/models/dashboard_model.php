@@ -10,6 +10,7 @@ class dashboard_model extends CI_Model
             return $query->result();
         }
     }
+
     function get_wishdetails($wid){
 
         $query = $this->db->query("SELECT w.*,ct.cname country,c.cname category,sc.scname subcategory
@@ -22,6 +23,59 @@ WHERE wid=$wid");
             return $query->result();
         }
     }
+
+
+    function post_updatewish($update){
+        $last_update = date("Y-m-d G:i:s",time());
+
+        $update=array(
+            'wid'      => $update["wid"],      // WISHING PRODUCT ID
+            'wpn'      => $update["wpn"],      // WISHING PRODUCT NAME
+            'wpcolour' => $update["wpcolour"], // WISHING PRODUCT COLOUR
+            'brand'    => $update["brand"],    // WISHING PRODUCT BRAND
+            'wpimg'    => $update["wpimg"],    // WISHING PRODUCT IMAGE
+            'scid'     => $update["scid"],     //SUB CATUGERY ID
+            'cname'    => $update["cname"],    //COUNTRY NAME
+            'wpdec'    => $update["wpdec"],    //WISHING PRODUCT DESCRIPTION
+        );
+
+        $wid=$update['wid'];
+
+        $query=$this->db->query("select wid from wishing where wid = $wid");
+        if($query->num_rows() > 0){
+            if($update["wpn"]){
+                //echo "wpn innnnn"; exit();
+                $this->db->where('wid', $wid);
+                $this->db->update('wishing', array('wpn'=>$update["wpn"],'wpdate' => $last_update));
+            }
+            if($update["wpcolour"]){
+                $this->db->where('wid', $wid);
+                $this->db->update('wishing', array('wpcolour'=>$update["wpcolour"],'wpdate' => $last_update));
+            }
+            if($update["brand"]){
+                $this->db->where('wid', $wid);
+                $this->db->update('wishing', array('brand'=>$update["brand"],'wpdate' => $last_update));
+            }
+            if($update["wpimg"]){
+                $this->db->where('wid', $wid);
+                $this->db->update('wishing', array('wpimg'=>$update["wpimg"],'wpdate' => $last_update));
+            }
+            if($update["scid"]){
+                $this->db->where('wid', $wid);
+                $this->db->update('wishing', array('scid'=>$update["scid"],'wpdate' => $last_update));
+            }
+            if($update["cname"]){
+                $this->db->where('wid', $wid);
+                $this->db->update('wishing', array('cname'=>$update["cname"],'wpdate' => $last_update));
+            }
+            if($update["wpdec"]){
+                $this->db->where('wid', $wid);
+                $this->db->update('wishing', array('wpdec'=>$update["wpdec"],'wpdate' => $last_update));
+            }
+        }
+    }
+
+
 
     function get_grantlistid($uid){
 
@@ -317,14 +371,14 @@ LEFT JOIN vr_wishing.granting g ON g.wpid = w.wid
 LEFT JOIN vr_wishing.approval a ON a.gid = g.gid
 LEFT JOIN vr_users.registration r ON r.rid = g.gtuid
 LEFT JOIN vr_users.country c ON c.cnid = g.gtcname
-WHERE w.rid =$uid");
+WHERE w.rid =$uid ");
         if($query->num_rows() > 0){
             return $query->result();
         }
     }
 
     function get_orderview($aid){
-        $query = $this->db->query("SELECT a.*,w.wid,w.wpn,g.gtprice,est.escost,afrom.*,sto.*,r.fn wishfn,r.ln wishln,rr.fn grantfn,rr.ln grantln,p.hcontact a_contact,c.cname a_country,cc.cname s_country
+        $query = $this->db->query("SELECT a.*,w.wid,w.wpn,g.gtprice,est.escost,est.escompany,afrom.*,sto.*,r.fn wishfn,r.ln wishln,rr.fn grantfn,rr.ln grantln,p.hcontact a_contact,c.cname a_country,cc.cname s_country
 FROM vr_wishing.approval a
 LEFT JOIN vr_wishing.granting g ON g.gid = a.gid
 LEFT JOIN vr_wishing.wishing w ON w.wid = g.wpid
@@ -349,15 +403,25 @@ LEFT JOIN vr_wishing.approval a ON a.aid = i.aid
 LEFT JOIN vr_wishing.granting g ON g.gid = a.gid
 LEFT JOIN vr_wishing.wishing w ON w.wid = g.wpid
 LEFT JOIN vr_wishing.est_shipping est ON est.esid = g.gid
-WHERE w.rid = $uid");
+WHERE w.rid = $uid and a.pay_status!=0");
         if($query->num_rows() > 0){
             return $query->result();
         }
     }
 
 function get_invoiceview($iid){
-        $query = $this->db->query("SELECT inv.*
+        $query = $this->db->query("SELECT inv.*,w.wid,g.gid,w.rid,afrom.*,g.gtuid,sto.*,a.quantity,w.wpn,g.gtprice,est.escompany,est.escost,c.cname a_country,cc.cname s_country,r.fn w_fn,r.ln w_ln,rr.fn g_fn,rr.ln g_ln
 FROM vr_wishing.invoice inv
+LEFT JOIN vr_wishing.approval a ON a.aid = inv.aid
+LEFT JOIN vr_wishing.granting g ON g.gid = a.gid
+LEFT JOIN vr_wishing.wishing w ON w.wid = g.wpid
+LEFT JOIN vr_users.address afrom ON afrom.paid = g.gtuid
+LEFT JOIN vr_users.shipping_add sto ON sto.said = a.shipping_id
+LEFT JOIN vr_wishing.est_shipping est ON est.esid = g.gid
+LEFT JOIN vr_users.country c ON c.cnid = afrom.a_add3
+LEFT JOIN vr_users.country cc ON cc.cnid = sto.s_add3
+LEFT JOIN vr_users.registration r ON r.rid = w.rid
+LEFT JOIN vr_users.registration rr ON rr.rid = g.gtuid
 WHERE inv.iid = $iid ");
         if($query->num_rows() > 0){
             return $query->result();

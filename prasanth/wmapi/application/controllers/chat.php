@@ -23,11 +23,71 @@ class Chat extends REST_Controller
         $this->load->helper('date');
         $this->load->helper('security');
         $this->load->library('encrypt');
+    }
 
+/********** CICHAT API FUNCTIONS START ************/
 
+    public function chatto_get(){
+        $chat_to=$this->get("uname");
+        if(empty($chat_to)){
+            $this->response(NULL, 400);
+        }else{
+            $chat_no=array(
+                'uname'   => $chat_to,
+            );
 
+            $chat = $this->chat_model->get_chatto($chat_no);
+            if($chat){
+                $this->response($chat, 200);
+            }else{
+                $this->response(NULL, 400);
+            }
+        }//ELSE END
 
     }
+    
+    public function recd_post(){
+        $chat_to = $this->input->post("to");
+        if(empty($chat_to)){
+            $this->response(NULL, 400);
+        }else{
+            $chat_no=array(
+                'uname'   => $chat_to,
+            );
+
+            $chat_read = $this->chat_model->post_recd($chat_no);
+            if($chat_read){
+                $this->response($chat_read, 200);
+            }else{
+                $this->response(NULL, 400);
+            }
+        }//ELSE END
+    }
+
+    public function chatinsert_post(){
+        $chat_in = array(
+            'from'    => $this->input->post("from"),
+            'to'      => $this->input->post("to"),
+            'message' => $this->input->post("message"),
+        );
+        if(empty($chat_in)){
+            $this->response(NULL, 400);
+        }else{
+            $chat_insert = $this->chat_model->post_chatinsert($chat_in);
+            if($chat_insert){
+                $this->response($chat_insert, 200);
+            }else{
+                $this->response(NULL, 400);
+            }
+        }//ELSE END
+    }
+
+
+/********** CICHAT API FUNCTIONS END ************/
+
+
+
+
 
     //To Get Chat of both sides
     //http://localhost/foldername/api/users/X-API-KEY/miapikey
@@ -57,7 +117,7 @@ class Chat extends REST_Controller
     //To Inser Chat of both users
     //http://localhost/foldername/api/users/X-API-KEY/miapikey
     //http://localhost/wmapi/chat/chatinsert/105/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
-    public function chatinsert_post()
+    public function chatinsert1_post()
     {
         $chat_from = $this->input->post("from");
         $chat_to   = $this->input->post("to");
@@ -80,7 +140,7 @@ class Chat extends REST_Controller
                 'time' => $chat_time,
             );
 
-            $chat_insert = $this->chat_model->post_chatinsert($chat_ins);
+            $chat_insert = $this->chat_model->post_chatinsert1($chat_ins);
             if($chat_insert === false){
                 $this->response(array("status" => "failed"));
             }else{
@@ -98,8 +158,6 @@ class Chat extends REST_Controller
         $chat_online = $this->input->post("online");
 
         if(empty($chat_uid)){
-            $this->response(NULL, 400);
-        }elseif(empty($chat_online)){
             $this->response(NULL, 400);
         }else{
             $chat_on_update=array(

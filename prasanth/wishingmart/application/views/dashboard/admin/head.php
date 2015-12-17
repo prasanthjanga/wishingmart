@@ -68,46 +68,17 @@ scrolltitle();
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-<?php if($thispage == "c1" || $thispage == "31"){ ?>
-    <script src="//code.jquery.com/jquery-1.3.1.js"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/chat/chat.css'); ?>">
-<script type="text/javascript">
-    setInterval('funread()',1000)
-    function funread(){
-        $.post("<?php echo base_url('chat/read'); ?>",{},function(data){
-            document.getElementById('divcontent').innerHTML=data
-            //$("#divcontent").scrollTop($("#divcontent")[0].scrollHeight);// to scroll down
-        })
-    }
-    function funsend(e){
-        if(e.keyCode === 13 || e.keyCode === 0){
-            msg = document.getElementById('txtmsg').value;
-            mssg = msg.replace(/^\s+|\s+$/g,"");
-            jQuery("#divcontent").load("<?php echo base_url('chat/insert').'/'; ?>" + encodeURIComponent(mssg));
-            document.getElementById('txtmsg').value='';
-        }
-    $("#divcontent").scrollTop($("#divcontent")[0].scrollHeight);
-    }
-    function funenter(){
-        //uname=document.getElementById('txtuname').value;
-        uname="<?php echo $this->uri->segment(3); ?>";
-        //document.getElementById('div1').style.display="none"
-        document.getElementById('tab1').style.display="block"
-    }
-    function funclose(){
-        document.getElementById('tab1').style.display="none"
-        document.getElementById('div1').style.display="block"
-    }
 
+<!-- CHATTING CSS & SCRIPT START-->    
+<?php //if($thispage == "c1" || $thispage == "31"){ ?>
 
-</script>
-<script type="text/javascript">
-    function toggler(divId) {
-        $("#" + divId).toggle();
-    }
-</script>
-<?php }//if end C1 ?>
+<link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url(); ?>assets/chat/css/chat.css" />
+<link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url(); ?>assets/chat/css/screen.css" />
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/chat/js/jquery.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/chat/js/chat.js"></script>
+
+<?php //}//if end C1 ?>
+<!-- CHATTING CSS & SCRIPT END-->    
 
 
 <!-- Language Bar Script Start -->

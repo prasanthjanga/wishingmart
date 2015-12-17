@@ -3,6 +3,49 @@
 class chat_model extends CI_Model
 {
 
+/********** CICHAT API FUNCTIONS START ************/
+
+    function get_chatto($chat_no){
+        $chat_to=$chat_no['uname'];
+
+        $CI = &get_instance();
+        $this->chat = $CI->load->database('chat', TRUE);
+        //$query = $this->chat->query("select * from chat c where (c.to = '".mysql_real_escape_string($chat_to)."' AND c.recd = 0) order by c.id ASC");
+        $query = $this->chat->query("select * from chat c where c.to = '".$chat_to."' AND c.recd = '0' order by c.id ASC");
+
+        if($query->num_rows() > 0){
+            return $query->result();
+        }
+    }
+
+    function post_recd($chat_no){ // Online Update User
+        $chat_no = $chat_no['uname'];
+        $CI = &get_instance();
+        $this->chat = $CI->load->database('chat', TRUE);
+
+        $query = $this->chat->query("update chat set recd = 1 where chat.to = '$chat_no' and recd = 0");
+        return $query;
+    }
+
+    function post_chatinsert($chat_in){ // Online Update User
+        $CI = &get_instance();
+        $this->chat = $CI->load->database('chat', TRUE);
+        $chat_time = date('Y-m-d H:m:s',time());//2015-10-22 14:16:19
+
+        $query = $this->chat->query("insert into chat (chat.id,chat.from,chat.to,message,sent,recd) values ('','".$chat_in['from']."', '".$chat_in['to']."','".$chat_in['message']."','".$chat_time."',0)");
+        return $query;
+
+    }
+
+
+
+
+
+
+/********** CICHAT API FUNCTIONS END ************/
+
+
+
     function get_bothchat($chat_no){
         $chat_from=$chat_no['from'];
         $chat_to=$chat_no['to'];
@@ -16,7 +59,7 @@ class chat_model extends CI_Model
         }
     }
 
-    function post_chatinsert($chat_ins){
+    function post_chatinsert1($chat_ins){
         $CI = &get_instance();
         $this->chat = $CI->load->database('chat', TRUE);
         $query = $this->chat->query('SELECT MAX(id) FROM chat');
@@ -49,6 +92,7 @@ class chat_model extends CI_Model
         $this->chat = $CI->load->database('chat', TRUE);
 
         $chat_on = array( 'online' => $chat_on_update['online'] );
+        //echo $chat_on_update['online'];
 
         $chat_online=$this->chat->where('uid', $chat_on_update['uid']);
         $chat_online=$this->chat->update('online', $chat_on);

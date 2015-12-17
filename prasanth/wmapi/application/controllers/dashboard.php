@@ -65,6 +65,38 @@ class Dashboard extends REST_Controller
         }//ELSE END
     }
 
+    //To UPDATE WISH DETSIL based on wishish id
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wmapi/dashboard/updatewish/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function updatewish_post()
+    {
+        $update=array(
+            'wid'      => $this->post("wid"),      // WISHING PRODUCT ID
+            'wpn'      => $this->post("wpn"),      // WISHING PRODUCT NAME
+            'wpcolour' => $this->post("wpcolour"), // WISHING PRODUCT COLOUR
+            'brand'    => $this->post("brand"),    // WISHING PRODUCT BRAND
+            'wpimg'    => $this->post("wpimg"),    // WISHING PRODUCT IMAGE
+            'scid'     => $this->post("scid"),     //SUB CATUGERY ID
+            'cname'    => $this->post("cname"),    //COUNTRY NAME
+            'wpdec'    => $this->post("wpdec"),    //WISHING PRODUCT DESCRIPTION
+        );
+        //print_r($update);
+        //exit();
+
+        if(isset($update)){
+            //print_r($update);        exit();
+            $update_wish = $this->dashboard_model->post_updatewish($update);
+            if($update_wish === false){
+                $this->response(array("status" => "failed"));
+            }else{
+                $this->response(array("status" => "success"));
+            }
+        }
+    }  
+
+
+
+
     //To Get Granted List based on User id
     //http://localhost/foldername/api/users/X-API-KEY/miapikey
     //http://localhost/wmapi/dashboard/grantlistid/uid/105/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS

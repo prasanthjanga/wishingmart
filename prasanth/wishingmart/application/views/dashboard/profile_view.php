@@ -136,7 +136,7 @@ function p_add1()
     <div class="form-group">
         <label for="" class="col-sm-4 control-label">Gender</label>
         <div class="col-sm-8">
-            <p class="wishform"><?php if($profile[0]['gender'] == "M"){ echo "Male"; } ?></p>
+            <p class="wishform"><?php if($profile[0]['gender'] == "M"){ echo "Male"; }else{ echo "Female"; } ?></p>
         </div>				
     </div>
     

@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Landing extends CI_Controller {
   
-  private $apiurl='http://localhost/wishing_ui1/prasanth/wmapi/';
-  private $apikey="/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
+  //private $apiurl='http://localhost/wishing_ui1/prasanth/wmapi/';
+  //private $apikey="/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
   public function __construct(){
     parent::__construct();
     $this->load->helper('form');
@@ -24,7 +24,7 @@ class Landing extends CI_Controller {
       $data['thispage']="1";
       $data['title']="WishingMart || Your Dream,Our Mission || Wishes Do Come True!";
   		
-      $url_product_list=$this->apiurl."login/productlist".$this->apikey;
+      $url_product_list=base_api_url()."login/productlist".base_api_key();
       $data['product_list'] = self::getapi($url_product_list);
 //print_r($data['product_list']);
 //exit();
@@ -50,15 +50,15 @@ class Landing extends CI_Controller {
         $pwd=$this->input->post("pwd");
         $enc_username=$this->encrypt->encode($email);
         $enc_username=str_replace(array('+', '/', '='), array('-', '_', '~'), $enc_username);
-        //echo $enc_username; //exit();
-        $url_check=$this->apiurl."login/logincheck/username/".$enc_username.$this->apikey;
+        //echo $enc_username; exit();
+        $url_check=base_api_url()."login/logincheck/username/".$enc_username.base_api_key();
         $data['check'] = self::getapi($url_check);
 
-        //echo $data->check->pwd;
+        //echo $data->check->pwd; exit();
         $pwd=do_hash($pwd, 'md5');
         if($data['check']['pwd'] == $pwd){
           //Chat User Online
-          $url_online=$this->apiurl."chat/online".$this->apikey;
+          $url_online=base_api_url()."chat/online".base_api_key();
           if($url_online){
             $username = 'admin';
             $password = '1234';
@@ -114,7 +114,7 @@ class Landing extends CI_Controller {
 
     $data['thispage']="3";
     $data['title']="WishingMart || Register";
-    $url_country=$this->apiurl."wishing/country".$this->apikey;
+    $url_country=base_api_url()."wishing/country".base_api_key();
     $data['country'] = self::getapi($url_country) ;
 
 
@@ -131,7 +131,7 @@ class Landing extends CI_Controller {
     $this->form_validation->set_error_delimiters('<div>','</div>');
     
     if($this->form_validation->run() == TRUE){
-      $url=$this->apiurl."registration/new_user".$this->apikey;
+      $url=base_api_url()."registration/new_user".base_api_key();
       if($url){
         $username = 'admin';
         $password = '1234';
@@ -180,7 +180,7 @@ class Landing extends CI_Controller {
     $enc_username=$this->encrypt->encode($str);
     $enc_username=str_replace(array('+', '/', '='), array('-', '_', '~'), $enc_username);
 
-    $url1=$this->apiurl."registration/send/username/".$enc_username.$this->apikey;
+    $url1=base_api_url()."registration/send/username/".$enc_username.base_api_key();
     if($url1){
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -312,7 +312,7 @@ class Landing extends CI_Controller {
     $data['thispage']="logout";
     $data['title']="Logout || WishingMart.";
     //Chat User Offline
-    $url_online=$this->apiurl."chat/online".$this->apikey;
+    $url_online=base_api_url()."chat/online".base_api_key();
     if($url_online){
       $username = 'admin';
       $password = '1234';
@@ -322,7 +322,7 @@ class Landing extends CI_Controller {
       curl_setopt($curl_handle, CURLOPT_POST, 1);
       curl_setopt($curl_handle, CURLOPT_POSTFIELDS, array(
         "uid" => $this->session->userdata('uid'),
-        "online"  => '2',
+        "online"  => '0',
       ));
        
       // Optional, delete this line if your API is open
@@ -334,7 +334,7 @@ class Landing extends CI_Controller {
       $result = json_decode($buffer);
       //print_r($result);
       if(isset($result->status) && $result->status == 'success'){
-        $this->session->all_userdata();
+        //$this->session->all_userdata();
         $this->session->sess_destroy();
         redirect("landing"); 
       }else{

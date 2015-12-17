@@ -5,7 +5,6 @@
             My Account
         </h3></div>
 
-
         <!-- Main content-->
         <section class="content inside-page">
 

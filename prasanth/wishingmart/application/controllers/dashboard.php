@@ -2,8 +2,8 @@
 
 class Dashboard extends CI_Controller {
 
-  private $apiurl='http://localhost/wishing_ui1/prasanth/wmapi/';
-  private $apikey="/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
+  //private $apiurl='http://localhost/wishing_ui1/prasanth/wmapi/';
+  //private $apikey="/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
   public function __construct(){
     parent::__construct();
     self::logcheck(); //TO CHECK USER LOGIN OR NOT
@@ -30,7 +30,8 @@ class Dashboard extends CI_Controller {
 
   public function grantlist(){ // TO GET Grant Product List PAGE
     $uid=$this->session->userdata('uid');
-    $url_grant_list=$this->apiurl."dashboard/grantlistid/uid/".$uid.$this->apikey;
+    //$url_grant_list=$this->apiurl."dashboard/grantlistid/uid/".$uid.$this->apikey;
+    $url_grant_list=base_api_url()."dashboard/grantlistid/uid/".$uid.base_api_key();
     $data['grant_list'] = self::getapi($url_grant_list);
     //print_r($data['grant_list']);exit();
 
@@ -47,7 +48,7 @@ class Dashboard extends CI_Controller {
 
       $uid=$this->session->userdata('uid');
 
-      $url_wish_list=$this->apiurl."dashboard/wishlistid/uid/".$uid.$this->apikey;
+      $url_wish_list=base_api_url()."dashboard/wishlistid/uid/".$uid.base_api_key();
       $data['wish_list'] = self::getapi($url_wish_list) ;
       //print_r($data['wish_list']);exit();
       //print_r($this->session->userdata());exit();
@@ -56,17 +57,20 @@ class Dashboard extends CI_Controller {
   }
 
   public function updatewish(){ // TO GET Wishing Product List PAGE
+    if($this->uri->segment(3) && $this->uri->segment(4)){
+      redirect('dashboard/wishlist');
+    }else{
     
     $data['wid']=$this->uri->segment(3);// for query string
     $data['wstatus']=$this->uri->segment(4);// for query string
 
-    $url_country=$this->apiurl."wishing/country".$this->apikey;
+    $url_country=base_api_url()."wishing/country".base_api_key();
     $data['country'] = self::getapi($url_country);
     
-    $url_category=$this->apiurl."wishing/category".$this->apikey;
+    $url_category=base_api_url()."wishing/category".base_api_key();
     $data['category'] = self::getapi($url_category);
     
-    $url_subcategory=$this->apiurl."wishing/subcategory".$this->apikey;
+    $url_subcategory=base_api_url()."wishing/subcategory".base_api_key();
     $data['subcategory'] = self::getapi($url_subcategory);
 
     $data['thispage']="9";
@@ -76,55 +80,89 @@ class Dashboard extends CI_Controller {
     //echo $data['wid'].'////'.$data['wstatus'];
     if($data['wid'] || $data['wstatus']){
       //echo "have";exit();
-      $url_wish_details=$this->apiurl."dashboard/wishid/wid/".$data['wid'].$this->apikey;
+      $url_wish_details=base_api_url()."dashboard/wishid/wid/".$data['wid'].base_api_key();
       $data['wish_details'] = self::getapi($url_wish_details);
       //print_r($data['wish_details']);exit();
       if($data['wid'] != $data['wish_details'][0]['wid'] || $data['wstatus'] != $data['wish_details'][0]['status']){
         redirect('dashboard/wishlist');
       }
-      //$scategory_url=$this->apiurl."wishing/subcategoryid/id/".$data['wish_details'][0]['scid'].$this->apikey;
+      //$scategory_url=base_api_url()."wishing/subcategoryid/id/".$data['wish_details'][0]['scid'].base_api_key();
       //$data['sub_category'] = self::getapi($scategory_url);
       //print_r($data['subcategory']);exit();
 
     }
     if(isset($_POST['sub'])){
-
-      $wuid      =$this->input->post('wuid');
-      $pname     =$this->input->post('pname');
-      $country   =$this->input->post('country');
-      $category  =$this->input->post('category');
-      $scategory =$this->input->post('scategory');
-      $brand     =$this->input->post('brand');
-      $colour    =$this->input->post('colour');
-      $pdesc     =$this->input->post('pdesc');
+      //echo "string1111111111111";
       //exit();
-      $this->load->library('form_validation');
-      $this->form_validation->set_rules('pname', 'Product Name', 'required');
-      $this->form_validation->set_rules('brand', 'Product Brand', 'required');
-      $this->form_validation->set_rules('colour', 'Product Colour', 'required');
-      $this->form_validation->set_rules('pdesc', 'Product Description', 'required');
-      $this->form_validation->set_error_delimiters('<div>','</div>');
-      
-      if($this->form_validation->run() == FALSE){
-        //echo "<span style='color:red;'>Form Errors Plz Ceck.</span>";
-        $redirect_url='dashboard/updatewish/'.$wuid.'/0';//exit();
-        redirect($redirect_url);
-        //$this->load->view('wishgrant/granting_view',$data);
-      }else{
-        echo "sample ok ok";exit();
-      }
+
+      //$wid = $this->input->post('wid');
+      //$pname     =$this->input->post('pname');
+      //$country   =$this->input->post('country');
+      //$category  =$this->input->post('category');
+      //$scategory =$this->input->post('scategory');
+      //$brand     =$this->input->post('brand');
+      //$colour    =$this->input->post('colour');
+      //$pdesc     =$this->input->post('pdesc');
+
+      $data['update']=array(
+        'wid'      => $this->input->post("wid"),       // WISHING PRODUCT ID
+        'wpn'      => $this->input->post("pname"),     // WISHING PRODUCT NAME
+        'wpcolour' => $this->input->post("colour"),    // WISHING PRODUCT COLOUR
+        'brand'    => $this->input->post("brand"),     // WISHING PRODUCT BRAND
+        'wpimg'    => $this->input->post("userfile"),  // WISHING PRODUCT IMAGE
+        'cname'    => $this->input->post("country"),   //COUNTRY NAME
+        'scid'     => $this->input->post("scategory"), //SUB CATUGERY ID
+        'wpdec'    => $this->input->post("pdesc"),     //WISHING PRODUCT DESCRIPTION
+      );
+      print_r($data['update']);//exit();
+
+      $url_update_wish=base_api_url()."dashboard/updatewish".base_api_key();
+      if($url_update_wish){
+        $username = 'admin';
+        $password = '1234';
+        $curl_handle = curl_init();
+        curl_setopt($curl_handle, CURLOPT_URL, $url_update_wish);
+        curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl_handle, CURLOPT_POST, 1);
+        curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $data["update"]);
+         
+        // Optional, delete this line if your API is open
+        curl_setopt($curl_handle, CURLOPT_USERPWD, $username . ':' . $password);
+         
+        $buffer = curl_exec($curl_handle);
+        curl_close($curl_handle);
+         
+        $result = json_decode($buffer);
+        //print_r($result);exit();
+        if(isset($result->status) && $result->status == 'success'){
+
+          //$this->session->set_flashdata('flashmsg',"<div>Wishing Details updated.</div>"); 
+          $wid_val = $data['update']['wid'].'/0';
+          $redirect_url="dashboard/updatewish/".$wid_val;
+          //exit();
+          redirect("$redirect_url");
+          //redirect('dashboard/profile');
+        }else{
+          $wid_val = $data['update']['wid'].'/0';
+          $redirect_url="dashboard/updatewish/".$wid_val;
+          //exit();
+          redirect("$redirect_url");
+          //$this->session->set_flashdata('flashmsg',"<div>Wishing Details Are Not updated.</div>"); 
+        }//ELSE END
+      }//URL IF END
     }
     $this->load->view('dashboard/index', $data);
+  }//ELSE END
   }
 
   public function profile(){ // TO GET Profile Details PAGE
     $data['thispage']="5";
     $data['title']="Profile Details || WishingMart";
-    $url_profile=$this->apiurl."dashboard/profile/uid/".$this->session->userdata('uid').$this->apikey;
+    $url_profile=base_api_url()."dashboard/profile/uid/".$this->session->userdata('uid').base_api_key();
     $data['profile'] = self::getapi($url_profile);
     //echo "<pre>";
     //print_r($data['profile']); exit();
-    $url_country=$this->apiurl."wishing/country".$this->apikey;
+    $url_country=base_api_url()."wishing/country".base_api_key();
     $data['country'] = self::getapi($url_country);
 
     $this->load->view('dashboard/index', $data);
@@ -154,7 +192,7 @@ class Dashboard extends CI_Controller {
           );
         //print_r($data['prof_pic']);exit();
 
-          $url_prof_pic=$this->apiurl."dashboard/profile_pic".$this->apikey;
+          $url_prof_pic=base_api_url()."dashboard/profile_pic".base_api_key();
           if($url_prof_pic){
             $username = 'admin';
             $password = '1234';
@@ -219,7 +257,7 @@ class Dashboard extends CI_Controller {
           'hcontact' => $this->input->post('hcontact'),
         );
         //print_r($data['prof_about_me']);exit();
-        $url_about_me=$this->apiurl."dashboard/about_me".$this->apikey;
+        $url_about_me=base_api_url()."dashboard/about_me".base_api_key();
         if($url_about_me){
           $username = 'admin';
           $password = '1234';
@@ -273,7 +311,7 @@ class Dashboard extends CI_Controller {
           'country'  => $this->input->post('country'),
         );
         //print_r($data['prof_bank_ac']); exit();
-        $url_bank_ac=$this->apiurl."dashboard/bank_ac".$this->apikey;
+        $url_bank_ac=base_api_url()."dashboard/bank_ac".base_api_key();
         if($url_bank_ac){
           $username = 'admin';
           $password = '1234';
@@ -327,7 +365,7 @@ class Dashboard extends CI_Controller {
           'post'  => $this->input->post('post'),
         );
         //print_r($data['prof_address']); exit();
-        $url_address=$this->apiurl."dashboard/postal_address".$this->apikey;
+        $url_address=base_api_url()."dashboard/postal_address".base_api_key();
         if($url_address){
           $username = 'admin';
           $password = '1234';
@@ -382,7 +420,7 @@ class Dashboard extends CI_Controller {
     $data['thispage']="7";
     $data['title']="Invoice List || WishingMart";
 
-    $url_invoice_list=$this->apiurl."dashboard/invoicelist/uid/".$this->session->userdata('uid').$this->apikey;
+    $url_invoice_list=base_api_url()."dashboard/invoicelist/uid/".$this->session->userdata('uid').base_api_key();
     $data['invoice_list'] = self::getapi($url_invoice_list);
     //print_r($data['invoice_list']);exit();
 
@@ -391,13 +429,25 @@ class Dashboard extends CI_Controller {
 
   public function invoiceview(){ // TO GET Invoices List PAGE
     $data['thispage']="71";
-    $data['title']="Invoices View || WishingMart";
+    $data['title']="Invoices Print || WishingMart";
 
-    $url_invoice_list=$this->apiurl."dashboard/invoiceview/iid/".$this->uri->segment(3).$this->apikey;
-    $data['invoice_list'] = self::getapi($url_invoice_list);
+    $url_invoice_view=base_api_url()."dashboard/invoiceview/iid/".$this->uri->segment(3).base_api_key();
+    $data['invoice_view'] = self::getapi($url_invoice_view);
     //print_r($data['invoice_list']);exit();
 
     $this->load->view('dashboard/index', $data);
+  }
+
+
+  public function invoiceprint(){ // TO GET Invoices List PAGE
+    $data['thispage']="72";
+    $data['title']="Invoices Print || WishingMart";
+
+    $url_invoice_view=base_api_url()."dashboard/invoiceview/iid/".$this->uri->segment(3).base_api_key();
+    $data['invoice_view'] = self::getapi($url_invoice_view);
+    //print_r($data['invoice_list']);exit();
+
+    $this->load->view('dashboard/invoiceprint_view', $data);
   }
 
   public function commingsoon(){ // TO GET Comming soon PAGE
@@ -415,17 +465,21 @@ class Dashboard extends CI_Controller {
       //$wp_id = $this->uri->segment(4);// for query string
       $this->session->set_userdata("from_id",$gt_id);
 
-      $url_grant_list=$this->apiurl."dashboard/grantid/gid/".$gt_id.$this->apikey;
+      $url_grant_list=base_api_url()."dashboard/grantid/gid/".$gt_id.base_api_key();
       $data['grant_pro'] = self::getapi($url_grant_list);
+      if($data['grant_pro'][0]['rid'] != $this->session->userdata('uid')){
+        redirect('dashboard/grantlist');
+      }
+
       //print_r($data['grant_pro']); exit();
       
-      //$url_grant_list=$this->apiurl."dashboard/wishid/wid/".$data['grant_pro'][0]['wpid'].$this->apikey;
+      //$url_grant_list=base_api_url()."dashboard/wishid/wid/".$data['grant_pro'][0]['wpid'].base_api_key();
       //$data['wish_pro'] = self::getapi($url_grant_list);
 
-      //$scategory_url=$this->apiurl."wishing/subcategoryid/id/".$data['wish_pro'][0]['scid'].$this->apikey;
+      //$scategory_url=base_api_url()."wishing/subcategoryid/id/".$data['wish_pro'][0]['scid'].base_api_key();
       //$data['sub_category'] = self::getapi($scategory_url);
 
-      $url_chat_on=$this->apiurl."chat/online_status/uid/".$gt_id.$this->apikey;
+      $url_chat_on=base_api_url()."chat/online_status/uid/".$gt_id.base_api_key();
       $data['online'] = self::getapi($url_chat_on) ;
       //print_r($this->session->userdata());  
       //exit();
@@ -457,12 +511,12 @@ class Dashboard extends CI_Controller {
       );
       //echo "<pre>"; print_r($data['aprovel_details']);      exit();
       $this->session->set_userdata("gid",$data['aprovel_details']['gid']);
-      $url_grant_list=$this->apiurl."dashboard/grantid/gid/".$data['aprovel_details']['gid'].$this->apikey;
+      $url_grant_list=base_api_url()."dashboard/grantid/gid/".$data['aprovel_details']['gid'].base_api_key();
       $data['grant_pro'] = self::getapi($url_grant_list);
       //print_r($data['grant_pro']);
       //exit();
 
-      $url_country=$this->apiurl."wishing/country".$this->apikey;
+      $url_country=base_api_url()."wishing/country".base_api_key();
       $data['country'] = self::getapi($url_country);
 
       $data['thispage']="32";
@@ -494,7 +548,7 @@ class Dashboard extends CI_Controller {
       //echo '<pre>';    print_r($data["shipping_add"]);      exit();
       
       if(isset($data["shipping_add"])){
-        $url_ship_add=$this->apiurl."dashboard/shipping_add".$this->apikey;
+        $url_ship_add=base_api_url()."dashboard/shipping_add".base_api_key();
         if($url_ship_add){
           $username = 'admin';
           $password = '1234';
@@ -528,7 +582,7 @@ class Dashboard extends CI_Controller {
       //$data['granting_id']=$this->session->userdata('gid');
       $data['approval_id']=$this->uri->segment(3);
 
-      $url_grant_list=$this->apiurl."dashboard/orderview/aid/".$data['approval_id'].$this->apikey;
+      $url_grant_list=base_api_url()."dashboard/orderview/aid/".$data['approval_id'].base_api_key();
       $data['order_view'] = self::getapi($url_grant_list);
       //print_r($data['grant_pro']);
       //exit();
@@ -541,7 +595,7 @@ class Dashboard extends CI_Controller {
     $data['thispage']="12";
     $data['title']="Invoice || WishingMart";
 
-    $url_order_list=$this->apiurl."dashboard/orderslist/uid/".$this->session->userdata('uid').$this->apikey;
+    $url_order_list=base_api_url()."dashboard/orderslist/uid/".$this->session->userdata('uid').base_api_key();
     $data['orders_list'] = self::getapi($url_order_list);
     //print_r($data['orders_list']);
     //exit();
@@ -555,7 +609,7 @@ class Dashboard extends CI_Controller {
     $data['thispage']="10";
     $data['title']="My Grant Requests || WishingMart";
 
-    $url_mygrant=$this->apiurl."dashboard/mygrantlist/uid/".$this->session->userdata('uid').$this->apikey;
+    $url_mygrant=base_api_url()."dashboard/mygrantlist/uid/".$this->session->userdata('uid').base_api_key();
     $data['mygrant_list'] = self::getapi($url_mygrant);
     //print_r($data['mygrant_list']);
     //exit();

@@ -30,11 +30,11 @@
                </tr>
               </thead>
               <tbody>
-                <tr>
 <?php
 for($i=0;$i<=(count($mygrant_list)-1);$i++){
   //echo $mygrant_list[$i]['gtuid'];
 ?>
+                <tr>
                   <td><?php echo $mygrant_list[$i]['gid']; ?> </td>
                   <td><img src="<?php echo base_url('images/products/granted/').'/'.$mygrant_list[$i]['gtimg']; ?>" width="50px" height="50px"></td>
                   <td><?php echo $mygrant_list[$i]['fname']." ".$mygrant_list[$i]['lname']; ?></td>
@@ -61,9 +61,9 @@ for($i=0;$i<=(count($mygrant_list)-1);$i++){
 ?>
                   </td>
                   <td><a href="viewGrant.html" class="btn btn-danger">View Request</a></td>
+                </tr>
                  
 <?php }//FOR END ?>
-                </tr>
                 
                 
                 

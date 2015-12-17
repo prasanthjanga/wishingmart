@@ -2,8 +2,8 @@
 
 class Wishgrant extends CI_Controller {
     
-  private $apiurl='http://localhost/wishing_ui1/prasanth/wmapi/';
-  private $apikey="/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
+  //private $apiurl='http://localhost/wishing_ui1/prasanth/wmapi/';
+  //private $apikey="/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS";
   public function __construct(){
     parent::__construct();
     self::logcheck(); //TO CHECK USER LOGIN OR NOT
@@ -36,13 +36,13 @@ class Wishgrant extends CI_Controller {
     $data['title']="WishingMart || Wishing Page.";
     //echo "<span style='color:red;'>sample same form</span>";
     //echo $this->input->post('userfile');
-    $url_country=$this->apiurl."wishing/country".$this->apikey;
+    $url_country=base_api_url()."wishing/country".base_api_key();
     $data['country'] = self::getapi($url_country) ;
     
-    $url_category=$this->apiurl."wishing/category".$this->apikey;
+    $url_category=base_api_url()."wishing/category".base_api_key();
     $data['category'] = self::getapi($url_category) ;
     
-    $url_subcategory=$this->apiurl."wishing/subcategory".$this->apikey;
+    $url_subcategory=base_api_url()."wishing/subcategory".base_api_key();
     $data['subcategory'] = self::getapi($url_subcategory) ;
 
   if(isset($_POST['sub'])){
@@ -77,7 +77,7 @@ class Wishgrant extends CI_Controller {
         //exit();
         //print_r($array);
 
-        $url_wish=$this->apiurl."wishing/new_wish".$this->apikey;
+        $url_wish=base_api_url()."wishing/new_wish".base_api_key();
         if($url_wish){
           $username = 'admin';
           $password = '1234';
@@ -160,18 +160,18 @@ class Wishgrant extends CI_Controller {
     
     $wp_id=$this->uri->segment(3);
 
-    $url_wishbyid = $this->apiurl."wishing/wishbyid/wpid/".$wp_id.$this->apikey;
+    $url_wishbyid = base_api_url()."wishing/wishbyid/wpid/".$wp_id.base_api_key();
     $data['wishbyid'] = self::getapi($url_wishbyid) ;
     //print_r($data['wishbyid']);
     //exit();    
     
     $this->session->set_userdata('from_id',$data['wishbyid'][0]['rid']);
     
-    $url_chat_on=$this->apiurl."chat/online_status/uid/".$data['wishbyid'][0]['rid'].$this->apikey;
+    $url_chat_on=base_api_url()."chat/online_status/uid/".$data['wishbyid'][0]['rid'].base_api_key();
     $data['online'] = self::getapi($url_chat_on) ;
     //print_r($data['online']);
     //exit();
-    $url_country=$this->apiurl."wishing/country".$this->apikey;
+    $url_country=base_api_url()."wishing/country".base_api_key();
     $data['country'] = self::getapi($url_country) ;
     //print_r($data['country']);exit();
 
@@ -211,7 +211,7 @@ class Wishgrant extends CI_Controller {
             //echo $this->input->post("gt_country");
             //echo $data['images'][0]['filename'];
             //exit();
-            $url_grant=$this->apiurl."wishing/grant_wish".$this->apikey;
+            $url_grant=base_api_url()."wishing/grant_wish".base_api_key();
             if($url_grant){
               $username = 'admin';
               $password = '1234';
@@ -268,11 +268,11 @@ class Wishgrant extends CI_Controller {
     $data['flashmsg']=$this->session->userdata('flashmsg');
     $this->session->unset_userdata('flashmsg');
     
-    $allwishes_url=$this->apiurl."wishing/all_wish_list".$this->apikey;
+    $allwishes_url=base_api_url()."wishing/all_wish_list".base_api_key();
     $data['allwishes'] = self::getapi($allwishes_url) ;
     //print_r($data['allwishes']);exit();
 
-    $url_country=$this->apiurl."wishing/country".$this->apikey;
+    $url_country=base_api_url()."wishing/country".base_api_key();
     $data['country'] = self::getapi($url_country) ;
     //print_r($data['country']);exit();
     
