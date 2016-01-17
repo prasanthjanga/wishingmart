@@ -161,11 +161,11 @@ Grant Wish
           </div>
           <div class="col-sm-2 pull-left wishform">
             <?php if($online['online']== '1'){ ?>
-            <a href="#" onclick="funenter()">
+            <a href="#" onclick="javascript:chatWith('<?php echo $wishbyid[0]['rid']; ?>')">
                 <h4 class="label label-success">User Online</h4>
             </a>
             <?php }else{//if end ?>
-            <a href="#" onclick="funoffline()">
+            <a href="#" onclick="javascript:chatWith('<?php echo $wishbyid[0]['rid']; ?>')">
                 <h4 class="label label-danger">User Offline</h4>
             </a>
             <?php }//else end ?>
@@ -175,6 +175,7 @@ Grant Wish
 <?php
 //print_r($wishbyid);
 //exit();
+//echo $wishbyid[0]['rid'];
 ?>
         <div class="form-group">
           <div class="col-sm-4 center image">

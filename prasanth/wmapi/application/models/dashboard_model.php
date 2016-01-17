@@ -216,7 +216,7 @@ WHERE r.rid=$uid
         $CI = &get_instance(); //To Load 2nd DB
         $this->user = $CI->load->database('user', TRUE); //To Load 2nd DB
 
-        //print_r($reg_data);exit();
+        //print_r($update_me);exit();
         if($update_me['fn']){
             $prof_fn=$this->user->where('rid', $update_me['uid']);
             $prof_fn=$this->user->update('registration', array('fn'=>$update_me['fn']));

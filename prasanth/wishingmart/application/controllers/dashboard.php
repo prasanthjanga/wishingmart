@@ -114,7 +114,7 @@ class Dashboard extends CI_Controller {
         'scid'     => $this->input->post("scategory"), //SUB CATUGERY ID
         'wpdec'    => $this->input->post("pdesc"),     //WISHING PRODUCT DESCRIPTION
       );
-      print_r($data['update']);//exit();
+      //print_r($data['update']);//exit();
 
       $url_update_wish=base_api_url()."dashboard/updatewish".base_api_key();
       if($url_update_wish){

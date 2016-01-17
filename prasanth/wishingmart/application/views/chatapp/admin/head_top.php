@@ -29,7 +29,7 @@
           </ul>
           <ul class="nav navbar-nav">        
             <li class="social user user-menu">
-              <a href="<?php echo base_url('landing/comingsoon'); ?>">
+              <a href="<?php echo base_url('shopping'); ?>">
                 <i class="fa" data-toggle="tooltip" data-placement="left" data-original-title="Shopping">
                   <img src="<?php echo base_url('assets/images/cms.png'); ?>" class="user-image" alt="Shopping" />
                 </i>
@@ -38,10 +38,11 @@
           </ul>
           <ul class="nav navbar-nav">        
             <li class="social user user-menu">
-              <a href="<?php echo base_url('chat'); ?>">
+              <a href="<?php echo base_url('chat/index'); ?>">
                 <i class="fa" data-toggle="tooltip" data-placement="left" data-original-title="Chat">
                   <img src="<?php echo base_url('assets/images/chat.png'); ?>" class="user-image" alt="Chat" />
                 </i>
+                <!--<span class="label label-danger">19</span>-->
               </a>
             </li>
           </ul>

@@ -62,7 +62,7 @@
     </ul>
     <ul class="nav navbar-nav">        
       <li class="social user user-menu">
-        <a href="<?php echo base_url('landing/comingsoon'); ?>">
+        <a href="<?php echo base_url('shopping'); ?>">
           <i class="fa" data-toggle="tooltip" data-placement="left" data-original-title="Shopping">
             <img src="<?php echo base_url('assets/images/cms.png'); ?>" class="user-image" alt="Shopping" />
           </i>
@@ -70,8 +70,8 @@
       </li>
     </ul>
     <ul class="nav navbar-nav">        
-      <li class="social user user-menu">
-        <a href="<?php echo base_url('chat'); ?>">
+      <li class="social user user-menu dropdown tasks-menu">
+        <a href="<?php echo base_url('chat/index'); ?>" class="dropdown-toggle">
           <i class="fa" data-toggle="tooltip" data-placement="left" data-original-title="Chat">
             <img src="<?php echo base_url('assets/images/chat.png'); ?>" class="user-image" alt="Chat" />
           </i>

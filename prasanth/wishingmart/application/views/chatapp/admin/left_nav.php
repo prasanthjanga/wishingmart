@@ -3,7 +3,7 @@
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->
-    <a href="<?php echo base_url('dashboard'); ?>">
+    <a href="<?php echo base_url('chat/index'); ?>">
     <div class="user-panel">
       <div class="pull-left image">
         <img src="<?php 
@@ -20,43 +20,47 @@
         </p>
       </div>
     </div>
-      </a>
+    </a>
  
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
-      <li class="treeview <?php if($thispage=='c2'){ echo 'active'; } ?>">
-        <a href="<?php echo base_url('chat/friendswithyou'); ?>">
+<!--
+      <li class="treeview <?php //if($thispage=='c2'){ echo 'active'; } ?>">
+        <a href="<?php //echo base_url('chat/friendswithyou'); ?>">
           <i class="fa fa-circle-o text-red"></i> <span>Friends With You</span> 
         </a>
       </li>
-      <li class="treeview <?php if($thispage=='c3'){ echo 'active'; } ?>">
-        <a href="<?php echo base_url('chat/youwithfriends'); ?>">
+      <li class="treeview <?php //if($thispage=='c3'){ echo 'active'; } ?>">
+        <a href="<?php //echo base_url('chat/youwithfriends'); ?>">
           <i class="fa fa-comments-o"></i> <span>You With Friends</span> 
         </a>
       </li>
+-->
+
       <li class="treeview <?php if($thispage=='c4'){ echo 'active'; } ?>">
         <a href="<?php echo base_url('chat/offline'); ?>">
           <small class="label label-danger"><i class="fa fa-clock-o"></i></small>
             <span>Offline Chat</span> 
         </a>
       </li>
-      <li class="treeview <?php if($thispage=='4'){ echo 'active'; } ?>">
+<!--
+      <li class="treeview <?php //if($thispage=='4'){ echo 'active'; } ?>">
         <a href="">
           <i class="fa fa-comment"></i> <span>Chat Options</span> 
           <i class="fa fa-angle-left pull-right"></i>
         </a>
       </li>
-      <li class="treeview <?php if($thispage=='4' || $thispage=='9'){ echo 'active'; } ?>">
+
+      <li class="treeview <?php //if($thispage=='4' || $thispage=='9'){ echo 'active'; } ?>">
         <a href="">
           <i class="fa fa-comments-o"></i> <span>Friends List</span> 
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="<?php echo base_url('chat/'); ?>"><i class="fa fa-circle-o"></i>My Friends</a></li>
+          <li><a href="<?php //echo base_url('chat/'); ?>"><i class="fa fa-circle-o"></i>My Friends</a></li>
         </ul>
       </li>
-      
-
+-->
       <li class="treeview">
         <a href="<?php echo base_url('landing/logout'); ?>">
         <i class="fa fa-sign-out"></i>

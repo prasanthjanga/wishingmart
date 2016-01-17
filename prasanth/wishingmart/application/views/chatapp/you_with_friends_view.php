@@ -33,17 +33,17 @@
 //echo $this->session->userdata('uid');
 //sort($chat_all);
 for($i=0;$i<=(count($chat_all)-1);$i++){
-	if($chat_all[$i]['to_id'] != $this->session->userdata('uid')){
+	if($chat_all[$i]['to'] != $this->session->userdata('uid')){
 		echo "<tr>";
 		echo "<td>";
 			echo $chat_all[$i]['id'];
 		echo "</td>";
 		echo "<td>";
-			echo $chat_all[$i]['to_id'];
+			echo $chat_all[$i]['to'];
 		echo "</td>";
 		echo "<td>";
 			echo $chat_all[$i]['sent'];
-			//echo $chat_all[$i]['to_id'];
+			//echo $chat_all[$i]['to'];
 		echo "</td>";
 		echo "<td>";
 			//echo $chat_all[$i]['online'];

@@ -215,7 +215,48 @@ class Chat extends REST_Controller
         }//ELSE END
     }
 
+    //To GET all user chat by user id
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wmapi/chat/friends_list/uid/102/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function friends_list_get()
+    {
+        $chat_uid = $this->get("uid");
 
+        if(empty($chat_uid)){
+            $this->response(NULL, 400);
+        }else{
+            $list_fri = $this->chat_model->get_friends_list($chat_uid);
+             if($list_fri){
+                $this->response($list_fri, 200);
+            }else{
+                $this->response(array("status" => "failed."));
+            }
+        }//ELSE END
+    }
+
+
+    //To GET all user chat by user id
+    //http://localhost/foldername/api/users/X-API-KEY/miapikey
+    //http://localhost/wmapi/chat/both_chat/fid/102/tid/101/x-api-key/8hu8fWMCIhCXyq0U4TP0CMJ9waHkCGNcsrqok8zS
+    public function both_chat_get()
+    {
+        //$chat_uid = $this->get("uid");
+        $chat_id = array(
+            'fid'=>$this->get("fid"),
+            'tid'=>$this->get("tid"),
+        );
+
+        if(empty($chat_id)){
+            $this->response(NULL, 400);
+        }else{
+            $chat_both = $this->chat_model->get_both_chat($chat_id);
+             if($chat_both){
+                $this->response($chat_both, 200);
+            }else{
+                $this->response(array("status" => "failed."));
+            }
+        }//ELSE END
+    }
 
 
 
