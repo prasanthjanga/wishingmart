@@ -1,19 +1,48 @@
+
+
 <?php if($thispage=="1"){ ?>
-<script src="<?php echo base_url('assets/landingpage/js/main.js'); ?>"></script>
-<script src="<?php echo base_url('assets/landingpage/js/_config.js'); ?>"></script>
-<script src="<?php echo base_url('assets/landingpage/js/classie.js'); ?>"></script>
-<script src="<?php echo base_url('assets/landingpage/js/_front.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/landingpage/VerticalShowcaseSlider/js/slider.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/landingpage/VerticalShowcaseSlider/js/modernizr.custom.79639.js'); ?>"></script>
+<!---scrolling-->
+<script type="text/javascript" src="<?php echo base_url('assets/landingpage/js/move-top.js'); ?>"></script>
 <script type="text/javascript">
-$(function(){
-    Slider.init();
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
 });
 </script>
-<?php }else{ ?>
+<!---//scrolling-->
+<script type="text/javascript">
+$(document).ready(function() {
+    /*
+    var defaults = {
+        containerID: 'toTop', // fading element id
+        containerHoverID: 'toTopHover', // fading element hover id
+        scrollSpeed: 1200,
+        easingType: 'linear' 
+    };
+    */
+    
+    $().UItoTop({ easingType: 'easeOutQuart' });
+        
+});
+</script>
+<a href="#move-top" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"> </span></a>
+
+<!--//End-copy-right-->
+<?php } //IF thispage == 1 END ?>
 
 <!-- // WISHING PAGE CSS AND SCRIPT -->
-<?php if($thispage=="5" || $thispage=="6"){ ?>
+<?php if($thispage==" "){ ?>
 <!-- JS -->
 <script type="text/javascript" src="<?php echo base_url('assets/wishing/js/jquery-1.11.0.min.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/wishing/js/bootstrap.min.js'); ?>"></script>
@@ -30,7 +59,7 @@ $(function(){
 <script type="text/javascript" src="<?php echo base_url('assets/wishing/js/scripts-custom.js'); ?>"></script> 
 
 
-<?php }else{ ?>
+<?php }else{ if($thispage!="1"){ ?>
 
 <script src="<?php echo base_url('assets/jquery.js'); ?>"></script>
 <!-- wow script -->
@@ -67,8 +96,9 @@ $(document).ready(function() {
 });
 </script>
 
-<?php } // ELSE END?>
-<?php if($thispage == "2"){ ?>
+<?php } // IF thispage!=1 COND END 
+ } // ELSE END ?>
+<?php if($thispage == "2" || $thispage == "3" || $thispage == "8"){ ?>
 <script src="<?php echo base_url('assets/wishgrant/js/classie.js'); ?>"></script>
 <script src="<?php echo base_url('assets/wishgrant/js/cbpViewModeSwitch.js'); ?>"></script>
 <?php } // ELSE END?>
@@ -127,6 +157,6 @@ $(document).ready(function() {
 });
 </script>
 
-<?php }//ELSE END ?>
+
 </body>
 </html>

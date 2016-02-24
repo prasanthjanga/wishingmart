@@ -16,15 +16,25 @@ html{
 
   
 .bodybg{
+/*  
   background: url("../images/nebula.jpg"); 
-  background-repeat:no-repeat;
   background-position:center center;
   background-attachment:fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-overflow:hidden;
+*/
+  overflow:hidden;
+  background-repeat:no-repeat;
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#86d1e8+0,ededed+66 */
+background: #86d1e8; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #86d1e8 0%, #ededed 66%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  #86d1e8 0%,#ededed 66%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  #86d1e8 0%,#ededed 66%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86d1e8', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
 
@@ -127,7 +137,7 @@ a{color: #333;}
 .navbar-nav > li{margin-top:0px !important;}
 .navbar-nav > li > a{ padding: 13px 5px; padding-bottom:0px !important;  text-transform: uppercase;font: normal 13px/19px 'Titillium Web';}
 .navbar-inverse{border:none; opacity:1; background-color:black;}
-.navbar-fixed-top{ background:rgba(0,0,0,.3); opacity:1.0;}
+/*.navbar-fixed-top{ background:rgba(0,0,0,.3); opacity:1.0;}*/
 .navbar-brand{padding:6px 15px !important;}
 .dropdown-menu{background:rgba(0,0,0,.3); color: #fff; padding-top:15px; margin-top:10px !important;}
 .dropdown-menu > li > a{color: #fff;padding:10px;}
@@ -152,13 +162,14 @@ a{color: #333;}
 
 
 /*footer*/
+
 .footer{background-color:rgba(0,0,0,1); position:fixed;margin-top:10px; z-index:1000;}
 
-.footer .links{margin-top: 9px;float: left;}
+.footer .links{margin-top: 5px;float: left;}
 .footer .links a{color: #888;padding: 0 10px;font: normal 13px/13px 'Titillium Web';}
 .footer .links a:hover{color: #fff;}
-.footer .social{margin-top: 5px;margin-right: 10px;}
-.footer .social a{color: #fff;font-size: 20px;margin:0 3px;}
+.footer .social{/*margin-top: 3px;*/margin-right: 10px;}
+.footer .social a{color: #fff;font-size: 20px;/*margin:0 3px;*/}
 .footer .social a:hover{color: #999;}
 /*footer*/
 
@@ -417,6 +428,15 @@ figure.effect-layla {
   background-color: #000;
 }
 
+div.selector{border:none; border: 1px solid #999;height: 33px !important; padding:3px 10px !important; border-radius: 0; font-size: 14px; /*background-color:rgba(0,0,0,0.5);*/ width: 100% !important;text-align: left !important;}
+div.selector:hover{}
+div.selector span{height: 36px;padding: 0; background: url(images/drop.png) right 9px no-repeat !important;color: #8d8d8d; width: 100% !important;margin-right: 20px;}
+div.selector:hover span{ background-position:right 9px !important; color: #282828;}
+div.selector select{height: 36px !important;top: -2px; cursor: pointer; background-color: #fff;}
+div.selector option{ padding: 10px;}
+
+
+/*
 input,
 select,
 textarea { 
@@ -425,6 +445,7 @@ textarea {
   font-style: normal;
   font-weight: 300;
 }
+*/
 
 .pageoverlay {
   position: fixed;

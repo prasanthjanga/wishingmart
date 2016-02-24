@@ -25,7 +25,7 @@ scrolltitle();
 <!-- Title Scroling end-->
 
 <!-- Google fonts -->
-
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
@@ -37,70 +37,59 @@ scrolltitle();
 <!-- font awesome -->
 <link href="<?php echo base_url('assets/font-awesome.min.css'); ?>" rel="stylesheet">
 
+<!-- bootstrap -->
+<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>" />
+
+<!-- uniform -->
+<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/uniform/css/uniform.default.min.css'); ?>" />
+
+<!-- // LANDING PAGE CSS AND SCRIPT START-->
 <?php if($thispage=="1"){ ?>
-    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/landingpage/css/reset.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/landingpage/css/style.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/landingpage/style.css'); ?>" type="text/css">
-    <link href="<?php echo base_url('assets/landingpage/css/animation.css'); ?>" rel='stylesheet' type='text/css'>
-    <link href="<?php echo base_url('assets/landingpage/jquery.fullPage.css'); ?>" rel="stylesheet" type="text/css">
-    <script src="<?php echo base_url('assets/landingpage/js/jquery.min.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/landingpage/js/jquery-ui.min.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/landingpage/jquery.fullPage.js'); ?>"></script>
+<link href="<?php echo base_url('assets/landingpage/css/style.css'); ?>" rel='stylesheet' type='text/css' />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</script>
+<!---script-->
+<script src="<?php echo base_url('assets/landingpage/js/jquery.min.js'); ?>"></script>
+<!---//script-->
+<!--768px-menu-->
+<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/landingpage/css/jquery.mmenu.all.css'); ?>" />
+<script type="text/javascript" src="<?php echo base_url('assets/landingpage/js/jquery.mmenu.js'); ?>"></script>
     <script type="text/javascript">
-    $(document).ready(function () {
-        $('#fullpage').fullpage();
-    });
+        //  The menu on the left
+        $(function() {
+            $('nav#menu-left').mmenu();
+        });
     </script>
-    <script src="<?php echo base_url('assets/landingpage/js/modernizr.js'); ?>"></script>
-    <noscript>
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/landingpage/VerticalShowcaseSlider/css/noscript.css'); ?>"/>
-    </noscript>
+<!---//768px-menu-->
+ <!--strat-slider-->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/landingpage/css/style2.css'); ?>" />
+<script type="text/javascript" src="<?php echo base_url('assets/landingpage/js/modernizr.custom.28468.js'); ?>"></script>
+<!---//strat-slider-->
+<?php }// thispage PAGE COND END ?>
+<!-- // LANDING PAGE CSS AND SCRIPT END-->
 
-<?php }else{ ?>
+<!-- // WISHING PAGE CSS AND SCRIPT -->
+<!-- animate.css -->
+<link rel="stylesheet" href="<?php echo base_url('assets/wow/animate.css'); ?>" />
+<link rel="stylesheet" href="<?php echo base_url('assets/style.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('assets/datepicker.css'); ?>">
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>" />
-
-    <!-- uniform -->
-    <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/uniform/css/uniform.default.min.css'); ?>" />
-
-     <!-- // WISHING PAGE CSS AND SCRIPT -->
-<?php if($thispage=="5" || $thispage=="6"){ ?>
-    <script type="text/javascript" src="<?php echo base_url('assets/wishing/js/modernizr.js'); ?>"></script>
-    <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/wishing/css/style.css'); ?>" >
-    <link rel="stylesheet" href="<?php echo base_url('assets/wishing/css/style-responsive.css'); ?>" >
-    <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/wishing/css/animate.min.css'); ?>">       
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="js/respond.min.js"></script>
-    <![endif]-->
-
-<?php }else{ ?>
-
-    <!-- animate.css -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/wow/animate.css'); ?>" />
-
-    <link rel="stylesheet" href="<?php echo base_url('assets/style.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/datepicker.css'); ?>">
-
-<?php } // ELSE END?>
-<?php if($thispage == "7"){ ?>
+<?php if($thispage == "5" || $thispage == "7" || $thispage == "6"){ ?>
     <link type="text/css" href='<?php echo base_url('assets/wishgrant/css/style.css'); ?>' rel='stylesheet'>
+    <link type="text/css" href='<?php echo base_url('assets/wishgrant/css/animation.css'); ?>' rel='stylesheet'>
 <?php } ?>
-<?php if($thispage == "2"){ ?>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/wishgrant/css/default.css'); ?>" />
-    <link rel="stylesheet" type="text/css'); ?>" href="<?php echo base_url('assets/wishgrant/css/component.css'); ?>" />
-    <script src="<?php echo base_url('assets/wishgrant/js/modernizr.custom.js'); ?>"></script>
-<?php } ?>
+<?php if($thispage == "2" || $thispage == "3" || $thispage == "8" || $thispage == "5" || $thispage == "6"){ ?>
+
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/login/css/style.css'); ?>" />
+    <script src="<?php echo base_url('assets/login/js/index.js'); ?>"></script>
+<!-- SCRIPT FOR GRID AND LIST VIEW START -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/wishgrant/css/component.css'); ?>" />
+<!-- SCRIPT FOR GRID AND LIST VIEW END -->
+<?php }// IF THISPAGE == 2 || 8 CONG END ?>
 <?php if($thispage == "404"){ ?>
     <link href="<?php echo base_url('assets/404/css/style.css'); ?>" rel="stylesheet" type="text/css" media="all" />
 <?php } ?>
 
-<?php }//ELSE END ?>
 <!-- CHATTING CSS & SCRIPT START-->    
 <?php //if($thispage == "c1" || $thispage == "31"){ ?>
 

@@ -21,14 +21,14 @@ class Landing extends CI_Controller {
   }
 
 	public function index(){ // TO GET LANDING PAGE
-      $data['thispage']="1";
-      $data['title']="WishingMart || Your Dream,Our Mission || Wishes Do Come True!";
-  		
-      $url_product_list=base_api_url()."login/productlist".base_api_key();
-      $data['product_list'] = self::getapi($url_product_list);
-//print_r($data['product_list']);
-//exit();
-      $this->load->view('landing_view', $data);
+    $data['thispage']="1";
+    $data['title']="WishingMart || Your Dream,Our Mission || Wishes Do Come True!";
+		
+    $url_product_list=base_api_url()."login/productlist".base_api_key();
+    $data['product_list'] = self::getapi($url_product_list);
+    //print_r($data['product_list']);
+    //exit();
+    $this->load->view('landing_view', $data);
 	}
 
 
@@ -111,6 +111,8 @@ class Landing extends CI_Controller {
     if($this->session->userdata('logged_in') == '1'){
       redirect("landing");
     }else{
+      //echo "samplesssssssssssssssssssssssssssss111111111111111111111111111111111111111111111111111111111111111111111111111111111ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppttttttttttttttttttttttttttttttttttt11111111111111111111111111111111111";
+      //exit();
 
     $data['thispage']="3";
     $data['title']="WishingMart || Register";
@@ -121,8 +123,10 @@ class Landing extends CI_Controller {
     $this->load->library('form_validation');
     $this->form_validation->set_rules('firstname', 'First Name', 'required|alpha');
     $this->form_validation->set_rules('lastname', 'Last Name', 'required|alpha');
-    $this->form_validation->set_rules('dob', 'Bate Of Birth', 'required');
-    $this->form_validation->set_rules('gender', 'Gender', 'required');
+    $this->form_validation->set_rules('date', 'Date', 'required|callback_select_validate');
+    $this->form_validation->set_rules('month', 'Month', 'required|callback_select_validate');
+    $this->form_validation->set_rules('year', 'Year', 'required|callback_select_validate');
+    $this->form_validation->set_rules('gender', 'Gender', 'required|callback_select_validate');
     $this->form_validation->set_rules('country', 'Country', 'required|callback_select_validate');
     $this->form_validation->set_rules('email', 'Email', 'required|callback_username_check');
     $this->form_validation->set_rules('pwd', 'Password', 'trim|required|matches[rpwd]');
@@ -130,41 +134,29 @@ class Landing extends CI_Controller {
     $this->form_validation->set_rules('tnc', 'Terms of Service and Privacy Policy', 'required');
     $this->form_validation->set_error_delimiters('<div>','</div>');
     
+    $dob = $this->input->post('year').'-'.$this->input->post('month').'-'.$this->input->post('date');
+    //exit();
+
     if($this->form_validation->run() == TRUE){
-      $url=base_api_url()."registration/new_user".base_api_key();
-      if($url){
-        $username = 'admin';
-        $password = '1234';
-        $curl_handle = curl_init();
-        curl_setopt($curl_handle, CURLOPT_URL, $url);
-        curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl_handle, CURLOPT_POST, 1);
-        curl_setopt($curl_handle, CURLOPT_POSTFIELDS, array(
-          "firstname" => $this->input->post('firstname'),
-          "lastname"  => $this->input->post('lastname'),
-          "dob"       => $this->input->post('dob'),
-          "gender"    => $this->input->post('gender'),
-          "country"   => $this->input->post('country'),
-          "email"     => $this->input->post('email'),
-          "pwd"       => $this->input->post('pwd')
-          ));
-         
-        // Optional, delete this line if your API is open
-        curl_setopt($curl_handle, CURLOPT_USERPWD, $username . ':' . $password);
-         
-        $buffer = curl_exec($curl_handle);
-        curl_close($curl_handle);
-         
-        $result = json_decode($buffer);
-        //print_r($result);
-        if(isset($result->status) && $result->status == 'success'){
-          $this->session->set_flashdata('flashmsg','<div>Registration Successfull Please Check Your Email For Activation Link.</div>'); 
-          redirect('landing/registration');
-          
-        }else{
-          echo 'Something has gone wrong';
-        }
-      }// IF END
+      //$url=base_api_url()."registration/new_user".base_api_key();
+      $post_data=array(
+        "firstname" => $this->input->post('firstname'),
+        "lastname"  => $this->input->post('lastname'),
+        "dob"       => $dob,
+        "gender"    => $this->input->post('gender'),
+        "country"   => $this->input->post('country'),
+        "email"     => $this->input->post('email'),
+        "pwd"       => $this->input->post('pwd'),
+      );
+      $post_url=base_api_url()."registration/new_user".base_api_key();
+      $result=post_datatoapi($post_url,$post_data);
+      //print_r($result);exit();
+
+      if(isset($result->status) && $result->status == 'success'){
+        $this->session->set_flashdata('flashmsg','<div>Registration Successfull Please Check Your Email For Activation Link.</div>'); 
+        redirect('landing/registration');
+        
+      }else{ echo 'Something has gone wrong'; }
     }else{
       $this->load->view('reg_view', $data);  
     }//ELSE END 

@@ -22,6 +22,7 @@
 
 <!-- footer -->
 <div class="footer navbar-fixed-bottom" role="navigation">
+<!-- <div class="colorbox rainbow"></div> -->
   <div class="pull-left">
     <div class="links">
       <a href="<?php echo base_url('landing/termscondition'); ?>">Terms &amp; Conditions</a>   

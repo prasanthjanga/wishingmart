@@ -64,7 +64,8 @@ body {
 }
 
 .skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
-    background-color: rgba(0, 0, 0, 0.8);
+    /*background-color: rgba(0, 0, 0, 0.8);*/
+    background-color: #fff;
 }
 
 @media (max-width: 767px) {
@@ -4599,9 +4600,9 @@ table.text-center, table.text-center td, table.text-center th {
 }
 
 .skin-blue .main-header .navbar, aside .sidebar {
-    /*background: black;*/
-    background-color:rgba(0,0,0,.3);
-    opacity: 1.0;
+    background: black;
+    /*background-color:rgba(0,0,0,.3);
+    opacity: 1.0;*/
 }
 
 .skin-blue .main-header .navbar .nav > li > a {
@@ -4645,15 +4646,15 @@ table.text-center, table.text-center td, table.text-center th {
 }
 
 .skin-blue .main-header .logo {
-    /*background: black;*/
-    background-color:rgba(0,0,0,.5);
-    opacity:1.0;
+    background: black;
+    /*background-color:rgba(0,0,0,.5);
+    opacity:1.0;*/
     color: #fff;
     border-bottom: 0 solid transparent;
 }
 
 .skin-blue .main-header .logo:hover {
-    background-color: #000
+    background-color: rgba(0,0,0,.5);
 }
 
 .skin-blue .main-header li.user-header {
@@ -4665,7 +4666,7 @@ table.text-center, table.text-center td, table.text-center th {
 }
 
 .skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
-    background: rgba(0, 0, 0, 0.32);
+    /*background: rgba(0, 0, 0, 0.32);
     background: url("../images/products/images.png");
     background-repeat: no-repeat;
     background-position: center center;
@@ -4673,7 +4674,7 @@ table.text-center, table.text-center td, table.text-center th {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover;*/
     padding-bottom: 50px;
 }
 

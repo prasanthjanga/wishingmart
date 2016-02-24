@@ -37,7 +37,7 @@ html {
 body {
   font-family: "Inconsolata", Helvetica, Arial, sans-serif;
   font-size: 18px; /* base font color */
-  color: #fff; /* base font color */
+  color: #000; /* base font color */
   letter-spacing: 0.03em; /* base letter spacing */
   line-height: 1.4; /* base line height */
   min-height: 100%;
@@ -55,7 +55,7 @@ body {
   background-size: cover;
 }
 a {
-  color: #fff; /* link color */
+  color: #1fda9a; /* link color */
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -70,7 +70,7 @@ a {
 
 a:focus, a:hover {
   text-decoration: none;
-  color: #fff; /* basic hover, focus color */
+  color: #1fda9a; /* basic hover, focus color */
 }
 
 a:focus {
@@ -95,7 +95,9 @@ textarea:focus {
 
 .form-group {
   margin-bottom: 30px;
-  font-family: "Oswald", Helvetica, Arial, sans-serif; /* form input / textarea font style */
+/*
+  font-family: "Oswald", Helvetica, Arial, sans-serif;*/ /* form input / textarea font style */
+
 }
 
 .btn,
@@ -106,8 +108,8 @@ textarea:focus {
 h1,h2,h3,h4,h5,h6 {
   font-family: "Oswald", Helvetica, Arial, sans-serif; /* title font style */
   font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  /*text-transform: uppercase;
+  letter-spacing: 0.1em;*/
   color: #fff; /* title base color */
   margin: 0;
   line-height: 1.4;
@@ -117,16 +119,35 @@ p {
   margin: 0;
 }
 
-input[type="text"], input[type="email"], input[type="search"], input[type="password"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+
+div.selector{border:none; border: 1px solid #999;height: 33px !important; padding:3px 10px !important; border-radius: 0; font-size: 14px; /*background-color:rgba(0,0,0,0.5);*/ width: 100% !important;text-align: left !important;}
+div.selector:hover{}
+div.selector span{height: 36px;padding: 0; background: url(images/drop.png) right 9px no-repeat !important;color: #8d8d8d; width: 100% !important;margin-right: 20px;}
+div.selector:hover span{ background-position:right 9px !important; color: #282828;}
+div.selector select{height: 36px !important;top: -2px; cursor: pointer; background-color: #fff;}
+div.selector option{ padding: 10px;}
+
+
+.wishgrant-bg{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f7eac8+50,f4d68b+100 */
+background: #f7eac8; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #f7eac8 50%, #f4d68b 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  #f7eac8 50%,#f4d68b 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  #f7eac8 50%,#f4d68b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7eac8', endColorstr='#f4d68b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
-input,
-textarea {
-  letter-spacing: 0.18em;
+.btn_title{
+  font-size: 23px;
+  height: auto;
+  color: #1fda9a;
+  font-weight: bold;
 }
 
+.border{
+  border-color: #db3340;
+}
 /* placeholder color */
 .form-control::-webkit-input-placeholder {color: #ccc;}
 .form-control:-moz-placeholder {color: #ccc; opacity:  1;}
@@ -137,7 +158,9 @@ textarea {
 .btn { /* base button style */
   font-size: 12px;
   padding: 15.5px 30px 15.5px 30px;
-  height: 40px;
+  height: auto;
+  border-color: #db3340;
+  color: #1fda9a;
 
   text-transform: uppercase;
   -webkit-transition: all 0.3s ease-in-out;
@@ -160,13 +183,14 @@ textarea {
 
 .btn-transparent {
   background-color: transparent;
-  border-color: #fff;
+  border-color: #db3340;
+  color: #e8b71a;
 }
 
 .btn-transparent:hover,
 .btn-transparent:focus {
-  background-color:#ea006e;
-  color: #000;
+  background-color:#db3340;
+  color: #e8b71a;
 }
 
 .home-btn-wrapper {
@@ -331,6 +355,7 @@ textarea {
   font-family:"Orbitron";
   text-shadow: -1px 1px 1em rgba(255,255,255,.5),1px -1px 1em rgba(255,255,255,.5); /* section title text shadow */
   letter-spacing: 0.2em;
+  color: #db3340;
 }
 h5.title{
     position: relative;
@@ -355,6 +380,7 @@ h5.title{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
   letter-spacing: 0.1em;
+  color: #000;
 }
 
 @media (max-width:991px) { /* extra small - small devices */

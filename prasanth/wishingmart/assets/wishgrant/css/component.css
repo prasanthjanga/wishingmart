@@ -16,9 +16,9 @@
 
 	}
 .cbp-vm-switcher {
-	padding: 20px;
-	border: 3px solid #47a3da;
-	background-color: rgba(0,0,0,0.32);
+	padding-top: 25px;
+	border: 1px solid #47a3da;
+	/*background-color: rgba(0,0,0,0.32);*/
 }
 
 /* options/select wrapper with switch anchors */
@@ -85,6 +85,8 @@
 	display: inline-block;
 	max-width: 100%;
 	border: none;
+	width: 160px;
+	height: 160px;
 }
 
 
@@ -94,7 +96,7 @@
 }
 
 .cbp-vm-price {
-	color: #c0c0c0;
+	color: #000;
 }
 
 .cbp-vm-add {
@@ -175,7 +177,7 @@
 .cbp-vm-view-grid .cbp-vm-title {
 	font-size: 2em;
 	font-family: "titillium web";
-    color: whitesmoke;
+    color: #1fda9a;
 }
 
 .cbp-vm-view-grid .cbp-vm-details {
@@ -183,7 +185,7 @@
 	min-height: 40px;
 	margin: 0 auto;
 	font-family: "titillium web";
-    color: whitesmoke;
+    color: #000;
 } 
 
 .cbp-vm-view-grid .cbp-vm-price {
@@ -208,30 +210,30 @@
 }
 
 .cbp-vm-view-list .cbp-vm-image {
-	width: 10%;
+	/*width: 10%;*/
 }
 
 .cbp-vm-view-list .cbp-vm-title {
 	font-size: 1.3em;
 	padding: 0 10px;
 	white-space: normal;
-	width: 23%;
+	width: 22%;
 	font-family: "titillium web";
-    color: whitesmoke;
+    color: #1fda9a;
 }
 
 .cbp-vm-view-list .cbp-vm-price {
 	font-size: 1.3em;
-	width: 10%;
+	width: 24%;
 }
 
 .cbp-vm-view-list .cbp-vm-details {
-	width: 40%;
+	width: 25%;
 	padding: 0 15px;
 	overflow: hidden;
 	white-space: normal;
 	font-family: "titillium web";
-    color: whitesmoke;
+    color: #000;
 }
 
 .cbp-vm-view-list .cbp-vm-add {

@@ -1,45 +1,20 @@
-<body <?php if($thispage == "1"){ ?>
- class="clouds-bg content inside inside-page"
-<?php }elseif($thispage=="5" || $thispage=="6" ){ ?>
-  class="star-background"
-<?php }elseif($thispage=="f1" || $thispage=="f2" || $thispage=="f3" || $thispage=="f4" || $thispage=="f5" || $thispage=="f6" ){ ?>
+<body <?php //if($thispage=="6" ){ class="star-background" ?>
+<?php //}else
+if($thispage=="f1" || $thispage=="f2" || $thispage=="f3" || $thispage=="f4" || $thispage=="f5" || $thispage=="f6" ){ ?>
   class="aboutbg"
-<?php }elseif($thispage=="7"){?>
-  class="wishbg"
-<?php }else{?>
+<?php }elseif($thispage=="5" || $thispage=="7"){ //echo 'class="wishbg"'; ?>
+  class="wishgrant-bg"
+<?php }else{ ?>
   class="bodybg"
 <?php } ?>>
-<?php if($thispage=="5" || $thispage=="6" ){?>
-<div class="pageoverlay"></div> 
-<?php } ?>
+<?php //if($thispage=="6"){?>
+<!--<div class="pageoverlay"></div> -->
+<?php //} ?>
 
-<?php if($thispage=="1"){ ?>
-<!-- cloud script -->
-<script id="vs" type="x-shader/x-vertex">
-  varying vec2 vUv;void main(){vUv=uv;
-  gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}
-</script>
-<script id="fs" type="x-shader/x-fragment">
-  uniform sampler2D map;
-  uniform vec3 fogColor;
-  uniform float fogNear;
-  uniform float fogFar;
-  varying vec2 vUv;
-  void main(){float depth=gl_FragCoord.z/gl_FragCoord.w;
-  float fogFactor=smoothstep(fogNear,fogFar,depth);
-  gl_FragColor=texture2D(map,vUv);gl_FragColor.w*=pow(gl_FragCoord.z,20.0);
-  gl_FragColor=mix(gl_FragColor,vec4(fogColor,gl_FragColor.w),fogFactor);}
-</script>
 
-<script type="text/javascript" src="<?php echo base_url('assets/landingpage/js/three.min.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/landingpage/js/detector.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/landingpage/js/clouds-anim.js'); ?>"></script>
-<script src="<?php echo base_url('assets/landingpage/aslider.js'); ?>"></script>
-<!-- cloud script -->
-<?php } ?>
 
 <!-- header -->
-<nav class="navbar  navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="clearfix">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -105,10 +80,10 @@
                 ?>"  class="img-circle" alt="User Image"/>
             </span>
             <div style="padding:10px; text-align:center">
-              <a href="<?php echo base_url('dashboard'); ?>" class="btn btn-default btn-flat">Profile</a>
+              <a href="<?php echo base_url('dashboard'); ?>" class="btn">Profile</a>
             </div>
             <div style="padding:10px; text-align:center">
-              <a href="<?php echo base_url('landing/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
+              <a href="<?php echo base_url('landing/logout'); ?>" class="btn">Sign out</a>
             </div>
           </li>
         </ul>
@@ -150,6 +125,7 @@
       </ul>
     </div><!-- navbar-collapse -->
   </div><!-- container-fluid -->
+<div class="colorbox rainbow"></div>
 </nav>
 <!-- header -->
 

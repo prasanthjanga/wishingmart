@@ -3,41 +3,43 @@ include('application/views/admin/head.php');
 include('application/views/admin/head_top.php');
 ?>
 
-
 <div class="content inside-page">
-<div class="main container "> 
+<div class="main container"> 
     <div class="form-group">
       <div class="help-block center h2">
-        <?php if(isset($flashmsg)){echo $flashmsg;} ?>            
       </div>        
     </div>    
     <div id="cbp-vm" class="  cbp-vm-switcher cbp-vm-view-grid">
-
+      <div class="form-group">
+        <div class="help-block center h2">
+          <?php if(isset($flashmsg)){echo $flashmsg;} ?>            
+        </div>        
+      </div> 
       <div class="cbp-vm-options">
 <div class="">
         
-        <div class="form-group col-sm-2">
-    <select class="form-control">
-      <option>10 wishes</option>
-      <option>25 wishes</option>
-      <option>50 wishes</option>
-      <option>100 wishes</option>
-      </select>
+      <div class="form-group col-sm-2">
+        <select class="form-control">
+          <option>10 wishes</option>
+          <option>25 wishes</option>
+          <option>50 wishes</option>
+          <option>100 wishes</option>
+        </select>
       </div>
     
-            <div class="form-group col-sm-2 ">
-    <select class="form-control">
-      <option>Country</option>
-      <option>Australia</option>
-      <option>America</option>
-      <option>Russia</option>
-                <option>India</option>
-      <option>Singapore</option>
-      <option>Malaysia</option>
-      <option>China</option>
-      <option>Nepal</option>
-                <option>United Kingdom</option>
-      </select>
+      <div class="form-group col-sm-2 ">
+        <select class="form-control">
+          <option>Country</option>
+          <option>Australia</option>
+          <option>America</option>
+          <option>Russia</option>
+          <option>India</option>
+          <option>Singapore</option>
+          <option>Malaysia</option>
+          <option>China</option>
+          <option>Nepal</option>
+          <option>United Kingdom</option>
+        </select>
       </div>
                 
                 <div class="form-group col-sm-2">
@@ -112,7 +114,7 @@ for($i=$start;$i<=($end-1);$i++){
       <img src="<?php echo base_url('images/products/wished').'/'.$allwishes[$i]['wpimg']; ?>">
     </a>
     <h3 class="cbp-vm-title">
-      <?php echo $allwishes[$i]['wpn']; ?>
+      <?php echo ucwords($allwishes[$i]['wpn']); ?>
     </h3>
     <div class="cbp-vm-price">
       <?php echo $allwishes[$i]['cname']; ?>
@@ -131,7 +133,7 @@ for($i=$start;$i<=($end-1);$i++){
     <?php
     if($allwishes[$i]['rid']!=$this->session->userdata('uid')){
     ?>
-      <a href="<?php echo base_url('wishgrant/granting').'/'.$allwishes[$i]['wid']; ?>" class="btn btn-danger">&#9733; Grant Wish</a>
+      <a href="<?php echo base_url('wishgrant/granting').'/'.$allwishes[$i]['wid']; ?>" class="btn btn-danger"><span class="fa fa-magic"></span> Grant Wish</a>
     <?php
     }else{
     ?>

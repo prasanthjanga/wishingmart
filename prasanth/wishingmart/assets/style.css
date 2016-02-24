@@ -14,9 +14,17 @@ html{
   width:100%;
   }
 
-  
+form {
+  width: 500px;
+  margin: 6em auto;
+  padding: 3em 2em 2em 2em;
+  background: #fafafa;
+  border: 1px solid #ebebeb;
+  box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+ 
 .bodybg{
-  background: url("images/nebula.jpg"); 
+  /*background: url("images/nebula.jpg"); */
   background-repeat:no-repeat;
   background-position:center center;
   background-attachment:fixed; 
@@ -69,10 +77,8 @@ h1.title{
   padding-bottom:30px;
   z-index: 100;
   text-align:center;
-  font-family:'Orbitron';
+  font-family:'Roboto Condensed';
   font-size: 100px;
-  color: darkgray;
-  text-shadow: 0 1px #111010 ,-1px 0 #ea006e, -1px 2px #111010, -2px 1px #ea006e, -2px 3px #111010, -3px 2px #ea006e, -3px 4px #111010, -4px 3px #ea006e, -4px 5px #111010, -5px 4px #ea006e, -5px 6px #111010, -6px 5px #ea006e, -6px 7px #111010, -7px 6px #ea006e, -7px 8px #111010, -8px 7px #ea006e;
 }
 
 span.top{ 
@@ -103,7 +109,9 @@ h1.bottom{
 
 /*default*/
 h1.hide{display: none;}
-h1{font:normal 33px/30px 'Old Standard TT', serif; margin:0 0 10px 0;}
+h1 { color:skyblue; font-family: 'Roboto Condensed'; }
+
+/*h1{font:normal 33px/30px 'Old Standard TT', serif; margin:0 0 10px 0;}*/
 h2{font:italic 60px/50px 'Old Standard TT', serif; margin:0;}
 .dashboard{font:normal 50px/50px 'Georgia','Impact', serif; margin:0 0 40px 0; text-align:center; font:strong;}
 h2.title{font:normal 50px/50px 'Impact'; margin:0 0 40px 0; text-align:center; color:#4abcdd;}
@@ -128,13 +136,13 @@ a{color: #333;}
 .height-half{height: 50%;display: table;}
 
 .content{padding: 48px 0 70px 0; margin-bottom:70px;}
-.inside-page{padding: 80px 40px 100px 20px;height:100%;}
+.inside-page{padding: 40px 10px 10px 10px;height:100%;}
 .breadcrumb{margin-bottom: 30px;background: none;padding: 0;}
 .breadcrumb a{color: #4abcdd;}
 .breadcrumb a:hover{text-decoration: underline;}
 .hidden{display:none;}
 
-.wishform{float:left; padding-top:8px;color:whitesmoke;}
+.wishform{float:left; padding-top:8px;color:#28abe3;}
 
 /*default*/
 
@@ -155,7 +163,7 @@ a{color: #333;}
 .navbar-nav > li{margin-top:0px !important;}
 .navbar-nav > li > a{ padding: 13px 5px; padding-bottom:0px !important;  text-transform: uppercase;font: normal 13px/19px 'Titillium Web';}
 .navbar-inverse{border:none; opacity:1; background-color:black;}
-.navbar-fixed-top{ background:rgba(0,0,0,.3); opacity:1.0;}
+.navbar-fixed-top{ background:#212121; opacity:1.0;}
 .navbar-brand{padding:2px 11px !important;}
 .dropdown-menu{background:rgba(0,0,0,.3); color: #fff; padding-top:15px; margin-top:10px !important;}
 .dropdown-menu > li > a{color: #fff;padding:10px;}
@@ -178,16 +186,56 @@ a{color: #333;}
 .searchbar .form-control,.newsletter .form-control{border:1px solid #555;background: none;border-radius: 0;padding:1px 5px;height: auto;width: 200px;color: #999;}
 /*search*/
 
+/********* RAINBOW COLOUR LINE CSS START **********/
+.colorbox {
+  width: auto;
+  height: 1px;
+  margin: auto;
+}
+
+.rainbow {
+    background: linear-gradient(
+    to right,
+    red 0%,
+    orange 15%,
+    yellow 30%,
+    green 45%,
+    blue 60%,
+    indigo 80%,
+    violet 100%);
+}
+
+.rainbow-stops {
+    background: linear-gradient(
+    to right,
+    red 0%,
+    red 15%,
+    orange 15%,
+    orange 29%,
+    yellow 29%,
+    yellow 43%,
+    green 43%,
+    green 57%,
+    blue 57%,
+    blue 71%,
+    indigo 71%,
+    indigo 85%,
+    violet 85%,
+    violet 100%);
+}
+/********* RAINBOW COLOUR LINE CSS END **********/
+
+
 
 /*footer*/
-.footer{background-color:rgba(0,0,0,.3); position:fixed;margin-top:10px; z-index:1000;}
+.footer{background-color:#212121; position:fixed;margin-top:10px; z-index:1000;}
 
-.footer .links{margin-top: 9px;float: left;}
+.footer .links{margin-top: 5px;float: left;}
 .footer .links a{color: #888;padding: 0 10px;font: normal 13px/13px 'Titillium Web';}
 .footer .links a:hover{color: #fff;}
-.footer .social{margin-top: 0px !important;margin-right: 10px;}
+.footer .social{margin-top: 3px !important;margin-right: 10px;}
 .footer .social a{color: #fff;font-size: 20px;margin:0px;}
-.footer .social a:hover{color: #999;}
+.footer .social a:hover{color: skyblue;}
 /*footer*/
 
 
@@ -197,9 +245,9 @@ a{color: #333;}
 /*form styles*/
 #registerForm{padding:20px 40px 20px 20px; z-index:1000; color:whitesmoke; margin-bottom:50px; }
  .form-control,div.selector{
-    background-color: rgba(0,0,0,0.5);
+    /*background-color: rgba(0,0,0,0.5);*/
     background-image: none !important;
-  color:whitesmoke;
+    color:black;
  }
 .input-group[class*=col-] {
     float: none;
@@ -209,8 +257,8 @@ a{color: #333;}
 .help-block{color:red; margin-bottom:1px; margin-top:0px; font:bold;}
 .form-control input{color:whitesmoke;}
 .form-control a{ color:whitesmoke;}
-.control-label{color:whitesmoke;}
-div.selector select {background-color:black !important;}
+.control-label{color:skyblue;}
+div.selector select {/*background-color:black !important;*/}
 .form-control select{background-color:rgba(0,0,0,0.9); color:whitesmoke;}
 .datepicker-dropdown{background-color:rgba(0,0,0,0.9); color:whitesmoke;}
 .datepicker-dropdown hover:tr{color:black;}
@@ -225,7 +273,7 @@ div.selector select {background-color:black !important;}
 #progressbar li.active:after {background: #ddd;}
 #progressbar li.done:before{background:url(images/check.png) center no-repeat #c14387; }
 .forgot-password{margin-bottom: 10px;}
-#register_tnc_error{float:right;padding:20px;color: whitesmoke;}
+#register_tnc_error{float:right;padding:20px;/*color: whitesmoke;*/}
 #register_tnc_error a{color:#ea006e;}
 /*form styles*/
 
@@ -236,12 +284,12 @@ div.selector select {background-color:black !important;}
 /*about*/
 .about h4{margin-bottom: 40px;}
 .about h3{margin-bottom: 10px;}
-.about p{margin-bottom: 40px; color:whitesmoke; font-family:"titillium web"; font-size:18px;}
+.about p{margin-bottom: 40px; /*color:whitesmoke;*/ font-family:"titillium web"; font-size:18px;}
 .terms p , .terms li , .terms a {margin-bottom: 40px; color:whitesmoke; font-family:"titillium web"; font-size:18px;}
 
 
 /*uniform*/
-.radio-inline{padding-top: 4px;padding-left: 0;color: whitesmoke;}
+.radio-inline{padding-top: 4px;padding-left: 0;/*color: whitesmoke;*/}
 .form-horizontal .radio{padding-top:3px;}
 .radio-inline input[type="radio"]{margin-left: 0;}
 div.radio{margin-right: 10px;}
@@ -249,7 +297,7 @@ div.radio span{background:url(images/radio.png) 0 20px !important;}
 
 div.radio span,div.radio input{width: 20px;height: 20px;}
 div.radio span.checked{background-position: 0 0 !important;}
-div.selector{border:none; border: 1px solid #999;height: 33px !important; padding:3px 10px !important; border-radius: 0; font-size: 14px; background-color:rgba(0,0,0,0.5); width: 100% !important;text-align: left !important;}
+div.selector{border:none; border: 1px solid #999;height: 33px !important; padding:3px 10px !important; border-radius: 0; font-size: 14px; /*background-color:rgba(0,0,0,0.5);*/ width: 100% !important;text-align: left !important;}
 div.selector:hover{}
 div.selector span{height: 36px;padding: 0; background: url(images/drop.png) right 9px no-repeat !important;color: #8d8d8d; width: 100% !important;margin-right: 20px;}
 div.selector:hover span{ background-position:right 9px !important; color: #282828;}

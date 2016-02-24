@@ -11,39 +11,38 @@ include_once($head_top);
 <div class="container">
 
 <div class="content inside-page create-account">
-<h1 class="title h2">
-  <span class="top"></span>
-Forgot Password
-  <span class="bottom"></span>
-</h1>
-   <div class="row">
-   <form id="registerForm" class="form-horizontal col-sm-6 col-sm-offset-3" data-toggle="validator" role="form" method="post" action="">
-            <div class="col-sm-6 col-lg-offset-1 col-lg-10">
-           
-                <div class="form-group">
-                <div class="help-block pull-right"></div>
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required>
-                </div>
-              <div class="form-group">
-				
-               <button type="submit" class="btn btn-danger pull-right">Submit</button>
-               
-              
-          </div>
-           <hr>
-                  <div class="form-group">
-				
-                <a href="<?php echo base_url('landing/registration'); ?>" class="btn btn-danger pull-left">Register</a>
-               
-				 <a href="<?php echo base_url('landing/login'); ?>" class="btn btn-danger pull-right">Login</a>
-								
-				</div>
-               </div>
-            </form>
-    </div>  
+  <div class="row">
+   
+    <div class="col-md-6">
+      <form data-toggle="validator" role="form" method="post" action="<?php echo base_url(''); ?>">
+        <h1>Forgot Password</h1>
+        <hr>
+        <div class="group">
+          <input type="email" name="email" value="<?php echo set_value('email'); ?>" required><span class="highlight"></span><span class="bar"></span>
+          <label>Email address</label>
+          <?php echo form_error('email'); ?>
+        </div>
+        <button type="submit" name="sub" class="button buttonBlue">Submit
+        </button>
+      </form>
+    </div><!-- col-md-6 CLASS END-->  
+    
+    <div class="col-md-6">
+      <form>
+        <h1>Login</h1>
+        <hr>
+        <ul class="list-unstyled" style="line-height: 2">
+          <li><span class="fa fa-check text-success"></span> See all your Wish & Grant list</li>
+          <li><span class="fa fa-check text-success"></span> See all your Chat</li>
+          <li><span class="fa fa-check text-success"></span> See all your orders</li>
+        </ul>
+        <a href="<?php echo base_url('landing/login'); ?>" class="button buttonBlue">Login now!</a>
+      </form>
+    </div><!-- col-md-6 CLASS END-->  
+
+  </div>  
 </div>
-  </div>
+</div>
 
 
 

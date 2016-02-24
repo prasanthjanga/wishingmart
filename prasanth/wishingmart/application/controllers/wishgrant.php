@@ -166,6 +166,7 @@ class Wishgrant extends CI_Controller {
     //exit();    
     
     $this->session->set_userdata('from_id',$data['wishbyid'][0]['rid']);
+    //$this->session->set_userdata('to_id',$this->session->userdata('uid'));
     
     $url_chat_on=base_api_url()."chat/online_status/uid/".$data['wishbyid'][0]['rid'].base_api_key();
     $data['online'] = self::getapi($url_chat_on) ;
@@ -179,9 +180,8 @@ class Wishgrant extends CI_Controller {
       redirect('wishgrant/listofwishes');
     }else{
 
-
       if(isset($_POST['sub'])){
-
+        
         $this->load->library('form_validation');
         $this->form_validation->set_rules('gt_country', 'Country Name', 'callback_select_validate');
         $this->form_validation->set_rules('gt_p_desc', 'Description', 'required');
@@ -243,14 +243,14 @@ class Wishgrant extends CI_Controller {
                
               $result = json_decode($buffer);
               //print_r($result);exit();
-              //if(isset($result->status) && ($result->status == 'success')){
+              if(isset($result->status) && ($result->status == 'success')){
               $this->session->set_userdata('flashmsg','<div>Your Grant Has Been Send Successfully.</div>');
               //$data['wish_details'];exit();
               //$this->session->unset_userdata($data['wish_details']);
               redirect('wishgrant/listofwishes');
             }else{
               $this->session->set_flashdata('flashmsg','<div>You Grant Not Send.</div>'); 
-              //}//ELSE END
+            }//ELSE END
             }//IF END
           }//ELSE END
         }//ELSE END
