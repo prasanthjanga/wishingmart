@@ -1573,7 +1573,7 @@ a:hover, a:active, a:focus {
 .box {
     position: relative;
     border-radius: 3px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.78);
     border-top: 3px solid #d2d6de;
     margin-bottom: 20px;
     width: 100%;

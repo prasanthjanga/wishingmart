@@ -1,0 +1,34 @@
+{
+  "name": "steroids-data",
+  "version": "0.8.9",
+  "homepage": "https://github.com/AppGyver/steroids-data",
+  "license": "MIT",
+  "authors": [
+    "Eevert Saukkokoski <eevert.saukkokoski@appgyver.com>"
+  ],
+  "main": "dist/steroids.data.js",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src",
+    "tasks",
+    "test",
+    "testApp",
+    "coffeelint.json",
+    "Gruntfile.coffee",
+    "package.json"
+  ],
+  "_release": "0.8.9",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.8.9",
+    "commit": "a0a9e8695df057f7148e1545e754d0bb9c25b66e"
+  },
+  "_source": "git://github.com/AppGyver/steroids-data.git",
+  "_target": "~0.8.4",
+  "_originalSource": "steroids-data"
+}
